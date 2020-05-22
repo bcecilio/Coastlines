@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let test = "test"
+    let test = "teesting"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
