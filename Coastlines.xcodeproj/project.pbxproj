@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
+		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
 		0B1F213C2476DEC300729365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F213B2476DEC300729365 /* AppDelegate.swift */; };
 		0B1F213E2476DEC300729365 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F213D2476DEC300729365 /* SceneDelegate.swift */; };
 		0B1F21452476DECA00729365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21442476DECA00729365 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
 		0B1F21382476DEC300729365 /* Coastlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coastlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1F213B2476DEC300729365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B1F213D2476DEC300729365 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 		0289F8F4247DA086008D3910 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0289F8F9247DB933008D3910 /* LocationDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -59,6 +64,7 @@
 		0289F8F5247DA093008D3910 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0289F8FB247DB981008D3910 /* LocationDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +237,8 @@
 			files = (
 				0B1F213C2476DEC300729365 /* AppDelegate.swift in Sources */,
 				0B1F213E2476DEC300729365 /* SceneDelegate.swift in Sources */,
+				0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */,
+				0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
