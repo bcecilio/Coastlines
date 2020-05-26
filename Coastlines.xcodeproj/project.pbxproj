@@ -13,6 +13,7 @@
 		0B1F21432476DEC300729365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21412476DEC300729365 /* Main.storyboard */; };
 		0B1F21452476DECA00729365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21442476DECA00729365 /* Assets.xcassets */; };
 		0B1F21482476DECA00729365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21462476DECA00729365 /* LaunchScreen.storyboard */; };
+		1393FDC357C87C1B91849D65 /* Pods_Coastlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		0B1F21442476DECA00729365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B1F21472476DECA00729365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B1F21492476DECA00729365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90B7802E35291B5353608B3B /* Pods-Coastlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.debug.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.debug.xcconfig"; sourceTree = "<group>"; };
+		CEE5A3A6EC95A87BAEBAA85A /* Pods-Coastlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.release.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.release.xcconfig"; sourceTree = "<group>"; };
+		D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coastlines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1393FDC357C87C1B91849D65 /* Pods_Coastlines.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				0B1F213A2476DEC300729365 /* Coastlines */,
 				0B1F21392476DEC300729365 /* Products */,
+				A9AB02489A2239108882CA4F /* Pods */,
+				79A00A563E6E055F7CD461D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = Coastlines;
 			sourceTree = "<group>";
 		};
+		79A00A563E6E055F7CD461D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9AB02489A2239108882CA4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90B7802E35291B5353608B3B /* Pods-Coastlines.debug.xcconfig */,
+				CEE5A3A6EC95A87BAEBAA85A /* Pods-Coastlines.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B1F214C2476DECA00729365 /* Build configuration list for PBXNativeTarget "Coastlines" */;
 			buildPhases = (
+				B83F0BBB3338FDF2D614B210 /* [CP] Check Pods Manifest.lock */,
 				0B1F21342476DEC300729365 /* Sources */,
 				0B1F21352476DEC300729365 /* Frameworks */,
 				0B1F21362476DEC300729365 /* Resources */,
@@ -132,6 +158,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B83F0BBB3338FDF2D614B210 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Coastlines-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B1F21342476DEC300729365 /* Sources */ = {
@@ -282,6 +333,7 @@
 		};
 		0B1F214D2476DECA00729365 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90B7802E35291B5353608B3B /* Pods-Coastlines.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +352,7 @@
 		};
 		0B1F214E2476DECA00729365 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEE5A3A6EC95A87BAEBAA85A /* Pods-Coastlines.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
