@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0B1F213C2476DEC300729365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F213B2476DEC300729365 /* AppDelegate.swift */; };
 		0B1F213E2476DEC300729365 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F213D2476DEC300729365 /* SceneDelegate.swift */; };
-		0B1F21402476DEC300729365 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F213F2476DEC300729365 /* ViewController.swift */; };
-		0B1F21432476DEC300729365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21412476DEC300729365 /* Main.storyboard */; };
 		0B1F21452476DECA00729365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21442476DECA00729365 /* Assets.xcassets */; };
 		0B1F21482476DECA00729365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21462476DECA00729365 /* LaunchScreen.storyboard */; };
 		1393FDC357C87C1B91849D65 /* Pods_Coastlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */; };
@@ -20,8 +18,6 @@
 		0B1F21382476DEC300729365 /* Coastlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coastlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1F213B2476DEC300729365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B1F213D2476DEC300729365 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0B1F213F2476DEC300729365 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0B1F21422476DEC300729365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B1F21442476DECA00729365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B1F21472476DECA00729365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B1F21492476DECA00729365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,8 +61,6 @@
 			children = (
 				0B1F213B2476DEC300729365 /* AppDelegate.swift */,
 				0B1F213D2476DEC300729365 /* SceneDelegate.swift */,
-				0B1F213F2476DEC300729365 /* ViewController.swift */,
-				0B1F21412476DEC300729365 /* Main.storyboard */,
 				0B1F21442476DECA00729365 /* Assets.xcassets */,
 				0B1F21462476DECA00729365 /* LaunchScreen.storyboard */,
 				0B1F21492476DECA00729365 /* Info.plist */,
@@ -88,7 +82,6 @@
 				90B7802E35291B5353608B3B /* Pods-Coastlines.debug.xcconfig */,
 				CEE5A3A6EC95A87BAEBAA85A /* Pods-Coastlines.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,7 +146,6 @@
 			files = (
 				0B1F21482476DECA00729365 /* LaunchScreen.storyboard in Resources */,
 				0B1F21452476DECA00729365 /* Assets.xcassets in Resources */,
-				0B1F21432476DEC300729365 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +181,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B1F21402476DEC300729365 /* ViewController.swift in Sources */,
 				0B1F213C2476DEC300729365 /* AppDelegate.swift in Sources */,
 				0B1F213E2476DEC300729365 /* SceneDelegate.swift in Sources */,
 			);
@@ -198,14 +189,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0B1F21412476DEC300729365 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0B1F21422476DEC300729365 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0B1F21462476DECA00729365 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
