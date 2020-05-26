@@ -38,6 +38,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0289F8F3247DA075008D3910 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B1F213B2476DEC300729365 /* AppDelegate.swift */,
+				0B1F213D2476DEC300729365 /* SceneDelegate.swift */,
+				0B1F21442476DECA00729365 /* Assets.xcassets */,
+				0B1F21462476DECA00729365 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0289F8F4247DA086008D3910 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0289F8F5247DA093008D3910 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0289F8F6247DA0A3008D3910 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0289F8F7247DA0BA008D3910 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0289F8F8247DA0D2008D3910 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0B1F212F2476DEC300729365 = {
 			isa = PBXGroup;
 			children = (
@@ -59,10 +105,12 @@
 		0B1F213A2476DEC300729365 /* Coastlines */ = {
 			isa = PBXGroup;
 			children = (
-				0B1F213B2476DEC300729365 /* AppDelegate.swift */,
-				0B1F213D2476DEC300729365 /* SceneDelegate.swift */,
-				0B1F21442476DECA00729365 /* Assets.xcassets */,
-				0B1F21462476DECA00729365 /* LaunchScreen.storyboard */,
+				0289F8F8247DA0D2008D3910 /* Models */,
+				0289F8F7247DA0BA008D3910 /* Services */,
+				0289F8F5247DA093008D3910 /* Controllers */,
+				0289F8F4247DA086008D3910 /* Views */,
+				0289F8F6247DA0A3008D3910 /* Extensions */,
+				0289F8F3247DA075008D3910 /* Supporting Files */,
 				0B1F21492476DECA00729365 /* Info.plist */,
 			);
 			path = Coastlines;
