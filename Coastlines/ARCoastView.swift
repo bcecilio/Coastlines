@@ -27,7 +27,6 @@ class ARCoastView: UIView {
     
     
     private func setupView() {
-        backgroundColor = .systemBlue
         setupARView()
     }
     
