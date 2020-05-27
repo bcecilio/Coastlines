@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
 		0B09F374247EF4B4001E17F0 /* ARCoastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F373247EF4B4001E17F0 /* ARCoastView.swift */; };
+		0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
+		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
 		0B1F213C2476DEC300729365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F213B2476DEC300729365 /* AppDelegate.swift */; };
 		0B1F213E2476DEC300729365 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F213D2476DEC300729365 /* SceneDelegate.swift */; };
 		0B1F21452476DECA00729365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21442476DECA00729365 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		0B09F371247EF49F001E17F0 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = Coastlines/ARViewController.swift; sourceTree = SOURCE_ROOT; };
 		0B09F373247EF4B4001E17F0 /* ARCoastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARCoastView.swift; path = Coastlines/ARCoastView.swift; sourceTree = SOURCE_ROOT; };
+		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
 		0B1F21382476DEC300729365 /* Coastlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coastlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1F213B2476DEC300729365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B1F213D2476DEC300729365 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				0B09F373247EF4B4001E17F0 /* ARCoastView.swift */,
+				0289F8F9247DB933008D3910 /* LocationDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -65,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				0B09F371247EF49F001E17F0 /* ARViewController.swift */,
+				0289F8FB247DB981008D3910 /* LocationDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,6 +245,8 @@
 				0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */,
 				0B1F213C2476DEC300729365 /* AppDelegate.swift in Sources */,
 				0B1F213E2476DEC300729365 /* SceneDelegate.swift in Sources */,
+				0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */,
+				0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
