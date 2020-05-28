@@ -28,5 +28,7 @@ class LocationDetailVC: UIViewController {
     @objc func goToARButtonPressed(_ sender: UIBarButtonItem) {
         
         print("AR Button Pressed")
+        let arVC = ARViewController()
+        present(arVC, animated: true)
     }
 }
