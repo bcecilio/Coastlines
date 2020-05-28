@@ -22,14 +22,15 @@ class IntroViewController: UIViewController {
     }
     
     private func setUp(){
-        view.backgroundColor = UIColor.systemGray4
+        view.backgroundColor = UIColor.systemBackground
         navigationItem.title = "Intro Page"
         introView.welcomeButton.addTarget(self, action: #selector(beginButtonPressed), for: .touchUpInside)
     }
     
     @objc
     private func beginButtonPressed(_ sender: UIButton){
-        print("The begin button was pressed.")
+//        let nextVC = LocationsViewController()
+//        navigationController?.pushViewController(nextVC, animated: true)
     }
 
 }

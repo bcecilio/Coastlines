@@ -14,8 +14,8 @@ class IntroView: UIView {
        let button = UIButton()
         button.setTitle("Begin", for: .normal)
         button.setTitleColor(UIColor.systemBlue, for: .normal)
-        button.layer.borderColor = UIColor.black.cgColor
-        button.layer.borderWidth = 1.0
+//        button.layer.borderColor = UIColor.black.cgColor
+//        button.layer.borderWidth = 1.0
         return button
     }()
     
@@ -25,6 +25,7 @@ class IntroView: UIView {
         label.textColor = UIColor.systemTeal
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont.preferredFont(forTextStyle: .title1)
+        label.alpha = 0.0
         return label
     }()
 
