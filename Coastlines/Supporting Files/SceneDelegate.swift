@@ -19,15 +19,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let firstTime = UserDefaults.standard.bool(forKey: OnboardingKey.ftuexKey)
-        
+//        let notFirstTime = UserDefaults.standard.bool(forKey: OnboardingKey.ftuexKey)
+//
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        if firstTime {
+//        if !notFirstTime {
             window?.rootViewController = FirstOnboardingController()
-        } else {
-            window?.rootViewController = UINavigationController(rootViewController: LocationsViewController())
-        }
+//            UserDefaults.standard.set(true, forKey: OnboardingKey.ftuexKey)
+//        } else {
+//            window?.rootViewController = UINavigationController(rootViewController: LocationsViewController())
+//        }
         
         window?.makeKeyAndVisible()
     }
