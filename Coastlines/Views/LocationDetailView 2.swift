@@ -16,8 +16,7 @@ class LocationDetailView: UIView {
         return scrollview
     }()
     
-    
-    public lazy var headerContainerView: UIView = {
+    public lazy var contentView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
         return view
@@ -26,27 +25,17 @@ class LocationDetailView: UIView {
     public lazy var locationImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.image = UIImage(named: "nycSeaLevel1")
+        iv.image = UIImage(systemName: "photo.fill")
         iv.clipsToBounds = true
         iv.alpha = 1
         return iv
-    }()
-    
-    public lazy var locationLabel: UILabel = {
-        let label = UILabel()
-        label.text = "New York City"
-        label.numberOfLines = 0
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 40)
-        label.textColor = .white
-        return label
     }()
     
     public lazy var seaLevelFactsLabel: UILabel = {
         let label = UILabel()
         label.text = "Sea Level Facts"
         label.numberOfLines = 0
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
@@ -114,15 +103,6 @@ class LocationDetailView: UIView {
         return button
     }()
     
-    public lazy var arView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemTeal
-        return view
-    }()
-    
-    var headerContainerViewBottom : NSLayoutConstraint!
-    var imageViewTopConstraint: NSLayoutConstraint!
-    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -135,10 +115,9 @@ class LocationDetailView: UIView {
     
     private func commonInit() {
         scrollViewContraints()
-        setupSeaLevelLabelConstraints()
-        headerContainer()
+        contentViewContraints()
         setupLocationImageConstraints()
-        setupLocationLabel()
+        setupSeaLevelLabelConstraints()
         seaLevelFactsConstraints()
         graphLabelConstraints()
         seaLevelGraphConstraints()
@@ -146,7 +125,6 @@ class LocationDetailView: UIView {
         populationContentConstraints()
         populationGraphLabelConstraints()
         populationGraphConstraints()
-        setupARView()
         arButtonConstraints()
         
     }
@@ -156,63 +134,50 @@ class LocationDetailView: UIView {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: self.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     
-    private func headerContainer() {
-        self.scrollView.addSubview(headerContainerView)
+    private func contentViewContraints() {
+        scrollView.addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         
-        self.headerContainerView.translatesAutoresizingMaskIntoConstraints = false
+        let heightConstraint = contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
+        heightConstraint.priority = UILayoutPriority(250)
+        
         NSLayoutConstraint.activate([
-            headerContainerView.topAnchor.constraint(equalTo: self.topAnchor),
-            headerContainerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            headerContainerView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            heightConstraint,
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
         ])
-        headerContainerViewBottom = self.headerContainerView.bottomAnchor.constraint(equalTo: self.seaLevelFactsLabel.topAnchor, constant: -10)
-        headerContainerViewBottom.priority = UILayoutPriority(rawValue: 900)
-        headerContainerViewBottom.isActive = true
     }
     
     private func setupLocationImageConstraints() {
         
-        headerContainerView.addSubview(locationImage)
+        contentView.addSubview(locationImage)
         locationImage.translatesAutoresizingMaskIntoConstraints = false
         
-        //        let imageViewTopConstraint: NSLayoutConstraint!
-        
         NSLayoutConstraint.activate([
-            locationImage.topAnchor.constraint(equalTo: headerContainerView.topAnchor),
+            locationImage.topAnchor.constraint(equalTo: contentView.topAnchor),
             locationImage.leadingAnchor.constraint(equalTo: leadingAnchor),
             locationImage.trailingAnchor.constraint(equalTo: trailingAnchor),
-            locationImage.bottomAnchor.constraint(equalTo: seaLevelFactsLabel.topAnchor, constant: -20)
-        ])
-        
-        imageViewTopConstraint = self.locationImage.topAnchor.constraint(equalTo: self.scrollView.topAnchor)
-        imageViewTopConstraint.priority = UILayoutPriority(rawValue: 900)
-        imageViewTopConstraint.isActive = true
-    }
-    
-    private func setupLocationLabel() {
-        locationImage.addSubview(locationLabel)
-        locationLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            locationLabel.bottomAnchor.constraint(equalTo: locationImage.bottomAnchor, constant: -10),
-            locationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            locationLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            locationImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25)
         ])
     }
     
     private func setupSeaLevelLabelConstraints() {
-        scrollView.addSubview(seaLevelFactsLabel)
+        contentView.addSubview(seaLevelFactsLabel)
         seaLevelFactsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            seaLevelFactsLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 280),
+            seaLevelFactsLabel.topAnchor.constraint(equalTo: locationImage.bottomAnchor, constant: 20),
             seaLevelFactsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             seaLevelFactsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
             
@@ -220,7 +185,7 @@ class LocationDetailView: UIView {
     }
     
     private func seaLevelFactsConstraints() {
-        scrollView.addSubview(seaLevelContentLabel)
+        contentView.addSubview(seaLevelContentLabel)
         seaLevelContentLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -231,7 +196,7 @@ class LocationDetailView: UIView {
     }
     
     private func graphLabelConstraints() {
-        scrollView.addSubview(graphLabel)
+        contentView.addSubview(graphLabel)
         graphLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -242,7 +207,7 @@ class LocationDetailView: UIView {
     }
     
     private func seaLevelGraphConstraints(){
-        scrollView.addSubview(seaLevelGraphView)
+        contentView.addSubview(seaLevelGraphView)
         seaLevelGraphView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -254,18 +219,19 @@ class LocationDetailView: UIView {
     }
     
     private func setupPopulationLabelConstraints() {
-        scrollView.addSubview(populationFactsLabel)
+        contentView.addSubview(populationFactsLabel)
         populationFactsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             populationFactsLabel.topAnchor.constraint(equalTo: seaLevelGraphView.bottomAnchor, constant: 20),
             populationFactsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             populationFactsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            
         ])
     }
     
     private func populationContentConstraints() {
-        scrollView.addSubview(populationContentLabel)
+        contentView.addSubview(populationContentLabel)
         populationContentLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -276,7 +242,7 @@ class LocationDetailView: UIView {
     }
     
     private func populationGraphLabelConstraints() {
-        scrollView.addSubview(populationGraphLabel)
+        contentView.addSubview(populationGraphLabel)
         populationGraphLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -287,39 +253,27 @@ class LocationDetailView: UIView {
     }
     
     private func populationGraphConstraints(){
-        scrollView.addSubview(populationGraphView)
+        contentView.addSubview(populationGraphView)
         populationGraphView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             populationGraphView.topAnchor.constraint(equalTo: populationGraphLabel.bottomAnchor, constant: 20),
             populationGraphView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.20),
             populationGraphView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            populationGraphView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            populationGraphView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80)
-        ])
-    }
-    
-    private func setupARView() {
-        addSubview(arView)
-        arView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            arView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            arView.widthAnchor.constraint(equalTo: widthAnchor),
-            arView.heightAnchor.constraint(equalToConstant: 100),
-            arView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            populationGraphView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
     }
     
     private func arButtonConstraints() {
-        addSubview(goToARButton)
+        contentView.addSubview(goToARButton)
         goToARButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            goToARButton.topAnchor.constraint(equalTo: populationGraphView.bottomAnchor, constant: 20),
             goToARButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             goToARButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5),
             goToARButton.heightAnchor.constraint(equalToConstant: 44),
-            goToARButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0)
+            goToARButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
         ])
     }
 }
