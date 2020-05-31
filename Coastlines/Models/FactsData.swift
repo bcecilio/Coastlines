@@ -19,6 +19,7 @@ struct Locations: Decodable {
 }
 
 struct Facts: Decodable {
+    let generalFacts: String
     let seaLevelFacts: String
     let populationFacts: String
 }

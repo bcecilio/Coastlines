@@ -16,7 +16,6 @@ class LocationDetailView: UIView {
         return scrollview
     }()
     
-    
     public lazy var headerContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -44,7 +43,7 @@ class LocationDetailView: UIView {
     
     public lazy var seaLevelFactsLabel: UILabel = {
         let label = UILabel()
-        label.text = "Sea Level Facts"
+        label.text = "Did you know?"
         label.numberOfLines = 0
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 20)
@@ -54,7 +53,24 @@ class LocationDetailView: UIView {
     public lazy var seaLevelContentLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiatiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labo"
+        label.text = ""
+        label.font = UIFont.monospacedDigitSystemFont(ofSize: 14, weight: .light)
+        return label
+    }()
+    
+    public lazy var looksLikeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "What this looks like"
+        label.numberOfLines = 0
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
+    
+    public lazy var looksLikeContentLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = ""
         label.font = UIFont.monospacedDigitSystemFont(ofSize: 14, weight: .light)
         return label
     }()
@@ -62,7 +78,7 @@ class LocationDetailView: UIView {
     public lazy var graphLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "Graph Title"
+        label.text = "Sea Level Rise by 2100"
         label.textAlignment = .center
         label.font = UIFont.monospacedDigitSystemFont(ofSize: 17, weight: .bold)
         return label
@@ -76,9 +92,9 @@ class LocationDetailView: UIView {
     
     public lazy var populationFactsLabel: UILabel = {
         let label = UILabel()
-        label.text = "Population Displacement Facts"
+        label.text = "Where will we go?"
         label.numberOfLines = 0
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
@@ -86,7 +102,7 @@ class LocationDetailView: UIView {
     public lazy var populationContentLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiatiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labo"
+        label.text = ""
         label.font = UIFont.monospacedDigitSystemFont(ofSize: 14, weight: .light)
         return label
     }()
@@ -94,7 +110,7 @@ class LocationDetailView: UIView {
     public lazy var populationGraphLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "Population Graph"
+        label.text = "Population Displacement"
         label.textAlignment = .center
         label.font = UIFont.monospacedDigitSystemFont(ofSize: 17, weight: .bold)
         return label
@@ -108,7 +124,7 @@ class LocationDetailView: UIView {
     
     public lazy var goToARButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Go to AR", for: .normal)
+        button.setTitle("AR Experience", for: .normal)
         button.backgroundColor = .systemPurple
         button.layer.cornerRadius = 5
         return button
@@ -140,6 +156,8 @@ class LocationDetailView: UIView {
         setupLocationImageConstraints()
         setupLocationLabel()
         seaLevelFactsConstraints()
+        setupLooksLikeConstraints()
+        setupLooksLikeContentConstraints()
         graphLabelConstraints()
         seaLevelGraphConstraints()
         setupPopulationLabelConstraints()
@@ -182,8 +200,6 @@ class LocationDetailView: UIView {
         headerContainerView.addSubview(locationImage)
         locationImage.translatesAutoresizingMaskIntoConstraints = false
         
-        //        let imageViewTopConstraint: NSLayoutConstraint!
-        
         NSLayoutConstraint.activate([
             locationImage.topAnchor.constraint(equalTo: headerContainerView.topAnchor),
             locationImage.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -224,9 +240,31 @@ class LocationDetailView: UIView {
         seaLevelContentLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            seaLevelContentLabel.topAnchor.constraint(equalTo: seaLevelFactsLabel.bottomAnchor, constant: 20),
+            seaLevelContentLabel.topAnchor.constraint(equalTo: seaLevelFactsLabel.bottomAnchor, constant: 8),
             seaLevelContentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             seaLevelContentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+        ])
+    }
+    
+    private func setupLooksLikeConstraints() {
+        scrollView.addSubview(looksLikeLabel)
+        looksLikeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            looksLikeLabel.topAnchor.constraint(equalTo: seaLevelContentLabel.bottomAnchor, constant: 20),
+            looksLikeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            looksLikeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+        ])
+    }
+    
+    private func setupLooksLikeContentConstraints() {
+        scrollView.addSubview(looksLikeContentLabel)
+        looksLikeContentLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            looksLikeContentLabel.topAnchor.constraint(equalTo: looksLikeLabel.bottomAnchor, constant: 8),
+            looksLikeContentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            looksLikeContentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
     }
     
@@ -235,9 +273,9 @@ class LocationDetailView: UIView {
         graphLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            graphLabel.topAnchor.constraint(equalTo: seaLevelContentLabel.bottomAnchor, constant: 20),
-            graphLabel.leadingAnchor.constraint(equalTo: seaLevelContentLabel.leadingAnchor),
-            graphLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            graphLabel.topAnchor.constraint(equalTo: looksLikeContentLabel.bottomAnchor, constant: 20),
+            graphLabel.leadingAnchor.constraint(equalTo: looksLikeContentLabel.leadingAnchor),
+            graphLabel.trailingAnchor.constraint(equalTo: looksLikeContentLabel.trailingAnchor)
         ])
     }
     
@@ -246,8 +284,8 @@ class LocationDetailView: UIView {
         seaLevelGraphView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            seaLevelGraphView.topAnchor.constraint(equalTo: graphLabel.bottomAnchor, constant: 20),
-            seaLevelGraphView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.20),
+            seaLevelGraphView.topAnchor.constraint(equalTo: graphLabel.bottomAnchor, constant: 8),
+            seaLevelGraphView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25),
             seaLevelGraphView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             seaLevelGraphView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
@@ -261,6 +299,7 @@ class LocationDetailView: UIView {
             populationFactsLabel.topAnchor.constraint(equalTo: seaLevelGraphView.bottomAnchor, constant: 20),
             populationFactsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             populationFactsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            
         ])
     }
     
@@ -269,7 +308,7 @@ class LocationDetailView: UIView {
         populationContentLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            populationContentLabel.topAnchor.constraint(equalTo: populationFactsLabel.bottomAnchor, constant: 20),
+            populationContentLabel.topAnchor.constraint(equalTo: populationFactsLabel.bottomAnchor, constant: 8),
             populationContentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             populationContentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
@@ -291,8 +330,8 @@ class LocationDetailView: UIView {
         populationGraphView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            populationGraphView.topAnchor.constraint(equalTo: populationGraphLabel.bottomAnchor, constant: 20),
-            populationGraphView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.20),
+            populationGraphView.topAnchor.constraint(equalTo: populationGraphLabel.bottomAnchor, constant: 8),
+            populationGraphView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25),
             populationGraphView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             populationGraphView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             populationGraphView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80)
