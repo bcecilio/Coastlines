@@ -1,5 +1,5 @@
 //
-//  LocationReusableView.swift
+//  LocationIntroCell.swift
 //  Coastlines
 //
 //  Created by Ahad Islam on 6/1/20.
@@ -8,18 +8,14 @@
 
 import UIKit
 
-/**
- I tried to make a reusable view, but it just doesn't look right.
- The code will stay here for now if anyone wants a go at it.
- */
-
-class LocationReusableView: UICollectionReusableView {
+class LocationIntroCell: UICollectionViewCell {
     private lazy var label: UILabel = {
         let l = UILabel()
-        l.text = "Swipe right to view locations"
+        l.text = "Swipe left\n to view locations"
         l.textAlignment = .right
         l.font = .preferredFont(forTextStyle: .largeTitle)
         l.numberOfLines = 2
+        l.alpha = 0
         return l
     }()
     
@@ -28,6 +24,14 @@ class LocationReusableView: UICollectionReusableView {
         setupLabel()
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 2.0
+        layer.cornerRadius = 8
+        animateLabel()
+    }
+    
+    private func animateLabel() {
+        UIView.animate(withDuration: 2, delay: 0, options: [.transitionCrossDissolve], animations: {
+            self.label.alpha = 1
+        }, completion: nil)
     }
     
     private func setupLabel() {
@@ -35,7 +39,7 @@ class LocationReusableView: UICollectionReusableView {
         label.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
-            label.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -8)])
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            label.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -8)])
     }
 }

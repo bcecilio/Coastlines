@@ -20,12 +20,35 @@ class LocationsViewController: UIViewController {
         super.viewDidLoad()
         locationsView.collectionView.dataSource = self
         locationsView.collectionView.delegate = self
+        title = "Locations"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
     }
 }
 
 // MARK: UICollectionViewDataSource/Delegate/DelegateFlowLayout
 
+
+
 extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // TODO: Implement items
         switch section {
@@ -39,25 +62,41 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "locationCell", for: indexPath) as? LocationCell else {
-            print("Failed to create cell")
-            return UICollectionViewCell()
+        switch indexPath.section {
+        case 0:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "introCell", for: indexPath) as? LocationIntroCell else {
+                print("Failed to create introCell")
+                break
+            }
+            return cell
+        case 1:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "locationCell", for: indexPath) as? LocationCell else {
+                print("Failed to create locationCell")
+                break
+            }
+            return cell
+        default:
+            break
         }
-        return cell
+        
+        return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // TODO: Implement CGSize
-        return CGSize(width: view.frame.width - 48, height: view.frame.height / 3)
+        return CGSize(width: view.frame.width - 24, height: view.frame.height / 3)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         // TODO: Implement insets
-        let verticalSpace = view.frame.height / 10
-        return UIEdgeInsets(top: verticalSpace, left: 0, bottom: verticalSpace, right: 0)
+        let verticalSpace = view.frame.height / 5
+        return UIEdgeInsets(top: verticalSpace, left: 16, bottom: verticalSpace, right: 16)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: Implement didSelect
+        
+        if indexPath.section == 1 {
+            navigationController?.pushViewController(LocationDetailVC(), animated: true)
+        }
     }
 }

@@ -11,23 +11,28 @@ import UIKit
 class LocationCell: UICollectionViewCell {
     
     private lazy var imageView: UIImageView = {
-        let iv = UIImageView(image: UIImage(systemName: "person.fill"))
-        iv.contentMode = .scaleAspectFill
+        let iv = UIImageView(image: UIImage(named: "nyc"))
+        iv.contentMode = .scaleToFill
+        iv.alpha = 0.9
         return iv
     }()
     
     private lazy var label: UILabel = {
         let l = UILabel()
         l.text = "New York City"
-        l.textColor = .lightText
+        l.textColor = .white
         l.textAlignment = .right
-        l.font = .preferredFont(forTextStyle: .headline)
+        l.font = .preferredFont(forTextStyle: .title1)
+        l.alpha = 1
         return l
     }()
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
         setupViews()
+        
         
     }
     
