@@ -7,8 +7,19 @@
 //
 
 import UIKit
+import Charts
 
 class LocationDetailView: UIView {
+    
+    public lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.backgroundColor = .clear
+        button.tintColor = .white
+        button.contentMode = .scaleToFill
+        button.layer.cornerRadius = 5
+        return button
+    }()
     
     public lazy var scrollView: UIScrollView = {
         let scrollview = UIScrollView()
@@ -31,12 +42,18 @@ class LocationDetailView: UIView {
         return iv
     }()
     
+    public lazy var wView: WavyView = {
+        let wavy = WavyView()
+        wavy.backgroundColor = .clear
+        return wavy
+    }()
+    
     public lazy var locationLabel: UILabel = {
         let label = UILabel()
         label.text = "New York City"
         label.numberOfLines = 0
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 40)
+        label.font = UIFont.boldSystemFont(ofSize: 35)
         label.textColor = .white
         return label
     }()
@@ -84,10 +101,27 @@ class LocationDetailView: UIView {
         return label
     }()
     
-    public lazy var seaLevelGraphView: UIView = {
-        let graphView = UIView()
-        graphView.backgroundColor = .systemOrange
-        return graphView
+    public lazy var seaLevelLineChart: LineChartView = {
+        let lineChart = LineChartView()
+        lineChart.backgroundColor = .systemBlue
+        lineChart.layer.cornerRadius = 5
+        lineChart.clipsToBounds = true
+        lineChart.rightAxis.enabled = false
+        let yAxis = lineChart.leftAxis
+        yAxis.labelFont = .boldSystemFont(ofSize: 12)
+        lineChart.xAxis.labelFont = .boldSystemFont(ofSize: 12)
+        yAxis.setLabelCount(5, force: false)
+        yAxis.axisLineColor = .white
+        yAxis.labelTextColor = .white
+        lineChart.xAxis.labelPosition = .bottom
+        lineChart.xAxis.labelTextColor = .white
+        lineChart.xAxis.axisLineColor = .white
+        yAxis.drawGridLinesEnabled = false
+        lineChart.xAxis.drawGridLinesEnabled = false
+        lineChart.xAxis.setLabelCount(5, force: false)
+        lineChart.legend.enabled = false
+        lineChart.xAxis.avoidFirstLastClippingEnabled = true
+        return lineChart
     }()
     
     public lazy var populationFactsLabel: UILabel = {
@@ -116,28 +150,49 @@ class LocationDetailView: UIView {
         return label
     }()
     
-    public lazy var populationGraphView: UIView = {
-        let graphView = UIView()
-        graphView.backgroundColor = .systemOrange
-        return graphView
+    public lazy var populationGraphView: LineChartView = {
+        let lineChart = LineChartView()
+        lineChart.backgroundColor = .green
+        lineChart.layer.cornerRadius = 5
+        lineChart.clipsToBounds = true
+        return lineChart
     }()
     
     public lazy var goToARButton: UIButton = {
         let button = UIButton()
-        button.setTitle("AR Experience", for: .normal)
-        button.backgroundColor = .systemPurple
-        button.layer.cornerRadius = 5
+        button.frame = CGRect(x: 100, y: 100, width: 64, height: 64)
+        button.layer.cornerRadius = 0.5 * button.bounds.size.width
+        button.clipsToBounds = true
+        button.setBackgroundImage(UIImage(named:"ar2"), for: .normal)
+        button.backgroundColor = .green
+        button.contentMode = .scaleAspectFit
+        button.tintColor = .white
+        button.layer.borderWidth = 3
+        button.layer.borderColor = UIColor.systemGray.cgColor
         return button
     }()
     
-    public lazy var arView: UIView = {
+    //    public lazy var arView: UIView = {
+    //        let view = UIView()
+    //        view.backgroundColor = .clear
+    //        return view
+    //    }()
+    
+    public lazy var triggerSLView1: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemTeal
+        view.backgroundColor = .clear
         return view
     }()
     
-    var headerContainerViewBottom : NSLayoutConstraint!
-    var imageViewTopConstraint: NSLayoutConstraint!
+    public lazy var triggerSLView2: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    public var headerContainerViewBottom : NSLayoutConstraint!
+    public var imageViewTopConstraint: NSLayoutConstraint!
+    public var seaLevelGraphBottomConstraint: NSLayoutConstraint!
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -154,19 +209,21 @@ class LocationDetailView: UIView {
         setupSeaLevelLabelConstraints()
         headerContainer()
         setupLocationImageConstraints()
+        setupWaveView()
         setupLocationLabel()
         seaLevelFactsConstraints()
         setupLooksLikeConstraints()
         setupLooksLikeContentConstraints()
         graphLabelConstraints()
-        seaLevelGraphConstraints()
+        setupSeaLevelLineChart()
         setupPopulationLabelConstraints()
         populationContentConstraints()
         populationGraphLabelConstraints()
         populationGraphConstraints()
-        setupARView()
+        //        setupARView()
         arButtonConstraints()
-        
+        backButtonConstraints()
+        setupTriggerView()
     }
     
     private func scrollViewContraints() {
@@ -212,6 +269,18 @@ class LocationDetailView: UIView {
         imageViewTopConstraint.isActive = true
     }
     
+    private func setupWaveView() {
+        headerContainerView.addSubview(wView)
+        wView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            wView.centerXAnchor.constraint(equalTo: locationImage.centerXAnchor),
+            wView.topAnchor.constraint(equalTo: locationImage.topAnchor),
+            wView.widthAnchor.constraint(equalTo: locationImage.widthAnchor),
+            wView.heightAnchor.constraint(equalTo: locationImage.heightAnchor)
+        ])
+    }
+    
     private func setupLocationLabel() {
         locationImage.addSubview(locationLabel)
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -233,6 +302,8 @@ class LocationDetailView: UIView {
             seaLevelFactsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
             
         ])
+        
+        
     }
     
     private func seaLevelFactsConstraints() {
@@ -277,18 +348,21 @@ class LocationDetailView: UIView {
             graphLabel.leadingAnchor.constraint(equalTo: looksLikeContentLabel.leadingAnchor),
             graphLabel.trailingAnchor.constraint(equalTo: looksLikeContentLabel.trailingAnchor)
         ])
+        
+        
     }
     
-    private func seaLevelGraphConstraints(){
-        scrollView.addSubview(seaLevelGraphView)
-        seaLevelGraphView.translatesAutoresizingMaskIntoConstraints = false
+    private func setupSeaLevelLineChart() {
+        scrollView.addSubview(seaLevelLineChart)
+        seaLevelLineChart.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            seaLevelGraphView.topAnchor.constraint(equalTo: graphLabel.bottomAnchor, constant: 8),
-            seaLevelGraphView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25),
-            seaLevelGraphView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            seaLevelGraphView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            seaLevelLineChart.topAnchor.constraint(equalTo: graphLabel.bottomAnchor, constant: 8),
+            seaLevelLineChart.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25),
+            seaLevelLineChart.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            seaLevelLineChart.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
+        
     }
     
     private func setupPopulationLabelConstraints() {
@@ -296,7 +370,7 @@ class LocationDetailView: UIView {
         populationFactsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            populationFactsLabel.topAnchor.constraint(equalTo: seaLevelGraphView.bottomAnchor, constant: 20),
+            populationFactsLabel.topAnchor.constraint(equalTo: seaLevelLineChart.bottomAnchor, constant: 20),
             populationFactsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             populationFactsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
             
@@ -338,27 +412,56 @@ class LocationDetailView: UIView {
         ])
     }
     
-    private func setupARView() {
-        addSubview(arView)
-        arView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            arView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            arView.widthAnchor.constraint(equalTo: widthAnchor),
-            arView.heightAnchor.constraint(equalToConstant: 100),
-            arView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
-    }
+    //    private func setupARView() {
+    //        addSubview(arView)
+    //        arView.translatesAutoresizingMaskIntoConstraints = false
+    //
+    //        NSLayoutConstraint.activate([
+    //            arView.centerXAnchor.constraint(equalTo: centerXAnchor),
+    //            arView.widthAnchor.constraint(equalTo: widthAnchor),
+    //            arView.heightAnchor.constraint(equalToConstant: 100),
+    //            arView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+    //        ])
+    //    }
     
     private func arButtonConstraints() {
         addSubview(goToARButton)
         goToARButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            goToARButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            goToARButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5),
-            goToARButton.heightAnchor.constraint(equalToConstant: 44),
-            goToARButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0)
+            goToARButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            goToARButton.widthAnchor.constraint(equalToConstant: 64),
+            goToARButton.heightAnchor.constraint(equalToConstant: 64),
+            goToARButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 15)
+        ])
+    }
+    
+    private func backButtonConstraints() {
+        addSubview(backButton)
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            backButton.widthAnchor.constraint(equalToConstant: 44),
+            backButton.heightAnchor.constraint(equalToConstant: 44),
+            backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 40)
+        ])
+    }
+    
+    private func setupTriggerView() {
+        scrollView.addSubview(triggerSLView1)
+        scrollView.addSubview(triggerSLView2)
+        triggerSLView1.translatesAutoresizingMaskIntoConstraints = false
+        triggerSLView2.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            triggerSLView1.centerXAnchor.constraint(equalTo: centerXAnchor),
+            triggerSLView1.widthAnchor.constraint(equalTo: widthAnchor),
+            triggerSLView1.topAnchor.constraint(equalTo: self.topAnchor),
+            triggerSLView1.bottomAnchor.constraint(equalTo: seaLevelLineChart.bottomAnchor),
+            triggerSLView2.centerXAnchor.constraint(equalTo: centerXAnchor),
+            triggerSLView2.widthAnchor.constraint(equalTo: widthAnchor),
+            triggerSLView2.topAnchor.constraint(equalTo: self.topAnchor),
+            triggerSLView2.bottomAnchor.constraint(equalTo: goToARButton.topAnchor)
         ])
     }
 }
