@@ -24,13 +24,31 @@ class FirstOnboardingController: UIViewController {
     private func setUp(){
         view.backgroundColor = UIColor.systemBackground
         navigationItem.title = "Intro Page"
-        introView.welcomeButton.addTarget(self, action: #selector(beginButtonPressed), for: .touchUpInside)
+        introView.skipButton.addTarget(self, action: #selector(skipButtonPressed), for: .touchUpInside)
+        introView.swipeLeft.addTarget(self, action: #selector(swipedLeft))
+        introView.nextButton.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
     }
     
     @objc
-    private func beginButtonPressed(_ sender: UIButton){
-          let nextVC = LocationsViewController()
-          navigationController?.pushViewController(nextVC, animated: true)
+    private func skipButtonPressed(_ sender: UIButton){
+        // TODO: Write Scene Change Logic 
+        let nextVC = LocationsViewController()
+        nextVC.modalPresentationStyle = .overFullScreen
+        present(nextVC, animated: true, completion: nil)
+    }
+    
+    @objc
+    private func swipedLeft(_ gesture: UISwipeGestureRecognizer){
+        if gesture.direction == .left {
+            segueNext()
+        }
+    }
+    
+    @objc
+    private func segueNext(){
+        let nextVC = SecondOnboardingController()
+        nextVC.modalPresentationStyle = .overFullScreen
+        present(nextVC, animated: true, completion: nil)
     }
 
 }
