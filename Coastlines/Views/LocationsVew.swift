@@ -12,6 +12,7 @@ class LocationsVew: UIView {
 
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         return collection
     }()
@@ -27,7 +28,7 @@ class LocationsVew: UIView {
     }
     
     private func commonInit() {
-        
+        setupCollectionView()
     }
     
     private func setupCollectionView() {
