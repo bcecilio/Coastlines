@@ -16,7 +16,6 @@ class LocationsVew: UIView {
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collection.backgroundColor = .systemBackground
         collection.register(LocationCell.self, forCellWithReuseIdentifier: "locationCell")
-        collection.register(LocationReusableView.self, forSupplementaryViewOfKind: "locationReusableView", withReuseIdentifier: UICollectionView.elementKindSectionHeader)
         return collection
     }()
     

@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+ I tried to make a reusable view, but it just doesn't look right.  The code will stay here for now if anyone wants a go at it.
+ */
+
 class LocationReusableView: UICollectionReusableView {
     private lazy var label: UILabel = {
         let l = UILabel()
