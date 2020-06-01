@@ -169,14 +169,13 @@ class LocationDetailView: UIView {
         button.tintColor = .white
         button.layer.borderWidth = 3
         button.layer.borderColor = UIColor.systemGray.cgColor
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 5, height: 5)
+        button.layer.shadowRadius = 3
+        button.layer.shadowOpacity = 0.65
+        button.layer.masksToBounds = false
         return button
     }()
-    
-    //    public lazy var arView: UIView = {
-    //        let view = UIView()
-    //        view.backgroundColor = .clear
-    //        return view
-    //    }()
     
     public lazy var triggerSLView1: UIView = {
         let view = UIView()
@@ -220,7 +219,6 @@ class LocationDetailView: UIView {
         populationContentConstraints()
         populationGraphLabelConstraints()
         populationGraphConstraints()
-        //        setupARView()
         arButtonConstraints()
         backButtonConstraints()
         setupTriggerView()
@@ -411,18 +409,6 @@ class LocationDetailView: UIView {
             populationGraphView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80)
         ])
     }
-    
-    //    private func setupARView() {
-    //        addSubview(arView)
-    //        arView.translatesAutoresizingMaskIntoConstraints = false
-    //
-    //        NSLayoutConstraint.activate([
-    //            arView.centerXAnchor.constraint(equalTo: centerXAnchor),
-    //            arView.widthAnchor.constraint(equalTo: widthAnchor),
-    //            arView.heightAnchor.constraint(equalToConstant: 100),
-    //            arView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-    //        ])
-    //    }
     
     private func arButtonConstraints() {
         addSubview(goToARButton)
