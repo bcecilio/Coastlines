@@ -49,7 +49,7 @@ class LocationDetailVC: UIViewController {
         locationView.populationGraphView.delegate = self
         setupUI()
         setSeaLevelData()
-        
+        setPopulationGraphData()
         
     }
     
@@ -153,5 +153,25 @@ extension LocationDetailVC: ChartViewDelegate {
             dataEntry.append(entry)
         }
         return dataEntry
+    }
+    
+    func setPopulationGraphData() {
+        var entries = [PieChartDataEntry]()
+        entries.append(PieChartDataEntry(value: 100000-20000, label: "Population"))
+        entries.append(PieChartDataEntry(value: 20000, label: "Displaced"))
+        
+        let dataSet = PieChartDataSet(entries: entries, label: "")
+
+        let c1 = NSUIColor(hex: 0x3A015C)
+        let c2 = NSUIColor(hex: 0xFF6347)
+        
+        dataSet.colors = [c1, c2]
+        
+        dataSet.drawValuesEnabled = false
+        
+        
+        locationView.populationGraphView.data = PieChartData(dataSet: dataSet)
+        locationView.populationGraphView.isUserInteractionEnabled = true
+        locationView.populationGraphView.setExtraOffsets(left: 0, top: 0, right: 0, bottom: 0)
     }
 }

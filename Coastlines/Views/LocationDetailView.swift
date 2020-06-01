@@ -150,12 +150,19 @@ class LocationDetailView: UIView {
         return label
     }()
     
-    public lazy var populationGraphView: LineChartView = {
-        let lineChart = LineChartView()
-        lineChart.backgroundColor = .green
-        lineChart.layer.cornerRadius = 5
-        lineChart.clipsToBounds = true
-        return lineChart
+    public lazy var populationGraphView: PieChartView = {
+        let pieChart = PieChartView()
+        pieChart.backgroundColor = .systemTeal
+        pieChart.layer.cornerRadius = 5
+        pieChart.clipsToBounds = true
+        pieChart.chartDescription?.enabled = false
+        pieChart.drawHoleEnabled = false
+        pieChart.rotationAngle = 0
+        pieChart.rotationEnabled = false
+//        pieChart.isUserInteractionEnabled = false
+        pieChart.legend.enabled = true
+        
+        return pieChart
     }()
     
     public lazy var goToARButton: UIButton = {
@@ -403,10 +410,10 @@ class LocationDetailView: UIView {
         
         NSLayoutConstraint.activate([
             populationGraphView.topAnchor.constraint(equalTo: populationGraphLabel.bottomAnchor, constant: 8),
-            populationGraphView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25),
             populationGraphView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             populationGraphView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            populationGraphView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80)
+            populationGraphView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80),
+            populationGraphView.heightAnchor.constraint(equalTo: populationGraphView.widthAnchor)
         ])
     }
     
