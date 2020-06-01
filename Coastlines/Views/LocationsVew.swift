@@ -10,10 +10,13 @@ import UIKit
 
 class LocationsVew: UIView {
 
-    private lazy var collectionView: UICollectionView = {
+    public lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collection.backgroundColor = .systemBackground
+        collection.register(LocationCell.self, forCellWithReuseIdentifier: "locationCell")
+        collection.register(LocationReusableView.self, forSupplementaryViewOfKind: "locationReusableView", withReuseIdentifier: UICollectionView.elementKindSectionHeader)
         return collection
     }()
     
