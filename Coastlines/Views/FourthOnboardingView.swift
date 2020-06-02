@@ -38,7 +38,7 @@ class FourthOnboardingView: UIView {
     
     public lazy var centerImage: UIImageView = {
        let iv = UIImageView()
-        iv.backgroundColor = UIColor.systemGreen
+        iv.image = UIImage(named: "coastlineIMG3")
         return iv
     }()
     
@@ -118,7 +118,7 @@ class FourthOnboardingView: UIView {
         addSubview(centerImage)
         centerImage.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
+        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
     }
     
     private func setUpInfoLabelConstraints() {

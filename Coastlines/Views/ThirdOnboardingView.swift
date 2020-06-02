@@ -45,9 +45,9 @@ class ThirdOnboardingView: UIView {
     }()
     
     public lazy var centerImage: UIImageView = {
-       let image = UIImageView()
-        image.backgroundColor = UIColor.systemGreen
-        return image
+       let iv = UIImageView()
+       iv.image = UIImage(named: "coastlineIMG5")
+       return iv
     }()
     
     public lazy var infoLabel: UILabel = {
@@ -118,14 +118,14 @@ class ThirdOnboardingView: UIView {
         addSubview(centerImage)
         centerImage.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
+        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
     }
     
     private func setUpInfoLabelConstraints(){
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 5), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8)])
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 1.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8)])
     }
     
     private func setUpSkipButtonConstraints(){

@@ -29,7 +29,7 @@ class FifthOnboardingView: UIView {
     
     public lazy var centralImage: UIImageView = {
        let iv = UIImageView()
-        iv.backgroundColor = UIColor.systemGreen
+        iv.image = UIImage(named: "coastlineIMG4")
         return iv
     }()
     
@@ -97,14 +97,14 @@ class FifthOnboardingView: UIView {
         addSubview(centralImage)
         centralImage.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([centralImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centralImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), centralImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), centralImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
+        NSLayoutConstraint.activate([centralImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centralImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centralImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centralImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
     }
     
     private func setUpInfoLabelConstraints(){
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centralImage.bottomAnchor, multiplier: 5.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8.0)])
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centralImage.bottomAnchor, multiplier: 1.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8.0)])
     }
     
     private func setUpBeginButtonConstraints(){
