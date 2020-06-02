@@ -46,10 +46,11 @@ class FifthOnboardingView: UIView {
     public lazy var beginButton: UIButton = {
        let button = UIButton()
         button.setTitle("Begin", for: .normal)
+        button.setTitleColor(GlobalColours.offWhite, for: .normal)
         button.layer.borderColor = GlobalColours.offWhite.cgColor
         button.layer.borderWidth = 1.0
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
-        //button.layer.cornerRadius =
+        button.layer.cornerRadius = 22
         return button
     }()
     
@@ -100,11 +101,17 @@ class FifthOnboardingView: UIView {
     }
     
     private func setUpInfoLabelConstraints(){
+        addSubview(infoLabel)
+        infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centralImage.bottomAnchor, multiplier: 5.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8.0)])
     }
     
     private func setUpBeginButtonConstraints(){
+        addSubview(beginButton)
+        beginButton.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([beginButton.topAnchor.constraint(equalToSystemSpacingBelow: infoLabel.bottomAnchor, multiplier: 5.0), beginButton.centerXAnchor.constraint(equalTo: centerXAnchor), beginButton.heightAnchor.constraint(equalToConstant: 44.0), beginButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
     }
     
     @objc
