@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02858579248305410003E31A /* locationFactsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 02858578248305410003E31A /* locationFactsData.json */; };
+		0285857B2483063A0003E31A /* FactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0285857A2483063A0003E31A /* FactsData.swift */; };
+		0285857F2485970E0003E31A /* WavyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0285857E2485970E0003E31A /* WavyView.swift */; };
+		028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028585822485B9660003E31A /* NSUIColor+Hex.swift */; };
 		0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
 		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
 		0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
@@ -15,6 +19,9 @@
 		0B1F213E2476DEC300729365 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F213D2476DEC300729365 /* SceneDelegate.swift */; };
 		0B1F21452476DECA00729365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21442476DECA00729365 /* Assets.xcassets */; };
 		0B1F21482476DECA00729365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21462476DECA00729365 /* LaunchScreen.storyboard */; };
+		0BCDFFB8248534B1007A94BF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB7248534B1007A94BF /* LocationCell.swift */; };
+		0BCDFFBA2485376A007A94BF /* LocationReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB92485376A007A94BF /* LocationReusableView.swift */; };
+		0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */; };
 		1393FDC357C87C1B91849D65 /* Pods_Coastlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */; };
 		B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */; };
 		B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsVew.swift */; };
@@ -33,6 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02858578248305410003E31A /* locationFactsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locationFactsData.json; sourceTree = "<group>"; };
+		0285857A2483063A0003E31A /* FactsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsData.swift; sourceTree = "<group>"; };
+		0285857E2485970E0003E31A /* WavyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyView.swift; sourceTree = "<group>"; };
+		028585822485B9660003E31A /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
 		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
 		0B09F371247EF49F001E17F0 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = Coastlines/ARViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -43,6 +54,9 @@
 		0B1F21442476DECA00729365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B1F21472476DECA00729365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B1F21492476DECA00729365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BCDFFB7248534B1007A94BF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		0BCDFFB92485376A007A94BF /* LocationReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReusableView.swift; sourceTree = "<group>"; };
+		0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIntroCell.swift; sourceTree = "<group>"; };
 		90B7802E35291B5353608B3B /* Pods-Coastlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.debug.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.debug.xcconfig"; sourceTree = "<group>"; };
 		B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		B7A4588D247F10BE001F8E51 /* LocationsVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVew.swift; sourceTree = "<group>"; };
@@ -74,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02858577248304B70003E31A /* JSON Data */ = {
+			isa = PBXGroup;
+			children = (
+				02858578248305410003E31A /* locationFactsData.json */,
+			);
+			path = "JSON Data";
+			sourceTree = "<group>";
+		};
 		0289F8F3247DA075008D3910 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,14 +111,18 @@
 		0289F8F4247DA086008D3910 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0B09F373247EF4B4001E17F0 /* ARCoastView.swift */,
-				0289F8F9247DB933008D3910 /* LocationDetailView.swift */,
-				B7A4588D247F10BE001F8E51 /* LocationsVew.swift */,
 				C4E9790A247DE4AD0039B398 /* FirstOnboardingView.swift */,
 				C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */,
 				C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */,
 				C463925C24847EC900DDB4DE /* FourthOnboardingView.swift */,
 				C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */,
+				0B09F373247EF4B4001E17F0 /* ARCoastView.swift */,
+				0289F8F9247DB933008D3910 /* LocationDetailView.swift */,
+				B7A4588D247F10BE001F8E51 /* LocationsVew.swift */,
+				0BCDFFB7248534B1007A94BF /* LocationCell.swift */,
+				0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */,
+				0BCDFFB92485376A007A94BF /* LocationReusableView.swift */,
+				0285857E2485970E0003E31A /* WavyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,14 +130,14 @@
 		0289F8F5247DA093008D3910 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0B09F371247EF49F001E17F0 /* ARViewController.swift */,
-				0289F8FB247DB981008D3910 /* LocationDetailVC.swift */,
-				B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */,
 				C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */,
 				C463925824847AA200DDB4DE /* SecondOnboardingController.swift */,
 				C463926024847EE800DDB4DE /* ThirdOnboardingController.swift */,
 				C463926224847EF800DDB4DE /* FourthOnboardingController.swift */,
 				C463926424847F0B00DDB4DE /* FifthOnboardingController.swift */,
+				0B09F371247EF49F001E17F0 /* ARViewController.swift */,
+				0289F8FB247DB981008D3910 /* LocationDetailVC.swift */,
+				B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -120,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */,
+				028585822485B9660003E31A /* NSUIColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -134,6 +161,7 @@
 		0289F8F8247DA0D2008D3910 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0285857A2483063A0003E31A /* FactsData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,6 +187,7 @@
 		0B1F213A2476DEC300729365 /* Coastlines */ = {
 			isa = PBXGroup;
 			children = (
+				02858577248304B70003E31A /* JSON Data */,
 				0289F8F8247DA0D2008D3910 /* Models */,
 				0289F8F7247DA0BA008D3910 /* Services */,
 				0289F8F5247DA093008D3910 /* Controllers */,
@@ -198,6 +227,7 @@
 				0B1F21342476DEC300729365 /* Sources */,
 				0B1F21352476DEC300729365 /* Frameworks */,
 				0B1F21362476DEC300729365 /* Resources */,
+				EF8B6F7E8B846EEC7B298A84 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02858579248305410003E31A /* locationFactsData.json in Resources */,
 				0B1F21482476DECA00729365 /* LaunchScreen.storyboard in Resources */,
 				0B1F21452476DECA00729365 /* Assets.xcassets in Resources */,
 			);
@@ -276,6 +307,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EF8B6F7E8B846EEC7B298A84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coastlines/Pods-Coastlines-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coastlines/Pods-Coastlines-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Coastlines/Pods-Coastlines-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -288,13 +336,19 @@
 				C4E9790B247DE4AD0039B398 /* FirstOnboardingView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
 				C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */,
+				0285857B2483063A0003E31A /* FactsData.swift in Sources */,
+				0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */,
+				0285857F2485970E0003E31A /* WavyView.swift in Sources */,
 				B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */,
+				028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */,
 				0B09F374247EF4B4001E17F0 /* ARCoastView.swift in Sources */,
+				0BCDFFBA2485376A007A94BF /* LocationReusableView.swift in Sources */,
 				0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */,
 				C4713F0D248193C500B1705E /* GlobalConstants.swift in Sources */,
 				B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */,
 				C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */,
 				C463926124847EE800DDB4DE /* ThirdOnboardingController.swift in Sources */,
+				0BCDFFB8248534B1007A94BF /* LocationCell.swift in Sources */,
 				0B1F213C2476DEC300729365 /* AppDelegate.swift in Sources */,
 				C463926324847EF800DDB4DE /* FourthOnboardingController.swift in Sources */,
 				C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */,

@@ -10,9 +10,13 @@ import UIKit
 
 class LocationsVew: UIView {
 
-    private lazy var collectionView: UICollectionView = {
+    public lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collection.backgroundColor = .systemBackground
+        collection.register(LocationCell.self, forCellWithReuseIdentifier: "locationCell")
+        collection.register(LocationIntroCell.self, forCellWithReuseIdentifier: "introCell")
         return collection
     }()
     
@@ -27,7 +31,7 @@ class LocationsVew: UIView {
     }
     
     private func commonInit() {
-        
+        setupCollectionView()
     }
     
     private func setupCollectionView() {
