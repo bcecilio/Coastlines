@@ -22,10 +22,9 @@ class SecondOnboardingController: UIViewController {
     }
     
     private func setUp(){
-        secondOnboardingView.backgroundColor = UIColor.systemBackground
+        secondOnboardingView.backgroundColor = GlobalColours.blueColour
         secondOnboardingView.leftSwipe.addTarget(self, action: #selector(screenSwiped))
         secondOnboardingView.nextButton.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
-        secondOnboardingView.skipButton.addTarget(self, action: #selector(skipButtonPressed), for: .touchUpInside)
     }
     
     @objc
@@ -40,13 +39,6 @@ class SecondOnboardingController: UIViewController {
         let nextVC = ThirdOnboardingController()
         nextVC.modalPresentationStyle = .fullScreen
         present(nextVC, animated: true, completion: nil)
-    }
-    
-    @objc
-    private func skipButtonPressed(_ sender: UIButton){
-        // TODO: Write Scene Change Logic
-        // let locationVC = LocationsViewController()
-        print("Skipped")
     }
 
 }

@@ -14,17 +14,16 @@ class FirstOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.tintColor = UIColor.black
+        button.tintColor = GlobalColours.offWhite
         return button
     }()
     
     public lazy var welcomeLabel: UILabel = {
        let label = UILabel()
         label.text = "Welcome to Coastlines"
-        label.textColor = UIColor.systemTeal
+        label.textColor = GlobalColours.offWhite
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont.preferredFont(forTextStyle: .title1)
-        label.font = UIFont(name: "Charter", size: 30)
+        label.font = UIFont(name: "Charter-Bold", size: 18)
         label.numberOfLines = 0
         label.alpha = 1.0
         return label
@@ -33,10 +32,9 @@ class FirstOnboardingView: UIView {
     public lazy var infoLabel: UILabel = {
        let label = UILabel()
         label.text = "Thank you for installing this application. Before you begin your experience, we'd like to take a moment to inform you a bit about climate change and its effect on the global sea level."
-        label.textColor = UIColor.systemTeal
+        label.textColor = GlobalColours.offWhite
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont.preferredFont(forTextStyle: .title2)
-        label.font = UIFont(name: "Charter", size: 30)
+        label.font = UIFont(name: "Charter-Bold", size: 18)
         label.alpha = 1.0
         label.numberOfLines = 0
         return label
@@ -46,14 +44,15 @@ class FirstOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("Skip", for: .normal)
         button.setTitleColor(UIColor.systemBlue, for: .normal)
+        button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
         return button
     }()
-    
-    public lazy var swipeRight: UISwipeGestureRecognizer = {
-        let gesture = UISwipeGestureRecognizer()
-        gesture.direction = .right
-        return gesture
-    }()
+    // Probably don't need this
+//    public lazy var swipeRight: UISwipeGestureRecognizer = {
+//        let gesture = UISwipeGestureRecognizer()
+//        gesture.direction = .right
+//        return gesture
+//    }()
     
     public lazy var swipeLeft: UISwipeGestureRecognizer = {
        let gesture = UISwipeGestureRecognizer()
@@ -71,12 +70,13 @@ class FirstOnboardingView: UIView {
         commonInit()
     }
     
+    /// An initializer used to set up constraints for custom views.
     private func commonInit(){
         setUpWelcomeLabelConstraints()
         setUpWelcomeButtonConstaints()
         setUpInfoLabelConstraints()
         setUpSkipButtonConstraints()
-        addGestureRecognizer(swipeRight)
+//        addGestureRecognizer(swipeRight)
         addGestureRecognizer(swipeLeft)
     }
     
@@ -91,7 +91,7 @@ class FirstOnboardingView: UIView {
         addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20), nextButton.heightAnchor.constraint(equalToConstant: 44), nextButton.widthAnchor.constraint(equalToConstant: 44)])
+        NSLayoutConstraint.activate([nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
     private func setUpInfoLabelConstraints() {
@@ -105,7 +105,12 @@ class FirstOnboardingView: UIView {
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20), skipButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20), skipButton.heightAnchor.constraint(equalToConstant: 44), skipButton.widthAnchor.constraint(equalToConstant: 44)])
+        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20), skipButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20), skipButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
     }
-
+    
+    @objc
+    private func showLocationsVC(){
+        let locationsVC = LocationsViewController()
+        UIViewController.resetWindow(locationsVC)
+    }
 }

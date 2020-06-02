@@ -14,7 +14,7 @@ class SecondOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.tintColor = UIColor.black
+        button.tintColor = GlobalColours.offWhite
         return button
     }()
     
@@ -22,6 +22,7 @@ class SecondOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("Skip", for: .normal)
         button.setTitleColor(UIColor.systemBlue, for: .normal)
+        button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
         return button
     }()
     
@@ -29,10 +30,10 @@ class SecondOnboardingView: UIView {
        let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = NSTextAlignment.center
-        label.textColor = UIColor.systemTeal
+        label.textColor = GlobalColours.offWhite
         label.text = "Sea levels are rising significantly each year."
         label.font = UIFont.preferredFont(forTextStyle: .body)
-        label.font = UIFont(name: "Charter", size: 15)
+        label.font = UIFont(name: "Charter-Bold", size: 18)
         return label
     }()
     
@@ -40,8 +41,9 @@ class SecondOnboardingView: UIView {
         let pc = UIPageControl()
         pc.currentPage = 1
         pc.numberOfPages = 4
-        pc.currentPageIndicatorTintColor = UIColor.white
-        pc.backgroundColor = UIColor.black
+        pc.currentPageIndicatorTintColor = GlobalColours.offWhite
+        pc.backgroundColor = GlobalColours.blueColour
+        pc.isUserInteractionEnabled = false
         return pc
     }()
     
@@ -109,6 +111,12 @@ class SecondOnboardingView: UIView {
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([skipButton.topAnchor.constraint(equalToSystemSpacingBelow: infoLabel.bottomAnchor, multiplier: 5), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalToConstant: 44.0), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor)])
+    }
+    
+    @objc
+    private func showLocationsVC(){
+        let locationsVC = LocationsViewController()
+        UIViewController.resetWindow(locationsVC)
     }
 }
 

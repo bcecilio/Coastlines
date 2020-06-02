@@ -18,6 +18,7 @@
 		1393FDC357C87C1B91849D65 /* Pods_Coastlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */; };
 		B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */; };
 		B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsVew.swift */; };
+		C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */; };
 		C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */; };
 		C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925824847AA200DDB4DE /* SecondOnboardingController.swift */; };
 		C463925B24847EB900DDB4DE /* ThirdOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */; };
@@ -45,6 +46,7 @@
 		90B7802E35291B5353608B3B /* Pods-Coastlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.debug.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.debug.xcconfig"; sourceTree = "<group>"; };
 		B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		B7A4588D247F10BE001F8E51 /* LocationsVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVew.swift; sourceTree = "<group>"; };
+		C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+resetWindow.swift"; path = "Coastlines/UIViewController+resetWindow.swift"; sourceTree = SOURCE_ROOT; };
 		C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingView.swift; sourceTree = "<group>"; };
 		C463925824847AA200DDB4DE /* SecondOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingController.swift; sourceTree = "<group>"; };
 		C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboardingView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		0289F8F6247DA0A3008D3910 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				C463925D24847EC900DDB4DE /* FourthOnboardingView.swift in Sources */,
 				C4E9790B247DE4AD0039B398 /* FirstOnboardingView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
+				C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */,
 				B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */,
 				0B09F374247EF4B4001E17F0 /* ARCoastView.swift in Sources */,
 				0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */,

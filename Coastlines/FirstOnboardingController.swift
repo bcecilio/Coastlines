@@ -22,19 +22,9 @@ class FirstOnboardingController: UIViewController {
     }
     
     private func setUp(){
-        view.backgroundColor = UIColor.systemBackground
-        navigationItem.title = "Intro Page"
-        introView.skipButton.addTarget(self, action: #selector(skipButtonPressed), for: .touchUpInside)
+        view.backgroundColor = GlobalColours.blueColour
         introView.swipeLeft.addTarget(self, action: #selector(swipedLeft))
         introView.nextButton.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
-    }
-    
-    @objc
-    private func skipButtonPressed(_ sender: UIButton){
-        // TODO: Write Scene Change Logic 
-        let nextVC = LocationsViewController()
-        nextVC.modalPresentationStyle = .overFullScreen
-        present(nextVC, animated: true, completion: nil)
     }
     
     @objc

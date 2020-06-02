@@ -10,12 +10,107 @@ import UIKit
 
 class FifthOnboardingView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    public lazy var prevButton: UIButton = {
+       let button = UIButton()
+        button.setTitle("", for: .normal)
+        button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.tintColor = GlobalColours.offWhite
+        return button
+    }()
+    
+    public lazy var pageControl: UIPageControl = {
+       let pc = UIPageControl()
+        pc.numberOfPages = 4
+        pc.currentPage = 3
+        pc.backgroundColor = GlobalColours.blueColour
+        pc.currentPageIndicatorTintColor = GlobalColours.offWhite
+        return pc
+    }()
+    
+    public lazy var centralImage: UIImageView = {
+       let iv = UIImageView()
+        iv.backgroundColor = UIColor.systemGreen
+        return iv
+    }()
+    
+    public lazy var infoLabel: UILabel = {
+       let label = UILabel()
+        label.textColor = GlobalColours.offWhite
+        label.textAlignment = NSTextAlignment.center
+        label.numberOfLines = 0
+        label.font = UIFont(name: "Charter-Bold", size: 18)
+        label.text = "With that, you are now ready to begin your experience."
+        return label
+    }()
+    
+    public lazy var beginButton: UIButton = {
+       let button = UIButton()
+        button.setTitle("Begin", for: .normal)
+        button.layer.borderColor = GlobalColours.offWhite.cgColor
+        button.layer.borderWidth = 1.0
+        button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
+        //button.layer.cornerRadius =
+        return button
+    }()
+    
+    public lazy var rightSwipe: UISwipeGestureRecognizer = {
+        let swipe = UISwipeGestureRecognizer()
+        swipe.direction = .right
+        return swipe
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: UIScreen.main.bounds)
+        commonInit()
     }
-    */
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    private func commonInit(){
+        setUpPrevButtonConstraints()
+        setUpPageControlConstraints()
+        setUpCentralImageConstraints()
+        setUpInfoLabelConstraints()
+        setUpBeginButtonConstraints()
+        addGestureRecognizer(rightSwipe)
+    }
+    
+    private func setUpPrevButtonConstraints(){
+        addSubview(prevButton)
+        prevButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([prevButton.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
+    }
+    
+    private func setUpPageControlConstraints(){
+        addSubview(pageControl)
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([pageControl.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), pageControl.centerXAnchor.constraint(equalTo: centerXAnchor), pageControl.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), pageControl.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+    }
+    
+    private func setUpCentralImageConstraints() {
+        addSubview(centralImage)
+        centralImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([centralImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centralImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), centralImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), centralImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
+    }
+    
+    private func setUpInfoLabelConstraints(){
+        
+    }
+    
+    private func setUpBeginButtonConstraints(){
+        
+    }
+    
+    @objc
+    private func showLocationsVC() {
+        let locationsVC = LocationsViewController()
+        UIViewController.resetWindow(locationsVC)
+    }
 
 }
