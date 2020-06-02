@@ -6,5 +6,5 @@ target 'Coastlines' do
   use_frameworks!
 
   # Pods for Coastlines
-
+pod 'Charts'
 end
