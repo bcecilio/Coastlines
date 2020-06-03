@@ -22,7 +22,7 @@ class ThirdOnboardingController: UIViewController {
     }
     
     private func setUp(){
-        thirdOnboardingView.backgroundColor = GlobalColours.blueColour
+        thirdOnboardingView.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         thirdOnboardingView.leftSwipe.addTarget(self, action: #selector(swiped))
         thirdOnboardingView.rightSwipe.addTarget(self, action: #selector(swiped))
         thirdOnboardingView.prevButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
@@ -47,6 +47,7 @@ class ThirdOnboardingController: UIViewController {
     private func segueNext(){
         let nextVC = FourthOnboardingController()
         nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
         present(nextVC, animated: true, completion: nil)
     }
 

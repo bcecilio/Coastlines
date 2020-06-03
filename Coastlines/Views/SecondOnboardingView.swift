@@ -14,15 +14,18 @@ class SecondOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.tintColor = GlobalColours.offWhite
+        button.tintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         return button
     }()
     
     public lazy var skipButton: UIButton = {
        let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(UIColor.systemBlue, for: .normal)
+        button.setTitleColor(PaletteColours.darkBlue.rawValue.convertHexToColour(), for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = PaletteColours.darkBlue.rawValue.convertHexToColour().cgColor
+        button.layer.cornerRadius = 22.0
         return button
     }()
     
@@ -30,10 +33,10 @@ class SecondOnboardingView: UIView {
        let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = NSTextAlignment.center
-        label.textColor = GlobalColours.offWhite
-        label.text = "Sea levels are rising significantly each year."
+        label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        label.text = "As the global temperature increases, the polar ice caps begin to melt, and the world’s oceans begin to heat up, which leads to an increase in the world’s sea level."
         label.font = UIFont.preferredFont(forTextStyle: .body)
-        label.font = UIFont(name: "Charter-Bold", size: 18)
+        label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
         return label
     }()
     
@@ -41,15 +44,15 @@ class SecondOnboardingView: UIView {
         let pc = UIPageControl()
         pc.currentPage = 1
         pc.numberOfPages = 4
-        pc.currentPageIndicatorTintColor = GlobalColours.offWhite
-        pc.backgroundColor = GlobalColours.blueColour
+        pc.currentPageIndicatorTintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        pc.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         pc.isUserInteractionEnabled = false
         return pc
     }()
     
     public lazy var centerImage: UIImageView = {
        let imageView = UIImageView()
-        imageView.image = UIImage(named: "coastlineIMG1")
+        imageView.image = UIImage(named: "coastlineIMG5")
         return imageView
     }()
     
@@ -103,14 +106,14 @@ class SecondOnboardingView: UIView {
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 1.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 8)])
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8)])
     }
     
     private func setUpSkipButtonConstraints(){
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.topAnchor.constraint(equalToSystemSpacingBelow: infoLabel.bottomAnchor, multiplier: 5), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalToConstant: 44.0), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor)])
+        NSLayoutConstraint.activate([skipButton.topAnchor.constraint(equalToSystemSpacingBelow: infoLabel.bottomAnchor, multiplier: 5), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor)])
     }
     
     @objc

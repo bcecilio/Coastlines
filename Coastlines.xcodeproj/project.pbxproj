@@ -15,10 +15,6 @@
 		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
 		0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
 		0B09F374247EF4B4001E17F0 /* ARCoastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F373247EF4B4001E17F0 /* ARCoastView.swift */; };
-		0B1F213C2476DEC300729365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F213B2476DEC300729365 /* AppDelegate.swift */; };
-		0B1F213E2476DEC300729365 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F213D2476DEC300729365 /* SceneDelegate.swift */; };
-		0B1F21452476DECA00729365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21442476DECA00729365 /* Assets.xcassets */; };
-		0B1F21482476DECA00729365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B1F21462476DECA00729365 /* LaunchScreen.storyboard */; };
 		0B35424C2488000600AAB02C /* WavyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35424B2488000600AAB02C /* WavyView2.swift */; };
 		0BCDFFB8248534B1007A94BF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB7248534B1007A94BF /* LocationCell.swift */; };
 		0BCDFFBA2485376A007A94BF /* LocationReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB92485376A007A94BF /* LocationReusableView.swift */; };
@@ -35,7 +31,28 @@
 		C463926124847EE800DDB4DE /* ThirdOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926024847EE800DDB4DE /* ThirdOnboardingController.swift */; };
 		C463926324847EF800DDB4DE /* FourthOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926224847EF800DDB4DE /* FourthOnboardingController.swift */; };
 		C463926524847F0B00DDB4DE /* FifthOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926424847F0B00DDB4DE /* FifthOnboardingController.swift */; };
-		C4713F0D248193C500B1705E /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4713F0C248193C500B1705E /* GlobalConstants.swift */; };
+		C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EBCC2248808D9001DB0A3 /* TestView.swift */; };
+		C48EBCCB24884626001DB0A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCC524884626001DB0A3 /* Assets.xcassets */; };
+		C48EBCCC24884626001DB0A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCC624884626001DB0A3 /* LaunchScreen.storyboard */; };
+		C48EBCCD24884626001DB0A3 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EBCC824884626001DB0A3 /* GlobalConstants.swift */; };
+		C48EBCCE24884626001DB0A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EBCC924884626001DB0A3 /* AppDelegate.swift */; };
+		C48EBCCF24884626001DB0A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EBCCA24884626001DB0A3 /* SceneDelegate.swift */; };
+		C48EBCE0248846C6001DB0A3 /* CooperHewitt-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCD1248846C6001DB0A3 /* CooperHewitt-Thin.otf */; };
+		C48EBCE1248846C6001DB0A3 /* CooperHewitt-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCD2248846C6001DB0A3 /* CooperHewitt-SemiboldItalic.otf */; };
+		C48EBCE2248846C6001DB0A3 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCD3248846C6001DB0A3 /* SIL Open Font License.txt */; };
+		C48EBCE3248846C6001DB0A3 /* CooperHewitt-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCD4248846C6001DB0A3 /* CooperHewitt-Bold.otf */; };
+		C48EBCE4248846C6001DB0A3 /* CooperHewitt-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCD5248846C6001DB0A3 /* CooperHewitt-BoldItalic.otf */; };
+		C48EBCE5248846C6001DB0A3 /* CooperHewitt-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCD6248846C6001DB0A3 /* CooperHewitt-ThinItalic.otf */; };
+		C48EBCE6248846C6001DB0A3 /* CooperHewitt-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCD7248846C6001DB0A3 /* CooperHewitt-Book.otf */; };
+		C48EBCE7248846C6001DB0A3 /* CooperHewitt-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCD8248846C6001DB0A3 /* CooperHewitt-BookItalic.otf */; };
+		C48EBCE8248846C6001DB0A3 /* CooperHewitt-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCD9248846C6001DB0A3 /* CooperHewitt-Medium.otf */; };
+		C48EBCE9248846C6001DB0A3 /* CooperHewitt-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDA248846C6001DB0A3 /* CooperHewitt-LightItalic.otf */; };
+		C48EBCEA248846C6001DB0A3 /* CooperHewitt-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDB248846C6001DB0A3 /* CooperHewitt-HeavyItalic.otf */; };
+		C48EBCEB248846C6001DB0A3 /* CooperHewitt-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDC248846C6001DB0A3 /* CooperHewitt-Heavy.otf */; };
+		C48EBCEC248846C6001DB0A3 /* CooperHewitt-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDD248846C6001DB0A3 /* CooperHewitt-Light.otf */; };
+		C48EBCED248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDE248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf */; };
+		C48EBCEE248846C6001DB0A3 /* CooperHewitt-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDF248846C6001DB0A3 /* CooperHewitt-Semibold.otf */; };
+		C491EF3F24871FA30055DA49 /* String+ConvertHexToColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491EF3E24871FA30055DA49 /* String+ConvertHexToColour.swift */; };
 		C4E97909247DE48A0039B398 /* FirstOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */; };
 		C4E9790B247DE4AD0039B398 /* FirstOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9790A247DE4AD0039B398 /* FirstOnboardingView.swift */; };
 /* End PBXBuildFile section */
@@ -50,10 +67,6 @@
 		0B09F371247EF49F001E17F0 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = Coastlines/ARViewController.swift; sourceTree = SOURCE_ROOT; };
 		0B09F373247EF4B4001E17F0 /* ARCoastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARCoastView.swift; path = Coastlines/ARCoastView.swift; sourceTree = SOURCE_ROOT; };
 		0B1F21382476DEC300729365 /* Coastlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coastlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B1F213B2476DEC300729365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B1F213D2476DEC300729365 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0B1F21442476DECA00729365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0B1F21472476DECA00729365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B1F21492476DECA00729365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B35424B2488000600AAB02C /* WavyView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyView2.swift; sourceTree = "<group>"; };
 		0BCDFFB7248534B1007A94BF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
@@ -71,7 +84,28 @@
 		C463926024847EE800DDB4DE /* ThirdOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboardingController.swift; sourceTree = "<group>"; };
 		C463926224847EF800DDB4DE /* FourthOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthOnboardingController.swift; sourceTree = "<group>"; };
 		C463926424847F0B00DDB4DE /* FifthOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthOnboardingController.swift; sourceTree = "<group>"; };
-		C4713F0C248193C500B1705E /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		C48EBCC2248808D9001DB0A3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		C48EBCC524884626001DB0A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C48EBCC724884626001DB0A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C48EBCC824884626001DB0A3 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		C48EBCC924884626001DB0A3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C48EBCCA24884626001DB0A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C48EBCD1248846C6001DB0A3 /* CooperHewitt-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Thin.otf"; sourceTree = "<group>"; };
+		C48EBCD2248846C6001DB0A3 /* CooperHewitt-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		C48EBCD3248846C6001DB0A3 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		C48EBCD4248846C6001DB0A3 /* CooperHewitt-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Bold.otf"; sourceTree = "<group>"; };
+		C48EBCD5248846C6001DB0A3 /* CooperHewitt-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-BoldItalic.otf"; sourceTree = "<group>"; };
+		C48EBCD6248846C6001DB0A3 /* CooperHewitt-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-ThinItalic.otf"; sourceTree = "<group>"; };
+		C48EBCD7248846C6001DB0A3 /* CooperHewitt-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Book.otf"; sourceTree = "<group>"; };
+		C48EBCD8248846C6001DB0A3 /* CooperHewitt-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-BookItalic.otf"; sourceTree = "<group>"; };
+		C48EBCD9248846C6001DB0A3 /* CooperHewitt-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Medium.otf"; sourceTree = "<group>"; };
+		C48EBCDA248846C6001DB0A3 /* CooperHewitt-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-LightItalic.otf"; sourceTree = "<group>"; };
+		C48EBCDB248846C6001DB0A3 /* CooperHewitt-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-HeavyItalic.otf"; sourceTree = "<group>"; };
+		C48EBCDC248846C6001DB0A3 /* CooperHewitt-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Heavy.otf"; sourceTree = "<group>"; };
+		C48EBCDD248846C6001DB0A3 /* CooperHewitt-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Light.otf"; sourceTree = "<group>"; };
+		C48EBCDE248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-MediumItalic.otf"; sourceTree = "<group>"; };
+		C48EBCDF248846C6001DB0A3 /* CooperHewitt-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Semibold.otf"; sourceTree = "<group>"; };
+		C491EF3E24871FA30055DA49 /* String+ConvertHexToColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ConvertHexToColour.swift"; sourceTree = "<group>"; };
 		C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstOnboardingController.swift; path = Coastlines/FirstOnboardingController.swift; sourceTree = SOURCE_ROOT; };
 		C4E9790A247DE4AD0039B398 /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstOnboardingView.swift; path = Coastlines/FirstOnboardingView.swift; sourceTree = SOURCE_ROOT; };
 		CEE5A3A6EC95A87BAEBAA85A /* Pods-Coastlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.release.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,21 +132,10 @@
 			path = "JSON Data";
 			sourceTree = "<group>";
 		};
-		0289F8F3247DA075008D3910 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0B1F213B2476DEC300729365 /* AppDelegate.swift */,
-				0B1F213D2476DEC300729365 /* SceneDelegate.swift */,
-				0B1F21442476DECA00729365 /* Assets.xcassets */,
-				0B1F21462476DECA00729365 /* LaunchScreen.storyboard */,
-				C4713F0C248193C500B1705E /* GlobalConstants.swift */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		0289F8F4247DA086008D3910 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C48EBCC2248808D9001DB0A3 /* TestView.swift */,
 				C4E9790A247DE4AD0039B398 /* FirstOnboardingView.swift */,
 				C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */,
 				C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */,
@@ -150,6 +173,7 @@
 			children = (
 				C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */,
 				028585822485B9660003E31A /* NSUIColor+Hex.swift */,
+				C491EF3E24871FA30055DA49 /* String+ConvertHexToColour.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,7 +220,7 @@
 				0289F8F5247DA093008D3910 /* Controllers */,
 				0289F8F4247DA086008D3910 /* Views */,
 				0289F8F6247DA0A3008D3910 /* Extensions */,
-				0289F8F3247DA075008D3910 /* Supporting Files */,
+				C48EBCC424884626001DB0A3 /* Supporting Files */,
 				0B1F21492476DECA00729365 /* Info.plist */,
 			);
 			path = Coastlines;
@@ -217,6 +241,41 @@
 				CEE5A3A6EC95A87BAEBAA85A /* Pods-Coastlines.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C48EBCC424884626001DB0A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C48EBCC524884626001DB0A3 /* Assets.xcassets */,
+				C48EBCC624884626001DB0A3 /* LaunchScreen.storyboard */,
+				C48EBCC824884626001DB0A3 /* GlobalConstants.swift */,
+				C48EBCC924884626001DB0A3 /* AppDelegate.swift */,
+				C48EBCCA24884626001DB0A3 /* SceneDelegate.swift */,
+				C48EBCD0248846C6001DB0A3 /* Cooper-Hewitt */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C48EBCD0248846C6001DB0A3 /* Cooper-Hewitt */ = {
+			isa = PBXGroup;
+			children = (
+				C48EBCD1248846C6001DB0A3 /* CooperHewitt-Thin.otf */,
+				C48EBCD2248846C6001DB0A3 /* CooperHewitt-SemiboldItalic.otf */,
+				C48EBCD3248846C6001DB0A3 /* SIL Open Font License.txt */,
+				C48EBCD4248846C6001DB0A3 /* CooperHewitt-Bold.otf */,
+				C48EBCD5248846C6001DB0A3 /* CooperHewitt-BoldItalic.otf */,
+				C48EBCD6248846C6001DB0A3 /* CooperHewitt-ThinItalic.otf */,
+				C48EBCD7248846C6001DB0A3 /* CooperHewitt-Book.otf */,
+				C48EBCD8248846C6001DB0A3 /* CooperHewitt-BookItalic.otf */,
+				C48EBCD9248846C6001DB0A3 /* CooperHewitt-Medium.otf */,
+				C48EBCDA248846C6001DB0A3 /* CooperHewitt-LightItalic.otf */,
+				C48EBCDB248846C6001DB0A3 /* CooperHewitt-HeavyItalic.otf */,
+				C48EBCDC248846C6001DB0A3 /* CooperHewitt-Heavy.otf */,
+				C48EBCDD248846C6001DB0A3 /* CooperHewitt-Light.otf */,
+				C48EBCDE248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf */,
+				C48EBCDF248846C6001DB0A3 /* CooperHewitt-Semibold.otf */,
+			);
+			path = "Cooper-Hewitt";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,9 +338,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48EBCE5248846C6001DB0A3 /* CooperHewitt-ThinItalic.otf in Resources */,
+				C48EBCE9248846C6001DB0A3 /* CooperHewitt-LightItalic.otf in Resources */,
+				C48EBCE7248846C6001DB0A3 /* CooperHewitt-BookItalic.otf in Resources */,
 				02858579248305410003E31A /* locationFactsData.json in Resources */,
-				0B1F21482476DECA00729365 /* LaunchScreen.storyboard in Resources */,
-				0B1F21452476DECA00729365 /* Assets.xcassets in Resources */,
+				C48EBCE0248846C6001DB0A3 /* CooperHewitt-Thin.otf in Resources */,
+				C48EBCE3248846C6001DB0A3 /* CooperHewitt-Bold.otf in Resources */,
+				C48EBCE8248846C6001DB0A3 /* CooperHewitt-Medium.otf in Resources */,
+				C48EBCEB248846C6001DB0A3 /* CooperHewitt-Heavy.otf in Resources */,
+				C48EBCE4248846C6001DB0A3 /* CooperHewitt-BoldItalic.otf in Resources */,
+				C48EBCCB24884626001DB0A3 /* Assets.xcassets in Resources */,
+				C48EBCE2248846C6001DB0A3 /* SIL Open Font License.txt in Resources */,
+				C48EBCED248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf in Resources */,
+				C48EBCEA248846C6001DB0A3 /* CooperHewitt-HeavyItalic.otf in Resources */,
+				C48EBCE6248846C6001DB0A3 /* CooperHewitt-Book.otf in Resources */,
+				C48EBCE1248846C6001DB0A3 /* CooperHewitt-SemiboldItalic.otf in Resources */,
+				C48EBCCC24884626001DB0A3 /* LaunchScreen.storyboard in Resources */,
+				C48EBCEC248846C6001DB0A3 /* CooperHewitt-Light.otf in Resources */,
+				C48EBCEE248846C6001DB0A3 /* CooperHewitt-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +410,9 @@
 			files = (
 				C4E97909247DE48A0039B398 /* FirstOnboardingController.swift in Sources */,
 				C463925D24847EC900DDB4DE /* FourthOnboardingView.swift in Sources */,
+				C48EBCCF24884626001DB0A3 /* SceneDelegate.swift in Sources */,
 				C4E9790B247DE4AD0039B398 /* FirstOnboardingView.swift in Sources */,
+				C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
 				0B35424C2488000600AAB02C /* WavyView2.swift in Sources */,
 				C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */,
@@ -348,15 +424,15 @@
 				0B09F374247EF4B4001E17F0 /* ARCoastView.swift in Sources */,
 				0BCDFFBA2485376A007A94BF /* LocationReusableView.swift in Sources */,
 				0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */,
-				C4713F0D248193C500B1705E /* GlobalConstants.swift in Sources */,
 				B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */,
 				C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */,
 				C463926124847EE800DDB4DE /* ThirdOnboardingController.swift in Sources */,
+				C48EBCCE24884626001DB0A3 /* AppDelegate.swift in Sources */,
 				0BCDFFB8248534B1007A94BF /* LocationCell.swift in Sources */,
-				0B1F213C2476DEC300729365 /* AppDelegate.swift in Sources */,
 				C463926324847EF800DDB4DE /* FourthOnboardingController.swift in Sources */,
 				C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */,
-				0B1F213E2476DEC300729365 /* SceneDelegate.swift in Sources */,
+				C48EBCCD24884626001DB0A3 /* GlobalConstants.swift in Sources */,
+				C491EF3F24871FA30055DA49 /* String+ConvertHexToColour.swift in Sources */,
 				C463926524847F0B00DDB4DE /* FifthOnboardingController.swift in Sources */,
 				0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */,
 				0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */,
@@ -367,10 +443,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0B1F21462476DECA00729365 /* LaunchScreen.storyboard */ = {
+		C48EBCC624884626001DB0A3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0B1F21472476DECA00729365 /* Base */,
+				C48EBCC724884626001DB0A3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

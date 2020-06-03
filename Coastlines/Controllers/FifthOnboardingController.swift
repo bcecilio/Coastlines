@@ -22,7 +22,7 @@ class FifthOnboardingController: UIViewController {
     }
     
     private func setUp(){
-        fifthOnboardingView.backgroundColor = GlobalColours.blueColour
+        fifthOnboardingView.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         fifthOnboardingView.prevButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         fifthOnboardingView.rightSwipe.addTarget(self, action: #selector(goBack))
     }

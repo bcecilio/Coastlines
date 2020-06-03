@@ -22,7 +22,7 @@ class FirstOnboardingController: UIViewController {
     }
     
     private func setUp(){
-        view.backgroundColor = GlobalColours.blueColour
+        view.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         introView.swipeLeft.addTarget(self, action: #selector(swipedLeft))
         introView.nextButton.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
     }
@@ -37,8 +37,7 @@ class FirstOnboardingController: UIViewController {
     @objc
     private func segueNext(){
         let nextVC = SecondOnboardingController()
-        nextVC.modalPresentationStyle = .overFullScreen
-        present(nextVC, animated: true, completion: nil)
+        UIViewController.resetWindow(nextVC)
     }
 
 }
