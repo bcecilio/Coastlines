@@ -25,7 +25,7 @@ class WavyView2: UIView {
     override func draw(_ rect: CGRect) {
         print("Being drawn", start)
         // color at the top of the curve
-        UIColor.systemTeal.set()
+        PaletteColours.lightBlue.rawValue.convertHexToColour().set()
         let bg = UIBezierPath(rect: rect)
         bg.fill()
         
@@ -33,7 +33,7 @@ class WavyView2: UIView {
         let wave1 = wavyPath(rect: CGRect(x: 0, y: top, width: frame.width, height: frame.height - top), periods: periods, amplitude: amplitude, start: start)
         
         // color at the bottom of the curve.
-        let clear: UIColor = .systemBackground
+        let clear: UIColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         clear.set()
         wave1.fill()
     }
