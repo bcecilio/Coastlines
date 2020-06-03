@@ -38,16 +38,16 @@ class FourthOnboardingView: UIView {
     
     public lazy var centerImage: UIImageView = {
        let iv = UIImageView()
-        iv.image = UIImage(named: "coastlineIMG3")
+        iv.image = UIImage(named: "coastlineIMG1")
         return iv
     }()
     
     public lazy var infoLabel: UILabel = {
        let label = UILabel()
         label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
-        label.text = "In addition to being vast. The ocean is also deep."
+        label.text = "Roughly 40% of the world’s population lives near Coastal Regions. If the sea level continues to rise at this rate, storms will increase in severity, flooding will become more frequent, and the coast will slowly recede."
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont(name: "Charter-Bold", size: 18)
+        label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
         label.numberOfLines = 0
         return label
     }()
@@ -128,14 +128,14 @@ class FourthOnboardingView: UIView {
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 1.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8)])
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8)])
     }
     
     private func setUpSkipButtonConstraints(){
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.topAnchor.constraint(equalToSystemSpacingBelow: infoLabel.bottomAnchor, multiplier: 5.0), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+        NSLayoutConstraint.activate([skipButton.topAnchor.constraint(equalToSystemSpacingBelow: infoLabel.bottomAnchor, multiplier: 2.7), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
     }
     
     @objc

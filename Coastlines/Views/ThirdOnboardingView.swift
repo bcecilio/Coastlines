@@ -49,7 +49,7 @@ class ThirdOnboardingView: UIView {
     
     public lazy var centerImage: UIImageView = {
        let iv = UIImageView()
-       iv.image = UIImage(named: "coastlineIMG5")
+       iv.image = UIImage(named: "coastlineIMG4")
        return iv
     }()
     
@@ -57,9 +57,9 @@ class ThirdOnboardingView: UIView {
        let label = UILabel()
         label.numberOfLines = 0
         label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
-        label.text = "The ocean contains lots of water. It is vast."
+        label.text = "Historically, a rise and fall in the Earth’s sea levels is not uncommon. However, the sea level has never risen at a rate that we have seen in recent years."
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont(name: "Charter-Bold", size: 18)
+        label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
         return label
     }()
     
@@ -128,7 +128,7 @@ class ThirdOnboardingView: UIView {
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 1.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8)])
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8)])
     }
     
     private func setUpSkipButtonConstraints(){

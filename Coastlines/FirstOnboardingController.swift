@@ -37,8 +37,7 @@ class FirstOnboardingController: UIViewController {
     @objc
     private func segueNext(){
         let nextVC = SecondOnboardingController()
-        nextVC.modalPresentationStyle = .overFullScreen
-        present(nextVC, animated: true, completion: nil)
+        UIViewController.resetWindow(nextVC)
     }
 
 }

@@ -47,6 +47,7 @@ class FourthOnboardingController: UIViewController {
     private func segueNext(){
         let fifthOnboardingVC = FifthOnboardingController()
         fifthOnboardingVC.modalPresentationStyle = .fullScreen
+        fifthOnboardingVC.modalTransitionStyle = .crossDissolve
         present(fifthOnboardingVC, animated: true, completion: nil)
     }
 

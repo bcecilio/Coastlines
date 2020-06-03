@@ -34,9 +34,9 @@ class SecondOnboardingView: UIView {
         label.numberOfLines = 0
         label.textAlignment = NSTextAlignment.center
         label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
-        label.text = "Sea levels are rising significantly each year."
+        label.text = "As the global temperature increases, the polar ice caps begin to melt, and the world’s oceans begin to heat up, which leads to an increase in the world’s sea level."
         label.font = UIFont.preferredFont(forTextStyle: .body)
-        label.font = UIFont(name: "Charter-Bold", size: 18)
+        label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
         return label
     }()
     
@@ -52,7 +52,7 @@ class SecondOnboardingView: UIView {
     
     public lazy var centerImage: UIImageView = {
        let imageView = UIImageView()
-        imageView.image = UIImage(named: "coastlineIMG1")
+        imageView.image = UIImage(named: "coastlineIMG5")
         return imageView
     }()
     
@@ -106,7 +106,7 @@ class SecondOnboardingView: UIView {
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 1.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 8)])
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8)])
     }
     
     private func setUpSkipButtonConstraints(){

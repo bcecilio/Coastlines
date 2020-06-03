@@ -21,9 +21,9 @@ class FirstOnboardingView: UIView {
     public lazy var welcomeLabel: UILabel = {
        let label = UILabel()
         label.text = "Welcome to Coastlines"
-        label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        label.textColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont(name: "Charter-Bold", size: 30)
+        label.font = UIFont(name: "CooperHewitt-Medium", size: 30)
         label.numberOfLines = 0
         label.alpha = 1.0
         return label
@@ -34,7 +34,7 @@ class FirstOnboardingView: UIView {
         label.text = "Thank you for installing this application. Before you begin your experience, we'd like to take a moment to inform you a bit about climate change and its effect on the global sea level."
         label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont(name: "Charter-Bold", size: 18)
+        label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
         label.alpha = 1.0
         label.numberOfLines = 0
         return label
@@ -57,6 +57,18 @@ class FirstOnboardingView: UIView {
         return gesture
     }()
     
+    public lazy var waves: TestView = {
+        let wv = TestView()
+        wv.backgroundColor = UIColor.clear
+        return wv
+    }()
+    
+    public lazy var topView: UIView = {
+       let view = UIView()
+        view.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        return view
+    }()
+    
     override init(frame: CGRect){
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -69,15 +81,17 @@ class FirstOnboardingView: UIView {
     
     /// An initializer used to set up constraints for custom views.
     private func commonInit(){
+        setUpTopViewConstraints()
         setUpWelcomeLabelConstraints()
         setUpWelcomeButtonConstaints()
         setUpInfoLabelConstraints()
         setUpSkipButtonConstraints()
         addGestureRecognizer(swipeLeft)
+        setUpTestViewConstraints()
     }
     
     private func setUpWelcomeLabelConstraints(){
-        addSubview(welcomeLabel)
+        topView.addSubview(welcomeLabel)
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([welcomeLabel.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 10.0), welcomeLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), welcomeLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), welcomeLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1)])
@@ -102,6 +116,20 @@ class FirstOnboardingView: UIView {
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+    }
+    
+    private func setUpTestViewConstraints(){
+        addSubview(waves)
+        waves.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([waves.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 10), waves.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), waves.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), waves.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5)])
+    }
+    
+    private func setUpTopViewConstraints() {
+        addSubview(topView)
+        topView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([topView.topAnchor.constraint(equalTo: topAnchor), topView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), topView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), topView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.27)])
     }
     
     @objc

@@ -38,6 +38,7 @@ class SecondOnboardingController: UIViewController {
     private func segueNext(){
         let nextVC = ThirdOnboardingController()
         nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
         present(nextVC, animated: true, completion: nil)
     }
 

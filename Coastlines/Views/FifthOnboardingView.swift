@@ -29,7 +29,7 @@ class FifthOnboardingView: UIView {
     
     public lazy var centralImage: UIImageView = {
        let iv = UIImageView()
-        iv.image = UIImage(named: "coastlineIMG4")
+        iv.image = UIImage(named: "coastlineIMG3")
         return iv
     }()
     
@@ -38,8 +38,8 @@ class FifthOnboardingView: UIView {
         label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
-        label.font = UIFont(name: "Charter-Bold", size: 18)
-        label.text = "With that, you are now ready to begin your experience."
+        label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
+        label.text = "With that, you are now ready to explore locations around the world to learn more about the impact of rising sea levels."
         return label
     }()
     
@@ -104,7 +104,7 @@ class FifthOnboardingView: UIView {
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centralImage.bottomAnchor, multiplier: 1.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8.0)])
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centralImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8.0)])
     }
     
     private func setUpBeginButtonConstraints(){
