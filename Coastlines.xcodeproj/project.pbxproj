@@ -15,6 +15,7 @@
 		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
 		0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
 		0B09F374247EF4B4001E17F0 /* ARCoastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F373247EF4B4001E17F0 /* ARCoastView.swift */; };
+		0B35424C2488000600AAB02C /* WavyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35424B2488000600AAB02C /* WavyView2.swift */; };
 		0BCDFFB8248534B1007A94BF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB7248534B1007A94BF /* LocationCell.swift */; };
 		0BCDFFBA2485376A007A94BF /* LocationReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB92485376A007A94BF /* LocationReusableView.swift */; };
 		0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */; };
@@ -67,6 +68,7 @@
 		0B09F373247EF4B4001E17F0 /* ARCoastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARCoastView.swift; path = Coastlines/ARCoastView.swift; sourceTree = SOURCE_ROOT; };
 		0B1F21382476DEC300729365 /* Coastlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coastlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1F21492476DECA00729365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B35424B2488000600AAB02C /* WavyView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyView2.swift; sourceTree = "<group>"; };
 		0BCDFFB7248534B1007A94BF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		0BCDFFB92485376A007A94BF /* LocationReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReusableView.swift; sourceTree = "<group>"; };
 		0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIntroCell.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */,
 				0BCDFFB92485376A007A94BF /* LocationReusableView.swift */,
 				0285857E2485970E0003E31A /* WavyView.swift */,
+				0B35424B2488000600AAB02C /* WavyView2.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				C4E9790B247DE4AD0039B398 /* FirstOnboardingView.swift in Sources */,
 				C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
+				0B35424C2488000600AAB02C /* WavyView2.swift in Sources */,
 				C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */,
 				0285857B2483063A0003E31A /* FactsData.swift in Sources */,
 				0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */,
