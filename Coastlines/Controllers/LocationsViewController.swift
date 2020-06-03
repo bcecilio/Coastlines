@@ -12,6 +12,8 @@ class LocationsViewController: UIViewController {
     
     private let locationsView = LocationsVew()
     
+    private lazy var oldValue = locationsView.collectionView.contentOffset.x
+    
     override func loadView() {
         view = locationsView
     }
@@ -106,12 +108,15 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
         
         /// The horizontal position of the scrollview.
         let x = scrollView.contentOffset.x
+        let change = x - oldValue
         
-        if x > 0 {
+        if change > 0 {
             locationsView.wavyView.waveIncrease()
-        } else if x < 0 {
+        } else if change < 0 {
             locationsView.wavyView.waveDecrease()
         }
+        
+        oldValue = x
         
         
     }
