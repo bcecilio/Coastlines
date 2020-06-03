@@ -76,8 +76,8 @@ class LocationDetailVC: UIViewController {
         
         //        locationView.seaLevelLineChart.animate(xAxisDuration: 4)
         //        locationView.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 6.5, easingOption: .easeInCirc)
-        locationView.seaLevelLineChart.animate(xAxisDuration: 10)
-        
+//        locationView.seaLevelLineChart.animate(xAxisDuration: 10)
+        self.dismiss(animated: true)
     }
 }
 
@@ -110,11 +110,11 @@ extension LocationDetailVC: UIScrollViewDelegate {
     
     func triggerGraphAnimation() {
         let triggerHeight = locationView.triggerSLView2.frame.height - locationView.triggerSLView1.frame.height
-        if triggerHeight > 10 && triggerHeight < 20 && !animateSLGraphCalled {
+        if triggerHeight > 15 && !animateSLGraphCalled {
             setSeaLevelData()
-            seaLevelSet.setCircleColor(.white)
-            seaLevelSet.setColor(.white)
-            seaLevelSet.fill = Fill(color: .white)
+            seaLevelSet.setCircleColor(UIColor(hex: 0xa1c5c5))
+            seaLevelSet.setColor(UIColor(hex: 0xa1c5c5))
+            seaLevelSet.fill = Fill(color: UIColor(hex: 0xa1c5c5))
             locationView.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 2, easingOption: .easeInCirc)
             animateSLGraphCalled = true
         }
