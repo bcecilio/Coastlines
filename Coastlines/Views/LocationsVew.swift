@@ -14,10 +14,17 @@ class LocationsVew: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collection.backgroundColor = .systemBackground
+        collection.backgroundColor = .clear
         collection.register(LocationCell.self, forCellWithReuseIdentifier: "locationCell")
         collection.register(LocationIntroCell.self, forCellWithReuseIdentifier: "introCell")
+        collection.isPagingEnabled = true
         return collection
+    }()
+    
+    public lazy var wavyView: WavyView2 = {
+        let wv = WavyView2()
+        wv.backgroundColor = .clear
+        return wv
     }()
     
     override init(frame: CGRect) {
@@ -31,6 +38,8 @@ class LocationsVew: UIView {
     }
     
     private func commonInit() {
+        backgroundColor = .systemBackground
+        setupWavyView()
         setupCollectionView()
     }
     
@@ -42,6 +51,17 @@ class LocationsVew: UIView {
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor)
+        ])
+    }
+    
+    private func setupWavyView() {
+        addSubview(wavyView)
+        wavyView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            wavyView.topAnchor.constraint(equalTo: topAnchor),
+            wavyView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1 / 4 ),
+            wavyView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            wavyView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
     }
 }
