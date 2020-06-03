@@ -22,7 +22,7 @@ class FourthOnboardingController: UIViewController {
     }
     
     private func setUp(){
-        fourthOnboardingView.backgroundColor = GlobalColours.blueColour
+        fourthOnboardingView.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         fourthOnboardingView.leftSwipe.addTarget(self, action: #selector(swiped))
         fourthOnboardingView.rightSwipe.addTarget(self, action: #selector(swiped))
         fourthOnboardingView.nextButton.addTarget(self, action: #selector(segueNext), for: .touchUpInside)

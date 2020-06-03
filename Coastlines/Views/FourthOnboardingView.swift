@@ -14,7 +14,7 @@ class FourthOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = GlobalColours.offWhite
+        button.tintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         return button
     }()
     
@@ -22,8 +22,8 @@ class FourthOnboardingView: UIView {
         let pc = UIPageControl()
         pc.numberOfPages = 4
         pc.currentPage = 2
-        pc.currentPageIndicatorTintColor = GlobalColours.offWhite
-        pc.backgroundColor = GlobalColours.blueColour
+        pc.currentPageIndicatorTintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        pc.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         pc.isUserInteractionEnabled = false
         return pc
     }()
@@ -32,7 +32,7 @@ class FourthOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.tintColor = GlobalColours.offWhite
+        button.tintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         return button
     }()
     
@@ -44,7 +44,7 @@ class FourthOnboardingView: UIView {
     
     public lazy var infoLabel: UILabel = {
        let label = UILabel()
-        label.textColor = GlobalColours.offWhite
+        label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         label.text = "In addition to being vast. The ocean is also deep."
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "Charter-Bold", size: 18)
@@ -55,8 +55,11 @@ class FourthOnboardingView: UIView {
     public lazy var skipButton: UIButton = {
        let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(UIColor.systemBlue, for: .normal)
+        button.setTitleColor(PaletteColours.darkBlue.rawValue.convertHexToColour(), for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = PaletteColours.darkBlue.rawValue.convertHexToColour().cgColor
+        button.layer.cornerRadius = 22.0
         return button
     }()
     
@@ -132,7 +135,7 @@ class FourthOnboardingView: UIView {
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.topAnchor.constraint(equalToSystemSpacingBelow: infoLabel.bottomAnchor, multiplier: 5.0), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalToConstant: 44.0)])
+        NSLayoutConstraint.activate([skipButton.topAnchor.constraint(equalToSystemSpacingBelow: infoLabel.bottomAnchor, multiplier: 5.0), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
     }
     
     @objc

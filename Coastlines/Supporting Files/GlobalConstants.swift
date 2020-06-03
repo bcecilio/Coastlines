@@ -13,9 +13,12 @@ public struct OnboardingKey{
     static let ftuexKey = "ftuex" // First Time User Experience
 }
 
-// TODO: Consider Refactoring this.
-/// Global Constant for colours to be used throughout the application.
-public struct GlobalColours{
-    static let blueColour = #colorLiteral(red: 0.4940515405, green: 0.7873483789, blue: 0.8202589897, alpha: 1)
-    static let offWhite = #colorLiteral(red: 0.970336616, green: 0.9686303636, blue: 0.8698289951, alpha: 1)
+/// An enum containing hex vaules that correspond to colours from the chosen colour palette.
+enum PaletteColours: String {
+    case offWhite = "#f9f7e3"
+    case lightBlue = "#a1c5c5"
+    case lightGreen = "#a9bd95"
+    case peach = "#e2a093"
+    case pink = "#c67eb2"
+    case darkBlue = "#3e54c7"
 }

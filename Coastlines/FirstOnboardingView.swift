@@ -14,16 +14,16 @@ class FirstOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.tintColor = GlobalColours.offWhite
+        button.tintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         return button
     }()
     
     public lazy var welcomeLabel: UILabel = {
        let label = UILabel()
         label.text = "Welcome to Coastlines"
-        label.textColor = GlobalColours.offWhite
+        label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont(name: "Charter-Bold", size: 18)
+        label.font = UIFont(name: "Charter-Bold", size: 30)
         label.numberOfLines = 0
         label.alpha = 1.0
         return label
@@ -32,7 +32,7 @@ class FirstOnboardingView: UIView {
     public lazy var infoLabel: UILabel = {
        let label = UILabel()
         label.text = "Thank you for installing this application. Before you begin your experience, we'd like to take a moment to inform you a bit about climate change and its effect on the global sea level."
-        label.textColor = GlobalColours.offWhite
+        label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "Charter-Bold", size: 18)
         label.alpha = 1.0
@@ -43,16 +43,13 @@ class FirstOnboardingView: UIView {
     public lazy var skipButton: UIButton = {
        let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(UIColor.systemBlue, for: .normal)
+        button.setTitleColor(PaletteColours.darkBlue.rawValue.convertHexToColour(), for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = PaletteColours.darkBlue.rawValue.convertHexToColour().cgColor
+        button.layer.cornerRadius = 22.0
         return button
     }()
-    // Probably don't need this
-//    public lazy var swipeRight: UISwipeGestureRecognizer = {
-//        let gesture = UISwipeGestureRecognizer()
-//        gesture.direction = .right
-//        return gesture
-//    }()
     
     public lazy var swipeLeft: UISwipeGestureRecognizer = {
        let gesture = UISwipeGestureRecognizer()
@@ -76,7 +73,6 @@ class FirstOnboardingView: UIView {
         setUpWelcomeButtonConstaints()
         setUpInfoLabelConstraints()
         setUpSkipButtonConstraints()
-//        addGestureRecognizer(swipeRight)
         addGestureRecognizer(swipeLeft)
     }
     
@@ -105,7 +101,7 @@ class FirstOnboardingView: UIView {
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20), skipButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20), skipButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
     }
     
     @objc
