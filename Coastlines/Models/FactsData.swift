@@ -31,7 +31,6 @@ struct DataSet: Decodable {
 struct LocationData: Decodable {
     let year: Int
     let level: Double
-    let popDisplaced: Int
 }
 
 extension FactsData {

@@ -103,7 +103,7 @@ class LocationDetailView: UIView {
     
     public lazy var seaLevelLineChart: LineChartView = {
         let lineChart = LineChartView()
-        lineChart.backgroundColor = .systemBlue
+        lineChart.backgroundColor = UIColor(hex: 0x98c1d9)
         lineChart.layer.cornerRadius = 5
         lineChart.clipsToBounds = true
         lineChart.rightAxis.enabled = false
@@ -152,7 +152,7 @@ class LocationDetailView: UIView {
     
     public lazy var populationGraphView: PieChartView = {
         let pieChart = PieChartView()
-        pieChart.backgroundColor = .systemTeal
+        pieChart.backgroundColor = UIColor(hex: 0xF9F7E3)
         pieChart.layer.cornerRadius = 5
         pieChart.clipsToBounds = true
         pieChart.chartDescription?.enabled = false
@@ -171,7 +171,7 @@ class LocationDetailView: UIView {
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         button.clipsToBounds = true
         button.setBackgroundImage(UIImage(named:"ar2"), for: .normal)
-        button.backgroundColor = .green
+        button.backgroundColor = UIColor(hex: 0x98c1d9)
         button.contentMode = .scaleAspectFit
         button.tintColor = .white
         button.layer.borderWidth = 3

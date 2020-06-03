@@ -40,7 +40,7 @@ class LocationDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemTeal
+        view.backgroundColor = UIColor(hex: 0xa1c5c5)
         
         locationView.goToARButton.addTarget(self, action: #selector(goToARButtonPressed(_:)), for: .touchUpInside)
         locationView.backButton.addTarget(self, action: #selector(backButtonPressed(_:)), for: .touchUpInside)
@@ -74,10 +74,10 @@ class LocationDetailVC: UIViewController {
         
         print("Back Button Pressed")
         
-        setSeaLevelData()
         //        locationView.seaLevelLineChart.animate(xAxisDuration: 4)
         //        locationView.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 6.5, easingOption: .easeInCirc)
         locationView.seaLevelLineChart.animate(xAxisDuration: 10)
+        
     }
 }
 
@@ -162,8 +162,8 @@ extension LocationDetailVC: ChartViewDelegate {
         
         let dataSet = PieChartDataSet(entries: entries, label: "")
 
-        let c1 = NSUIColor(hex: 0x3A015C)
-        let c2 = NSUIColor(hex: 0xFF6347)
+        let c1 = NSUIColor(hex: 0xf9f7e3)
+        let c2 = NSUIColor(hex: 0xa1c5c5)
         
         dataSet.colors = [c1, c2]
         
