@@ -12,6 +12,7 @@ class LocationsViewController: UIViewController {
     
     private let locationsView = LocationsVew()
     
+    /// Captures the last value of the x coordinate of the collection view.
     private lazy var oldValue = locationsView.collectionView.contentOffset.x
     
     override func loadView() {
