@@ -21,6 +21,7 @@ class LocationIntroCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        backgroundColor = .systemBackground
         setupLabel()
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 2.0

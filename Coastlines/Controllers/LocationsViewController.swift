@@ -101,4 +101,18 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
             present(vc, animated: true)
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        /// The horizontal position of the scrollview.
+        let x = scrollView.contentOffset.x
+        
+        if x > 0 {
+            locationsView.wavyView.waveIncrease()
+        } else if x < 0 {
+            locationsView.wavyView.waveDecrease()
+        }
+        
+        
+    }
 }
