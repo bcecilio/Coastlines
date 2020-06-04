@@ -22,6 +22,8 @@ struct Facts: Decodable {
     let generalFacts: String
     let seaLevelFacts: String
     let populationFacts: String
+    let population: Int
+    let populationDisplaced: Int
 }
 
 struct DataSet: Decodable {

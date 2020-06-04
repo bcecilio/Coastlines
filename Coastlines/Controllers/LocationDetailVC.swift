@@ -157,8 +157,8 @@ extension LocationDetailVC: ChartViewDelegate {
     
     func setPopulationGraphData() {
         var entries = [PieChartDataEntry]()
-        entries.append(PieChartDataEntry(value: 100000-20000, label: "Population"))
-        entries.append(PieChartDataEntry(value: 20000, label: "Displaced"))
+        entries.append(PieChartDataEntry(value: Double(locations[0].facts.population), label: "Population"))
+        entries.append(PieChartDataEntry(value: Double(locations[0].facts.populationDisplaced), label: "Displaced"))
         
         let dataSet = PieChartDataSet(entries: entries, label: "")
 
