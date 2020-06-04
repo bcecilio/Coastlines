@@ -10,6 +10,7 @@ import UIKit
 
 class WavyView: UIView {
     
+    public var start: Double = 0.5
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -70,5 +71,15 @@ class WavyView: UIView {
         path.close()
         
         return path
+    }
+    
+    public func waveIncrease() {
+        start += 0.01
+        setNeedsDisplay()
+    }
+    
+    public func waveDecrease() {
+        start -= 0.01
+        setNeedsDisplay()
     }
 }

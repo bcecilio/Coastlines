@@ -15,11 +15,22 @@ class LocationDetailVC: UIViewController {
     
     private let locations = FactsData.getLocations()
     
+    private let location: Location
+    
     private var isStatusBarHidden = false
     
     private var animateSLGraphCalled = false
     
     private var seaLevelSet = LineChartDataSet()
+    
+    init(_ location: Location) {
+        self.location = location
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override var prefersStatusBarHidden: Bool {
         return self.isStatusBarHidden
@@ -40,7 +51,7 @@ class LocationDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(hex: 0xa1c5c5)
+        view.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         
         locationView.goToARButton.addTarget(self, action: #selector(goToARButtonPressed(_:)), for: .touchUpInside)
         locationView.backButton.addTarget(self, action: #selector(backButtonPressed(_:)), for: .touchUpInside)
@@ -54,11 +65,10 @@ class LocationDetailVC: UIViewController {
     }
     
     private func setupUI() {
-        let nyc = locations[0]
-        locationView.locationLabel.text = nyc.location
-        locationView.seaLevelContentLabel.text = nyc.facts.generalFacts
-        locationView.looksLikeContentLabel.text = nyc.facts.seaLevelFacts
-        locationView.populationContentLabel.text = nyc.facts.populationFacts
+        locationView.locationLabel.text = location.name
+        locationView.seaLevelContentLabel.text = location.facts.generalFacts
+        locationView.looksLikeContentLabel.text = location.facts.seaLevelFacts
+        locationView.populationContentLabel.text = location.facts.populationFacts
     }
     
     
@@ -112,10 +122,10 @@ extension LocationDetailVC: UIScrollViewDelegate {
         let triggerHeight = locationView.triggerSLView2.frame.height - locationView.triggerSLView1.frame.height
         if triggerHeight > 15 && !animateSLGraphCalled {
             setSeaLevelData()
-            seaLevelSet.setCircleColor(UIColor(hex: 0xa1c5c5))
-            seaLevelSet.setColor(UIColor(hex: 0xa1c5c5))
-            seaLevelSet.fill = Fill(color: UIColor(hex: 0xa1c5c5))
-            locationView.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 2, easingOption: .easeInCirc)
+            seaLevelSet.setCircleColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
+            seaLevelSet.setColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
+            seaLevelSet.fill = Fill(color: PaletteColours.lightBlue.rawValue.convertHexToColour())
+            locationView.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 5, easingOption: .easeInCirc)
             animateSLGraphCalled = true
         }
     }
@@ -148,7 +158,7 @@ extension LocationDetailVC: ChartViewDelegate {
     func getSeaLevelData() -> [ChartDataEntry] {
         var dataEntry: [ChartDataEntry] = []
         
-        for data in locations[0].dataSet {
+        for data in location.dataSet {
             let entry = ChartDataEntry(x: Double(data.year), y: data.level)
             dataEntry.append(entry)
         }
@@ -157,8 +167,8 @@ extension LocationDetailVC: ChartViewDelegate {
     
     func setPopulationGraphData() {
         var entries = [PieChartDataEntry]()
-        entries.append(PieChartDataEntry(value: 100000-20000, label: "Population"))
-        entries.append(PieChartDataEntry(value: 20000, label: "Displaced"))
+        entries.append(PieChartDataEntry(value: Double(location.facts.population), label: "Population"))
+        entries.append(PieChartDataEntry(value: Double(location.facts.populationDisplaced), label: "Displaced"))
         
         let dataSet = PieChartDataSet(entries: entries, label: "")
 
