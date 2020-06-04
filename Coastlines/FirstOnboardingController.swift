@@ -39,5 +39,4 @@ class FirstOnboardingController: UIViewController {
         let nextVC = SecondOnboardingController()
         UIViewController.resetWindow(nextVC)
     }
-
 }

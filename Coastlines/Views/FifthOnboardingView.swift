@@ -39,7 +39,7 @@ class FifthOnboardingView: UIView {
         label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
         label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
-        label.text = "With that, you are now ready to explore locations around the world to learn more about the impact of rising sea levels."
+        label.text = "\nWith that, you are now ready to explore locations around the world to learn more about the impact of rising sea levels."
         return label
     }()
     
@@ -104,14 +104,14 @@ class FifthOnboardingView: UIView {
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centralImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8.0)])
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centralImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16.0), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0)])
     }
     
     private func setUpBeginButtonConstraints(){
         addSubview(beginButton)
         beginButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([beginButton.topAnchor.constraint(equalToSystemSpacingBelow: infoLabel.bottomAnchor, multiplier: 5.0), beginButton.centerXAnchor.constraint(equalTo: centerXAnchor), beginButton.heightAnchor.constraint(equalToConstant: 44.0), beginButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+        NSLayoutConstraint.activate([beginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8), beginButton.centerXAnchor.constraint(equalTo: centerXAnchor), beginButton.heightAnchor.constraint(equalToConstant: 44.0), beginButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
     }
     
     @objc

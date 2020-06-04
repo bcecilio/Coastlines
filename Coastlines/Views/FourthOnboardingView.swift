@@ -45,7 +45,7 @@ class FourthOnboardingView: UIView {
     public lazy var infoLabel: UILabel = {
        let label = UILabel()
         label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
-        label.text = "Roughly 40% of the world’s population lives near Coastal Regions. If the sea level continues to rise at this rate, storms will increase in severity, flooding will become more frequent, and the coast will slowly recede."
+        label.text = "\nRoughly 40% of the world’s population lives near Coastal Regions. If the sea level continues to rise at this rate, our coasts will slowly recede."
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
         label.numberOfLines = 0
@@ -128,14 +128,14 @@ class FourthOnboardingView: UIView {
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8)])
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)])
     }
     
     private func setUpSkipButtonConstraints(){
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.topAnchor.constraint(equalToSystemSpacingBelow: infoLabel.bottomAnchor, multiplier: 2.7), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
     }
     
     @objc
