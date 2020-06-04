@@ -11,6 +11,8 @@ import UIKit
 class LocationsViewController: UIViewController {
     
     private let locationsView = LocationsVew()
+    let locations = LocationCell.Location.allCases
+
     
     /// Captures the last value of the x coordinate of the collection view.
     private lazy var oldValue = locationsView.collectionView.contentOffset.x
@@ -58,7 +60,7 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
         case 0:
             return 1
         case 1:
-            return 1
+            return locations.count
         default:
             return 0
         }
@@ -77,6 +79,8 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
                 print("Failed to create locationCell")
                 break
             }
+            
+            cell.configureCell(locations[indexPath.row])
             return cell
         default:
             break
@@ -85,15 +89,28 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
         return UICollectionViewCell()
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // TODO: Implement CGSize
-        return CGSize(width: view.frame.width - 24, height: view.frame.height / 3)
+        
+        let maxSize: CGSize = UIScreen.main.bounds.size
+        let spacingBetweenItems: CGFloat = 8
+        let numberOfItems: CGFloat = 1
+        let totalSpacing: CGFloat = (2 * spacingBetweenItems) + (numberOfItems - 1) * spacingBetweenItems
+        let itemWidth: CGFloat = (maxSize.width - totalSpacing) / numberOfItems
+        let itemHeight: CGFloat = maxSize.height / 3
+        return  CGSize(width: itemWidth, height: itemHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         // TODO: Implement insets
         let verticalSpace = view.frame.height / 5
-        return UIEdgeInsets(top: verticalSpace, left: 16, bottom: verticalSpace, right: 16)
+        let spacingBetween: CGFloat = 8
+        if section == 0 {
+            return UIEdgeInsets(top: verticalSpace, left: spacingBetween, bottom: verticalSpace, right: spacingBetween)
+        } else {
+            return UIEdgeInsets(top: verticalSpace, left: 0, bottom: verticalSpace, right: spacingBetween)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

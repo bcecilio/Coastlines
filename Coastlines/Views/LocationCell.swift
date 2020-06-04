@@ -10,6 +10,13 @@ import UIKit
 
 class LocationCell: UICollectionViewCell {
     
+    enum Location: CaseIterable {
+        case newYork
+        case newOrleans
+        case florida
+        case bangladesh
+    }
+    
     private lazy var imageView: UIImageView = {
         let iv = UIImageView(image: UIImage(named: "nyc"))
         iv.contentMode = .scaleToFill
@@ -34,6 +41,23 @@ class LocationCell: UICollectionViewCell {
         setupViews()
         
         
+    }
+    
+    public func configureCell(_ location: Location) {
+        switch location {
+        case .newYork:
+            label.text = "New York"
+            imageView.image = UIImage(named: "nyc")
+        case .florida:
+            label.text = "Florida"
+            imageView.image = UIImage(named: "miami")
+        case .newOrleans:
+            label.text = "New Orleans"
+            imageView.image = UIImage(named: "new-orleans")
+        case .bangladesh:
+            label.text = "Bangladesh"
+            imageView.image = UIImage(named: "bangladesh")
+        }
     }
     
     private func setupViews() {

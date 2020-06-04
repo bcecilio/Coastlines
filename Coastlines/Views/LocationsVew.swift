@@ -17,7 +17,8 @@ class LocationsVew: UIView {
         collection.backgroundColor = .clear
         collection.register(LocationCell.self, forCellWithReuseIdentifier: "locationCell")
         collection.register(LocationIntroCell.self, forCellWithReuseIdentifier: "introCell")
-        collection.isPagingEnabled = true
+        // TODO: Fix paging, it's alignment sucks.
+//        collection.isPagingEnabled = true
         return collection
     }()
     
