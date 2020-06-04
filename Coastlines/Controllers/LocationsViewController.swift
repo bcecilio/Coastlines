@@ -93,7 +93,12 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         // TODO: Implement insets
         let verticalSpace = view.frame.height / 5
-        return UIEdgeInsets(top: verticalSpace, left: 16, bottom: verticalSpace, right: 16)
+        let spacingBetween: CGFloat = 8
+        if section == 0 {
+            return UIEdgeInsets(top: verticalSpace, left: spacingBetween, bottom: verticalSpace, right: spacingBetween)
+        } else {
+            return UIEdgeInsets(top: verticalSpace, left: 0, bottom: verticalSpace, right: spacingBetween)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
