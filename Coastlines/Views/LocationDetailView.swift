@@ -104,7 +104,7 @@ class LocationDetailView: UIView {
     
     public lazy var seaLevelLineChart: LineChartView = {
         let lineChart = LineChartView()
-        lineChart.backgroundColor = UIColor(hex: 0xf9f7e3)
+        lineChart.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         lineChart.layer.cornerRadius = 5
         lineChart.clipsToBounds = true
         lineChart.rightAxis.enabled = false
@@ -112,11 +112,11 @@ class LocationDetailView: UIView {
         yAxis.labelFont = .boldSystemFont(ofSize: 12)
         lineChart.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         yAxis.setLabelCount(5, force: false)
-        yAxis.axisLineColor = UIColor(hex: 0xa1c5c5)
-        yAxis.labelTextColor = UIColor(hex: 0xa1c5c5)
+        yAxis.axisLineColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        yAxis.labelTextColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         lineChart.xAxis.labelPosition = .bottom
-        lineChart.xAxis.labelTextColor = UIColor(hex: 0xa1c5c5)
-        lineChart.xAxis.axisLineColor = UIColor(hex: 0xa1c5c5)
+        lineChart.xAxis.labelTextColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        lineChart.xAxis.axisLineColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         yAxis.drawGridLinesEnabled = false
         lineChart.xAxis.drawGridLinesEnabled = false
         lineChart.xAxis.setLabelCount(5, force: false)
@@ -153,7 +153,7 @@ class LocationDetailView: UIView {
     
     public lazy var populationGraphView: PieChartView = {
         let pieChart = PieChartView()
-        pieChart.backgroundColor = UIColor(hex: 0xa1c5c5)
+        pieChart.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         pieChart.layer.cornerRadius = 5
         pieChart.clipsToBounds = true
         pieChart.chartDescription?.enabled = false
@@ -172,7 +172,7 @@ class LocationDetailView: UIView {
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         button.clipsToBounds = true
         button.setBackgroundImage(UIImage(named:"ar2"), for: .normal)
-        button.backgroundColor = UIColor(hex: 0xf9f7e3)
+        button.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         button.contentMode = .scaleAspectFit
         button.tintColor = .white
         button.layer.borderWidth = 3

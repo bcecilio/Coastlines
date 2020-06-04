@@ -9,11 +9,11 @@
 import Foundation
 
 struct FactsData: Decodable {
-    let results: [Locations]
+    let results: [Location]
 }
 
-struct Locations: Decodable {
-    let location: String
+struct Location: Decodable {
+    let name: String
     let facts: Facts
     let dataSet: [LocationData]
 }
@@ -37,8 +37,8 @@ struct LocationData: Decodable {
 
 extension FactsData {
     
-  static func getLocations() -> [Locations] {
-    var locations = [Locations]()
+  static func getLocations() -> [Location] {
+    var locations = [Location]()
     
     guard let fileURL = Bundle.main.url(forResource: "locationFactsData", withExtension: "json") else {
       fatalError("error getting json file")
