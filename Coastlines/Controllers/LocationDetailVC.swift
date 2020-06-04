@@ -125,7 +125,7 @@ extension LocationDetailVC: UIScrollViewDelegate {
             seaLevelSet.setCircleColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
             seaLevelSet.setColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
             seaLevelSet.fill = Fill(color: PaletteColours.lightBlue.rawValue.convertHexToColour())
-            locationView.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 2, easingOption: .easeInCirc)
+            locationView.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 5, easingOption: .easeInCirc)
             animateSLGraphCalled = true
         }
     }
