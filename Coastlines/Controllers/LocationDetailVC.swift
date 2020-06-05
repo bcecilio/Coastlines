@@ -13,6 +13,8 @@ class LocationDetailVC: UIViewController {
     
     private var locationView = LocationDetailView()
     
+    private var detailView = DetailView()
+    
     private let locations = FactsData.getLocations()
     
     private let location: Location
@@ -65,6 +67,7 @@ class LocationDetailVC: UIViewController {
     }
     
     private func setupUI() {
+        locationView.locationImage.image = UIImage(named: location.imageName)
         locationView.locationLabel.text = location.name
         locationView.seaLevelContentLabel.text = location.facts.generalFacts
         locationView.looksLikeContentLabel.text = location.facts.seaLevelFacts
