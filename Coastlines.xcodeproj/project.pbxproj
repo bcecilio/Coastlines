@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423722489C8D1000C1A9B /* LocationDetailController.swift */; };
+		028423752489C984000C1A9B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
+		028423772489E617000C1A9B /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423762489E617000C1A9B /* ContentCell.swift */; };
 		02858579248305410003E31A /* locationFactsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 02858578248305410003E31A /* locationFactsData.json */; };
 		0285857B2483063A0003E31A /* FactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0285857A2483063A0003E31A /* FactsData.swift */; };
 		0285857F2485970E0003E31A /* WavyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0285857E2485970E0003E31A /* WavyView.swift */; };
 		028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028585822485B9660003E31A /* NSUIColor+Hex.swift */; };
 		0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
 		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
+		02F53F04248AA7E200227C62 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F03248AA7E200227C62 /* GraphCell.swift */; };
+		02F53F06248AAB3C00227C62 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */; };
+		02F53F12248AF87600227C62 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F11248AF87600227C62 /* PieChartCell.swift */; };
 		0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
 		0B09F374247EF4B4001E17F0 /* ARCoastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F373247EF4B4001E17F0 /* ARCoastView.swift */; };
 		0B35424C2488000600AAB02C /* WavyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35424B2488000600AAB02C /* WavyView2.swift */; };
@@ -58,12 +64,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		028423722489C8D1000C1A9B /* LocationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailController.swift; sourceTree = "<group>"; };
+		028423742489C984000C1A9B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		028423762489E617000C1A9B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		02858578248305410003E31A /* locationFactsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locationFactsData.json; sourceTree = "<group>"; };
 		0285857A2483063A0003E31A /* FactsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsData.swift; sourceTree = "<group>"; };
 		0285857E2485970E0003E31A /* WavyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyView.swift; sourceTree = "<group>"; };
 		028585822485B9660003E31A /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
 		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
+		02F53F03248AA7E200227C62 /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
+		02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		02F53F11248AF87600227C62 /* PieChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
 		0B09F371247EF49F001E17F0 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = Coastlines/ARViewController.swift; sourceTree = SOURCE_ROOT; };
 		0B09F373247EF4B4001E17F0 /* ARCoastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARCoastView.swift; path = Coastlines/ARCoastView.swift; sourceTree = SOURCE_ROOT; };
 		0B1F21382476DEC300729365 /* Coastlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coastlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +155,10 @@
 				C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */,
 				0B09F373247EF4B4001E17F0 /* ARCoastView.swift */,
 				0289F8F9247DB933008D3910 /* LocationDetailView.swift */,
+				028423742489C984000C1A9B /* DetailView.swift */,
+				028423762489E617000C1A9B /* ContentCell.swift */,
+				02F53F03248AA7E200227C62 /* GraphCell.swift */,
+				02F53F11248AF87600227C62 /* PieChartCell.swift */,
 				B7A4588D247F10BE001F8E51 /* LocationsVew.swift */,
 				0BCDFFB7248534B1007A94BF /* LocationCell.swift */,
 				0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */,
@@ -164,6 +180,7 @@
 				0B09F371247EF49F001E17F0 /* ARViewController.swift */,
 				0289F8FB247DB981008D3910 /* LocationDetailVC.swift */,
 				B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */,
+				028423722489C8D1000C1A9B /* LocationDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +191,7 @@
 				C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */,
 				028585822485B9660003E31A /* NSUIColor+Hex.swift */,
 				C491EF3E24871FA30055DA49 /* String+ConvertHexToColour.swift */,
+				02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -408,13 +426,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02F53F12248AF87600227C62 /* PieChartCell.swift in Sources */,
 				C4E97909247DE48A0039B398 /* FirstOnboardingController.swift in Sources */,
 				C463925D24847EC900DDB4DE /* FourthOnboardingView.swift in Sources */,
 				C48EBCCF24884626001DB0A3 /* SceneDelegate.swift in Sources */,
+				02F53F06248AAB3C00227C62 /* UIButton+Extension.swift in Sources */,
 				C4E9790B247DE4AD0039B398 /* FirstOnboardingView.swift in Sources */,
 				C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
 				0B35424C2488000600AAB02C /* WavyView2.swift in Sources */,
+				028423772489E617000C1A9B /* ContentCell.swift in Sources */,
+				028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */,
 				C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */,
 				0285857B2483063A0003E31A /* FactsData.swift in Sources */,
 				0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */,
@@ -423,6 +445,8 @@
 				028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */,
 				0B09F374247EF4B4001E17F0 /* ARCoastView.swift in Sources */,
 				0BCDFFBA2485376A007A94BF /* LocationReusableView.swift in Sources */,
+				028423752489C984000C1A9B /* DetailView.swift in Sources */,
+				02F53F04248AA7E200227C62 /* GraphCell.swift in Sources */,
 				0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */,
 				B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */,
 				C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */,

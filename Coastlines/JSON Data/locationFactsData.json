@@ -2,6 +2,7 @@
     "results": [
         {
             "name": "New York City",
+            "imageName": "nycHeader",
             "facts": {
                 "generalFacts": "New York State's extensive ocean coastline has places that we know, that we remember and that have shaped us in some way. More than 60 percent of New Yorkers live in homes on or near these waterfront areas. Each shoreline area is unique and part of the essence of New York. But these places will change as sea level rises, and the differences will become more obvious as the sea continues to rise to levels never experienced by humans. A result of the world’s changing climate, a rising sea will alter more than just the coastline. The entire state will feel the effects as residents and a significant amount of the landscape are affected. These areas are diverse and interconnected and share New York’s rich agriculture, commercial,economic and environmental history and resources.",
                 "seaLevelFacts": "As shown in the graph below, the sea level rise projection in New York City is an increase of 4 to 8 inches in the 2020s, 11 to 21 inches in the 2050s, 18 to 39 inches in the 2080s, and 22 to 50 inches by 2100. Sea level rise is projected to accelerate as the century progresses and could reach as high as 75 inches by 2100 under the high estimate (90th percentile). New York City's sea level rise projections exceed the global average, primarily due to local land subsidence and global climate model projections that ocean height along the Northeast coastline may increase faster than global average ocean height due in part to projected weakening of the Gulf Stream current. The range of projected sea level rise grows as the century progresses, primarily because of uncertainties about how much the ice sheets will melt as temperatures rise.",
@@ -82,6 +83,7 @@
         },
         {
             "name": "New Orleans",
+            "imageName": "newOrleansHeader",
             "facts": {
                 "generalFacts": "Coastal Louisiana is critical to the health and prosperity of our nation. Louisiana's rich traditions, diverse cultures and world-renowned cuisine are deeply rooted in Louisiana's rich coastal environment. Coastal Louisiana’s wetlands, marshes, barrier islands and waterways protect coastal communities and the nation’s oil and gas infrastructure from tropical storm and hurricane wave and storm surge damage, provide essential navigation routes for national and international shipping and commerce for half of the United States, provide important habitat and food resources for some of our nation's most productive fisheries, and so much more.",
                 "seaLevelFacts": "Sea levels in the New Orleans area are likely to increase by 1 to 4.6 feet (0.3 to 1.4 meters) by 2100 based on the range of estimates of absolute sea level rise and subsidence of the local land. These conditions give much of the Louisiana coast a relative sea level rise rate that is among the highest in the nation. ",
@@ -162,6 +164,7 @@
         },
         {
             "name": "Miami",
+            "imageName": "miamiHeader",
             "facts": {
                 "generalFacts": "South Florida and Miami coastlines serve as an important reservoir of landscape, community, and species diversity. The beach and dune system of Miami-Dade county is the first line of defense against storms because it acts as a buffer between the storm waves and coastal development or infrastructure. During storms, waves encounter the beach and dunes prior to reaching upland property, therefore absorbing wave energy and reducing the damage suffered to upland homes and businesses.",
                 "seaLevelFacts": "The sea level around Miami, Florida, has risen by 8 inches since 1950. Its speed of rise has accelerated over the last ten years and it’s now rising by 1 inch every 3 years. Scientists know this because sea levels are measured every 6 minutes using equipment like satellites, floating buoys off the coast, and tidal gauges to accurately measure the local sea level as it accelerates and changes.",
@@ -242,6 +245,7 @@
         },
         {
             "name": "Bangladesh",
+            "imageName": "bangladeshHeader",
             "facts": {
                 "generalFacts": "The coastline of Bangladesh is about 441 miles long, and the effective area of marine fishery ground is estimated to be around 4000 square miles. The coastal area of Bangladesh is full of natural resources and is the main contributor to the country's economy.",
                 "seaLevelFacts": "By the end of the century, sea levels are expected to rise along the Bangladesh coastline by up to 1.5 meters. And that will come with more extreme seasonal fluctuations in sea levels. Disastrous storms and unusually high tides currently occur once each decade, but could become as regular as three to 15 times each year by 2100.",
@@ -322,8 +326,9 @@
         },
         {
             "name": "Polar Ice Caps",
+            "imageName": "iceCapsHeader",
             "facts": {
-                "generalFacts": "New York State's extensive ocean coastline has places that we know, that we remember and that have shaped us in some way. The state’s coastline includes many notable locations—Montauk Point, Coney Island, Robert Moses State Park, Battery Park and the Hudson River's shores from New York City to the federal dam at Troy. More than 60 percent of New Yorkers live in homes on or near these waterfront areas. Each shoreline area is unique and part of the essence of New York. But these places will change as sea level rises, and the differences will become more obvious as the sea continues to rise to levels never experienced by humans. A result of the world’s changing climate, a rising sea will alter more than just the coastline. The entire state will feel the effects as residents and a significant amount of the landscape are affected. These areas are diverse and interconnected and share New York’s rich agriculture, commercial,economic and environmental history and resources. ",
+                "generalFacts": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiatiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labo",
                 "seaLevelFacts": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiatiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labo",
                 "populationFacts": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiatiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labo",
                 "population": 480807,
