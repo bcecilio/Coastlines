@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024035D3248D8B7800C7F7B2 /* ARCell.swift */; };
 		028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423722489C8D1000C1A9B /* LocationDetailController.swift */; };
 		028423752489C984000C1A9B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
 		028423772489E617000C1A9B /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423762489E617000C1A9B /* ContentCell.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		024035D3248D8B7800C7F7B2 /* ARCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCell.swift; sourceTree = "<group>"; };
 		028423722489C8D1000C1A9B /* LocationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailController.swift; sourceTree = "<group>"; };
 		028423742489C984000C1A9B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		028423762489E617000C1A9B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				028423762489E617000C1A9B /* ContentCell.swift */,
 				02F53F03248AA7E200227C62 /* GraphCell.swift */,
 				02F53F11248AF87600227C62 /* PieChartCell.swift */,
+				024035D3248D8B7800C7F7B2 /* ARCell.swift */,
 				B7A4588D247F10BE001F8E51 /* LocationsVew.swift */,
 				0BCDFFB7248534B1007A94BF /* LocationCell.swift */,
 				0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */,
@@ -440,6 +443,7 @@
 				C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */,
 				0285857B2483063A0003E31A /* FactsData.swift in Sources */,
 				0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */,
+				024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */,
 				0285857F2485970E0003E31A /* WavyView.swift in Sources */,
 				B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */,
 				028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */,

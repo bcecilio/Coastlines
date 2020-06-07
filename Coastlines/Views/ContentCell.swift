@@ -29,6 +29,19 @@ class ContentCell: UICollectionViewCell {
         return button.previousButton()
     }()
     
+    public lazy var scrollView: UIScrollView = {
+        let scrollview = UIScrollView()
+        scrollview.backgroundColor = .clear
+        scrollview.showsVerticalScrollIndicator = false
+        return scrollview
+    }()
+    
+    public lazy var cellContentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .green
+        return view
+    }()
+    
     public lazy var headerLabel: UILabel = {
         let label = UILabel()
         label.text = ""
@@ -56,10 +69,12 @@ class ContentCell: UICollectionViewCell {
         prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
         
-        setupPrevButton()
-        setupNextButton()
+        
+        setupScrollView()
         setupHeaderLabel()
         setupContentLabel()
+        setupPrevButton()
+        setupNextButton()
         animateLabel()
     }
     
@@ -94,25 +109,38 @@ class ContentCell: UICollectionViewCell {
         ])
     }
     
+    private func setupScrollView() {
+        addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: self.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10)
+        ])
+    }
+    
     private func setupHeaderLabel() {
-        addSubview(headerLabel)
+        scrollView.addSubview(headerLabel)
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            headerLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
             headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             headerLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
     }
     
     private func setupContentLabel() {
-        addSubview(contentLabel)
+        scrollView.addSubview(contentLabel)
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             contentLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10),
             contentLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            contentLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+            contentLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            contentLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -60)
         ])
     }
     

@@ -122,7 +122,7 @@ class GraphCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             seaLevelLineChart.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 20),
-            seaLevelLineChart.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            seaLevelLineChart.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
             seaLevelLineChart.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             seaLevelLineChart.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.6)
         ])

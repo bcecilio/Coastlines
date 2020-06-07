@@ -62,6 +62,7 @@ class DetailView: UIView {
         collection.register(ContentCell.self, forCellWithReuseIdentifier: "contentCell")
         collection.register(GraphCell.self, forCellWithReuseIdentifier: "graphCell")
         collection.register(PieChartCell.self, forCellWithReuseIdentifier: "pieCell")
+        collection.register(ARCell.self, forCellWithReuseIdentifier: "arCell")
         return collection
     }()
     
@@ -183,6 +184,26 @@ class DetailView: UIView {
             backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 40)
         ])
+    }
+    
+    public func hideARButton() {
+        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
+            self.goToARButton.alpha = 0
+            
+        })  { (completed) in
+            self.goToARButton.isHidden = true
+        }
+    }
+    
+    public func showARButton() {
+        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
+            
+            self.goToARButton.isHidden = false
+            self.goToARButton.alpha = 1
+            
+        })  { (completed) in
+            
+        }
     }
     
 }
