@@ -31,7 +31,7 @@ class PieChartCell: UICollectionViewCell {
         label.textAlignment = .center
         label.font = .preferredFont(forTextStyle: .title1)
         label.numberOfLines = 1
-        label.alpha = 0
+        label.alpha = 1
         return label
     }()
     
@@ -60,14 +60,13 @@ class PieChartCell: UICollectionViewCell {
         setupNextButton()
         setupHeaderLabel()
         setupPieChart()
-        animateLabel()
+//        animateLabel()
         setPopulationGraphData()
     }
     
     private func animateLabel() {
         UIView.animate(withDuration: 2, delay: 0, options: [.transitionCrossDissolve], animations: {
             self.headerLabel.alpha = 1
-//            self.seaLevelLineChart.alpha = 1
         }, completion: nil)
     }
     

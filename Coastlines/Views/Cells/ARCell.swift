@@ -23,7 +23,7 @@ class ARCell: UICollectionViewCell {
         label.textAlignment = .center
         label.font = .preferredFont(forTextStyle: .title1)
         label.numberOfLines = 1
-        label.alpha = 0
+        label.alpha = 1
         return label
     }()
     
@@ -41,7 +41,7 @@ class ARCell: UICollectionViewCell {
         setupPrevButton()
         setupHeaderLabel()
         setupARIcon()
-        animateLabel()
+//        animateLabel()
         animateARIcon()
     }
     

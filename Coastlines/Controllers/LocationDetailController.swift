@@ -16,8 +16,8 @@ class LocationDetailController: UIViewController {
     private let location: Location
     
     private var isStatusBarHidden = false
-        
-    public var showPieChart = false
+    
+    private var seaChartCell = GraphCell()
     
     init(_ location: Location) {
         self.location = location
@@ -83,11 +83,12 @@ class LocationDetailController: UIViewController {
             self.locationView.collectionView.contentOffset.x += self.locationView.frame.width-8
         }, completion: nil)
         
-//        UIView.animate(withDuration: 1.25, delay: 0, options: .curveEaseOut, animations: {
-//            self.locationView.nameLabelLeading.constant -= self.locationView.frame.width+8
-////            self.locationView.wView.start = 0.5
-//            self.locationView.layoutIfNeeded()
-//        }, completion: nil)
+        UIView.animate(withDuration: 1.25, delay: 0, options: .curveEaseOut, animations: {
+            self.locationView.nameLabelLeading.constant -= self.locationView.frame.width+8
+            //            self.locationView.wView.start = 0.5
+            self.locationView.wavyLeading.constant -= self.locationView.frame.width
+            self.locationView.layoutIfNeeded()
+        }, completion: nil)
         print(locationView.collectionView.contentOffset.x.description)
     }
     
@@ -98,14 +99,29 @@ class LocationDetailController: UIViewController {
             self.locationView.collectionView.contentOffset.x -= self.locationView.frame.width-8
         }, completion: nil)
         
-//        UIView.animate(withDuration: 1.25, delay: 0, options: .curveEaseOut, animations: {
-//            self.locationView.nameLabelLeading.constant += self.locationView.frame.width+8
-////            self.locationView.wavyLeading.constant += self.locationView.frame.width+8
-////            self.locationView.wView.start = 0.5
-//            self.locationView.layoutIfNeeded()
-//        }, completion: nil)
+        
+        UIView.animate(withDuration: 1.25, delay: 0, options: .curveEaseOut, animations: {
+            self.locationView.nameLabelLeading.constant += self.locationView.frame.width+8
+            //            self.locationView.wView.start = 0.5
+            self.locationView.wavyLeading.constant += self.locationView.frame.width
+            self.locationView.layoutIfNeeded()
+        }, completion: nil)
         print(locationView.collectionView.contentOffset.x.description)
     }
+    
+    private func animateChart() {
+        seaChartCell.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 3, easingOption: .easeInCirc)
+    }
+    
+    private func setSeaLevelChart() {
+        seaChartCell.location = location
+        seaChartCell.headerLabel.text = "Sea Level Rise by 2100"
+        seaChartCell.setSeaLevelData()
+        seaChartCell.seaLevelSet.setCircleColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
+        seaChartCell.seaLevelSet.setColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
+        seaChartCell.seaLevelSet.fill = Fill(color: PaletteColours.lightBlue.rawValue.convertHexToColour())
+    }
+    
 }
 
 extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -121,7 +137,7 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let contentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentCell", for: indexPath) as? ContentCell, let graphCell = collectionView.dequeueReusableCell(withReuseIdentifier: "graphCell", for: indexPath) as? GraphCell, let pieCell = collectionView.dequeueReusableCell(withReuseIdentifier: "pieCell", for: indexPath) as? PieChartCell, let arCell = collectionView.dequeueReusableCell(withReuseIdentifier: "arCell", for: indexPath) as? ARCell else {
-            fatalError("Failed to create cell")
+            fatalError("Failed to create cells")
         }
         
         contentCell.index = indexPath
@@ -142,16 +158,11 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             return contentCell
         case 1:
             contentCell.headerLabel.text = "What is happening?"
-            contentCell.contentLabel.text = location.facts.generalFacts
+            contentCell.contentLabel.text = location.facts.seaLevelFacts
             return contentCell
         case 2:
-            graphCell.location = location
-            graphCell.headerLabel.text = "Sea Level Rise by 2100"
-            graphCell.setSeaLevelData()
-            graphCell.seaLevelSet.setCircleColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
-            graphCell.seaLevelSet.setColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
-            graphCell.seaLevelSet.fill = Fill(color: PaletteColours.lightBlue.rawValue.convertHexToColour())
-            graphCell.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 5, easingOption: .easeInCirc)
+            seaChartCell = graphCell
+            setSeaLevelChart()
             return graphCell
         case 3:
             contentCell.headerLabel.text = "Where will we go?"
@@ -161,13 +172,10 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             pieCell.headerLabel.text = "Population Displacement"
             pieCell.location = location
             pieCell.setPopulationGraphData()
-            pieCell.populationGraphView.isHidden = false
             return pieCell
         case 5:
             contentCell.headerLabel.text = indexPath.row.description
             contentCell.contentLabel.text = ""
-            contentCell.nextButton.isHidden = true
-            contentCell.prevButton.isHidden = false
             return arCell
         default:
             break
@@ -204,18 +212,28 @@ extension LocationDetailController: PrevNextButton {
     func clickedOnPrev(index: Int, cell: Any) {
         print("clicked on previous at this \(index)")
         animateLeftScroll()
-        if index == 5 {
+        switch index {
+        case 3:
+            animateChart()
+        case 5:
             locationView.showARButton()
+        default:
+            break
         }
     }
     
     func clickedOnNext(index: Int, cell: Any) {
         print("clicked on next at this \(index)")
         animateRightScroll()
-        print(locationView.collectionView.contentOffset.x.description)
-        if index == 4 {
-//            locationView.goToARButton.isHidden = true
+        
+        switch index {
+        case 1:
+            animateChart()
+        case 4:
             locationView.hideARButton()
+        default:
+            break
         }
     }
+    
 }
