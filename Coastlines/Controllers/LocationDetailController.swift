@@ -120,7 +120,7 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let contentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentCell", for: indexPath) as? ContentCell, let graphCell = collectionView.dequeueReusableCell(withReuseIdentifier: "graphCell", for: indexPath) as? GraphCell, let pieCell = collectionView.dequeueReusableCell(withReuseIdentifier: "pieCell", for: indexPath) as? PieChartCell else {
+        guard let contentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentCell", for: indexPath) as? ContentCell, let graphCell = collectionView.dequeueReusableCell(withReuseIdentifier: "graphCell", for: indexPath) as? GraphCell, let pieCell = collectionView.dequeueReusableCell(withReuseIdentifier: "pieCell", for: indexPath) as? PieChartCell, let arCell = collectionView.dequeueReusableCell(withReuseIdentifier: "arCell", for: indexPath) as? ARCell else {
             fatalError("Failed to create cell")
         }
         
@@ -130,7 +130,8 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
         graphCell.cellDelegate = self
         pieCell.index = indexPath
         pieCell.cellDelegate = self
-        
+        arCell.index = indexPath
+        arCell.cellDelegate = self
         
         switch indexPath.row {
             
@@ -167,7 +168,7 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             contentCell.contentLabel.text = ""
             contentCell.nextButton.isHidden = true
             contentCell.prevButton.isHidden = false
-            return contentCell
+            return arCell
         default:
             break
         }
@@ -190,7 +191,12 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
+        if indexPath.row == 5 {
+            print("AR Button Pressed")
+            
+            let arVC = ARViewController()
+            present(arVC, animated: true)
+        }
     }
 }
 
@@ -198,11 +204,18 @@ extension LocationDetailController: PrevNextButton {
     func clickedOnPrev(index: Int, cell: Any) {
         print("clicked on previous at this \(index)")
         animateLeftScroll()
+        if index == 5 {
+            locationView.showARButton()
+        }
     }
     
     func clickedOnNext(index: Int, cell: Any) {
         print("clicked on next at this \(index)")
         animateRightScroll()
         print(locationView.collectionView.contentOffset.x.description)
+        if index == 4 {
+//            locationView.goToARButton.isHidden = true
+            locationView.hideARButton()
+        }
     }
 }
