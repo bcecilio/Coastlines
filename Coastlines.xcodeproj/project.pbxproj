@@ -121,7 +121,7 @@
 		C48EBCDF248846C6001DB0A3 /* CooperHewitt-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Semibold.otf"; sourceTree = "<group>"; };
 		C491EF3E24871FA30055DA49 /* String+ConvertHexToColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ConvertHexToColour.swift"; sourceTree = "<group>"; };
 		C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstOnboardingController.swift; path = Coastlines/FirstOnboardingController.swift; sourceTree = SOURCE_ROOT; };
-		C4E9790A247DE4AD0039B398 /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstOnboardingView.swift; path = Coastlines/FirstOnboardingView.swift; sourceTree = SOURCE_ROOT; };
+		C4E9790A247DE4AD0039B398 /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstOnboardingView.swift; path = "Coastlines/Views/New Group/FirstOnboardingView.swift"; sourceTree = SOURCE_ROOT; };
 		CEE5A3A6EC95A87BAEBAA85A /* Pods-Coastlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.release.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.release.xcconfig"; sourceTree = "<group>"; };
 		D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coastlines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -149,25 +149,14 @@
 		0289F8F4247DA086008D3910 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C48EBCC2248808D9001DB0A3 /* TestView.swift */,
-				C4E9790A247DE4AD0039B398 /* FirstOnboardingView.swift */,
-				C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */,
-				C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */,
-				C463925C24847EC900DDB4DE /* FourthOnboardingView.swift */,
-				C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */,
+				02B9AC9D248EC3DD0037971E /* Wavy Views */,
+				02B9AC9C248EC3AE0037971E /* Onboarding Views */,
 				0B09F373247EF4B4001E17F0 /* ARCoastView.swift */,
 				0289F8F9247DB933008D3910 /* LocationDetailView.swift */,
-				028423742489C984000C1A9B /* DetailView.swift */,
-				028423762489E617000C1A9B /* ContentCell.swift */,
-				02F53F03248AA7E200227C62 /* GraphCell.swift */,
-				02F53F11248AF87600227C62 /* PieChartCell.swift */,
-				024035D3248D8B7800C7F7B2 /* ARCell.swift */,
 				B7A4588D247F10BE001F8E51 /* LocationsVew.swift */,
-				0BCDFFB7248534B1007A94BF /* LocationCell.swift */,
-				0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */,
+				028423742489C984000C1A9B /* DetailView.swift */,
 				0BCDFFB92485376A007A94BF /* LocationReusableView.swift */,
-				0285857E2485970E0003E31A /* WavyView.swift */,
-				0B35424B2488000600AAB02C /* WavyView2.swift */,
+				02B9AC9E248EC3FC0037971E /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +191,7 @@
 		0289F8F7247DA0BA008D3910 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C48EBCC824884626001DB0A3 /* GlobalConstants.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -212,6 +202,41 @@
 				0285857A2483063A0003E31A /* FactsData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		02B9AC9C248EC3AE0037971E /* Onboarding Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4E9790A247DE4AD0039B398 /* FirstOnboardingView.swift */,
+				C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */,
+				C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */,
+				C463925C24847EC900DDB4DE /* FourthOnboardingView.swift */,
+				C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */,
+			);
+			path = "Onboarding Views";
+			sourceTree = "<group>";
+		};
+		02B9AC9D248EC3DD0037971E /* Wavy Views */ = {
+			isa = PBXGroup;
+			children = (
+				C48EBCC2248808D9001DB0A3 /* TestView.swift */,
+				0285857E2485970E0003E31A /* WavyView.swift */,
+				0B35424B2488000600AAB02C /* WavyView2.swift */,
+			);
+			path = "Wavy Views";
+			sourceTree = "<group>";
+		};
+		02B9AC9E248EC3FC0037971E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				028423762489E617000C1A9B /* ContentCell.swift */,
+				02F53F03248AA7E200227C62 /* GraphCell.swift */,
+				02F53F11248AF87600227C62 /* PieChartCell.swift */,
+				024035D3248D8B7800C7F7B2 /* ARCell.swift */,
+				0BCDFFB7248534B1007A94BF /* LocationCell.swift */,
+				0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		0B1F212F2476DEC300729365 = {
@@ -269,7 +294,6 @@
 			children = (
 				C48EBCC524884626001DB0A3 /* Assets.xcassets */,
 				C48EBCC624884626001DB0A3 /* LaunchScreen.storyboard */,
-				C48EBCC824884626001DB0A3 /* GlobalConstants.swift */,
 				C48EBCC924884626001DB0A3 /* AppDelegate.swift */,
 				C48EBCCA24884626001DB0A3 /* SceneDelegate.swift */,
 				C48EBCD0248846C6001DB0A3 /* Cooper-Hewitt */,

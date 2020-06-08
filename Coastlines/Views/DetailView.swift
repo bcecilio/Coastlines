@@ -125,7 +125,7 @@ class DetailView: UIView {
         wView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            wView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            wView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: self.frame.width * 5),
             wView.topAnchor.constraint(equalTo: locationImage.topAnchor),
             wView.heightAnchor.constraint(equalTo: locationImage.heightAnchor)
         ])
@@ -170,7 +170,7 @@ class DetailView: UIView {
             goToARButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             goToARButton.widthAnchor.constraint(equalToConstant: 64),
             goToARButton.heightAnchor.constraint(equalToConstant: 64),
-            goToARButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 15)
+            goToARButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -5)
         ])
     }
     
