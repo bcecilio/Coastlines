@@ -17,9 +17,9 @@ extension UIButton {
         button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         button.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         button.contentMode = .scaleToFill
-        button.tintColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        button.tintColor = .black
         button.layer.borderWidth = 3
-        button.layer.borderColor = UIColor.systemGray.cgColor
+        button.layer.borderColor = PaletteColours.offWhite.rawValue.convertHexToColour().cgColor
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 5, height: 5)
         button.layer.shadowRadius = 3
@@ -36,9 +36,9 @@ extension UIButton {
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         button.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         button.contentMode = .scaleToFill
-        button.tintColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        button.tintColor = .black
         button.layer.borderWidth = 3
-        button.layer.borderColor = UIColor.systemGray.cgColor
+        button.layer.borderColor = PaletteColours.offWhite.rawValue.convertHexToColour().cgColor
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 5, height: 5)
         button.layer.shadowRadius = 3
@@ -57,7 +57,7 @@ extension UIButton {
         button.contentMode = .scaleAspectFit
         button.tintColor = .white
         button.layer.borderWidth = 3
-        button.layer.borderColor = UIColor.systemGray.cgColor
+        button.layer.borderColor = PaletteColours.offWhite.rawValue.convertHexToColour().cgColor
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 5, height: 5)
         button.layer.shadowRadius = 3

@@ -116,7 +116,7 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if indexPath.section == 1 {
-            let vc = LocationDetailVC(locationData[indexPath.row])
+            let vc = LocationDetailController(locationData[indexPath.row])
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
         }
