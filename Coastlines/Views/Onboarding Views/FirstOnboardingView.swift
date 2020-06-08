@@ -1,17 +1,16 @@
 //
-//  IntroView.swift
+//  FirstOnboardingView.swift
 //  Coastlines
 //
-//  Created by Cameron Rivera on 5/26/20.
+//  Created by Kelby Mittan on 6/8/20.
 //  Copyright © 2020 Ahad Islam. All rights reserved.
 //
 
 import UIKit
 
 class FirstOnboardingView: UIView {
-    
     public lazy var nextButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
         button.tintColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
@@ -19,7 +18,7 @@ class FirstOnboardingView: UIView {
     }()
     
     public lazy var welcomeLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Welcome to Coastlines"
         label.textColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
         label.textAlignment = NSTextAlignment.center
@@ -29,7 +28,7 @@ class FirstOnboardingView: UIView {
     }()
     
     public lazy var infoLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
@@ -40,7 +39,7 @@ class FirstOnboardingView: UIView {
     }()
     
     public lazy var skipButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setTitle("Skip", for: .normal)
         button.setTitleColor(PaletteColours.darkBlue.rawValue.convertHexToColour(), for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
@@ -51,7 +50,7 @@ class FirstOnboardingView: UIView {
     }()
     
     public lazy var swipeLeft: UISwipeGestureRecognizer = {
-       let gesture = UISwipeGestureRecognizer()
+        let gesture = UISwipeGestureRecognizer()
         gesture.direction = .left
         return gesture
     }()
@@ -63,7 +62,7 @@ class FirstOnboardingView: UIView {
     }()
     
     public lazy var topView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         return view
     }()

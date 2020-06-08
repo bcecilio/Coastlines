@@ -17,6 +17,7 @@
 		028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028585822485B9660003E31A /* NSUIColor+Hex.swift */; };
 		0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
 		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
+		02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */; };
 		02F53F04248AA7E200227C62 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F03248AA7E200227C62 /* GraphCell.swift */; };
 		02F53F06248AAB3C00227C62 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */; };
 		02F53F12248AF87600227C62 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F11248AF87600227C62 /* PieChartCell.swift */; };
@@ -61,7 +62,6 @@
 		C48EBCEE248846C6001DB0A3 /* CooperHewitt-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDF248846C6001DB0A3 /* CooperHewitt-Semibold.otf */; };
 		C491EF3F24871FA30055DA49 /* String+ConvertHexToColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491EF3E24871FA30055DA49 /* String+ConvertHexToColour.swift */; };
 		C4E97909247DE48A0039B398 /* FirstOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */; };
-		C4E9790B247DE4AD0039B398 /* FirstOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E9790A247DE4AD0039B398 /* FirstOnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +75,7 @@
 		028585822485B9660003E31A /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
 		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
+		02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingView.swift; sourceTree = "<group>"; };
 		02F53F03248AA7E200227C62 /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
 		02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		02F53F11248AF87600227C62 /* PieChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
@@ -121,7 +122,6 @@
 		C48EBCDF248846C6001DB0A3 /* CooperHewitt-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Semibold.otf"; sourceTree = "<group>"; };
 		C491EF3E24871FA30055DA49 /* String+ConvertHexToColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ConvertHexToColour.swift"; sourceTree = "<group>"; };
 		C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstOnboardingController.swift; path = Coastlines/FirstOnboardingController.swift; sourceTree = SOURCE_ROOT; };
-		C4E9790A247DE4AD0039B398 /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstOnboardingView.swift; path = "Coastlines/Views/New Group/FirstOnboardingView.swift"; sourceTree = SOURCE_ROOT; };
 		CEE5A3A6EC95A87BAEBAA85A /* Pods-Coastlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.release.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.release.xcconfig"; sourceTree = "<group>"; };
 		D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coastlines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -207,7 +207,7 @@
 		02B9AC9C248EC3AE0037971E /* Onboarding Views */ = {
 			isa = PBXGroup;
 			children = (
-				C4E9790A247DE4AD0039B398 /* FirstOnboardingView.swift */,
+				02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */,
 				C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */,
 				C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */,
 				C463925C24847EC900DDB4DE /* FourthOnboardingView.swift */,
@@ -458,7 +458,6 @@
 				C463925D24847EC900DDB4DE /* FourthOnboardingView.swift in Sources */,
 				C48EBCCF24884626001DB0A3 /* SceneDelegate.swift in Sources */,
 				02F53F06248AAB3C00227C62 /* UIButton+Extension.swift in Sources */,
-				C4E9790B247DE4AD0039B398 /* FirstOnboardingView.swift in Sources */,
 				C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
 				0B35424C2488000600AAB02C /* WavyView2.swift in Sources */,
@@ -481,6 +480,7 @@
 				C463926124847EE800DDB4DE /* ThirdOnboardingController.swift in Sources */,
 				C48EBCCE24884626001DB0A3 /* AppDelegate.swift in Sources */,
 				0BCDFFB8248534B1007A94BF /* LocationCell.swift in Sources */,
+				02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */,
 				C463926324847EF800DDB4DE /* FourthOnboardingController.swift in Sources */,
 				C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */,
 				C48EBCCD24884626001DB0A3 /* GlobalConstants.swift in Sources */,
