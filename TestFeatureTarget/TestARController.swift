@@ -40,6 +40,16 @@ class TestARController: UIViewController {
         addAnchor()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        arView.automaticallyConfigureSession = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        arView.session.pause()
+    }
+    
     private func addAnchor(){
         horizontalAnchor = AnchorEntity(plane: .horizontal, minimumBounds: [0.3,0.3])
         arView.scene.addAnchor(horizontalAnchor)
