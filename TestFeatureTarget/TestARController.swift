@@ -49,19 +49,19 @@ class TestARController: UIViewController {
     }
     
     private func loadEntities(){
-        let assetName = "Ball"
-//        do {
-//            ent = try Entity.loadModel(named: assetName)
-//        } catch {
-//            print(error)
-//        }
+        let assetName = "newnewLanscape3"
+        do {
+            ent = try Entity.loadModel(named: assetName)
+        } catch {
+            print(error)
+        }
         
-        _ = Entity.loadModelAsync(named: assetName)
-            .sink(receiveCompletion: { (result) in
-                
-            }, receiveValue: { [weak self] (model) in
-                self?.ent = model
-            })
+//        _ = Entity.loadModelAsync(named: assetName)
+//            .sink(receiveCompletion: { (result) in
+//
+//            }, receiveValue: { [weak self] (model) in
+//                self?.ent = model
+//            })
     }
     
     private func addingOcclusion(_ anchor: AnchorEntity){
