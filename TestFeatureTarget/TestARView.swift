@@ -12,6 +12,7 @@ import RealityKit
 
 class TestARView: ARView {
     
+<<<<<<< HEAD
     override init(frame frameRect: CGRect, cameraMode: ARView.CameraMode, automaticallyConfigureSession: Bool) {
         super.init(frame: UIScreen.main.bounds, cameraMode: .ar, automaticallyConfigureSession: true)
     }
@@ -23,4 +24,6 @@ class TestARView: ARView {
     @objc required dynamic init(frame frameRect: CGRect) {
          super.init(frame: UIScreen.main.bounds, cameraMode: .ar, automaticallyConfigureSession: true)
     }
+=======
+>>>>>>> 9fed2fcdbeda3010526016dba4afacdef7ea68cb
 }
