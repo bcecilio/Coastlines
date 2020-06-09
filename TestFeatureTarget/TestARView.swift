@@ -12,4 +12,15 @@ import RealityKit
 
 class TestARView: ARView {
     
+    override init(frame frameRect: CGRect, cameraMode: ARView.CameraMode, automaticallyConfigureSession: Bool) {
+        super.init(frame: UIScreen.main.bounds, cameraMode: .ar, automaticallyConfigureSession: true)
+    }
+    
+    required init?(coder decoder: NSCoder) {
+        super.init(coder: decoder)
+    }
+    
+    @objc required dynamic init(frame frameRect: CGRect) {
+        fatalError("init(frame:) has not been implemented")
+    }
 }
