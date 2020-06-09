@@ -88,6 +88,8 @@
 		C40F2D1E2490157200AA1756 /* FifthOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */; };
 		C40F2D1F2490168500AA1756 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
 		C40F2D212490171F00AA1756 /* TestARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2D202490171F00AA1756 /* TestARView.swift */; };
+		C40F2D2424901B1B00AA1756 /* Ball.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C40F2D2224901B1B00AA1756 /* Ball.usdz */; };
+		C40F2D2524901B1B00AA1756 /* newnewLanscape3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C40F2D2324901B1B00AA1756 /* newnewLanscape3.usdz */; };
 		C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */; };
 		C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */; };
 		C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925824847AA200DDB4DE /* SecondOnboardingController.swift */; };
@@ -160,6 +162,8 @@
 		C40F2CDE2490123A00AA1756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C40F2CE02490123A00AA1756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40F2D202490171F00AA1756 /* TestARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARView.swift; sourceTree = "<group>"; };
+		C40F2D2224901B1B00AA1756 /* Ball.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Ball.usdz; sourceTree = "<group>"; };
+		C40F2D2324901B1B00AA1756 /* newnewLanscape3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = newnewLanscape3.usdz; sourceTree = "<group>"; };
 		C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+resetWindow.swift"; path = "Coastlines/UIViewController+resetWindow.swift"; sourceTree = SOURCE_ROOT; };
 		C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondOnboardingView.swift; path = "/Users/cameronrivera/Documents/GroupProjects/Coastlines/Coastlines/Coastlines/Views/Onboarding Views/SecondOnboardingView.swift"; sourceTree = "<absolute>"; };
 		C463925824847AA200DDB4DE /* SecondOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondOnboardingController.swift; path = /Users/cameronrivera/Documents/GroupProjects/Coastlines/Coastlines/Coastlines/Controllers/SecondOnboardingController.swift; sourceTree = "<absolute>"; };
@@ -375,6 +379,8 @@
 		C40F2CD12490123800AA1756 /* TestFeatureTarget */ = {
 			isa = PBXGroup;
 			children = (
+				C40F2D2224901B1B00AA1756 /* Ball.usdz */,
+				C40F2D2324901B1B00AA1756 /* newnewLanscape3.usdz */,
 				C40F2CD22490123800AA1756 /* AppDelegate.swift */,
 				C40F2CD42490123800AA1756 /* SceneDelegate.swift */,
 				C40F2CD62490123800AA1756 /* TestARController.swift */,
@@ -535,6 +541,7 @@
 				C40F2D0C249012E400AA1756 /* CooperHewitt-Book.otf in Resources */,
 				C40F2CDF2490123A00AA1756 /* LaunchScreen.storyboard in Resources */,
 				C40F2CDC2490123A00AA1756 /* Assets.xcassets in Resources */,
+				C40F2D2524901B1B00AA1756 /* newnewLanscape3.usdz in Resources */,
 				C40F2D0D249012E400AA1756 /* CooperHewitt-BookItalic.otf in Resources */,
 				C40F2D08249012E400AA1756 /* SIL Open Font License.txt in Resources */,
 				C40F2CEF2490126E00AA1756 /* locationFactsData.json in Resources */,
@@ -545,6 +552,7 @@
 				C40F2CDA2490123800AA1756 /* Main.storyboard in Resources */,
 				C40F2D0F249012E400AA1756 /* CooperHewitt-LightItalic.otf in Resources */,
 				C40F2D0E249012E400AA1756 /* CooperHewitt-Medium.otf in Resources */,
+				C40F2D2424901B1B00AA1756 /* Ball.usdz in Resources */,
 				C40F2D0B249012E400AA1756 /* CooperHewitt-ThinItalic.otf in Resources */,
 				C40F2D11249012E400AA1756 /* CooperHewitt-Heavy.otf in Resources */,
 				C40F2D0A249012E400AA1756 /* CooperHewitt-BoldItalic.otf in Resources */,
