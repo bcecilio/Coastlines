@@ -79,8 +79,10 @@ class LocationDetailVC: UIViewController {
         
         print("AR Button Pressed")
         
-        let arVC = ARViewController()
-        present(arVC, animated: true)
+//        let arVC = ARViewController()
+//        present(arVC, animated: true)
+        let arcV = TestARController()
+        present(arcV, animated: true)
     }
     
     @objc func backButtonPressed(_ sender: UIBarButtonItem) {

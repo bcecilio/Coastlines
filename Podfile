@@ -7,4 +7,12 @@ target 'Coastlines' do
 
   # Pods for Coastlines
 pod 'Charts'
+
+end
+
+target 'TestFeatureTarget' do
+  use_frameworks!
+  
+pod 'Charts'
+  
 end
