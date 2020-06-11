@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02157784249171E500392061 /* scaledDownNYC.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 02157783249171E500392061 /* scaledDownNYC.usdz */; };
 		024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024035D3248D8B7800C7F7B2 /* ARCell.swift */; };
+		027A82602491CDD80016D209 /* baseMapNYC.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 027A825F2491CDD80016D209 /* baseMapNYC.usdz */; };
 		028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423722489C8D1000C1A9B /* LocationDetailController.swift */; };
 		028423752489C984000C1A9B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
 		028423772489E617000C1A9B /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423762489E617000C1A9B /* ContentCell.swift */; };
@@ -17,9 +19,10 @@
 		028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028585822485B9660003E31A /* NSUIColor+Hex.swift */; };
 		0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
 		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
+		02B4EDEE24928EC4009016DA /* coastlinesNYC.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 02B4EDED24928EC4009016DA /* coastlinesNYC.rcproject */; };
 		02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */; };
-		02E7046224911DCE007CD244 /* TestARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD62490123800AA1756 /* TestARController.swift */; };
-		02E7046324911DF7007CD244 /* TestARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2D202490171F00AA1756 /* TestARView.swift */; };
+		02C4D15524913F780095560B /* framedNYCAnimation.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 02C4D15424913F780095560B /* framedNYCAnimation.rcproject */; };
+		02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4D15624913FCE0095560B /* ExperimentARController.swift */; };
 		02F53F04248AA7E200227C62 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F03248AA7E200227C62 /* GraphCell.swift */; };
 		02F53F06248AAB3C00227C62 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */; };
 		02F53F12248AF87600227C62 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F11248AF87600227C62 /* PieChartCell.swift */; };
@@ -91,7 +94,6 @@
 		C40F2D1F2490168500AA1756 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
 		C40F2D212490171F00AA1756 /* TestARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2D202490171F00AA1756 /* TestARView.swift */; };
 		C40F2D2424901B1B00AA1756 /* Ball.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C40F2D2224901B1B00AA1756 /* Ball.usdz */; };
-		C40F2D2524901B1B00AA1756 /* newnewLanscape3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C40F2D2324901B1B00AA1756 /* newnewLanscape3.usdz */; };
 		C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */; };
 		C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */; };
 		C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925824847AA200DDB4DE /* SecondOnboardingController.swift */; };
@@ -127,7 +129,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02157783249171E500392061 /* scaledDownNYC.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = scaledDownNYC.usdz; sourceTree = "<group>"; };
 		024035D3248D8B7800C7F7B2 /* ARCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCell.swift; sourceTree = "<group>"; };
+		027A825F2491CDD80016D209 /* baseMapNYC.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = baseMapNYC.usdz; sourceTree = "<group>"; };
 		028423722489C8D1000C1A9B /* LocationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailController.swift; sourceTree = "<group>"; };
 		028423742489C984000C1A9B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		028423762489E617000C1A9B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
@@ -137,7 +141,10 @@
 		028585822485B9660003E31A /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
 		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
+		02B4EDED24928EC4009016DA /* coastlinesNYC.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = coastlinesNYC.rcproject; sourceTree = "<group>"; };
 		02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingView.swift; sourceTree = "<group>"; };
+		02C4D15424913F780095560B /* framedNYCAnimation.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = framedNYCAnimation.rcproject; sourceTree = "<group>"; };
+		02C4D15624913FCE0095560B /* ExperimentARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentARController.swift; sourceTree = "<group>"; };
 		02F53F03248AA7E200227C62 /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
 		02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		02F53F11248AF87600227C62 /* PieChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
@@ -165,7 +172,6 @@
 		C40F2CE02490123A00AA1756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40F2D202490171F00AA1756 /* TestARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARView.swift; sourceTree = "<group>"; };
 		C40F2D2224901B1B00AA1756 /* Ball.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Ball.usdz; sourceTree = "<group>"; };
-		C40F2D2324901B1B00AA1756 /* newnewLanscape3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = newnewLanscape3.usdz; sourceTree = "<group>"; };
 		C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+resetWindow.swift"; path = "Coastlines/UIViewController+resetWindow.swift"; sourceTree = SOURCE_ROOT; };
 		C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingView.swift; sourceTree = "<group>"; };
 		C463925824847AA200DDB4DE /* SecondOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingController.swift; sourceTree = "<group>"; };
@@ -381,12 +387,16 @@
 		C40F2CD12490123800AA1756 /* TestFeatureTarget */ = {
 			isa = PBXGroup;
 			children = (
+				02C4D15424913F780095560B /* framedNYCAnimation.rcproject */,
+				02B4EDED24928EC4009016DA /* coastlinesNYC.rcproject */,
 				C40F2D2224901B1B00AA1756 /* Ball.usdz */,
-				C40F2D2324901B1B00AA1756 /* newnewLanscape3.usdz */,
+				02157783249171E500392061 /* scaledDownNYC.usdz */,
+				027A825F2491CDD80016D209 /* baseMapNYC.usdz */,
 				C40F2CD22490123800AA1756 /* AppDelegate.swift */,
 				C40F2CD42490123800AA1756 /* SceneDelegate.swift */,
 				C40F2CD62490123800AA1756 /* TestARController.swift */,
 				C40F2D202490171F00AA1756 /* TestARView.swift */,
+				02C4D15624913FCE0095560B /* ExperimentARController.swift */,
 				C40F2CD82490123800AA1756 /* Main.storyboard */,
 				C40F2CDB2490123A00AA1756 /* Assets.xcassets */,
 				C40F2CDD2490123A00AA1756 /* LaunchScreen.storyboard */,
@@ -543,18 +553,19 @@
 				C40F2D0C249012E400AA1756 /* CooperHewitt-Book.otf in Resources */,
 				C40F2CDF2490123A00AA1756 /* LaunchScreen.storyboard in Resources */,
 				C40F2CDC2490123A00AA1756 /* Assets.xcassets in Resources */,
-				C40F2D2524901B1B00AA1756 /* newnewLanscape3.usdz in Resources */,
 				C40F2D0D249012E400AA1756 /* CooperHewitt-BookItalic.otf in Resources */,
 				C40F2D08249012E400AA1756 /* SIL Open Font License.txt in Resources */,
 				C40F2CEF2490126E00AA1756 /* locationFactsData.json in Resources */,
 				C40F2D13249012E400AA1756 /* CooperHewitt-MediumItalic.otf in Resources */,
 				C40F2D14249012E400AA1756 /* CooperHewitt-Semibold.otf in Resources */,
 				C40F2D12249012E400AA1756 /* CooperHewitt-Light.otf in Resources */,
+				027A82602491CDD80016D209 /* baseMapNYC.usdz in Resources */,
 				C40F2D07249012E400AA1756 /* CooperHewitt-SemiboldItalic.otf in Resources */,
 				C40F2CDA2490123800AA1756 /* Main.storyboard in Resources */,
 				C40F2D0F249012E400AA1756 /* CooperHewitt-LightItalic.otf in Resources */,
 				C40F2D0E249012E400AA1756 /* CooperHewitt-Medium.otf in Resources */,
 				C40F2D2424901B1B00AA1756 /* Ball.usdz in Resources */,
+				02157784249171E500392061 /* scaledDownNYC.usdz in Resources */,
 				C40F2D0B249012E400AA1756 /* CooperHewitt-ThinItalic.otf in Resources */,
 				C40F2D11249012E400AA1756 /* CooperHewitt-Heavy.otf in Resources */,
 				C40F2D0A249012E400AA1756 /* CooperHewitt-BoldItalic.otf in Resources */,
@@ -657,7 +668,6 @@
 				C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
 				0B35424C2488000600AAB02C /* WavyView2.swift in Sources */,
-				02E7046224911DCE007CD244 /* TestARController.swift in Sources */,
 				028423772489E617000C1A9B /* ContentCell.swift in Sources */,
 				028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */,
 				C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */,
@@ -680,7 +690,6 @@
 				02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */,
 				C463926324847EF800DDB4DE /* FourthOnboardingController.swift in Sources */,
 				C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */,
-				02E7046324911DF7007CD244 /* TestARView.swift in Sources */,
 				C48EBCCD24884626001DB0A3 /* GlobalConstants.swift in Sources */,
 				C491EF3F24871FA30055DA49 /* String+ConvertHexToColour.swift in Sources */,
 				C463926524847F0B00DDB4DE /* FifthOnboardingController.swift in Sources */,
@@ -705,9 +714,12 @@
 				C40F2CED2490126800AA1756 /* GlobalConstants.swift in Sources */,
 				C40F2CFF249012A100AA1756 /* NSUIColor+Hex.swift in Sources */,
 				C40F2CF02490127500AA1756 /* TestView.swift in Sources */,
+				02C4D15524913F780095560B /* framedNYCAnimation.rcproject in Sources */,
 				C40F2D1B2490157200AA1756 /* SecondOnboardingView.swift in Sources */,
 				C40F2CFE2490129E00AA1756 /* UIViewController+resetWindow.swift in Sources */,
 				C40F2CF72490128A00AA1756 /* LocationReusableView.swift in Sources */,
+				02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */,
+				02B4EDEE24928EC4009016DA /* coastlinesNYC.rcproject in Sources */,
 				C40F2CEB2490126300AA1756 /* LocationsViewController.swift in Sources */,
 				C40F2D1A2490157200AA1756 /* FirstOnboardingView.swift in Sources */,
 				C40F2CEE2490126B00AA1756 /* FactsData.swift in Sources */,

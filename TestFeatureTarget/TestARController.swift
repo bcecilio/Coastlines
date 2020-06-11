@@ -18,7 +18,7 @@ enum BoxState {
 class TestARController: UIViewController {
 
     private let arView = TestARView()
-    private var ent = Entity()
+    private var ent = ModelEntity()
     private var box = ModelEntity()
     private var boxState = BoxState.appeared
     private var horizontalAnchor = AnchorEntity()
@@ -43,13 +43,14 @@ class TestARController: UIViewController {
     private func addAnchor(){
         horizontalAnchor = AnchorEntity(plane: .horizontal, minimumBounds: [0.3,0.3])
         arView.scene.addAnchor(horizontalAnchor)
-        ent.position = [0,0,0]
-        addingOcclusion(horizontalAnchor)
+//        ent.position = [0,0,0]
+        ent.setPosition([0,0,0], relativeTo: nil)
+//        addingOcclusion(horizontalAnchor)
         horizontalAnchor.addChild(ent)
     }
     
     private func loadEntities(){
-        let assetName = "newnewLanscape3"
+        let assetName = "baseMapNYC"
         do {
             ent = try Entity.loadModel(named: assetName)
         } catch {
