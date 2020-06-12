@@ -58,7 +58,7 @@ class DetailView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collection.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        collection.backgroundColor = PaletteColour.lightBlue.colour
         collection.register(ContentCell.self, forCellWithReuseIdentifier: "contentCell")
         collection.register(GraphCell.self, forCellWithReuseIdentifier: "graphCell")
         collection.register(PieChartCell.self, forCellWithReuseIdentifier: "pieCell")

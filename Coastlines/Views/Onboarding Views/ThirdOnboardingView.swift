@@ -14,7 +14,7 @@ class ThirdOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        button.tintColor = PaletteColour.offWhite.colour
         return button
     }()
     
@@ -22,17 +22,17 @@ class ThirdOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.tintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        button.tintColor = PaletteColour.offWhite.colour
         return button
     }()
     
     public lazy var skipButton: UIButton = {
         let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(PaletteColours.darkBlue.rawValue.convertHexToColour(), for: .normal)
+        button.setTitleColor(PaletteColour.darkBlue.colour, for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
         button.layer.borderWidth = 1.0
-        button.layer.borderColor = PaletteColours.darkBlue.rawValue.convertHexToColour().cgColor
+        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
         button.layer.cornerRadius = 22.0
         return button
     }()
@@ -41,8 +41,8 @@ class ThirdOnboardingView: UIView {
        let pc = UIPageControl()
         pc.numberOfPages = 4
         pc.currentPage = 1
-        pc.currentPageIndicatorTintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
-        pc.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        pc.currentPageIndicatorTintColor = PaletteColour.offWhite.colour
+        pc.backgroundColor = PaletteColour.lightBlue.colour
         pc.isUserInteractionEnabled = false
         return pc
     }()
@@ -56,8 +56,8 @@ class ThirdOnboardingView: UIView {
     public lazy var infoLabel: UILabel = {
        let label = UILabel()
         label.numberOfLines = 0
-        label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
-        label.text = "\nHistorically, a rise and fall in the Earth’s sea levels is not uncommon. However, the sea level has never risen at a rate that we have seen in recent years."
+        label.textColor = PaletteColour.offWhite.colour
+        label.text = OnboardingText.secondOnboaringLabel
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
         return label
@@ -121,7 +121,7 @@ class ThirdOnboardingView: UIView {
         addSubview(centerImage)
         centerImage.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
+        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
     }
     
     private func setUpInfoLabelConstraints(){

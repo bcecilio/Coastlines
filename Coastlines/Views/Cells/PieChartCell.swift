@@ -37,7 +37,7 @@ class PieChartCell: UICollectionViewCell {
     
     public lazy var populationGraphView: PieChartView = {
         let pieChart = PieChartView()
-        pieChart.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        pieChart.backgroundColor = PaletteColour.lightBlue.colour
         pieChart.layer.cornerRadius = 5
         pieChart.clipsToBounds = true
         pieChart.chartDescription?.enabled = false
@@ -52,7 +52,7 @@ class PieChartCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        backgroundColor = PaletteColour.lightBlue.colour
         
         prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)

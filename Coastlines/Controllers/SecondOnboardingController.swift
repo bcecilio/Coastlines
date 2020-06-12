@@ -22,7 +22,7 @@ class SecondOnboardingController: UIViewController {
     }
     
     private func setUp(){
-        secondOnboardingView.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        secondOnboardingView.backgroundColor = PaletteColour.lightBlue.colour
         secondOnboardingView.leftSwipe.addTarget(self, action: #selector(screenSwiped))
         secondOnboardingView.nextButton.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
     }

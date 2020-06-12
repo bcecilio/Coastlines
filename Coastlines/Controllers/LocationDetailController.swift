@@ -47,7 +47,7 @@ class LocationDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        view.backgroundColor = PaletteColour.lightBlue.colour
         
         locationView.goToARButton.addTarget(self, action: #selector(goToARButtonPressed(_:)), for: .touchUpInside)
         locationView.backButton.addTarget(self, action: #selector(backButtonPressed(_:)), for: .touchUpInside)
@@ -67,9 +67,9 @@ class LocationDetailController: UIViewController {
         
         print("AR Button Pressed")
         
-        let arVC = TestARController()
-        arVC.modalPresentationStyle = .fullScreen
-        present(arVC, animated: true)
+//        let arVC = TestARController()
+//        arVC.modalPresentationStyle = .fullScreen
+//        present(arVC, animated: true)
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
@@ -118,9 +118,9 @@ class LocationDetailController: UIViewController {
         seaChartCell.location = location
         seaChartCell.headerLabel.text = "Sea Level Rise by 2100"
         seaChartCell.setSeaLevelData()
-        seaChartCell.seaLevelSet.setCircleColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
-        seaChartCell.seaLevelSet.setColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
-        seaChartCell.seaLevelSet.fill = Fill(color: PaletteColours.lightBlue.rawValue.convertHexToColour())
+        seaChartCell.seaLevelSet.setCircleColor(PaletteColour.lightBlue.colour)
+        seaChartCell.seaLevelSet.setColor(PaletteColour.lightBlue.colour)
+        seaChartCell.seaLevelSet.fill = Fill(color: PaletteColour.lightBlue.colour)
     }
     
 }

@@ -39,7 +39,7 @@ class LocationsVew: UIView {
     }
     
     private func commonInit() {
-        backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        backgroundColor = PaletteColour.offWhite.colour
         setupWavyView()
         setupCollectionView()
     }

@@ -14,17 +14,17 @@ class SecondOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.tintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        button.tintColor = PaletteColour.offWhite.colour
         return button
     }()
     
     public lazy var skipButton: UIButton = {
        let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(PaletteColours.darkBlue.rawValue.convertHexToColour(), for: .normal)
+        button.setTitleColor(PaletteColour.darkBlue.colour, for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
         button.layer.borderWidth = 1.0
-        button.layer.borderColor = PaletteColours.darkBlue.rawValue.convertHexToColour().cgColor
+        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
         button.layer.cornerRadius = 22.0
         return button
     }()
@@ -33,8 +33,8 @@ class SecondOnboardingView: UIView {
        let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = NSTextAlignment.center
-        label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
-        label.text = "\nAs the global temperature increases, the ice caps begin to melt, and the world’s oceans begin to heat up, which causes the sea level to rise."
+        label.textColor = PaletteColour.offWhite.colour
+        label.text = OnboardingText.firstOnboardingLabel
         label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
         return label
     }()
@@ -43,8 +43,8 @@ class SecondOnboardingView: UIView {
         let pc = UIPageControl()
         pc.currentPage = 1
         pc.numberOfPages = 4
-        pc.currentPageIndicatorTintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
-        pc.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        pc.currentPageIndicatorTintColor = PaletteColour.offWhite.colour
+        pc.backgroundColor = PaletteColour.lightBlue.colour
         pc.isUserInteractionEnabled = false
         return pc
     }()
@@ -98,7 +98,7 @@ class SecondOnboardingView: UIView {
         addSubview(centerImage)
         centerImage.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
+        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
     }
     
     private func setUpInfoLabelConstraints(){
