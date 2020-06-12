@@ -71,6 +71,37 @@
                             }
                           ],
                           "__version" : 1
+                        },
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "target" : [
+                                            "AA0C95A7-1EC2-4B29-B422-A87A70119D4D"
+                                          ],
+                                          "userIdentifier" : "flipModel"
+                                        },
+                                        "name" : {
+                                          "type" : "custom"
+                                        }
+                                      },
+                                      "identifier" : "76EC68EC-5E44-46A4-97C2-B566B4A82961",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "AF8616DD-03A2-4D13-BA07-35C9E6253135",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
                         }
                       ],
                       "color" : [
@@ -97,96 +128,6 @@
                                 "name" : "tapTarget"
                               },
                               "identifier" : "E185573A-24CF-44B0-B181-2954C21D4302",
-                              "isEnabled" : true
-                            }
-                          ],
-                          "__version" : 1
-                        }
-                      ]
-                    }
-                  ],
-                  "__version" : 3
-                },
-                {
-                  "__content" : [
-                    {
-                      "accessibility" : {
-                        "__content" : [
-                          {
-                            "isEnabled" : false
-                          }
-                        ],
-                        "__version" : 1
-                      },
-                      "actionGroups" : [
-                        {
-                          "__content" : [
-                            {
-                              "configurations" : [
-                                {
-                                  "__content" : [
-                                    {
-                                      "configurationBox" : {
-                                        "configuration" : {
-                                          "angularCoefficient" : 1,
-                                          "duration" : 4.509706974029541,
-                                          "isTransformInitKeyPath" : true,
-                                          "linearCoefficient" : 1,
-                                          "location" : [
-                                            0,
-                                            0,
-                                            0
-                                          ],
-                                          "moveEase" : "easeIn",
-                                          "respectPhysics" : false,
-                                          "scale" : 0.78983831405639648,
-                                          "target" : [
-
-                                          ]
-                                        },
-                                        "name" : {
-                                          "arguments" : "local",
-                                          "type" : "transform"
-                                        }
-                                      },
-                                      "identifier" : "83D8483C-40A1-4465-8ABF-18A1B00D0AB6",
-                                      "isEnabled" : true
-                                    }
-                                  ],
-                                  "__version" : 1
-                                }
-                              ],
-                              "identifier" : "DBC26B79-BED9-4B0B-9D12-E1E8D494ED6B",
-                              "isEnabled" : true
-                            }
-                          ],
-                          "__version" : 1
-                        }
-                      ],
-                      "color" : [
-                        0.21568627655506134,
-                        0.72549021244049072,
-                        0.80000001192092896,
-                        1
-                      ],
-                      "identifier" : "D7676B1C-DEF8-46E3-957E-64B42A34F4FC",
-                      "isEnabled" : true,
-                      "isLooping" : false,
-                      "isModal" : false,
-                      "name" : "Behavior",
-                      "triggers" : [
-                        {
-                          "__content" : [
-                            {
-                              "configurationBox" : {
-                                "configuration" : {
-                                  "target" : [
-                                    "AA0C95A7-1EC2-4B29-B422-A87A70119D4D"
-                                  ]
-                                },
-                                "name" : "tapTarget"
-                              },
-                              "identifier" : "DEF935D0-5782-426D-BC99-68740B398FD2",
                               "isEnabled" : true
                             }
                           ],
@@ -397,21 +338,21 @@
               "title" : "Scene",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.94269746541976929,
+                  0.96273553371429443,
+                  7.4505805969238281e-09,
+                  0.27044433355331421,
                   0,
-                  0.33364856243133545,
+                  0.25348222255706787,
+                  0.34857642650604248,
+                  -0.90235310792922974,
                   0,
-                  0.12726683914661407,
-                  0.92439371347427368,
-                  -0.35958221554756165,
+                  -0.094270616769790649,
+                  0.93728041648864746,
+                  0.33558663725852966,
                   0,
-                  -0.30842271447181702,
-                  0.38144001364707947,
-                  0.87142354249954224,
-                  0,
-                  -0.27254539728164673,
-                  0.40471753478050232,
-                  0.88475847244262695,
+                  -0.18925076723098755,
+                  0.78550273180007935,
+                  0.42975160479545593,
                   1
                 ],
                 "sceneTransform" : [

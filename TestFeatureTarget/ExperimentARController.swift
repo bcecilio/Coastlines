@@ -12,12 +12,8 @@ import ARKit
 
 class ExperimentARController: UIViewController {
     
-    var arView = TestARView()
-    
-    override func loadView(){
-        view = arView
-    }
-    
+    lazy var arView = ARView(frame: view.frame)
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -26,24 +22,11 @@ class ExperimentARController: UIViewController {
 //        setupARView()
 //
 //        arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
-//
-//        let sceneAnchor = try!
-//        arView.scene.addAnchor(sceneAnchor)
+        
         let sceneAnchor = try! AnimationNYCmap.loadScene()
         arView.scene.addAnchor(sceneAnchor)
     }
     
-    func setupARView() {
-        arView.automaticallyConfigureSession = false
-        let configuration = ARWorldTrackingConfiguration()
-
-        configuration.planeDetection = [.horizontal,.vertical]
-        configuration.environmentTexturing = .automatic
-
-        arView.session.run(configuration)
-        
-        
-    }
     
     @objc
     func handleTap(recognizer: UITapGestureRecognizer) {
@@ -61,8 +44,6 @@ class ExperimentARController: UIViewController {
             print("Object Placement Failed")
         }
         
-//        let sceneAnchor = try! FramedNYCAnimation.loadScene()
-//        arView.scene.addAnchor(sceneAnchor)
     }
     
     func placeObject(named entityName: String, for anchor: ARAnchor) {
