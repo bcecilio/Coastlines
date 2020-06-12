@@ -1,0 +1,17 @@
+[
+  {
+    "libraryIdentifier" : "f4e97c769e384c00a6e26def883a42ab",
+    "format" : "model",
+    "displayName" : "animatingMapNYC.usdz"
+  },
+  {
+    "libraryIdentifier" : "6ecedd6d0ae1122716a73094c1673f7a",
+    "format" : "image",
+    "displayName" : "nycSeaLevel1.jpeg"
+  },
+  {
+    "libraryIdentifier" : "3fb4eef86e3b0bd271a936cc08e6ad91",
+    "format" : "image",
+    "displayName" : "nycRiseSea.jpeg"
+  }
+]

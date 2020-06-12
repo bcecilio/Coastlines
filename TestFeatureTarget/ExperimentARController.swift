@@ -21,14 +21,16 @@ class ExperimentARController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        arView.session.delegate = self
-        
-        setupARView()
-
-        arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
+//        arView.session.delegate = self
 //
-//        let sceneAnchor = try! CoastlinesNYC.loadScene1()
+//        setupARView()
+//
+//        arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
+//
+//        let sceneAnchor = try!
 //        arView.scene.addAnchor(sceneAnchor)
+        let sceneAnchor = try! AnimationNYCmap.loadScene()
+        arView.scene.addAnchor(sceneAnchor)
     }
     
     func setupARView() {

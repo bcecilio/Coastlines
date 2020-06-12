@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02157784249171E500392061 /* scaledDownNYC.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 02157783249171E500392061 /* scaledDownNYC.usdz */; };
 		024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024035D3248D8B7800C7F7B2 /* ARCell.swift */; };
-		027A82602491CDD80016D209 /* baseMapNYC.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 027A825F2491CDD80016D209 /* baseMapNYC.usdz */; };
+		024128C82493F9120070FEAC /* animationNYCmap.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 024128C72493F9120070FEAC /* animationNYCmap.rcproject */; };
+		024128CA2493F93D0070FEAC /* animatingMapNYC.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 024128C92493F93D0070FEAC /* animatingMapNYC.usdz */; };
 		028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423722489C8D1000C1A9B /* LocationDetailController.swift */; };
 		028423752489C984000C1A9B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
 		028423772489E617000C1A9B /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423762489E617000C1A9B /* ContentCell.swift */; };
@@ -19,7 +19,6 @@
 		028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028585822485B9660003E31A /* NSUIColor+Hex.swift */; };
 		0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
 		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
-		02B4EDEE24928EC4009016DA /* coastlinesNYC.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 02B4EDED24928EC4009016DA /* coastlinesNYC.rcproject */; };
 		02B4EDF024929DFE009016DA /* baseMapNYC-2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */; };
 		02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */; };
 		02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4D15624913FCE0095560B /* ExperimentARController.swift */; };
@@ -129,9 +128,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02157783249171E500392061 /* scaledDownNYC.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = scaledDownNYC.usdz; sourceTree = "<group>"; };
 		024035D3248D8B7800C7F7B2 /* ARCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCell.swift; sourceTree = "<group>"; };
-		027A825F2491CDD80016D209 /* baseMapNYC.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = baseMapNYC.usdz; sourceTree = "<group>"; };
+		024128C72493F9120070FEAC /* animationNYCmap.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = animationNYCmap.rcproject; sourceTree = "<group>"; };
+		024128C92493F93D0070FEAC /* animatingMapNYC.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = animatingMapNYC.usdz; sourceTree = "<group>"; };
 		028423722489C8D1000C1A9B /* LocationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailController.swift; sourceTree = "<group>"; };
 		028423742489C984000C1A9B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		028423762489E617000C1A9B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
@@ -141,7 +140,6 @@
 		028585822485B9660003E31A /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
 		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
-		02B4EDED24928EC4009016DA /* coastlinesNYC.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = coastlinesNYC.rcproject; sourceTree = "<group>"; };
 		02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "baseMapNYC-2.usdz"; sourceTree = "<group>"; };
 		02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingView.swift; sourceTree = "<group>"; };
 		02C4D15624913FCE0095560B /* ExperimentARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentARController.swift; sourceTree = "<group>"; };
@@ -387,10 +385,9 @@
 		C40F2CD12490123800AA1756 /* TestFeatureTarget */ = {
 			isa = PBXGroup;
 			children = (
-				02B4EDED24928EC4009016DA /* coastlinesNYC.rcproject */,
+				024128C72493F9120070FEAC /* animationNYCmap.rcproject */,
+				024128C92493F93D0070FEAC /* animatingMapNYC.usdz */,
 				C40F2D2224901B1B00AA1756 /* Ball.usdz */,
-				02157783249171E500392061 /* scaledDownNYC.usdz */,
-				027A825F2491CDD80016D209 /* baseMapNYC.usdz */,
 				02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */,
 				C40F2CD22490123800AA1756 /* AppDelegate.swift */,
 				C40F2CD42490123800AA1756 /* SceneDelegate.swift */,
@@ -547,6 +544,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024128CA2493F93D0070FEAC /* animatingMapNYC.usdz in Resources */,
 				C40F2D06249012E400AA1756 /* CooperHewitt-Thin.otf in Resources */,
 				C40F2D09249012E400AA1756 /* CooperHewitt-Bold.otf in Resources */,
 				C40F2D10249012E400AA1756 /* CooperHewitt-HeavyItalic.otf in Resources */,
@@ -560,13 +558,11 @@
 				C40F2D13249012E400AA1756 /* CooperHewitt-MediumItalic.otf in Resources */,
 				C40F2D14249012E400AA1756 /* CooperHewitt-Semibold.otf in Resources */,
 				C40F2D12249012E400AA1756 /* CooperHewitt-Light.otf in Resources */,
-				027A82602491CDD80016D209 /* baseMapNYC.usdz in Resources */,
 				C40F2D07249012E400AA1756 /* CooperHewitt-SemiboldItalic.otf in Resources */,
 				C40F2CDA2490123800AA1756 /* Main.storyboard in Resources */,
 				C40F2D0F249012E400AA1756 /* CooperHewitt-LightItalic.otf in Resources */,
 				C40F2D0E249012E400AA1756 /* CooperHewitt-Medium.otf in Resources */,
 				C40F2D2424901B1B00AA1756 /* Ball.usdz in Resources */,
-				02157784249171E500392061 /* scaledDownNYC.usdz in Resources */,
 				C40F2D0B249012E400AA1756 /* CooperHewitt-ThinItalic.otf in Resources */,
 				C40F2D11249012E400AA1756 /* CooperHewitt-Heavy.otf in Resources */,
 				C40F2D0A249012E400AA1756 /* CooperHewitt-BoldItalic.otf in Resources */,
@@ -707,6 +703,7 @@
 				C40F2CD72490123800AA1756 /* TestARController.swift in Sources */,
 				C40F2CEC2490126500AA1756 /* LocationDetailController.swift in Sources */,
 				C40F2CF22490127D00AA1756 /* WavyView2.swift in Sources */,
+				024128C82493F9120070FEAC /* animationNYCmap.rcproject in Sources */,
 				C40F2D1E2490157200AA1756 /* FifthOnboardingView.swift in Sources */,
 				C40F2CE52490125200AA1756 /* SecondOnboardingController.swift in Sources */,
 				C40F2CE82490125A00AA1756 /* FifthOnboardingController.swift in Sources */,
@@ -719,7 +716,6 @@
 				C40F2CFE2490129E00AA1756 /* UIViewController+resetWindow.swift in Sources */,
 				C40F2CF72490128A00AA1756 /* LocationReusableView.swift in Sources */,
 				02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */,
-				02B4EDEE24928EC4009016DA /* coastlinesNYC.rcproject in Sources */,
 				C40F2CEB2490126300AA1756 /* LocationsViewController.swift in Sources */,
 				C40F2D1A2490157200AA1756 /* FirstOnboardingView.swift in Sources */,
 				C40F2CEE2490126B00AA1756 /* FactsData.swift in Sources */,
