@@ -64,7 +64,7 @@ class ContentCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        backgroundColor = PaletteColour.lightBlue.colour
         
         prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)

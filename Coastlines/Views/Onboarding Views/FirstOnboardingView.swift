@@ -13,14 +13,14 @@ class FirstOnboardingView: UIView {
         let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.tintColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        button.tintColor = PaletteColour.lightBlue.colour
         return button
     }()
     
     public lazy var welcomeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Welcome to Coastlines"
-        label.textColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        label.text = OnboardingText.appTitle
+        label.textColor = PaletteColour.lightBlue.colour
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "CooperHewitt-Medium", size: 30)
         label.numberOfLines = 0
@@ -29,22 +29,22 @@ class FirstOnboardingView: UIView {
     
     public lazy var infoLabel: UILabel = {
         let label = UILabel()
-        label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        label.textColor = PaletteColour.offWhite.colour
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
         label.numberOfLines = 0
-        label.text = "\nThank you for installing this application. Before you begin your experience, we'd like to take a moment to inform you a bit about climate change and its effect on the global sea level."
-        label.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        label.text = OnboardingText.welcomeMessage
+        label.backgroundColor = PaletteColour.lightBlue.colour
         return label
     }()
     
     public lazy var skipButton: UIButton = {
         let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(PaletteColours.darkBlue.rawValue.convertHexToColour(), for: .normal)
+        button.setTitleColor(PaletteColour.darkBlue.colour, for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
         button.layer.borderWidth = 1.0
-        button.layer.borderColor = PaletteColours.darkBlue.rawValue.convertHexToColour().cgColor
+        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
         button.layer.cornerRadius = 22.0
         return button
     }()
@@ -63,7 +63,7 @@ class FirstOnboardingView: UIView {
     
     public lazy var topView: UIView = {
         let view = UIView()
-        view.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        view.backgroundColor = PaletteColour.offWhite.colour
         return view
     }()
     

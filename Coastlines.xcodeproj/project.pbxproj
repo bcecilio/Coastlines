@@ -79,7 +79,6 @@
 		C40F2CFD2490129A00AA1756 /* LocationIntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */; };
 		C40F2CFE2490129E00AA1756 /* UIViewController+resetWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */; };
 		C40F2CFF249012A100AA1756 /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028585822485B9660003E31A /* NSUIColor+Hex.swift */; };
-		C40F2D00249012A400AA1756 /* String+ConvertHexToColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491EF3E24871FA30055DA49 /* String+ConvertHexToColour.swift */; };
 		C40F2D01249012A700AA1756 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */; };
 		C40F2D06249012E400AA1756 /* CooperHewitt-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCD1248846C6001DB0A3 /* CooperHewitt-Thin.otf */; };
 		C40F2D07249012E400AA1756 /* CooperHewitt-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCD2248846C6001DB0A3 /* CooperHewitt-SemiboldItalic.otf */; };
@@ -133,7 +132,6 @@
 		C48EBCEC248846C6001DB0A3 /* CooperHewitt-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDD248846C6001DB0A3 /* CooperHewitt-Light.otf */; };
 		C48EBCED248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDE248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf */; };
 		C48EBCEE248846C6001DB0A3 /* CooperHewitt-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDF248846C6001DB0A3 /* CooperHewitt-Semibold.otf */; };
-		C491EF3F24871FA30055DA49 /* String+ConvertHexToColour.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491EF3E24871FA30055DA49 /* String+ConvertHexToColour.swift */; };
 		C4E97909247DE48A0039B398 /* FirstOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */; };
 /* End PBXBuildFile section */
 
@@ -218,7 +216,6 @@
 		C48EBCDD248846C6001DB0A3 /* CooperHewitt-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Light.otf"; sourceTree = "<group>"; };
 		C48EBCDE248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-MediumItalic.otf"; sourceTree = "<group>"; };
 		C48EBCDF248846C6001DB0A3 /* CooperHewitt-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Semibold.otf"; sourceTree = "<group>"; };
-		C491EF3E24871FA30055DA49 /* String+ConvertHexToColour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ConvertHexToColour.swift"; sourceTree = "<group>"; };
 		C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstOnboardingController.swift; path = ../FirstOnboardingController.swift; sourceTree = "<group>"; };
 		CEE5A3A6EC95A87BAEBAA85A /* Pods-Coastlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.release.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.release.xcconfig"; sourceTree = "<group>"; };
 		D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coastlines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,7 +289,6 @@
 			children = (
 				C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */,
 				028585822485B9660003E31A /* NSUIColor+Hex.swift */,
-				C491EF3E24871FA30055DA49 /* String+ConvertHexToColour.swift */,
 				02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
@@ -720,7 +716,6 @@
 				C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */,
 				B7B59BDB2497E4A0004CA137 /* ResourcesController.swift in Sources */,
 				C48EBCCD24884626001DB0A3 /* GlobalConstants.swift in Sources */,
-				C491EF3F24871FA30055DA49 /* String+ConvertHexToColour.swift in Sources */,
 				C463926524847F0B00DDB4DE /* FifthOnboardingController.swift in Sources */,
 				0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */,
 				0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */,
@@ -738,7 +733,6 @@
 				C40F2D1E2490157200AA1756 /* FifthOnboardingView.swift in Sources */,
 				C40F2CE52490125200AA1756 /* SecondOnboardingController.swift in Sources */,
 				C40F2CE82490125A00AA1756 /* FifthOnboardingController.swift in Sources */,
-				C40F2D00249012A400AA1756 /* String+ConvertHexToColour.swift in Sources */,
 				C40F2CFA2490129300AA1756 /* PieChartCell.swift in Sources */,
 				C40F2CED2490126800AA1756 /* GlobalConstants.swift in Sources */,
 				02AC5AA424999A1900468145 /* flipRiseSlider.rcproject in Sources */,
@@ -935,12 +929,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26RHXP32FH;
+				DEVELOPMENT_TEAM = 6D2PJ2UC46;
 				INFOPLIST_FILE = Coastlines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ahadislam1.Coastlines;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahadislam12.Coastlines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -954,12 +949,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26RHXP32FH;
+				DEVELOPMENT_TEAM = 6D2PJ2UC46;
 				INFOPLIST_FILE = Coastlines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ahadislam1.Coastlines;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahadislam12.Coastlines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -973,6 +969,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26RHXP32FH;
+				DEVELOPMENT_TEAM = 6D2PJ2UC46;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -981,6 +978,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.coastlines1;
 				PRODUCT_NAME = Coasts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cameronrivera11.TestFeatureTarget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -993,6 +992,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26RHXP32FH;
+				DEVELOPMENT_TEAM = 6D2PJ2UC46;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1001,6 +1001,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.coastlines1;
 				PRODUCT_NAME = Coasts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cameronrivera11.TestFeatureTarget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

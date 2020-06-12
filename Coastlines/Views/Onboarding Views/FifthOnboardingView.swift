@@ -14,7 +14,7 @@ class FifthOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        button.tintColor = PaletteColour.offWhite.colour
         return button
     }()
     
@@ -22,8 +22,8 @@ class FifthOnboardingView: UIView {
        let pc = UIPageControl()
         pc.numberOfPages = 4
         pc.currentPage = 3
-        pc.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
-        pc.currentPageIndicatorTintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        pc.backgroundColor = PaletteColour.lightBlue.colour
+        pc.currentPageIndicatorTintColor = PaletteColour.offWhite.colour
         return pc
     }()
     
@@ -35,19 +35,19 @@ class FifthOnboardingView: UIView {
     
     public lazy var infoLabel: UILabel = {
        let label = UILabel()
-        label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        label.textColor = PaletteColour.offWhite.colour
         label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
         label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
-        label.text = "\nWith that, you are now ready to explore locations around the world to learn more about the impact of rising sea levels."
+        label.text = OnboardingText.fourthOnboardingLabel
         return label
     }()
     
     public lazy var beginButton: UIButton = {
        let button = UIButton()
         button.setTitle("Begin", for: .normal)
-        button.setTitleColor(PaletteColours.offWhite.rawValue.convertHexToColour(), for: .normal)
-        button.layer.borderColor = PaletteColours.offWhite.rawValue.convertHexToColour().cgColor
+        button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
+        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
         button.layer.borderWidth = 1.0
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
         button.layer.cornerRadius = 22
@@ -97,7 +97,7 @@ class FifthOnboardingView: UIView {
         addSubview(centralImage)
         centralImage.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([centralImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centralImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centralImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centralImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
+        NSLayoutConstraint.activate([centralImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centralImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centralImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centralImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
     }
     
     private func setUpInfoLabelConstraints(){

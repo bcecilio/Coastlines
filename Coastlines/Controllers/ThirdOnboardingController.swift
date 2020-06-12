@@ -22,7 +22,7 @@ class ThirdOnboardingController: UIViewController {
     }
     
     private func setUp(){
-        thirdOnboardingView.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        thirdOnboardingView.backgroundColor = PaletteColour.lightBlue.colour
         thirdOnboardingView.leftSwipe.addTarget(self, action: #selector(swiped))
         thirdOnboardingView.rightSwipe.addTarget(self, action: #selector(swiped))
         thirdOnboardingView.prevButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
