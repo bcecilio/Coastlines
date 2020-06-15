@@ -28,6 +28,14 @@ class LocationsVew: UIView {
         return wv
     }()
     
+    private lazy var resourceButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        button.layer.borderColor = PaletteColours.offWhite.rawValue.convertHexToColour().cgColor
+        button.addTarget(self, action: #selector(goToResourceVC), for: .touchUpInside)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -42,6 +50,7 @@ class LocationsVew: UIView {
         backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         setupWavyView()
         setupCollectionView()
+        setupResourceButton()
     }
     
     private func setupCollectionView() {
@@ -49,7 +58,7 @@ class LocationsVew: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
@@ -64,5 +73,19 @@ class LocationsVew: UIView {
             wavyView.trailingAnchor.constraint(equalTo: trailingAnchor),
             wavyView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
+    }
+    
+    private func setupResourceButton() {
+        addSubview(resourceButton)
+        resourceButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            resourceButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
+            resourceButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
+        ])
+    }
+    
+    @objc private func goToResourceVC() {
+        let resourceVC = ResourcesController()
+        UIViewController.resetWindow(resourceVC)
     }
 }
