@@ -79,6 +79,8 @@ class ExperimentARController: UIViewController {
                 let (spotlight1, spotlight2) = self.addSpotlights()
                 let spotlightComp = self.addSpotlightComponent()
                 
+                self.flipScene = scene
+                
                 scene.addChild(spotlight1)
                 scene.addChild(spotlight2)
                 scene.components.set(spotlightComp)
