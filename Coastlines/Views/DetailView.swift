@@ -157,7 +157,7 @@ class DetailView: UIView {
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: wView.bottomAnchor, constant: 5),
             collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: wView.trailingAnchor, constant: -40),
             collectionView.bottomAnchor.constraint(equalTo: goToARButton.topAnchor, constant: -5)
         ])
     }

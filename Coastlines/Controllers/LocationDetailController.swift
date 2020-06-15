@@ -67,7 +67,7 @@ class LocationDetailController: UIViewController {
         
         print("AR Button Pressed")
         
-        let arVC = TestARController()
+        let arVC = ExperimentARController()
         arVC.modalPresentationStyle = .fullScreen
         present(arVC, animated: true)
     }
@@ -86,7 +86,6 @@ class LocationDetailController: UIViewController {
         
         UIView.animate(withDuration: 1.25, delay: 0, options: .curveEaseOut, animations: {
             self.locationView.nameLabelLeading.constant -= self.locationView.frame.width+8
-            //            self.locationView.wView.start = 0.5
             self.locationView.wavyLeading.constant -= self.locationView.frame.width
             self.locationView.layoutIfNeeded()
         }, completion: nil)
@@ -103,7 +102,6 @@ class LocationDetailController: UIViewController {
         
         UIView.animate(withDuration: 1.25, delay: 0, options: .curveEaseOut, animations: {
             self.locationView.nameLabelLeading.constant += self.locationView.frame.width+8
-            //            self.locationView.wView.start = 0.5
             self.locationView.wavyLeading.constant += self.locationView.frame.width
             self.locationView.layoutIfNeeded()
         }, completion: nil)

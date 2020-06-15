@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024035D3248D8B7800C7F7B2 /* ARCell.swift */; };
+		024128CA2493F93D0070FEAC /* animatingMapNYC.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 024128C92493F93D0070FEAC /* animatingMapNYC.usdz */; };
+		024128CC249549FA0070FEAC /* flipRiseMap.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 024128CB249549FA0070FEAC /* flipRiseMap.rcproject */; };
 		028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423722489C8D1000C1A9B /* LocationDetailController.swift */; };
 		028423752489C984000C1A9B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
 		028423772489E617000C1A9B /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423762489E617000C1A9B /* ContentCell.swift */; };
@@ -17,9 +19,9 @@
 		028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028585822485B9660003E31A /* NSUIColor+Hex.swift */; };
 		0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
 		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
+		02B4EDF024929DFE009016DA /* baseMapNYC-2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */; };
 		02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */; };
-		02E7046224911DCE007CD244 /* TestARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD62490123800AA1756 /* TestARController.swift */; };
-		02E7046324911DF7007CD244 /* TestARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2D202490171F00AA1756 /* TestARView.swift */; };
+		02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4D15624913FCE0095560B /* ExperimentARController.swift */; };
 		02F53F04248AA7E200227C62 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F03248AA7E200227C62 /* GraphCell.swift */; };
 		02F53F06248AAB3C00227C62 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */; };
 		02F53F12248AF87600227C62 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F11248AF87600227C62 /* PieChartCell.swift */; };
@@ -91,7 +93,6 @@
 		C40F2D1F2490168500AA1756 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
 		C40F2D212490171F00AA1756 /* TestARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2D202490171F00AA1756 /* TestARView.swift */; };
 		C40F2D2424901B1B00AA1756 /* Ball.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C40F2D2224901B1B00AA1756 /* Ball.usdz */; };
-		C40F2D2524901B1B00AA1756 /* newnewLanscape3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C40F2D2324901B1B00AA1756 /* newnewLanscape3.usdz */; };
 		C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */; };
 		C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */; };
 		C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925824847AA200DDB4DE /* SecondOnboardingController.swift */; };
@@ -128,6 +129,8 @@
 
 /* Begin PBXFileReference section */
 		024035D3248D8B7800C7F7B2 /* ARCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCell.swift; sourceTree = "<group>"; };
+		024128C92493F93D0070FEAC /* animatingMapNYC.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = animatingMapNYC.usdz; sourceTree = "<group>"; };
+		024128CB249549FA0070FEAC /* flipRiseMap.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = flipRiseMap.rcproject; sourceTree = "<group>"; };
 		028423722489C8D1000C1A9B /* LocationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailController.swift; sourceTree = "<group>"; };
 		028423742489C984000C1A9B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		028423762489E617000C1A9B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
@@ -137,7 +140,9 @@
 		028585822485B9660003E31A /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
 		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
+		02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "baseMapNYC-2.usdz"; sourceTree = "<group>"; };
 		02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingView.swift; sourceTree = "<group>"; };
+		02C4D15624913FCE0095560B /* ExperimentARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentARController.swift; sourceTree = "<group>"; };
 		02F53F03248AA7E200227C62 /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
 		02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		02F53F11248AF87600227C62 /* PieChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
@@ -165,7 +170,6 @@
 		C40F2CE02490123A00AA1756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40F2D202490171F00AA1756 /* TestARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARView.swift; sourceTree = "<group>"; };
 		C40F2D2224901B1B00AA1756 /* Ball.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Ball.usdz; sourceTree = "<group>"; };
-		C40F2D2324901B1B00AA1756 /* newnewLanscape3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = newnewLanscape3.usdz; sourceTree = "<group>"; };
 		C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+resetWindow.swift"; path = "Coastlines/UIViewController+resetWindow.swift"; sourceTree = SOURCE_ROOT; };
 		C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingView.swift; sourceTree = "<group>"; };
 		C463925824847AA200DDB4DE /* SecondOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingController.swift; sourceTree = "<group>"; };
@@ -381,12 +385,15 @@
 		C40F2CD12490123800AA1756 /* TestFeatureTarget */ = {
 			isa = PBXGroup;
 			children = (
+				024128CB249549FA0070FEAC /* flipRiseMap.rcproject */,
+				024128C92493F93D0070FEAC /* animatingMapNYC.usdz */,
 				C40F2D2224901B1B00AA1756 /* Ball.usdz */,
-				C40F2D2324901B1B00AA1756 /* newnewLanscape3.usdz */,
+				02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */,
 				C40F2CD22490123800AA1756 /* AppDelegate.swift */,
 				C40F2CD42490123800AA1756 /* SceneDelegate.swift */,
 				C40F2CD62490123800AA1756 /* TestARController.swift */,
 				C40F2D202490171F00AA1756 /* TestARView.swift */,
+				02C4D15624913FCE0095560B /* ExperimentARController.swift */,
 				C40F2CD82490123800AA1756 /* Main.storyboard */,
 				C40F2CDB2490123A00AA1756 /* Assets.xcassets */,
 				C40F2CDD2490123A00AA1756 /* LaunchScreen.storyboard */,
@@ -537,15 +544,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024128CA2493F93D0070FEAC /* animatingMapNYC.usdz in Resources */,
 				C40F2D06249012E400AA1756 /* CooperHewitt-Thin.otf in Resources */,
 				C40F2D09249012E400AA1756 /* CooperHewitt-Bold.otf in Resources */,
 				C40F2D10249012E400AA1756 /* CooperHewitt-HeavyItalic.otf in Resources */,
 				C40F2D0C249012E400AA1756 /* CooperHewitt-Book.otf in Resources */,
 				C40F2CDF2490123A00AA1756 /* LaunchScreen.storyboard in Resources */,
 				C40F2CDC2490123A00AA1756 /* Assets.xcassets in Resources */,
-				C40F2D2524901B1B00AA1756 /* newnewLanscape3.usdz in Resources */,
 				C40F2D0D249012E400AA1756 /* CooperHewitt-BookItalic.otf in Resources */,
 				C40F2D08249012E400AA1756 /* SIL Open Font License.txt in Resources */,
+				02B4EDF024929DFE009016DA /* baseMapNYC-2.usdz in Resources */,
 				C40F2CEF2490126E00AA1756 /* locationFactsData.json in Resources */,
 				C40F2D13249012E400AA1756 /* CooperHewitt-MediumItalic.otf in Resources */,
 				C40F2D14249012E400AA1756 /* CooperHewitt-Semibold.otf in Resources */,
@@ -657,7 +665,6 @@
 				C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
 				0B35424C2488000600AAB02C /* WavyView2.swift in Sources */,
-				02E7046224911DCE007CD244 /* TestARController.swift in Sources */,
 				028423772489E617000C1A9B /* ContentCell.swift in Sources */,
 				028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */,
 				C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */,
@@ -680,7 +687,6 @@
 				02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */,
 				C463926324847EF800DDB4DE /* FourthOnboardingController.swift in Sources */,
 				C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */,
-				02E7046324911DF7007CD244 /* TestARView.swift in Sources */,
 				C48EBCCD24884626001DB0A3 /* GlobalConstants.swift in Sources */,
 				C491EF3F24871FA30055DA49 /* String+ConvertHexToColour.swift in Sources */,
 				C463926524847F0B00DDB4DE /* FifthOnboardingController.swift in Sources */,
@@ -708,6 +714,7 @@
 				C40F2D1B2490157200AA1756 /* SecondOnboardingView.swift in Sources */,
 				C40F2CFE2490129E00AA1756 /* UIViewController+resetWindow.swift in Sources */,
 				C40F2CF72490128A00AA1756 /* LocationReusableView.swift in Sources */,
+				02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */,
 				C40F2CEB2490126300AA1756 /* LocationsViewController.swift in Sources */,
 				C40F2D1A2490157200AA1756 /* FirstOnboardingView.swift in Sources */,
 				C40F2CEE2490126B00AA1756 /* FactsData.swift in Sources */,
@@ -720,6 +727,7 @@
 				C40F2D01249012A700AA1756 /* UIButton+Extension.swift in Sources */,
 				C40F2CFB2490129500AA1756 /* ARCell.swift in Sources */,
 				C40F2CEA2490126000AA1756 /* LocationDetailVC.swift in Sources */,
+				024128CC249549FA0070FEAC /* flipRiseMap.rcproject in Sources */,
 				C40F2CE62490125400AA1756 /* ThirdOnboardingController.swift in Sources */,
 				C40F2CD52490123800AA1756 /* SceneDelegate.swift in Sources */,
 				C40F2CF42490128300AA1756 /* LocationDetailView.swift in Sources */,
@@ -929,7 +937,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cameronrivera1.TestFeatureTarget;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.coastlines1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -948,7 +956,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cameronrivera1.TestFeatureTarget;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.coastlines1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
