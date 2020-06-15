@@ -201,7 +201,7 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
         if indexPath.row == 5 {
             print("AR Button Pressed")
             
-            let arVC = ARViewController()
+            let arVC = ExperimentARController()
             present(arVC, animated: true)
         }
     }
