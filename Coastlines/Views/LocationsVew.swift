@@ -30,7 +30,8 @@ class LocationsVew: UIView {
     
     private lazy var resourceButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor.red
+        button.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        button.layer.borderColor = PaletteColours.offWhite.rawValue.convertHexToColour().cgColor
         button.addTarget(self, action: #selector(goToResourceVC), for: .touchUpInside)
         return button
     }()
@@ -57,7 +58,7 @@ class LocationsVew: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
