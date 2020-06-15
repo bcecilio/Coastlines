@@ -6,22 +6,27 @@
 //  Copyright © 2020 Ahad Islam. All rights reserved.
 //
 
-import UIKit
 import RealityKit
 import ARKit
+import Combine
 
 class ExperimentARController: UIViewController {
     
 //    lazy var arView = ARView(frame: view.frame)
     
-    let arView = TestARView()
+    let arView = ARView()
     
-    override func loadView() {
-        view = arView
-    }
+    lazy var coachingOverlay = ARCoachingOverlayView()
     
     var flipScene = FlipRiseMap.FlipScene()
     var occBox = ModelEntity()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupARView()
+        setupCoachingOverlayView()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -86,6 +91,14 @@ class ExperimentARController: UIViewController {
         
     }
     
+    private func loadScene() {
+        FlipRiseMap.loadFlipSceneAsync { result in
+            switch result {
+                
+            }
+        }
+    }
+    
     
     @objc
     func handleTap(recognizer: UITapGestureRecognizer) {
@@ -122,6 +135,18 @@ class ExperimentARController: UIViewController {
         anchorEntity.addChild(entity)
 
         arView.scene.addAnchor(anchorEntity)
+    }
+    
+    private func setupARView() {
+        view.addSubview(arView)
+        
+        arView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            arView.topAnchor.constraint(equalTo: view.topAnchor),
+            arView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            arView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            arView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
     }
 }
 

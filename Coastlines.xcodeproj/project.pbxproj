@@ -27,6 +27,7 @@
 		02F53F12248AF87600227C62 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F11248AF87600227C62 /* PieChartCell.swift */; };
 		0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
 		0B09F374247EF4B4001E17F0 /* ARCoastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F373247EF4B4001E17F0 /* ARCoastView.swift */; };
+		0B2AA89E2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2AA89D2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift */; };
 		0B35424C2488000600AAB02C /* WavyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35424B2488000600AAB02C /* WavyView2.swift */; };
 		0BCDFFB8248534B1007A94BF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB7248534B1007A94BF /* LocationCell.swift */; };
 		0BCDFFBA2485376A007A94BF /* LocationReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB92485376A007A94BF /* LocationReusableView.swift */; };
@@ -151,6 +152,7 @@
 		0B09F373247EF4B4001E17F0 /* ARCoastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARCoastView.swift; path = Coastlines/ARCoastView.swift; sourceTree = SOURCE_ROOT; };
 		0B1F21382476DEC300729365 /* Coastlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coastlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1F21492476DECA00729365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B2AA89D2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExperimentARController+ARCoachingOverlay.swift"; sourceTree = "<group>"; };
 		0B35424B2488000600AAB02C /* WavyView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyView2.swift; sourceTree = "<group>"; };
 		0BCDFFB7248534B1007A94BF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		0BCDFFB92485376A007A94BF /* LocationReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReusableView.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				C40F2CD62490123800AA1756 /* TestARController.swift */,
 				C40F2D202490171F00AA1756 /* TestARView.swift */,
 				02C4D15624913FCE0095560B /* ExperimentARController.swift */,
+				0B2AA89D2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift */,
 				C40F2CD82490123800AA1756 /* Main.storyboard */,
 				C40F2CDB2490123A00AA1756 /* Assets.xcassets */,
 				C40F2CDD2490123A00AA1756 /* LaunchScreen.storyboard */,
@@ -718,6 +721,7 @@
 				C40F2CEB2490126300AA1756 /* LocationsViewController.swift in Sources */,
 				C40F2D1A2490157200AA1756 /* FirstOnboardingView.swift in Sources */,
 				C40F2CEE2490126B00AA1756 /* FactsData.swift in Sources */,
+				0B2AA89E2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift in Sources */,
 				C40F2CF62490128800AA1756 /* DetailView.swift in Sources */,
 				C40F2CF92490129100AA1756 /* GraphCell.swift in Sources */,
 				C40F2CE42490124F00AA1756 /* FirstOnboardingController.swift in Sources */,
@@ -893,7 +897,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = Coastlines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -912,7 +916,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = Coastlines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -931,7 +935,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -950,7 +954,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
