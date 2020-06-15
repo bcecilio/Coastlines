@@ -41,6 +41,8 @@
 		B7B59BDE2497E4E8004CA137 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDC2497E4E8004CA137 /* ResourceView.swift */; };
 		B7B59BE02497E532004CA137 /* ResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDF2497E532004CA137 /* ResourceCell.swift */; };
 		B7B59BE12497E532004CA137 /* ResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDF2497E532004CA137 /* ResourceCell.swift */; };
+		B7B59BE32497E8C9004CA137 /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BE22497E8C9004CA137 /* ResourceModel.swift */; };
+		B7B59BE42497E8C9004CA137 /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BE22497E8C9004CA137 /* ResourceModel.swift */; };
 		C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD22490123800AA1756 /* AppDelegate.swift */; };
 		C40F2CD52490123800AA1756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD42490123800AA1756 /* SceneDelegate.swift */; };
 		C40F2CD72490123800AA1756 /* TestARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD62490123800AA1756 /* TestARController.swift */; };
@@ -170,6 +172,7 @@
 		B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesController.swift; sourceTree = "<group>"; };
 		B7B59BDC2497E4E8004CA137 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 		B7B59BDF2497E532004CA137 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
+		B7B59BE22497E8C9004CA137 /* ResourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
 		C40F2CD02490123800AA1756 /* TestFeatureTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFeatureTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40F2CD22490123800AA1756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD42490123800AA1756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -300,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				0285857A2483063A0003E31A /* FactsData.swift */,
+				B7B59BE22497E8C9004CA137 /* ResourceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -686,6 +690,7 @@
 				0285857B2483063A0003E31A /* FactsData.swift in Sources */,
 				B7B59BE02497E532004CA137 /* ResourceCell.swift in Sources */,
 				0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */,
+				B7B59BE32497E8C9004CA137 /* ResourceModel.swift in Sources */,
 				024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */,
 				0285857F2485970E0003E31A /* WavyView.swift in Sources */,
 				B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */,
@@ -740,6 +745,7 @@
 				B7B59BE12497E532004CA137 /* ResourceCell.swift in Sources */,
 				C40F2CF92490129100AA1756 /* GraphCell.swift in Sources */,
 				C40F2CE42490124F00AA1756 /* FirstOnboardingController.swift in Sources */,
+				B7B59BE42497E8C9004CA137 /* ResourceModel.swift in Sources */,
 				C40F2CF52490128500AA1756 /* LocationsVew.swift in Sources */,
 				C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */,
 				C40F2CF12490127700AA1756 /* WavyView.swift in Sources */,
