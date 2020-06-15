@@ -43,7 +43,7 @@ class ResourceView: UIView {
         addSubview(prevButton)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            prevButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            prevButton.topAnchor.constraint(equalTo: topAnchor, constant: 25),
             prevButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15)
         ])
     }
@@ -52,7 +52,7 @@ class ResourceView: UIView {
         addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: prevButton.bottomAnchor, constant: 25),
+            tableView.topAnchor.constraint(equalTo: prevButton.bottomAnchor, constant: 15),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
