@@ -35,6 +35,8 @@
 		1393FDC357C87C1B91849D65 /* Pods_Coastlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */; };
 		5D700857BBD059F2237BFD0C /* Pods_TestFeatureTarget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B9E8FE61F7AAE1A1CB365C /* Pods_TestFeatureTarget.framework */; };
 		B776AD412497F5AF00034A4E /* ResourcesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */; };
+		B776AD432498114800034A4E /* ARAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B776AD422498114800034A4E /* ARAnimation.json */; };
+		B776AD442498114800034A4E /* ARAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B776AD422498114800034A4E /* ARAnimation.json */; };
 		B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */; };
 		B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsVew.swift */; };
 		B7B59BDB2497E4A0004CA137 /* ResourcesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */; };
@@ -168,6 +170,7 @@
 		3E4C564036176640CEBB70C2 /* Pods-TestFeatureTarget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestFeatureTarget.debug.xcconfig"; path = "Target Support Files/Pods-TestFeatureTarget/Pods-TestFeatureTarget.debug.xcconfig"; sourceTree = "<group>"; };
 		90B7802E35291B5353608B3B /* Pods-Coastlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.debug.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.debug.xcconfig"; sourceTree = "<group>"; };
 		93B9E8FE61F7AAE1A1CB365C /* Pods_TestFeatureTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestFeatureTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B776AD422498114800034A4E /* ARAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ARAnimation.json; sourceTree = "<group>"; };
 		B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		B7A4588D247F10BE001F8E51 /* LocationsVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVew.swift; sourceTree = "<group>"; };
 		B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesController.swift; sourceTree = "<group>"; };
@@ -243,6 +246,7 @@
 		02858577248304B70003E31A /* JSON Data */ = {
 			isa = PBXGroup;
 			children = (
+				B776AD422498114800034A4E /* ARAnimation.json */,
 				02858578248305410003E31A /* locationFactsData.json */,
 			);
 			path = "JSON Data";
@@ -545,6 +549,7 @@
 				C48EBCE0248846C6001DB0A3 /* CooperHewitt-Thin.otf in Resources */,
 				C48EBCE3248846C6001DB0A3 /* CooperHewitt-Bold.otf in Resources */,
 				C48EBCE8248846C6001DB0A3 /* CooperHewitt-Medium.otf in Resources */,
+				B776AD432498114800034A4E /* ARAnimation.json in Resources */,
 				C48EBCEB248846C6001DB0A3 /* CooperHewitt-Heavy.otf in Resources */,
 				C48EBCE4248846C6001DB0A3 /* CooperHewitt-BoldItalic.otf in Resources */,
 				C48EBCCB24884626001DB0A3 /* Assets.xcassets in Resources */,
@@ -575,6 +580,7 @@
 				02B4EDF024929DFE009016DA /* baseMapNYC-2.usdz in Resources */,
 				C40F2CEF2490126E00AA1756 /* locationFactsData.json in Resources */,
 				C40F2D13249012E400AA1756 /* CooperHewitt-MediumItalic.otf in Resources */,
+				B776AD442498114800034A4E /* ARAnimation.json in Resources */,
 				C40F2D14249012E400AA1756 /* CooperHewitt-Semibold.otf in Resources */,
 				C40F2D12249012E400AA1756 /* CooperHewitt-Light.otf in Resources */,
 				C40F2D07249012E400AA1756 /* CooperHewitt-SemiboldItalic.otf in Resources */,
