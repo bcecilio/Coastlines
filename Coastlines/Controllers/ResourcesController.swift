@@ -13,10 +13,10 @@ class ResourcesController: UIViewController {
     private let resourceView = ResourceView()
     
     private var resources = [
-        Resources(title: <#T##String#>, description: <#T##String#>),
-        Resources(title: <#T##String#>, description: <#T##String#>),
-        Resources(title: <#T##String#>, description: <#T##String#>),
-        Resources(title: <#T##String#>, description: <#T##String#>),
+        Resources(title: "Action 1", description: "bluhbluhbluh"),
+        Resources(title: "Action 2", description: "bluhbluhbluh"),
+        Resources(title: "Action 3", description: "bluhbluhbluh"),
+        Resources(title: "Action 4", description: "bluhbluhbluh"),
         ]
     
     override func loadView() {
