@@ -19,6 +19,8 @@ class ResourcesController: UIViewController {
         Resources(title: "Action 4", description: "bluhbluhbluh"),
         ]
     
+    private var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
+    
     override func loadView() {
         view = resourceView
     }
@@ -43,7 +45,7 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? Cells else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ResourceCell else {
             fatalError("it no dequeue bro")
         }
         let data = resources[indexPath.row]

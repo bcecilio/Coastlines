@@ -28,6 +28,13 @@ class LocationsVew: UIView {
         return wv
     }()
     
+    private lazy var resourceButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor.red
+        button.addTarget(self, action: #selector(goToResourceVC), for: .touchUpInside)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -42,6 +49,7 @@ class LocationsVew: UIView {
         backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         setupWavyView()
         setupCollectionView()
+        setupResourceButton()
     }
     
     private func setupCollectionView() {
@@ -64,5 +72,19 @@ class LocationsVew: UIView {
             wavyView.trailingAnchor.constraint(equalTo: trailingAnchor),
             wavyView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
+    }
+    
+    private func setupResourceButton() {
+        addSubview(resourceButton)
+        resourceButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            resourceButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
+            resourceButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
+        ])
+    }
+    
+    @objc private func goToResourceVC() {
+        let resourceVC = ResourcesController()
+        UIViewController.resetWindow(resourceVC)
     }
 }
