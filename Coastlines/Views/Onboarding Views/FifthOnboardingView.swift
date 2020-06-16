@@ -18,15 +18,6 @@ class FifthOnboardingView: UIView {
         return button
     }()
     
-    public lazy var pageControl: UIPageControl = {
-       let pc = UIPageControl()
-        pc.numberOfPages = 4
-        pc.currentPage = 3
-        pc.backgroundColor = PaletteColour.lightBlue.colour
-        pc.currentPageIndicatorTintColor = PaletteColour.offWhite.colour
-        return pc
-    }()
-    
     public lazy var centralImage: UIImageView = {
        let iv = UIImageView()
         iv.image = UIImage(named: "coastlineIMG3")
@@ -54,12 +45,6 @@ class FifthOnboardingView: UIView {
         return button
     }()
     
-    public lazy var rightSwipe: UISwipeGestureRecognizer = {
-        let swipe = UISwipeGestureRecognizer()
-        swipe.direction = .right
-        return swipe
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -71,12 +56,11 @@ class FifthOnboardingView: UIView {
     }
     
     private func commonInit(){
-        setUpPrevButtonConstraints()
-        setUpPageControlConstraints()
+//        setUpPrevButtonConstraints()
+//        setUpPageControlConstraints()
         setUpCentralImageConstraints()
         setUpInfoLabelConstraints()
         setUpBeginButtonConstraints()
-        addGestureRecognizer(rightSwipe)
     }
     
     private func setUpPrevButtonConstraints(){
@@ -86,18 +70,11 @@ class FifthOnboardingView: UIView {
         NSLayoutConstraint.activate([prevButton.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
-    private func setUpPageControlConstraints(){
-        addSubview(pageControl)
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([pageControl.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), pageControl.centerXAnchor.constraint(equalTo: centerXAnchor), pageControl.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), pageControl.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
-    }
-    
     private func setUpCentralImageConstraints() {
         addSubview(centralImage)
         centralImage.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([centralImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centralImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centralImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centralImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
+        NSLayoutConstraint.activate([centralImage.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0), centralImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centralImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centralImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
     }
     
     private func setUpInfoLabelConstraints(){
