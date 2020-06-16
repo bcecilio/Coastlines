@@ -23,20 +23,5 @@ class FirstOnboardingController: UIViewController {
     
     private func setUp(){
         view.backgroundColor = PaletteColour.lightBlue.colour
-        introView.swipeLeft.addTarget(self, action: #selector(swipedLeft))
-        introView.nextButton.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
-    }
-    
-    @objc
-    private func swipedLeft(_ gesture: UISwipeGestureRecognizer){
-        if gesture.direction == .left {
-            segueNext()
-        }
-    }
-    
-    @objc
-    private func segueNext(){
-        let nextVC = SecondOnboardingController()
-        UIViewController.resetWindow(nextVC)
     }
 }
