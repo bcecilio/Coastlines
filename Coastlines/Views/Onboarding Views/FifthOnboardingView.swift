@@ -56,18 +56,18 @@ class FifthOnboardingView: UIView {
     }
     
     private func commonInit(){
-//        setUpPrevButtonConstraints()
-//        setUpPageControlConstraints()
         setUpCentralImageConstraints()
         setUpInfoLabelConstraints()
         setUpBeginButtonConstraints()
+        setUpPrevButtonConstraints()
+        animatePrevButton()
     }
     
     private func setUpPrevButtonConstraints(){
-        addSubview(prevButton)
+        centralImage.addSubview(prevButton)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([prevButton.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
+        NSLayoutConstraint.activate([prevButton.centerYAnchor.constraint(equalTo: centerYAnchor), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
     private func setUpCentralImageConstraints() {
@@ -97,4 +97,10 @@ class FifthOnboardingView: UIView {
         UIViewController.resetWindow(locationsVC)
     }
 
+    public func animatePrevButton(){
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat,.autoreverse], animations: {
+            self.prevButton.transform = CGAffineTransform(translationX: -5.0, y: 0.0)
+            self.prevButton.transform = CGAffineTransform(translationX: 5.0, y: 0.0)
+        })
+    }
 }
