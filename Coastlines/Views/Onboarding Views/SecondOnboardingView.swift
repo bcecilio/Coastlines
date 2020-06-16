@@ -60,11 +60,10 @@ class SecondOnboardingView: UIView {
         setUpInfoLabelConstraints()
         setUpSkipButtonConstraints()
         setUpNextButtonConstraints()
-        animateNextButton()
     }
     
     private func setUpNextButtonConstraints() {
-        centerImage.addSubview(nextButton)
+        addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([nextButton.centerYAnchor.constraint(equalTo: centerYAnchor), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])

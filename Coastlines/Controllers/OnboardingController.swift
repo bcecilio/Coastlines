@@ -27,13 +27,26 @@ class OnboardingController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let secondView = view as? SecondOnboardingView {
-            secondView.animateNextButton()
-        }
+        animateChevrons()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         secondOnboardingView.backgroundColor = PaletteColour.lightBlue.colour
+    }
+}
+
+extension OnboardingController {
+    
+    func animateChevrons(){
+        if let second = self.view as? SecondOnboardingView {
+            second.animateNextButton()
+        } else if let third = self.view as? ThirdOnboardingView{
+            third.animateButtons()
+        } else if let fourth = self.view as? FourthOnboardingView{
+            fourth.animateButtons()
+        } else if let fifth = self.view as? FifthOnboardingView{
+            fifth.animatePrevButton()
+        }
     }
 }

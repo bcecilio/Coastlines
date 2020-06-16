@@ -47,9 +47,9 @@ class FirstOnboardingView: UIView {
         button.setTitle("Skip", for: .normal)
         button.setTitleColor(PaletteColour.darkBlue.colour, for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
-        button.layer.borderWidth = 1.0
-        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
-        button.layer.cornerRadius = 22.0
+//        button.layer.borderWidth = 1.0
+//        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
+//        button.layer.cornerRadius = 22.0
         return button
     }()
     
@@ -83,7 +83,6 @@ class FirstOnboardingView: UIView {
         setUpSkipButtonConstraints()
         setUpTestViewConstraints()
         setUpNextButtonConstaints()
-//        animateNextButton()
     }
     
     private func setUpWelcomeLabelConstraints(){
@@ -97,7 +96,7 @@ class FirstOnboardingView: UIView {
         addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16), nextButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), nextButton.heightAnchor.constraint(equalToConstant: 44.0), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.35)])
+        NSLayoutConstraint.activate([nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), nextButton.heightAnchor.constraint(equalToConstant: 44.0), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.35)])
     }
     
     private func setUpInfoLabelConstraints() {
@@ -111,7 +110,7 @@ class FirstOnboardingView: UIView {
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16), skipButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.35)])
+        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16), skipButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.35)])
     }
     
     private func setUpTestViewConstraints(){
@@ -144,7 +143,6 @@ class FirstOnboardingView: UIView {
         UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: {
             self.nextButton.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             self.nextButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        }) { (completed) in
-        }
+        })
     }
 }
