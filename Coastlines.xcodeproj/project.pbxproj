@@ -20,6 +20,7 @@
 		028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028585822485B9660003E31A /* NSUIColor+Hex.swift */; };
 		0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
 		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
+		02AC5AA224996FCE00468145 /* SeaLevelComputations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AA124996FCE00468145 /* SeaLevelComputations.swift */; };
 		02B4EDF024929DFE009016DA /* baseMapNYC-2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */; };
 		02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */; };
 		02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4D15624913FCE0095560B /* ExperimentARController.swift */; };
@@ -142,6 +143,7 @@
 		028585822485B9660003E31A /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
 		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
+		02AC5AA124996FCE00468145 /* SeaLevelComputations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaLevelComputations.swift; sourceTree = "<group>"; };
 		02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "baseMapNYC-2.usdz"; sourceTree = "<group>"; };
 		02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingView.swift; sourceTree = "<group>"; };
 		02C4D15624913FCE0095560B /* ExperimentARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentARController.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				C40F2D202490171F00AA1756 /* TestARView.swift */,
 				02C4D15624913FCE0095560B /* ExperimentARController.swift */,
 				0B2AA89D2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift */,
+				02AC5AA124996FCE00468145 /* SeaLevelComputations.swift */,
 				C40F2CD82490123800AA1756 /* Main.storyboard */,
 				C40F2CDB2490123A00AA1756 /* Assets.xcassets */,
 				C40F2CDD2490123A00AA1756 /* LaunchScreen.storyboard */,
@@ -733,6 +736,7 @@
 				C40F2CF62490128800AA1756 /* DetailView.swift in Sources */,
 				C40F2CF92490129100AA1756 /* GraphCell.swift in Sources */,
 				C40F2CE42490124F00AA1756 /* FirstOnboardingController.swift in Sources */,
+				02AC5AA224996FCE00468145 /* SeaLevelComputations.swift in Sources */,
 				C40F2CF52490128500AA1756 /* LocationsVew.swift in Sources */,
 				C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */,
 				C40F2CF12490127700AA1756 /* WavyView.swift in Sources */,

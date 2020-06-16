@@ -25,17 +25,11 @@ class ExperimentARController: UIViewController {
     var flipScene = FlipRiseMapSlide.FlipScene()
     var riseScene = FlipRiseMapSlide.RiseScene()
     var seaRiseScene = FlipRiseMapSlide.SeaRiseScene()
+    var riseSegmentScene = FlipRiseMapSlide.RiseSegmentScene()
     
     var occBox = ModelEntity()
     
-    var newSlider = RUISlider()//RUISlider(slider: SliderComponent(startingValue: 0.1, isContinuous: true))
-//            slider: SliderComponent(length: 0.7, startingValue: 0.1, isContinuous: true)
-//            slider: SliderComponent(length: 0.7, startingValue: 0.1, minTrackColor: .blue, maxTrackColor: .gray, thumbColor: .systemBackground, thickness: 0.1, isContinuous: true, steps: 1)
-//        ) { (slider, _) in
-//          slider.scale.x = slider.value + 0.1
-//
-//        }
-    
+    var newSlider = RUISlider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +40,8 @@ class ExperimentARController: UIViewController {
         arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
         
         loadScene()
-        setupOccBox()
-        //        setupSlider()
+//        setupOccBox()
+        setupSlider()
         
     }
     
@@ -95,34 +89,47 @@ class ExperimentARController: UIViewController {
             }
         }
         
-        FlipRiseMapSlide.loadRiseSceneAsync { [unowned self] result in
-            switch result {
-            case .failure(let error):
-                print("The rise error is..... \(error)")
-            case .success(let scene):
-                
-                self.riseScene = scene
-                                
-                self.arView.scene.anchors.append(self.riseScene)
-                self.riseScene.isEnabled = false
-                
-            }
-        }
+//        FlipRiseMapSlide.loadRiseSceneAsync { [unowned self] result in
+//            switch result {
+//            case .failure(let error):
+//                print("The rise error is..... \(error)")
+//            case .success(let scene):
+//
+//                self.riseScene = scene
+//
+//                self.arView.scene.anchors.append(self.riseScene)
+//                self.riseScene.isEnabled = false
+//
+//            }
+//        }
         
-        FlipRiseMapSlide.loadSeaRiseSceneAsync { [unowned self] result in
+//        FlipRiseMapSlide.loadSeaRiseSceneAsync { [unowned self] result in
+//            switch result {
+//            case .failure(let error):
+//                print("The seaRise error is..... \(error)")
+//            case .success(let scene):
+//
+//                self.seaRiseScene = scene
+//
+//                self.arView.scene.anchors.append(self.seaRiseScene)
+//                self.seaRiseScene.isEnabled = false
+//
+//            }
+//        }
+        
+        FlipRiseMapSlide.loadRiseSegmentSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
                 print("The seaRise error is..... \(error)")
             case .success(let scene):
                 
-                self.seaRiseScene = scene
+                self.riseSegmentScene = scene
                                 
-                self.arView.scene.anchors.append(self.seaRiseScene)
-                self.seaRiseScene.isEnabled = false
+                self.arView.scene.anchors.append(self.riseSegmentScene)
+                self.riseSegmentScene.isEnabled = false
                 
             }
         }
-        
     }
     
     public func setupOccBox() {
@@ -135,37 +142,49 @@ class ExperimentARController: UIViewController {
     
     func wasFlipped(_ entity: Entity?) {
         print("please be flipped")
-        let (redManh, spotlight2, _, _) = self.addSpotlights()
+//        let (redManh, spotlight2, _, _) = self.addSpotlights()
         
-        seaRiseScene.isEnabled = true
+        riseSegmentScene.isEnabled = true
         flipScene.isEnabled = false
         
-        seaRiseScene.addChild(redManh)
-        seaRiseScene.addChild(spotlight2)
+//        riseSegmentScene.addChild(redManh)
+//        riseSegmentScene.addChild(spotlight2)
+        riseSegmentScene.addChild(newSlider)
     }
     
     private func setupSlider() {
-        newSlider.isEnabled = false
         arView.enableRealityUIGestures(.all)
-        newSlider.position = [0,0.1,0.30]
-        newSlider.transform.scale = [0.035,0.035,0.035]
-        print(newSlider.value)
-        //        newSlider.scale.x = newSlider.value + 0.1
-
+        
         newSlider = RUISlider( slider: SliderComponent(startingValue: 0.1, isContinuous: false)
+            
+            
         ) { (slider, _) in
-            //          slider.scale.x = slider.value + 0.1
-//            slider.isEnabled = false
-            slider.position = [0,0.1,0.30]
-            slider.transform.scale = [0.035,0.035,0.035]
+            
             print(slider.value)
-//            slider.isEnabled = true
+//            if slider.value > 0.5 {
+//                self.year = 5
+//                for _ in 1...self.year {
+////                    self.seaRiseScene.notifications.scaleUp.post()
+//
+//                }
+//            }
+            
+            if let transform = CompSeaLevel.riseDropCalc(sliderVal: slider.value, entity: self.riseSegmentScene.levelOne) {
+                
+                self.riseSegmentScene.levelOne?.move(to: transform, relativeTo: self.riseSegmentScene, duration: 8)
+            }
+            
+            slider.isEnabled = true
             
         }
+        
+        newSlider.position = [0,0.1,0.30]
+        newSlider.transform.scale = [0.04,0.04,0.04]
 
     }
     
     var count = 0
+    var year = 0
     
     @objc
     func handleTap(recognizer: UITapGestureRecognizer) {
@@ -175,8 +194,9 @@ class ExperimentARController: UIViewController {
         print(count)
         
         if count == 3 {
-//            riseScene.notifications.fourUp.post()
+            
             seaRiseScene.brooklynTwo?.scale = [3,1,3]
+            
         }
     }
     
