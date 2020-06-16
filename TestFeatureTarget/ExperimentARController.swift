@@ -9,8 +9,12 @@
 import RealityKit
 import ARKit
 import Combine
+import RealityUI
 
 class ExperimentARController: UIViewController {
+    
+    
+    
     
     //    lazy var arView = ARView(frame: view.frame)
     
@@ -18,21 +22,45 @@ class ExperimentARController: UIViewController {
     
     lazy var coachingOverlay = ARCoachingOverlayView()
     
-    var flipScene = FlipRiseMap.FlipScene()
+    var flipScene = FlipRiseMapSlide.FlipScene()
+    var riseScene = FlipRiseMapSlide.RiseScene()
+
+    var theScene: Scene.AnchorCollection.Element?
     var occBox = ModelEntity()
+    
+    //var newSlider = RUISlider()//RUISlider(slider: SliderComponent(startingValue: 0.1, isContinuous: true))
+    //        slider: SliderComponent(length: 0.7, startingValue: 0.1, isContinuous: true)
+    //        slider: SliderComponent(length: 0.7, startingValue: 0.1, minTrackColor: .blue, maxTrackColor: .gray, thumbColor: .systemBackground, thickness: 0.1, isContinuous: true, steps: 1)
+    //    ) { (slider, _) in
+    //      slider.scale.x = slider.value + 0.1
+    //
+    //    }
+    
+//    public lazy var longPress: UILongPressGestureRecognizer = {
+//        let lp = UILongPressGestureRecognizer()
+//        return lp
+//    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupARView()
         setupCoachingOverlayView()
+        
         arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
         
+//        arView.addGestureRecognizer(longPress)
+//        longPress.addTarget(self, action: #selector(registerLongPress(_:)))
+        
         loadScene()
+        flipScene.actions.flipModel.onAction = loadRiseScene(_:)
+        //        setupSlider()
+        
     }
     
     
-    private func addSpotlights() -> (SpotLight, SpotLight) {
+    private func addSpotlights() -> (SpotLight, SpotLight, SpotLight) {
         let sLight = SpotLight()
         let sLight2 = SpotLight()
         let sLight3 = SpotLight()
@@ -62,7 +90,7 @@ class ExperimentARController: UIViewController {
         sLight3.light.color = .green
         sLight3.light.outerAngleInDegrees = 135
         
-        return (sLight, sLight3)
+        return (sLight, sLight2, sLight3)
     }
     
     private func addSpotlightComponent() -> SpotLightComponent {
@@ -70,62 +98,97 @@ class ExperimentARController: UIViewController {
     }
     
     private func loadScene() {
-        FlipRiseMap.loadFlipSceneAsync { [unowned self] result in
+        
+        FlipRiseMapSlide.loadFlipSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let scene):
                 
-                let (spotlight1, spotlight2) = self.addSpotlights()
-                let spotlightComp = self.addSpotlightComponent()
-                
                 self.flipScene = scene
-                
-                scene.addChild(spotlight1)
-                scene.addChild(spotlight2)
-                scene.components.set(spotlightComp)
+//                self.theScene = scene
                 self.arView.scene.anchors.append(scene)
+                
             }
         }
+        
+        FlipRiseMapSlide.loadRiseSceneAsync { [unowned self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let scene):
+                
+                self.riseScene = scene
+                
+                let (spotlight1, spotlight2, _) = self.addSpotlights()
+                scene.addChild(spotlight1)
+                scene.addChild(spotlight2)
+                self.arView.scene.anchors.append(scene)
+                self.riseScene.isEnabled = false
+                
+            }
+        }
+        
+    }
+        
+    private func loadRiseScene(_ entity: Entity?) {
+        flipScene.isEnabled = false
+        riseScene.isEnabled = true
+//        arView.scene.anchors.remove(flipScene)
+//        arView.scene.anchors.append(riseScene)
+            
+        let (spotlight1, spotlight2, _) = self.addSpotlights()
+        riseScene.addChild(spotlight1)
+        riseScene.addChild(spotlight2)
+        
     }
     
+    //    private func setupSlider() {
+    //        arView.enableRealityUIGestures(.all)
+    //        newSlider.position = [0,0.1,0.30]
+    //        newSlider.transform.scale = [0.035,0.035,0.035]
+    //        print(newSlider.value)
+    //        //        newSlider.scale.x = newSlider.value + 0.1
+    //
+    //        newSlider = RUISlider(
+    //            slider: SliderComponent(startingValue: 0.1, isContinuous: false)
+    //
+    //        ) { (slider, _) in
+    //            //          slider.scale.x = slider.value + 0.1
+    //            slider.position = [0,0.1,0.30]
+    //            slider.transform.scale = [0.035,0.035,0.035]
+    //            print(slider.value)
+    //        }
+    //
+    //        //        newSlider.scale.x = newSlider.value + 0.1
+    //    }
     
+    var count = 0
     @objc
     func handleTap(recognizer: UITapGestureRecognizer) {
-        
-        flipScene.notifications.flipBehavior.post()
-        //        let location = recognizer.location(in: arView)
-        //
-        //
-        //        let results = arView.raycast(from: location, allowing: .estimatedPlane, alignment: .horizontal)
-        //
-        //        if let firstResult = results.first {
-        //            let anchor = ARAnchor(name: "baseMapNYC-2", transform: firstResult.worldTransform)
-        //
-        //            arView.session.add(anchor: anchor)
-        //
-        //        } else {
-        //            print("Object Placement Failed")
-        //        }
-        
-        
-        
+        count += 1
+        print(count)
+        if count == 3 {
+//            daScene.isEnabled = true
+//            daScene.notifications.fourUp.post()
+            riseScene.notifications.fourUp.post()
+        }
+        //        flipScene.notifications.flipBehavior.post()
+//        riseScene.notifications.threeUp.post()
     }
     
-    func placeObject(named entityName: String, for anchor: ARAnchor) {
-        let entity = try! ModelEntity.loadModel(named: "baseMapNYC-2")
-        
-        
-        entity.generateCollisionShapes(recursive: true)
-        
-        arView.installGestures([.rotation, .translation], for: entity)
-        
-        let anchorEntity = AnchorEntity(anchor: anchor)
-        
-        anchorEntity.addChild(entity)
-        
-        arView.scene.addAnchor(anchorEntity)
-    }
+//    @objc
+//    private func registerLongPress(_ lp: UILongPressGestureRecognizer) {
+//        //        if lp.state == .began || lp.state == .ended {
+//        sliderSlid(lp.location(in: arView))
+//        //        }
+//    }
+//
+//    private func sliderSlid(_ point: CGPoint) {
+//        if let slider = arView.entity(at: point) as? RUISlider {
+//            print(slider.value)
+//        }
+//    }
     
     private func setupARView() {
         view.addSubview(arView)
@@ -137,16 +200,5 @@ class ExperimentARController: UIViewController {
             arView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             arView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             arView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
-    }
-}
-
-extension ExperimentARController: ARSessionDelegate {
-    
-    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
-        for anchor in anchors {
-            if let anchorName = anchor.name, anchorName == "baseMapNYC-2" {
-                placeObject(named: anchorName, for: anchor)
-            }
-        }
     }
 }

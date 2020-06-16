@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024035D3248D8B7800C7F7B2 /* ARCell.swift */; };
 		024128CA2493F93D0070FEAC /* animatingMapNYC.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 024128C92493F93D0070FEAC /* animatingMapNYC.usdz */; };
 		024128CC249549FA0070FEAC /* flipRiseMap.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 024128CB249549FA0070FEAC /* flipRiseMap.rcproject */; };
+		024128CE2497DA640070FEAC /* flipRiseMapSlide.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 024128CD2497DA640070FEAC /* flipRiseMapSlide.rcproject */; };
+		024128D12497DB5F0070FEAC /* RealityUI in Frameworks */ = {isa = PBXBuildFile; productRef = 024128D02497DB5F0070FEAC /* RealityUI */; };
 		028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423722489C8D1000C1A9B /* LocationDetailController.swift */; };
 		028423752489C984000C1A9B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
 		028423772489E617000C1A9B /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423762489E617000C1A9B /* ContentCell.swift */; };
@@ -132,6 +134,7 @@
 		024035D3248D8B7800C7F7B2 /* ARCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCell.swift; sourceTree = "<group>"; };
 		024128C92493F93D0070FEAC /* animatingMapNYC.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = animatingMapNYC.usdz; sourceTree = "<group>"; };
 		024128CB249549FA0070FEAC /* flipRiseMap.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = flipRiseMap.rcproject; sourceTree = "<group>"; };
+		024128CD2497DA640070FEAC /* flipRiseMapSlide.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = flipRiseMapSlide.rcproject; sourceTree = "<group>"; };
 		028423722489C8D1000C1A9B /* LocationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailController.swift; sourceTree = "<group>"; };
 		028423742489C984000C1A9B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		028423762489E617000C1A9B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
@@ -162,7 +165,7 @@
 		93B9E8FE61F7AAE1A1CB365C /* Pods_TestFeatureTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestFeatureTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		B7A4588D247F10BE001F8E51 /* LocationsVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVew.swift; sourceTree = "<group>"; };
-		C40F2CD02490123800AA1756 /* TestFeatureTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFeatureTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40F2CD02490123800AA1756 /* Coasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40F2CD22490123800AA1756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD42490123800AA1756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD62490123800AA1756 /* TestARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARController.swift; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D700857BBD059F2237BFD0C /* Pods_TestFeatureTarget.framework in Frameworks */,
+				024128D12497DB5F0070FEAC /* RealityUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				0B1F21382476DEC300729365 /* Coastlines.app */,
-				C40F2CD02490123800AA1756 /* TestFeatureTarget.app */,
+				C40F2CD02490123800AA1756 /* Coasts.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -388,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				024128CB249549FA0070FEAC /* flipRiseMap.rcproject */,
+				024128CD2497DA640070FEAC /* flipRiseMapSlide.rcproject */,
 				024128C92493F93D0070FEAC /* animatingMapNYC.usdz */,
 				C40F2D2224901B1B00AA1756 /* Ball.usdz */,
 				02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */,
@@ -476,8 +481,11 @@
 			dependencies = (
 			);
 			name = TestFeatureTarget;
+			packageProductDependencies = (
+				024128D02497DB5F0070FEAC /* RealityUI */,
+			);
 			productName = TestFeatureTarget;
-			productReference = C40F2CD02490123800AA1756 /* TestFeatureTarget.app */;
+			productReference = C40F2CD02490123800AA1756 /* Coasts.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -507,6 +515,9 @@
 				Base,
 			);
 			mainGroup = 0B1F212F2476DEC300729365;
+			packageReferences = (
+				024128CF2497DB5F0070FEAC /* XCRemoteSwiftPackageReference "RealityUI" */,
+			);
 			productRefGroup = 0B1F21392476DEC300729365 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -728,6 +739,7 @@
 				C40F2CF52490128500AA1756 /* LocationsVew.swift in Sources */,
 				C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */,
 				C40F2CF12490127700AA1756 /* WavyView.swift in Sources */,
+				024128CE2497DA640070FEAC /* flipRiseMapSlide.rcproject in Sources */,
 				C40F2D01249012A700AA1756 /* UIButton+Extension.swift in Sources */,
 				C40F2CFB2490129500AA1756 /* ARCell.swift in Sources */,
 				C40F2CEA2490126000AA1756 /* LocationDetailVC.swift in Sources */,
@@ -942,7 +954,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.coastlines1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Coasts;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -961,7 +973,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.coastlines1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Coasts;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -998,6 +1010,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		024128CF2497DB5F0070FEAC /* XCRemoteSwiftPackageReference "RealityUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/RealityUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		024128D02497DB5F0070FEAC /* RealityUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 024128CF2497DB5F0070FEAC /* XCRemoteSwiftPackageReference "RealityUI" */;
+			productName = RealityUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0B1F21302476DEC300729365 /* Project object */;
 }

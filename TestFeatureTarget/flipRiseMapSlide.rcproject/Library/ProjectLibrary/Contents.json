@@ -1,0 +1,27 @@
+[
+  {
+    "libraryIdentifier" : "d91671daf7cb2689c2e03b2a13c4df1b",
+    "format" : "model",
+    "displayName" : "Landscape5_sScale.usdz"
+  },
+  {
+    "libraryIdentifier" : "49df16b589f9294c3fb13b795d62a7ca",
+    "format" : "model",
+    "displayName" : "baseMapNYC-2.usdz"
+  },
+  {
+    "libraryIdentifier" : "1af13aa818ebb445e0f139cd35de08a1",
+    "format" : "image",
+    "displayName" : "nycSeaLevel2.jpeg"
+  },
+  {
+    "libraryIdentifier" : "3fb4eef86e3b0bd271a936cc08e6ad91",
+    "format" : "image",
+    "displayName" : "nycSeaRise.jpeg"
+  },
+  {
+    "libraryIdentifier" : "073eaceca6173c41e7f3954c47d09374",
+    "format" : "model",
+    "displayName" : "carPaintMap.usdz"
+  }
+]
