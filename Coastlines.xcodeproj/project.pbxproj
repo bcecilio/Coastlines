@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024035D3248D8B7800C7F7B2 /* ARCell.swift */; };
 		024128CA2493F93D0070FEAC /* animatingMapNYC.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 024128C92493F93D0070FEAC /* animatingMapNYC.usdz */; };
-		024128CC249549FA0070FEAC /* flipRiseMap.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 024128CB249549FA0070FEAC /* flipRiseMap.rcproject */; };
 		024128CE2497DA640070FEAC /* flipRiseMapSlide.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 024128CD2497DA640070FEAC /* flipRiseMapSlide.rcproject */; };
 		024128D12497DB5F0070FEAC /* RealityUI in Frameworks */ = {isa = PBXBuildFile; productRef = 024128D02497DB5F0070FEAC /* RealityUI */; };
 		028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423722489C8D1000C1A9B /* LocationDetailController.swift */; };
@@ -133,7 +132,6 @@
 /* Begin PBXFileReference section */
 		024035D3248D8B7800C7F7B2 /* ARCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCell.swift; sourceTree = "<group>"; };
 		024128C92493F93D0070FEAC /* animatingMapNYC.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = animatingMapNYC.usdz; sourceTree = "<group>"; };
-		024128CB249549FA0070FEAC /* flipRiseMap.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = flipRiseMap.rcproject; sourceTree = "<group>"; };
 		024128CD2497DA640070FEAC /* flipRiseMapSlide.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = flipRiseMapSlide.rcproject; sourceTree = "<group>"; };
 		028423722489C8D1000C1A9B /* LocationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailController.swift; sourceTree = "<group>"; };
 		028423742489C984000C1A9B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -391,7 +389,6 @@
 		C40F2CD12490123800AA1756 /* TestFeatureTarget */ = {
 			isa = PBXGroup;
 			children = (
-				024128CB249549FA0070FEAC /* flipRiseMap.rcproject */,
 				024128CD2497DA640070FEAC /* flipRiseMapSlide.rcproject */,
 				024128C92493F93D0070FEAC /* animatingMapNYC.usdz */,
 				C40F2D2224901B1B00AA1756 /* Ball.usdz */,
@@ -743,7 +740,6 @@
 				C40F2D01249012A700AA1756 /* UIButton+Extension.swift in Sources */,
 				C40F2CFB2490129500AA1756 /* ARCell.swift in Sources */,
 				C40F2CEA2490126000AA1756 /* LocationDetailVC.swift in Sources */,
-				024128CC249549FA0070FEAC /* flipRiseMap.rcproject in Sources */,
 				C40F2CE62490125400AA1756 /* ThirdOnboardingController.swift in Sources */,
 				C40F2CD52490123800AA1756 /* SceneDelegate.swift in Sources */,
 				C40F2CF42490128300AA1756 /* LocationDetailView.swift in Sources */,
