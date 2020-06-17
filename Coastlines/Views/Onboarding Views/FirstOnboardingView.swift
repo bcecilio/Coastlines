@@ -97,6 +97,7 @@ class FirstOnboardingView: UIView {
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), nextButton.heightAnchor.constraint(equalToConstant: 44.0), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.35)])
+
     }
     
     private func setUpInfoLabelConstraints() {
@@ -117,14 +118,14 @@ class FirstOnboardingView: UIView {
         addSubview(waves)
         waves.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([waves.topAnchor.constraint(equalTo: topAnchor), waves.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), waves.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), waves.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.33)])
+        NSLayoutConstraint.activate([waves.topAnchor.constraint(equalTo: topAnchor), waves.leadingAnchor.constraint(equalTo: leadingAnchor), waves.trailingAnchor.constraint(equalTo: trailingAnchor), waves.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.33)])
     }
     
     private func setUpTopViewConstraints() {
         addSubview(topView)
         topView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([topView.topAnchor.constraint(equalTo: topAnchor), topView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), topView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), topView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.33)])
+        NSLayoutConstraint.activate([topView.topAnchor.constraint(equalTo: topAnchor), topView.leadingAnchor.constraint(equalTo: leadingAnchor), topView.trailingAnchor.constraint(equalTo: trailingAnchor), topView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.33)])
     }
     
     @objc
