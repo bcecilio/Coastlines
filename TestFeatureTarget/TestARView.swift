@@ -10,18 +10,18 @@ import UIKit
 import ARKit
 import RealityKit
 
-class TestARView: ARView {
-    
-
-    override init(frame frameRect: CGRect, cameraMode: ARView.CameraMode, automaticallyConfigureSession: Bool) {
-        super.init(frame: UIScreen.main.bounds, cameraMode: .ar, automaticallyConfigureSession: true)
-    }
-    
-    required init?(coder decoder: NSCoder) {
-        super.init(coder: decoder)
-    }
-    
-    @objc required dynamic init(frame frameRect: CGRect) {
-         super.init(frame: UIScreen.main.bounds, cameraMode: .ar, automaticallyConfigureSession: true)
-    }
-}
+//class TestARView: ARView {
+//
+//
+//    override init(frame frameRect: CGRect, cameraMode: ARView.CameraMode, automaticallyConfigureSession: Bool) {
+//        super.init(frame: UIScreen.main.bounds, cameraMode: .ar, automaticallyConfigureSession: true)
+//    }
+//
+//    required init?(coder decoder: NSCoder) {
+//        super.init(coder: decoder)
+//    }
+//
+//    @objc required dynamic init(frame frameRect: CGRect) {
+//         super.init(frame: UIScreen.main.bounds, cameraMode: .ar, automaticallyConfigureSession: true)
+//    }
+//}

@@ -22,33 +22,6 @@ class ThirdOnboardingController: UIViewController {
     }
     
     private func setUp(){
-        thirdOnboardingView.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
-        thirdOnboardingView.leftSwipe.addTarget(self, action: #selector(swiped))
-        thirdOnboardingView.rightSwipe.addTarget(self, action: #selector(swiped))
-        thirdOnboardingView.prevButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-        thirdOnboardingView.nextButton.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
+        thirdOnboardingView.backgroundColor = PaletteColour.lightBlue.colour
     }
-    
-    @objc
-    private func swiped(_ sender: UISwipeGestureRecognizer){
-        if sender.direction == .left {
-            segueNext()
-        } else if sender.direction == .right {
-            goBack()
-        }
-    }
-    
-    @objc
-    private func goBack(){
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @objc
-    private func segueNext(){
-        let nextVC = FourthOnboardingController()
-        nextVC.modalPresentationStyle = .fullScreen
-        nextVC.modalTransitionStyle = .crossDissolve
-        present(nextVC, animated: true, completion: nil)
-    }
-
 }

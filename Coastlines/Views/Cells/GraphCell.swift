@@ -38,7 +38,7 @@ class GraphCell: UICollectionViewCell {
     
     public lazy var seaLevelLineChart: LineChartView = {
         let lineChart = LineChartView()
-        lineChart.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        lineChart.backgroundColor = PaletteColour.offWhite.colour
         lineChart.layer.cornerRadius = 5
         lineChart.clipsToBounds = true
         lineChart.rightAxis.enabled = false
@@ -46,11 +46,11 @@ class GraphCell: UICollectionViewCell {
         yAxis.labelFont = .boldSystemFont(ofSize: 12)
         lineChart.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         yAxis.setLabelCount(5, force: false)
-        yAxis.axisLineColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
-        yAxis.labelTextColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        yAxis.axisLineColor = PaletteColour.lightBlue.colour
+        yAxis.labelTextColor = PaletteColour.lightBlue.colour
         lineChart.xAxis.labelPosition = .bottom
-        lineChart.xAxis.labelTextColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
-        lineChart.xAxis.axisLineColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        lineChart.xAxis.labelTextColor = PaletteColour.lightBlue.colour
+        lineChart.xAxis.axisLineColor = PaletteColour.lightBlue.colour
         yAxis.drawGridLinesEnabled = false
         lineChart.xAxis.drawGridLinesEnabled = false
         lineChart.xAxis.setLabelCount(5, force: false)
@@ -61,7 +61,7 @@ class GraphCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        backgroundColor = PaletteColour.lightBlue.colour
         
         prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
@@ -152,9 +152,9 @@ extension GraphCell: ChartViewDelegate {
         seaLevelSet.drawCirclesEnabled = false
         seaLevelSet.mode = .cubicBezier
         seaLevelSet.lineWidth = 3
-        seaLevelSet.setCircleColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
-        seaLevelSet.setColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
-        seaLevelSet.fill = Fill(color: PaletteColours.lightBlue.rawValue.convertHexToColour())
+        seaLevelSet.setCircleColor(PaletteColour.lightBlue.colour)
+        seaLevelSet.setColor(PaletteColour.lightBlue.colour)
+        seaLevelSet.fill = Fill(color: PaletteColour.lightBlue.colour)
         seaLevelSet.fillAlpha = 0.6
         seaLevelSet.drawFilledEnabled = true
         seaLevelSet.drawHorizontalHighlightIndicatorEnabled = false

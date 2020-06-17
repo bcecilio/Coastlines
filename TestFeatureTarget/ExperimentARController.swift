@@ -35,7 +35,7 @@ class ExperimentARController: UIViewController {
         super.viewDidLoad()
         
         setupARView()
-        setupCoachingOverlayView()
+//        setupCoachingOverlayView()
         
         arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
         

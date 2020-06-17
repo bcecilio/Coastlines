@@ -9,18 +9,22 @@
 import UIKit
 
 class FirstOnboardingView: UIView {
+    
     public lazy var nextButton: UIButton = {
         let button = UIButton()
-        button.setTitle("", for: .normal)
-        button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.tintColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        button.setTitle("Get Started", for: .normal)
+        button.setTitleColor(PaletteColour.darkBlue.colour, for: .normal)
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
+        button.layer.cornerRadius = 22.0
+        button.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
         return button
     }()
     
     public lazy var welcomeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Welcome to Coastlines"
-        label.textColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        label.text = OnboardingText.appTitle
+        label.textColor = PaletteColour.lightBlue.colour
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "CooperHewitt-Medium", size: 30)
         label.numberOfLines = 0
@@ -29,30 +33,24 @@ class FirstOnboardingView: UIView {
     
     public lazy var infoLabel: UILabel = {
         let label = UILabel()
-        label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        label.textColor = PaletteColour.offWhite.colour
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
         label.numberOfLines = 0
-        label.text = "\nThank you for installing this application. Before you begin your experience, we'd like to take a moment to inform you a bit about climate change and its effect on the global sea level."
-        label.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        label.text = OnboardingText.welcomeMessage
+        label.backgroundColor = PaletteColour.lightBlue.colour
         return label
     }()
     
     public lazy var skipButton: UIButton = {
         let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(PaletteColours.darkBlue.rawValue.convertHexToColour(), for: .normal)
+        button.setTitleColor(PaletteColour.darkBlue.colour, for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
-        button.layer.borderWidth = 1.0
-        button.layer.borderColor = PaletteColours.darkBlue.rawValue.convertHexToColour().cgColor
-        button.layer.cornerRadius = 22.0
+//        button.layer.borderWidth = 1.0
+//        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
+//        button.layer.cornerRadius = 22.0
         return button
-    }()
-    
-    public lazy var swipeLeft: UISwipeGestureRecognizer = {
-        let gesture = UISwipeGestureRecognizer()
-        gesture.direction = .left
-        return gesture
     }()
     
     public lazy var waves: TestView = {
@@ -63,7 +61,7 @@ class FirstOnboardingView: UIView {
     
     public lazy var topView: UIView = {
         let view = UIView()
-        view.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        view.backgroundColor = PaletteColour.offWhite.colour
         return view
     }()
     
@@ -85,8 +83,7 @@ class FirstOnboardingView: UIView {
         setUpSkipButtonConstraints()
         setUpTestViewConstraints()
         setUpNextButtonConstaints()
-        addGestureRecognizer(swipeLeft)
-        animateNextButton()
+//        animateNextButton()
     }
     
     private func setUpWelcomeLabelConstraints(){
@@ -97,10 +94,10 @@ class FirstOnboardingView: UIView {
     }
     
     private func setUpNextButtonConstaints(){
-        waves.addSubview(nextButton)
+        addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([nextButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
+        NSLayoutConstraint.activate([nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20), nextButton.heightAnchor.constraint(equalToConstant: 44.0), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
     }
     
     private func setUpInfoLabelConstraints() {
@@ -114,7 +111,7 @@ class FirstOnboardingView: UIView {
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16), skipButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
     }
     
     private func setUpTestViewConstraints(){
@@ -135,6 +132,12 @@ class FirstOnboardingView: UIView {
     private func showLocationsVC(){
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
+    }
+    
+    @objc
+    private func segueNext(){
+        let nextVC = PageController()
+        UIViewController.resetWindow(nextVC)
     }
     
     private func animateNextButton(){
