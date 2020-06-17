@@ -14,6 +14,7 @@ extension UIViewController {
     static func resetWindow(_ vc: UIViewController){
         guard let scene = UIApplication.shared.connectedScenes.first, let sceneDelegate = scene.delegate as? SceneDelegate, let window = sceneDelegate.window else {
             fatalError("Could not reset scene.window's rootViewController")
+//            return
         }
         window.rootViewController = vc
     }
