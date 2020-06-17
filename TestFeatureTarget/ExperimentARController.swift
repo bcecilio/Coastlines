@@ -22,10 +22,10 @@ class ExperimentARController: UIViewController {
     
     lazy var coachingOverlay = ARCoachingOverlayView()
     
-    var flipScene = FlipRiseMapSlide.FlipScene()
-    var riseScene = FlipRiseMapSlide.RiseScene()
-    var seaRiseScene = FlipRiseMapSlide.SeaRiseScene()
-    var riseSegmentScene = FlipRiseMapSlide.RiseSegmentScene()
+    var flipScene = FlipRiseSlider.FlipScene()
+//    var riseScene = FlipRiseSlider.RiseScene()
+//    var seaRiseScene = FlipRiseSlider.SeaRiseScene()
+    var riseSegmentScene = FlipRiseSlider.RiseSegmentScene()
     
     var occBox = ModelEntity()
     
@@ -73,7 +73,7 @@ class ExperimentARController: UIViewController {
     
     private func loadScene() {
         
-        FlipRiseMapSlide.loadFlipSceneAsync { [unowned self] result in
+        FlipRiseSlider.loadFlipSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
                 print("The flip scene error is..... \(error)")
@@ -117,7 +117,7 @@ class ExperimentARController: UIViewController {
 //            }
 //        }
         
-        FlipRiseMapSlide.loadRiseSegmentSceneAsync { [unowned self] result in
+        FlipRiseSlider.loadRiseSegmentSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
                 print("The seaRise error is..... \(error)")
@@ -160,18 +160,40 @@ class ExperimentARController: UIViewController {
             
         ) { (slider, _) in
             
+            let scene = self.riseSegmentScene
             print(slider.value)
-//            if slider.value > 0.5 {
-//                self.year = 5
-//                for _ in 1...self.year {
-////                    self.seaRiseScene.notifications.scaleUp.post()
-//
-//                }
-//            }
             
-            if let transform = CompSeaLevel.riseDropCalc(sliderVal: slider.value, entity: self.riseSegmentScene.levelOne) {
+            if let transformOne = CompSeaLevel.riseDropOne(sliderVal: slider.value, entity: scene.riserOne) {
+                scene.riserOne?.move(to: transformOne, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformTwo = CompSeaLevel.riseDropTwo(sliderVal: slider.value, entity: scene.riserTwo) {
+                scene.riserTwo?.move(to: transformTwo, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformThree = CompSeaLevel.riseDropThree(sliderVal: slider.value, entity: scene.riserThree) {
                 
-                self.riseSegmentScene.levelOne?.move(to: transform, relativeTo: self.riseSegmentScene, duration: 8)
+                scene.riserThree?.move(to: transformThree, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformFour = CompSeaLevel.riseDropFour(sliderVal: slider.value, entity: scene.riserFour) {
+                
+                scene.riserFour?.move(to: transformFour, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformFive = CompSeaLevel.riseDropFive(sliderVal: slider.value, entity: scene.riserFive) {
+                
+                scene.riserFive?.move(to: transformFive, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformSix = CompSeaLevel.riseDropSix(sliderVal: slider.value, entity: scene.riserSix) {
+                
+                scene.riserSix?.move(to: transformSix, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformSeven = CompSeaLevel.riseDropSeven(sliderVal: slider.value, entity: scene.riserSeven) {
+                
+                scene.riserSeven?.move(to: transformSeven, relativeTo: scene, duration: 8)
             }
             
             slider.isEnabled = true
@@ -194,9 +216,7 @@ class ExperimentARController: UIViewController {
         print(count)
         
         if count == 3 {
-            
-            seaRiseScene.brooklynTwo?.scale = [3,1,3]
-            
+                        
         }
     }
     

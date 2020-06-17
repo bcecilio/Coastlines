@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024035D3248D8B7800C7F7B2 /* ARCell.swift */; };
-		024128CA2493F93D0070FEAC /* animatingMapNYC.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 024128C92493F93D0070FEAC /* animatingMapNYC.usdz */; };
-		024128CE2497DA640070FEAC /* flipRiseMapSlide.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 024128CD2497DA640070FEAC /* flipRiseMapSlide.rcproject */; };
 		024128D12497DB5F0070FEAC /* RealityUI in Frameworks */ = {isa = PBXBuildFile; productRef = 024128D02497DB5F0070FEAC /* RealityUI */; };
 		028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423722489C8D1000C1A9B /* LocationDetailController.swift */; };
 		028423752489C984000C1A9B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
@@ -21,7 +19,7 @@
 		0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
 		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
 		02AC5AA224996FCE00468145 /* SeaLevelComputations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AA124996FCE00468145 /* SeaLevelComputations.swift */; };
-		02B4EDF024929DFE009016DA /* baseMapNYC-2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */; };
+		02AC5AA424999A1900468145 /* flipRiseSlider.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AA324999A1900468145 /* flipRiseSlider.rcproject */; };
 		02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */; };
 		02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4D15624913FCE0095560B /* ExperimentARController.swift */; };
 		02F53F04248AA7E200227C62 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F03248AA7E200227C62 /* GraphCell.swift */; };
@@ -95,7 +93,6 @@
 		C40F2D1E2490157200AA1756 /* FifthOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */; };
 		C40F2D1F2490168500AA1756 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
 		C40F2D212490171F00AA1756 /* TestARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2D202490171F00AA1756 /* TestARView.swift */; };
-		C40F2D2424901B1B00AA1756 /* Ball.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C40F2D2224901B1B00AA1756 /* Ball.usdz */; };
 		C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */; };
 		C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */; };
 		C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925824847AA200DDB4DE /* SecondOnboardingController.swift */; };
@@ -132,8 +129,6 @@
 
 /* Begin PBXFileReference section */
 		024035D3248D8B7800C7F7B2 /* ARCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCell.swift; sourceTree = "<group>"; };
-		024128C92493F93D0070FEAC /* animatingMapNYC.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = animatingMapNYC.usdz; sourceTree = "<group>"; };
-		024128CD2497DA640070FEAC /* flipRiseMapSlide.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = flipRiseMapSlide.rcproject; sourceTree = "<group>"; };
 		028423722489C8D1000C1A9B /* LocationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailController.swift; sourceTree = "<group>"; };
 		028423742489C984000C1A9B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		028423762489E617000C1A9B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
@@ -144,7 +139,7 @@
 		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
 		02AC5AA124996FCE00468145 /* SeaLevelComputations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaLevelComputations.swift; sourceTree = "<group>"; };
-		02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "baseMapNYC-2.usdz"; sourceTree = "<group>"; };
+		02AC5AA324999A1900468145 /* flipRiseSlider.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = flipRiseSlider.rcproject; sourceTree = "<group>"; };
 		02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingView.swift; sourceTree = "<group>"; };
 		02C4D15624913FCE0095560B /* ExperimentARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentARController.swift; sourceTree = "<group>"; };
 		02F53F03248AA7E200227C62 /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
@@ -174,7 +169,6 @@
 		C40F2CDE2490123A00AA1756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C40F2CE02490123A00AA1756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40F2D202490171F00AA1756 /* TestARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARView.swift; sourceTree = "<group>"; };
-		C40F2D2224901B1B00AA1756 /* Ball.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Ball.usdz; sourceTree = "<group>"; };
 		C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+resetWindow.swift"; path = "Coastlines/UIViewController+resetWindow.swift"; sourceTree = SOURCE_ROOT; };
 		C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingView.swift; sourceTree = "<group>"; };
 		C463925824847AA200DDB4DE /* SecondOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingController.swift; sourceTree = "<group>"; };
@@ -391,10 +385,7 @@
 		C40F2CD12490123800AA1756 /* TestFeatureTarget */ = {
 			isa = PBXGroup;
 			children = (
-				024128CD2497DA640070FEAC /* flipRiseMapSlide.rcproject */,
-				024128C92493F93D0070FEAC /* animatingMapNYC.usdz */,
-				C40F2D2224901B1B00AA1756 /* Ball.usdz */,
-				02B4EDEF24929DFE009016DA /* baseMapNYC-2.usdz */,
+				02AC5AA324999A1900468145 /* flipRiseSlider.rcproject */,
 				C40F2CD22490123800AA1756 /* AppDelegate.swift */,
 				C40F2CD42490123800AA1756 /* SceneDelegate.swift */,
 				C40F2CD62490123800AA1756 /* TestARController.swift */,
@@ -558,7 +549,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				024128CA2493F93D0070FEAC /* animatingMapNYC.usdz in Resources */,
 				C40F2D06249012E400AA1756 /* CooperHewitt-Thin.otf in Resources */,
 				C40F2D09249012E400AA1756 /* CooperHewitt-Bold.otf in Resources */,
 				C40F2D10249012E400AA1756 /* CooperHewitt-HeavyItalic.otf in Resources */,
@@ -567,7 +557,6 @@
 				C40F2CDC2490123A00AA1756 /* Assets.xcassets in Resources */,
 				C40F2D0D249012E400AA1756 /* CooperHewitt-BookItalic.otf in Resources */,
 				C40F2D08249012E400AA1756 /* SIL Open Font License.txt in Resources */,
-				02B4EDF024929DFE009016DA /* baseMapNYC-2.usdz in Resources */,
 				C40F2CEF2490126E00AA1756 /* locationFactsData.json in Resources */,
 				C40F2D13249012E400AA1756 /* CooperHewitt-MediumItalic.otf in Resources */,
 				C40F2D14249012E400AA1756 /* CooperHewitt-Semibold.otf in Resources */,
@@ -576,7 +565,6 @@
 				C40F2CDA2490123800AA1756 /* Main.storyboard in Resources */,
 				C40F2D0F249012E400AA1756 /* CooperHewitt-LightItalic.otf in Resources */,
 				C40F2D0E249012E400AA1756 /* CooperHewitt-Medium.otf in Resources */,
-				C40F2D2424901B1B00AA1756 /* Ball.usdz in Resources */,
 				C40F2D0B249012E400AA1756 /* CooperHewitt-ThinItalic.otf in Resources */,
 				C40F2D11249012E400AA1756 /* CooperHewitt-Heavy.otf in Resources */,
 				C40F2D0A249012E400AA1756 /* CooperHewitt-BoldItalic.otf in Resources */,
@@ -723,6 +711,7 @@
 				C40F2D00249012A400AA1756 /* String+ConvertHexToColour.swift in Sources */,
 				C40F2CFA2490129300AA1756 /* PieChartCell.swift in Sources */,
 				C40F2CED2490126800AA1756 /* GlobalConstants.swift in Sources */,
+				02AC5AA424999A1900468145 /* flipRiseSlider.rcproject in Sources */,
 				C40F2CFF249012A100AA1756 /* NSUIColor+Hex.swift in Sources */,
 				C40F2CF02490127500AA1756 /* TestView.swift in Sources */,
 				C40F2D1B2490157200AA1756 /* SecondOnboardingView.swift in Sources */,
@@ -740,7 +729,6 @@
 				C40F2CF52490128500AA1756 /* LocationsVew.swift in Sources */,
 				C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */,
 				C40F2CF12490127700AA1756 /* WavyView.swift in Sources */,
-				024128CE2497DA640070FEAC /* flipRiseMapSlide.rcproject in Sources */,
 				C40F2D01249012A700AA1756 /* UIButton+Extension.swift in Sources */,
 				C40F2CFB2490129500AA1756 /* ARCell.swift in Sources */,
 				C40F2CEA2490126000AA1756 /* LocationDetailVC.swift in Sources */,
