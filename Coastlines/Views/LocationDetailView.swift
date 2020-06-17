@@ -36,7 +36,8 @@ class LocationDetailView: UIView {
     public lazy var locationImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.image = UIImage(named: "nycSeaLevel1")
+        iv.image = UIImage(named: "nycHeader")
+        iv.backgroundColor = .yellow
         iv.clipsToBounds = true
         iv.alpha = 1
         return iv

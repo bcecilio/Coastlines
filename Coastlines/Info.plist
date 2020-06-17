@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>In order to enjoy an AR experience, Coastlines needs to access your camera.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>CooperHewitt-Medium.otf</string>

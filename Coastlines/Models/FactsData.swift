@@ -14,6 +14,7 @@ struct FactsData: Decodable {
 
 struct Location: Decodable {
     let name: String
+    let imageName: String
     let facts: Facts
     let dataSet: [LocationData]
 }
