@@ -67,15 +67,9 @@ class LocationDetailController: UIViewController {
         
         print("AR Button Pressed")
         
-<<<<<<< HEAD
-        let arVC = ExperimentARController()
-        arVC.modalPresentationStyle = .fullScreen
-        present(arVC, animated: true)
-=======
-//        let arVC = TestARController()
+//        let arVC = ExperimentARController()
 //        arVC.modalPresentationStyle = .fullScreen
 //        present(arVC, animated: true)
->>>>>>> Refactored PaletteColour enum, and centralized all onboarding text into global constants.
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
@@ -207,8 +201,8 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
         if indexPath.row == 5 {
             print("AR Button Pressed")
             
-            let arVC = ExperimentARController()
-            present(arVC, animated: true)
+//            let arVC = ExperimentARController()
+//            present(arVC, animated: true)
         }
     }
 }

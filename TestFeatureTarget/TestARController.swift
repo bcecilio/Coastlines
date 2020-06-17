@@ -18,62 +18,6 @@
 ////    case disappeared
 //// }
 //
-<<<<<<< HEAD
-
-import UIKit
-import RealityKit
-import ARKit
-
-enum BoxState {
-    case appeared
-    case disappeared
-}
-
-class TestARController: UIViewController {
-
-    private let arView = TestARView()
-    private var ent = ModelEntity()
-    private var box = ModelEntity()
-    private var boxState = BoxState.appeared
-    private var horizontalAnchor = AnchorEntity()
-
-    public lazy var tap: UITapGestureRecognizer = {
-       let tap = UITapGestureRecognizer()
-        return tap
-    }()
-    
-    override func loadView(){
-        view = arView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        arView.addGestureRecognizer(tap)
-        tap.addTarget(self, action: #selector(toggleBox))
-        loadEntities()
-        addAnchor()
-    }
-    
-    private func addAnchor(){
-        horizontalAnchor = AnchorEntity(plane: .horizontal, minimumBounds: [0.3,0.3])
-        arView.scene.addAnchor(horizontalAnchor)
-//        ent.position = [0,0,0]
-        ent.setPosition([0,0,0], relativeTo: nil)
-//        addingOcclusion(horizontalAnchor)
-        horizontalAnchor.addChild(ent)
-    }
-    
-    private func loadEntities(){
-        let assetName = "baseMapNYC"
-        do {
-            ent = try Entity.loadModel(named: assetName)
-        } catch {
-            print(error)
-        }
-        
-//        _ = Entity.loadModelAsync(named: assetName)
-//            .sink(receiveCompletion: { (result) in
-=======
 //class TestARController: UIViewController {
 //
 //    private let arView = ARView(frame: UIScreen.main.bounds)
@@ -221,5 +165,4 @@ class TestARController: UIViewController {
 ////        }
 ////    }
 //}
->>>>>>> Refactored PaletteColour enum, and centralized all onboarding text into global constants.
 //
