@@ -28,6 +28,17 @@ class LocationsVew: UIView {
         return wv
     }()
     
+    private lazy var resourceButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Get Involved", for: .normal)
+//        button.setImage(UIImage(named: "leafIcon"), for: .normal)
+        button.layer.cornerRadius = 18
+        button.backgroundColor = PaletteColours.lightGreen.rawValue.convertHexToColour()
+//        button.layer.borderColor = PaletteColours.lightBlue.rawValue.convertHexToColour().cgColor
+        button.addTarget(self, action: #selector(goToResourceVC), for: .touchUpInside)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -42,6 +53,7 @@ class LocationsVew: UIView {
         backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
         setupWavyView()
         setupCollectionView()
+        setupResourceButton()
     }
     
     private func setupCollectionView() {
@@ -64,5 +76,21 @@ class LocationsVew: UIView {
             wavyView.trailingAnchor.constraint(equalTo: trailingAnchor),
             wavyView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
+    }
+    
+    private func setupResourceButton() {
+        collectionView.addSubview(resourceButton)
+        resourceButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            resourceButton.topAnchor.constraint(equalTo: bottomAnchor, constant: -60),
+            resourceButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            resourceButton.widthAnchor.constraint(equalToConstant: 140),
+            resourceButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+    }
+    
+    @objc private func goToResourceVC() {
+        let resourceVC = ResourcesController()
+        UIViewController.resetWindow(resourceVC)
     }
 }

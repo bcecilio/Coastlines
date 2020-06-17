@@ -34,8 +34,18 @@
 		0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */; };
 		1393FDC357C87C1B91849D65 /* Pods_Coastlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */; };
 		5D700857BBD059F2237BFD0C /* Pods_TestFeatureTarget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B9E8FE61F7AAE1A1CB365C /* Pods_TestFeatureTarget.framework */; };
+		B776AD412497F5AF00034A4E /* ResourcesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */; };
 		B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */; };
 		B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsVew.swift */; };
+		B7B59BDB2497E4A0004CA137 /* ResourcesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */; };
+		B7B59BDD2497E4E8004CA137 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDC2497E4E8004CA137 /* ResourceView.swift */; };
+		B7B59BDE2497E4E8004CA137 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDC2497E4E8004CA137 /* ResourceView.swift */; };
+		B7B59BE02497E532004CA137 /* ResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDF2497E532004CA137 /* ResourceCell.swift */; };
+		B7B59BE12497E532004CA137 /* ResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDF2497E532004CA137 /* ResourceCell.swift */; };
+		B7B59BE32497E8C9004CA137 /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BE22497E8C9004CA137 /* ResourceModel.swift */; };
+		B7B59BE42497E8C9004CA137 /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BE22497E8C9004CA137 /* ResourceModel.swift */; };
+		B7BC816824993AAF00EB6A57 /* ARAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B7BC816724993AAF00EB6A57 /* ARAnimation.json */; };
+		B7BC816924993AAF00EB6A57 /* ARAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B7BC816724993AAF00EB6A57 /* ARAnimation.json */; };
 		C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD22490123800AA1756 /* AppDelegate.swift */; };
 		C40F2CD52490123800AA1756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD42490123800AA1756 /* SceneDelegate.swift */; };
 		C40F2CD72490123800AA1756 /* TestARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD62490123800AA1756 /* TestARController.swift */; };
@@ -160,7 +170,16 @@
 		93B9E8FE61F7AAE1A1CB365C /* Pods_TestFeatureTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestFeatureTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		B7A4588D247F10BE001F8E51 /* LocationsVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVew.swift; sourceTree = "<group>"; };
+
 		C40F2CD02490123800AA1756 /* Coasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+
+		B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesController.swift; sourceTree = "<group>"; };
+		B7B59BDC2497E4E8004CA137 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
+		B7B59BDF2497E532004CA137 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
+		B7B59BE22497E8C9004CA137 /* ResourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
+		B7BC816724993AAF00EB6A57 /* ARAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ARAnimation.json; sourceTree = "<group>"; };
+		C40F2CD02490123800AA1756 /* TestFeatureTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFeatureTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+
 		C40F2CD22490123800AA1756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD42490123800AA1756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD62490123800AA1756 /* TestARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARController.swift; sourceTree = "<group>"; };
@@ -230,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				02858578248305410003E31A /* locationFactsData.json */,
+				B7BC816724993AAF00EB6A57 /* ARAnimation.json */,
 			);
 			path = "JSON Data";
 			sourceTree = "<group>";
@@ -244,6 +264,7 @@
 				B7A4588D247F10BE001F8E51 /* LocationsVew.swift */,
 				028423742489C984000C1A9B /* DetailView.swift */,
 				0BCDFFB92485376A007A94BF /* LocationReusableView.swift */,
+				B7B59BDC2497E4E8004CA137 /* ResourceView.swift */,
 				02B9AC9E248EC3FC0037971E /* Cells */,
 			);
 			path = Views;
@@ -261,6 +282,7 @@
 				0289F8FB247DB981008D3910 /* LocationDetailVC.swift */,
 				B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */,
 				028423722489C8D1000C1A9B /* LocationDetailController.swift */,
+				B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -288,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				0285857A2483063A0003E31A /* FactsData.swift */,
+				B7B59BE22497E8C9004CA137 /* ResourceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +346,7 @@
 				024035D3248D8B7800C7F7B2 /* ARCell.swift */,
 				0BCDFFB7248534B1007A94BF /* LocationCell.swift */,
 				0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */,
+				B7B59BDF2497E532004CA137 /* ResourceCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -526,6 +550,7 @@
 			files = (
 				C48EBCE5248846C6001DB0A3 /* CooperHewitt-ThinItalic.otf in Resources */,
 				C48EBCE9248846C6001DB0A3 /* CooperHewitt-LightItalic.otf in Resources */,
+				B7BC816824993AAF00EB6A57 /* ARAnimation.json in Resources */,
 				C48EBCE7248846C6001DB0A3 /* CooperHewitt-BookItalic.otf in Resources */,
 				02858579248305410003E31A /* locationFactsData.json in Resources */,
 				C48EBCE0248846C6001DB0A3 /* CooperHewitt-Thin.otf in Resources */,
@@ -560,6 +585,7 @@
 				C40F2CEF2490126E00AA1756 /* locationFactsData.json in Resources */,
 				C40F2D13249012E400AA1756 /* CooperHewitt-MediumItalic.otf in Resources */,
 				C40F2D14249012E400AA1756 /* CooperHewitt-Semibold.otf in Resources */,
+				B7BC816924993AAF00EB6A57 /* ARAnimation.json in Resources */,
 				C40F2D12249012E400AA1756 /* CooperHewitt-Light.otf in Resources */,
 				C40F2D07249012E400AA1756 /* CooperHewitt-SemiboldItalic.otf in Resources */,
 				C40F2CDA2490123800AA1756 /* Main.storyboard in Resources */,
@@ -667,11 +693,14 @@
 				C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
 				0B35424C2488000600AAB02C /* WavyView2.swift in Sources */,
+				B7B59BDD2497E4E8004CA137 /* ResourceView.swift in Sources */,
 				028423772489E617000C1A9B /* ContentCell.swift in Sources */,
 				028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */,
 				C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */,
 				0285857B2483063A0003E31A /* FactsData.swift in Sources */,
+				B7B59BE02497E532004CA137 /* ResourceCell.swift in Sources */,
 				0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */,
+				B7B59BE32497E8C9004CA137 /* ResourceModel.swift in Sources */,
 				024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */,
 				0285857F2485970E0003E31A /* WavyView.swift in Sources */,
 				B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */,
@@ -689,6 +718,7 @@
 				02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */,
 				C463926324847EF800DDB4DE /* FourthOnboardingController.swift in Sources */,
 				C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */,
+				B7B59BDB2497E4A0004CA137 /* ResourcesController.swift in Sources */,
 				C48EBCCD24884626001DB0A3 /* GlobalConstants.swift in Sources */,
 				C491EF3F24871FA30055DA49 /* String+ConvertHexToColour.swift in Sources */,
 				C463926524847F0B00DDB4DE /* FifthOnboardingController.swift in Sources */,
@@ -715,6 +745,7 @@
 				C40F2CFF249012A100AA1756 /* NSUIColor+Hex.swift in Sources */,
 				C40F2CF02490127500AA1756 /* TestView.swift in Sources */,
 				C40F2D1B2490157200AA1756 /* SecondOnboardingView.swift in Sources */,
+				B776AD412497F5AF00034A4E /* ResourcesController.swift in Sources */,
 				C40F2CFE2490129E00AA1756 /* UIViewController+resetWindow.swift in Sources */,
 				C40F2CF72490128A00AA1756 /* LocationReusableView.swift in Sources */,
 				02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */,
@@ -723,9 +754,14 @@
 				C40F2CEE2490126B00AA1756 /* FactsData.swift in Sources */,
 				0B2AA89E2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift in Sources */,
 				C40F2CF62490128800AA1756 /* DetailView.swift in Sources */,
+				B7B59BE12497E532004CA137 /* ResourceCell.swift in Sources */,
 				C40F2CF92490129100AA1756 /* GraphCell.swift in Sources */,
 				C40F2CE42490124F00AA1756 /* FirstOnboardingController.swift in Sources */,
+
 				02AC5AA224996FCE00468145 /* SeaLevelComputations.swift in Sources */,
+
+				B7B59BE42497E8C9004CA137 /* ResourceModel.swift in Sources */,
+
 				C40F2CF52490128500AA1756 /* LocationsVew.swift in Sources */,
 				C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */,
 				C40F2CF12490127700AA1756 /* WavyView.swift in Sources */,
@@ -741,6 +777,7 @@
 				C40F2D1F2490168500AA1756 /* ARViewController.swift in Sources */,
 				C40F2D1D2490157200AA1756 /* FourthOnboardingView.swift in Sources */,
 				C40F2CF32490128000AA1756 /* ARCoastView.swift in Sources */,
+				B7B59BDE2497E4E8004CA137 /* ResourceView.swift in Sources */,
 				C40F2CE72490125800AA1756 /* FourthOnboardingController.swift in Sources */,
 				C40F2CFD2490129A00AA1756 /* LocationIntroCell.swift in Sources */,
 				C40F2D1C2490157200AA1756 /* ThirdOnboardingView.swift in Sources */,
@@ -935,8 +972,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -954,8 +992,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
