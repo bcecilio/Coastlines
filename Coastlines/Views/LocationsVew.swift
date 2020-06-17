@@ -33,7 +33,7 @@ class LocationsVew: UIView {
         button.setTitle("Get Involved", for: .normal)
 //        button.setImage(UIImage(named: "leafIcon"), for: .normal)
         button.layer.cornerRadius = 18
-        button.backgroundColor = PaletteColours.lightGreen.rawValue.convertHexToColour()
+        button.backgroundColor = PaletteColour.lightGreen.colour
 //        button.layer.borderColor = PaletteColours.lightBlue.rawValue.convertHexToColour().cgColor
         button.addTarget(self, action: #selector(goToResourceVC), for: .touchUpInside)
         return button

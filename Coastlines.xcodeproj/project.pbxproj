@@ -52,8 +52,8 @@
 		C40F2CDA2490123800AA1756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40F2CD82490123800AA1756 /* Main.storyboard */; };
 		C40F2CDC2490123A00AA1756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C40F2CDB2490123A00AA1756 /* Assets.xcassets */; };
 		C40F2CDF2490123A00AA1756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40F2CDD2490123A00AA1756 /* LaunchScreen.storyboard */; };
-		C40F2CE42490124F00AA1756 /* FirstOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */; };
-		C40F2CE52490125200AA1756 /* SecondOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925824847AA200DDB4DE /* SecondOnboardingController.swift */; };
+		C40F2CE42490124F00AA1756 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E97908247DE48A0039B398 /* WelcomeController.swift */; };
+		C40F2CE52490125200AA1756 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925824847AA200DDB4DE /* OnboardingController.swift */; };
 		C40F2CE62490125400AA1756 /* ThirdOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926024847EE800DDB4DE /* ThirdOnboardingController.swift */; };
 		C40F2CE72490125800AA1756 /* FourthOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926224847EF800DDB4DE /* FourthOnboardingController.swift */; };
 		C40F2CE82490125A00AA1756 /* FifthOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926424847F0B00DDB4DE /* FifthOnboardingController.swift */; };
@@ -104,7 +104,7 @@
 		C40F2D212490171F00AA1756 /* TestARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2D202490171F00AA1756 /* TestARView.swift */; };
 		C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */; };
 		C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */; };
-		C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925824847AA200DDB4DE /* SecondOnboardingController.swift */; };
+		C463925924847AA200DDB4DE /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925824847AA200DDB4DE /* OnboardingController.swift */; };
 		C463925B24847EB900DDB4DE /* ThirdOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */; };
 		C463925D24847EC900DDB4DE /* FourthOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925C24847EC900DDB4DE /* FourthOnboardingView.swift */; };
 		C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */; };
@@ -132,7 +132,9 @@
 		C48EBCEC248846C6001DB0A3 /* CooperHewitt-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDD248846C6001DB0A3 /* CooperHewitt-Light.otf */; };
 		C48EBCED248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDE248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf */; };
 		C48EBCEE248846C6001DB0A3 /* CooperHewitt-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCDF248846C6001DB0A3 /* CooperHewitt-Semibold.otf */; };
-		C4E97909247DE48A0039B398 /* FirstOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */; };
+		C4CFF34C249AC87C00777962 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFF34B249AC87C00777962 /* PageController.swift */; };
+		C4CFF34D249AC87C00777962 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFF34B249AC87C00777962 /* PageController.swift */; };
+		C4E97909247DE48A0039B398 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E97908247DE48A0039B398 /* WelcomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,16 +170,12 @@
 		93B9E8FE61F7AAE1A1CB365C /* Pods_TestFeatureTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestFeatureTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		B7A4588D247F10BE001F8E51 /* LocationsVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVew.swift; sourceTree = "<group>"; };
-
-		C40F2CD02490123800AA1756 /* Coasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
-
 		B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesController.swift; sourceTree = "<group>"; };
 		B7B59BDC2497E4E8004CA137 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 		B7B59BDF2497E532004CA137 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
 		B7B59BE22497E8C9004CA137 /* ResourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
 		B7BC816724993AAF00EB6A57 /* ARAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ARAnimation.json; sourceTree = "<group>"; };
 		C40F2CD02490123800AA1756 /* TestFeatureTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFeatureTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
-
 		C40F2CD22490123800AA1756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD42490123800AA1756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD62490123800AA1756 /* TestARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARController.swift; sourceTree = "<group>"; };
@@ -188,7 +186,7 @@
 		C40F2D202490171F00AA1756 /* TestARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARView.swift; sourceTree = "<group>"; };
 		C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+resetWindow.swift"; path = "Coastlines/UIViewController+resetWindow.swift"; sourceTree = SOURCE_ROOT; };
 		C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingView.swift; sourceTree = "<group>"; };
-		C463925824847AA200DDB4DE /* SecondOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingController.swift; sourceTree = "<group>"; };
+		C463925824847AA200DDB4DE /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboardingView.swift; sourceTree = "<group>"; };
 		C463925C24847EC900DDB4DE /* FourthOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthOnboardingView.swift; sourceTree = "<group>"; };
 		C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthOnboardingView.swift; sourceTree = "<group>"; };
@@ -216,7 +214,8 @@
 		C48EBCDD248846C6001DB0A3 /* CooperHewitt-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Light.otf"; sourceTree = "<group>"; };
 		C48EBCDE248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-MediumItalic.otf"; sourceTree = "<group>"; };
 		C48EBCDF248846C6001DB0A3 /* CooperHewitt-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Semibold.otf"; sourceTree = "<group>"; };
-		C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstOnboardingController.swift; path = ../FirstOnboardingController.swift; sourceTree = "<group>"; };
+		C4CFF34B249AC87C00777962 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
+		C4E97908247DE48A0039B398 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeController.swift; path = ../WelcomeController.swift; sourceTree = "<group>"; };
 		CEE5A3A6EC95A87BAEBAA85A /* Pods-Coastlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.release.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.release.xcconfig"; sourceTree = "<group>"; };
 		D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coastlines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -270,8 +269,9 @@
 		0289F8F5247DA093008D3910 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C4E97908247DE48A0039B398 /* FirstOnboardingController.swift */,
-				C463925824847AA200DDB4DE /* SecondOnboardingController.swift */,
+				C4CFF34B249AC87C00777962 /* PageController.swift */,
+				C4E97908247DE48A0039B398 /* WelcomeController.swift */,
+				C463925824847AA200DDB4DE /* OnboardingController.swift */,
 				C463926024847EE800DDB4DE /* ThirdOnboardingController.swift */,
 				C463926224847EF800DDB4DE /* FourthOnboardingController.swift */,
 				C463926424847F0B00DDB4DE /* FifthOnboardingController.swift */,
@@ -362,7 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				0B1F21382476DEC300729365 /* Coastlines.app */,
-				C40F2CD02490123800AA1756 /* Coasts.app */,
+				C40F2CD02490123800AA1756 /* TestFeatureTarget.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -496,7 +496,7 @@
 				024128D02497DB5F0070FEAC /* RealityUI */,
 			);
 			productName = TestFeatureTarget;
-			productReference = C40F2CD02490123800AA1756 /* Coasts.app */;
+			productReference = C40F2CD02490123800AA1756 /* TestFeatureTarget.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -682,7 +682,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F53F12248AF87600227C62 /* PieChartCell.swift in Sources */,
-				C4E97909247DE48A0039B398 /* FirstOnboardingController.swift in Sources */,
+				C4E97909247DE48A0039B398 /* WelcomeController.swift in Sources */,
 				C463925D24847EC900DDB4DE /* FourthOnboardingView.swift in Sources */,
 				C48EBCCF24884626001DB0A3 /* SceneDelegate.swift in Sources */,
 				02F53F06248AAB3C00227C62 /* UIButton+Extension.swift in Sources */,
@@ -705,6 +705,7 @@
 				0BCDFFBA2485376A007A94BF /* LocationReusableView.swift in Sources */,
 				028423752489C984000C1A9B /* DetailView.swift in Sources */,
 				02F53F04248AA7E200227C62 /* GraphCell.swift in Sources */,
+				C4CFF34C249AC87C00777962 /* PageController.swift in Sources */,
 				0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */,
 				B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */,
 				C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */,
@@ -713,7 +714,7 @@
 				0BCDFFB8248534B1007A94BF /* LocationCell.swift in Sources */,
 				02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */,
 				C463926324847EF800DDB4DE /* FourthOnboardingController.swift in Sources */,
-				C463925924847AA200DDB4DE /* SecondOnboardingController.swift in Sources */,
+				C463925924847AA200DDB4DE /* OnboardingController.swift in Sources */,
 				B7B59BDB2497E4A0004CA137 /* ResourcesController.swift in Sources */,
 				C48EBCCD24884626001DB0A3 /* GlobalConstants.swift in Sources */,
 				C463926524847F0B00DDB4DE /* FifthOnboardingController.swift in Sources */,
@@ -731,7 +732,7 @@
 				C40F2CEC2490126500AA1756 /* LocationDetailController.swift in Sources */,
 				C40F2CF22490127D00AA1756 /* WavyView2.swift in Sources */,
 				C40F2D1E2490157200AA1756 /* FifthOnboardingView.swift in Sources */,
-				C40F2CE52490125200AA1756 /* SecondOnboardingController.swift in Sources */,
+				C40F2CE52490125200AA1756 /* OnboardingController.swift in Sources */,
 				C40F2CE82490125A00AA1756 /* FifthOnboardingController.swift in Sources */,
 				C40F2CFA2490129300AA1756 /* PieChartCell.swift in Sources */,
 				C40F2CED2490126800AA1756 /* GlobalConstants.swift in Sources */,
@@ -741,6 +742,7 @@
 				C40F2D1B2490157200AA1756 /* SecondOnboardingView.swift in Sources */,
 				B776AD412497F5AF00034A4E /* ResourcesController.swift in Sources */,
 				C40F2CFE2490129E00AA1756 /* UIViewController+resetWindow.swift in Sources */,
+				C4CFF34D249AC87C00777962 /* PageController.swift in Sources */,
 				C40F2CF72490128A00AA1756 /* LocationReusableView.swift in Sources */,
 				02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */,
 				C40F2CEB2490126300AA1756 /* LocationsViewController.swift in Sources */,
@@ -750,12 +752,9 @@
 				C40F2CF62490128800AA1756 /* DetailView.swift in Sources */,
 				B7B59BE12497E532004CA137 /* ResourceCell.swift in Sources */,
 				C40F2CF92490129100AA1756 /* GraphCell.swift in Sources */,
-				C40F2CE42490124F00AA1756 /* FirstOnboardingController.swift in Sources */,
-
+				C40F2CE42490124F00AA1756 /* WelcomeController.swift in Sources */,
 				02AC5AA224996FCE00468145 /* SeaLevelComputations.swift in Sources */,
-
 				B7B59BE42497E8C9004CA137 /* ResourceModel.swift in Sources */,
-
 				C40F2CF52490128500AA1756 /* LocationsVew.swift in Sources */,
 				C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */,
 				C40F2CF12490127700AA1756 /* WavyView.swift in Sources */,
@@ -928,7 +927,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 26RHXP32FH;
 				DEVELOPMENT_TEAM = 6D2PJ2UC46;
 				INFOPLIST_FILE = Coastlines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -948,7 +946,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 26RHXP32FH;
 				DEVELOPMENT_TEAM = 6D2PJ2UC46;
 				INFOPLIST_FILE = Coastlines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -968,7 +965,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 26RHXP32FH;
 				DEVELOPMENT_TEAM = 6D2PJ2UC46;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
@@ -976,8 +972,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.coastlines1;
-				PRODUCT_NAME = Coasts;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronrivera11.TestFeatureTarget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -991,7 +985,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 26RHXP32FH;
 				DEVELOPMENT_TEAM = 6D2PJ2UC46;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
@@ -999,8 +992,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.coastlines1;
-				PRODUCT_NAME = Coasts;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronrivera11.TestFeatureTarget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

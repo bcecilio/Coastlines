@@ -18,16 +18,6 @@ class FourthOnboardingView: UIView {
         return button
     }()
     
-    public lazy var pageControl: UIPageControl = {
-        let pc = UIPageControl()
-        pc.numberOfPages = 4
-        pc.currentPage = 2
-        pc.currentPageIndicatorTintColor = PaletteColour.offWhite.colour
-        pc.backgroundColor = PaletteColour.lightBlue.colour
-        pc.isUserInteractionEnabled = false
-        return pc
-    }()
-    
     public lazy var nextButton: UIButton = {
        let button = UIButton()
         button.setTitle("", for: .normal)
@@ -63,18 +53,6 @@ class FourthOnboardingView: UIView {
         return button
     }()
     
-    public lazy var leftSwipe: UISwipeGestureRecognizer = {
-       let swipe = UISwipeGestureRecognizer()
-        swipe.direction = .left
-        return swipe
-    }()
-    
-    public lazy var rightSwipe: UISwipeGestureRecognizer = {
-        let swipe = UISwipeGestureRecognizer()
-        swipe.direction = .right
-        return swipe
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -86,42 +64,32 @@ class FourthOnboardingView: UIView {
     }
     
     private func commonInit(){
-        setUpPrevButtonConstraints()
-        setUpPageControlConstraints()
-        setUpNextButtonConstraints()
         setUpCenterImageConstraints()
+        setUpPrevButtonConstraints()
+        setUpNextButtonConstraints()
         setUpInfoLabelConstraints()
         setUpSkipButtonConstraints()
-        addGestureRecognizer(leftSwipe)
-        addGestureRecognizer(rightSwipe)
     }
     
     private func setUpPrevButtonConstraints(){
-        addSubview(prevButton)
+        centerImage.addSubview(prevButton)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([prevButton.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
-    }
-    
-    private func setUpPageControlConstraints() {
-        addSubview(pageControl)
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([pageControl.centerXAnchor.constraint(equalTo: centerXAnchor), pageControl.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), pageControl.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3), pageControl.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05)])
+        NSLayoutConstraint.activate([prevButton.centerYAnchor.constraint(equalTo: centerYAnchor), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
     private func setUpNextButtonConstraints() {
-        addSubview(nextButton)
+        centerImage.addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([nextButton.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
+        NSLayoutConstraint.activate([nextButton.centerYAnchor.constraint(equalTo: centerYAnchor), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
     private func setUpCenterImageConstraints() {
         addSubview(centerImage)
         centerImage.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
+        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
     }
     
     private func setUpInfoLabelConstraints() {
@@ -142,6 +110,18 @@ class FourthOnboardingView: UIView {
     private func showLocationsVC(){
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
+    }
+    
+    public func animateChevrons(){
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat,.autoreverse], animations: {
+            self.prevButton.transform = CGAffineTransform(translationX: -5.0, y: 0.0)
+            self.prevButton.transform = CGAffineTransform(translationX: 5.0, y: 0.0)
+        })
+        
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: [.repeat,.autoreverse], animations: {
+            self.nextButton.transform = CGAffineTransform(translationX: -5.0, y: 0.0)
+            self.nextButton.transform = CGAffineTransform(translationX: 5.0, y: 0.0)
+        })
     }
 
 }

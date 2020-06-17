@@ -23,20 +23,6 @@ class FifthOnboardingController: UIViewController {
     
     private func setUp(){
         fifthOnboardingView.backgroundColor = PaletteColour.lightBlue.colour
-        fifthOnboardingView.prevButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-        fifthOnboardingView.rightSwipe.addTarget(self, action: #selector(goBack))
-    }
-    
-    @objc
-    private func swiped(_ sender: UISwipeGestureRecognizer){
-        if sender.direction == .right{
-            goBack()
-        }
-    }
-    
-    @objc
-    private func goBack(){
-        dismiss(animated: true, completion: nil)
     }
 
 }

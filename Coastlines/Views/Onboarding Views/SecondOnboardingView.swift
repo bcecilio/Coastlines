@@ -39,26 +39,10 @@ class SecondOnboardingView: UIView {
         return label
     }()
     
-    public lazy var pageControl: UIPageControl = {
-        let pc = UIPageControl()
-        pc.currentPage = 1
-        pc.numberOfPages = 4
-        pc.currentPageIndicatorTintColor = PaletteColour.offWhite.colour
-        pc.backgroundColor = PaletteColour.lightBlue.colour
-        pc.isUserInteractionEnabled = false
-        return pc
-    }()
-    
     public lazy var centerImage: UIImageView = {
        let imageView = UIImageView()
         imageView.image = UIImage(named: "coastlineIMG5")
         return imageView
-    }()
-    
-    public lazy var leftSwipe: UISwipeGestureRecognizer = {
-        let swipe = UISwipeGestureRecognizer()
-        swipe.direction = .left
-        return swipe
     }()
     
     override init(frame: CGRect) {
@@ -72,33 +56,24 @@ class SecondOnboardingView: UIView {
     }
     
     private func commonInit(){
-        setUpPageControlConstraints()
-        setUpNextButtonConstraints()
         setUpImageViewConstraints()
         setUpInfoLabelConstraints()
         setUpSkipButtonConstraints()
-        addGestureRecognizer(leftSwipe)
-    }
-    
-    private func setUpPageControlConstraints(){
-        addSubview(pageControl)
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([pageControl.centerXAnchor.constraint(equalTo: centerXAnchor), pageControl.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), pageControl.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), pageControl.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+        setUpNextButtonConstraints()
     }
     
     private func setUpNextButtonConstraints() {
-        addSubview(nextButton)
+        centerImage.addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([nextButton.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
+        NSLayoutConstraint.activate([nextButton.centerYAnchor.constraint(equalTo: centerYAnchor), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
     private func setUpImageViewConstraints() {
         addSubview(centerImage)
         centerImage.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
+        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
     }
     
     private func setUpInfoLabelConstraints(){
@@ -119,6 +94,13 @@ class SecondOnboardingView: UIView {
     private func showLocationsVC(){
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
+    }
+    
+    public func animateNextButton(){
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat,.autoreverse], animations: {
+            self.nextButton.transform = CGAffineTransform(translationX: -5.0, y: 0.0)
+            self.nextButton.transform = CGAffineTransform(translationX: 5.0, y: 0.0)
+        })
     }
 }
 
