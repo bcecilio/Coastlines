@@ -201,7 +201,7 @@ class ExperimentARController: UIViewController {
         }
         
         newSlider.position = [0,0.1,0.30]
-        newSlider.transform.scale = [0.04,0.04,0.04]
+        newSlider.transform.scale = [0.05,0.05,0.05]
 
     }
     
