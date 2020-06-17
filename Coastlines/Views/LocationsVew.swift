@@ -30,8 +30,8 @@ class LocationsVew: UIView {
     
     private lazy var resourceButton: UIButton = {
         let button = UIButton()
-//        button.setTitle("Get Involved", for: .normal)
-        button.setImage(UIImage(named: "leafIcon"), for: .normal)
+        button.setTitle("Get Involved", for: .normal)
+//        button.setImage(UIImage(named: "leafIcon"), for: .normal)
         button.layer.cornerRadius = 18
         button.backgroundColor = PaletteColours.lightGreen.rawValue.convertHexToColour()
 //        button.layer.borderColor = PaletteColours.lightBlue.rawValue.convertHexToColour().cgColor
@@ -84,7 +84,7 @@ class LocationsVew: UIView {
         NSLayoutConstraint.activate([
             resourceButton.topAnchor.constraint(equalTo: bottomAnchor, constant: -60),
             resourceButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            resourceButton.widthAnchor.constraint(equalToConstant: 40),
+            resourceButton.widthAnchor.constraint(equalToConstant: 140),
             resourceButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }

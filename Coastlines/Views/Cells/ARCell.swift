@@ -36,7 +36,6 @@ class ARCell: UICollectionViewCell {
     
     public lazy var arIconAnimation: AnimationView = {
         let v = AnimationView()
-        
         return v
     }()
     
@@ -49,7 +48,7 @@ class ARCell: UICollectionViewCell {
         setupHeaderLabel()
         setupARAnimation()
 //        setupARIcon()
-//        animateLabel()
+        animateLabel()
         animateARIcon()
     }
     
@@ -109,14 +108,13 @@ class ARCell: UICollectionViewCell {
     
     
     @objc func prevButtonPressed(_ sender: UIButton) {
-        
         print("Prev Button Pressed")
         cellDelegate?.clickedOnPrev(index: (index?.row)!, cell: self)
         
     }
     
     private func animateARIcon(){
-        UIView.animate(withDuration: 0.75, delay: 0.0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: {
+        UIView.animate(withDuration: 0.75, delay: 0.0, options: [.allowUserInteraction, .curveEaseIn], animations: {
             self.arIconAnimation.animation = Animation.named("ARAnimation")
             self.arIconAnimation.play()
             // self.arIconImage.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)
