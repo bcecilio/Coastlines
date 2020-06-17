@@ -32,7 +32,7 @@ class ResourceCell: UITableViewCell {
     private lazy var subtext: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -88,10 +88,10 @@ class ResourceCell: UITableViewCell {
         container.addSubview(subtext)
         subtext.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            subtext.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 20),
-            subtext.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
-            subtext.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
-            subtext.heightAnchor.constraint(equalToConstant: 110)
+            subtext.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 15),
+            subtext.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 15),
+            subtext.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -15),
+            subtext.heightAnchor.constraint(equalToConstant: 120)
         ])
     }
     

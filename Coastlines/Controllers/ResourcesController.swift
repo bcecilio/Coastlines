@@ -13,7 +13,7 @@ class ResourcesController: UIViewController {
     private let resourceView = ResourceView()
     
     private var resources = [
-        Resources(title: "Bike to Work!", description: "bluhbluhbluh"),
+        Resources(title: "Bike to Work!", description: "\u{2022} To help, we've rounded up our best tips for eco-friendly commuting, starting a carpool, commuting by bike, and much more in this guide. You'll save money, time, and reduce your carbon footprint -- and could even lose weight!"),
         Resources(title: "Daily Actions You Can Take.", description: "bluhbluhbluh"),
         Resources(title: "Considering Solar Energy.", description: "bluhbluhbluh"),
         Resources(title: "Can my diet make a difference?", description: "bluhbluhbluh"),
@@ -59,7 +59,7 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if selectedIndex == indexPath {
-            return 200
+            return 220
         }
         return 60
     }
