@@ -30,8 +30,11 @@ class LocationsVew: UIView {
     
     private lazy var resourceButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
-        button.layer.borderColor = PaletteColours.offWhite.rawValue.convertHexToColour().cgColor
+        button.setTitle("Get Involved", for: .normal)
+//        button.setImage(UIImage(named: "leafIcon"), for: .normal)
+        button.layer.cornerRadius = 18
+        button.backgroundColor = PaletteColours.lightGreen.rawValue.convertHexToColour()
+//        button.layer.borderColor = PaletteColours.lightBlue.rawValue.convertHexToColour().cgColor
         button.addTarget(self, action: #selector(goToResourceVC), for: .touchUpInside)
         return button
     }()
@@ -58,7 +61,7 @@ class LocationsVew: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
@@ -76,11 +79,13 @@ class LocationsVew: UIView {
     }
     
     private func setupResourceButton() {
-        addSubview(resourceButton)
+        collectionView.addSubview(resourceButton)
         resourceButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            resourceButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
-            resourceButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
+            resourceButton.topAnchor.constraint(equalTo: bottomAnchor, constant: -60),
+            resourceButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            resourceButton.widthAnchor.constraint(equalToConstant: 140),
+            resourceButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
     
