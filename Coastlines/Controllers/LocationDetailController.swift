@@ -67,7 +67,11 @@ class LocationDetailController: UIViewController {
         
         print("AR Button Pressed")
         
+<<<<<<< HEAD
 //        let arVC = ExperimentARController()
+=======
+//        let arVC = TestARController()
+>>>>>>> 09ec09513106aa4d8d1dba8ff6dcd84eb207dd3e
 //        arVC.modalPresentationStyle = .fullScreen
 //        present(arVC, animated: true)
     }
