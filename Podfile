@@ -7,6 +7,7 @@ target 'Coastlines' do
 
   # Pods for Coastlines
 pod 'Charts'
+pod 'lottie-ios'
 
 end
 
@@ -14,5 +15,6 @@ target 'TestFeatureTarget' do
   use_frameworks!
   
 pod 'Charts'
+pod 'lottie-ios'
   
 end

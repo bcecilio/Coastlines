@@ -13,10 +13,11 @@ class ResourcesController: UIViewController {
     private let resourceView = ResourceView()
     
     private var resources = [
-        Resources(title: "Learn More", description: "bluhbluhbluh"),
-        Resources(title: "Commute Alternatives", description: "bluhbluhbluh"),
-        Resources(title: "Solar Energy", description: "bluhbluhbluh"),
-        Resources(title: "Compost", description: "bluhbluhbluh"),
+        Resources(title: "Bike to Work!", description: "bluhbluhbluh"),
+        Resources(title: "Daily Actions You Can Take.", description: "bluhbluhbluh"),
+        Resources(title: "Considering Solar Energy.", description: "bluhbluhbluh"),
+        Resources(title: "Can my diet make a difference?", description: "bluhbluhbluh"),
+        Resources(title: "Can't afford to cut down on the driving?", description: "bluhbluhbluh"),
         ]
     
     private var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)

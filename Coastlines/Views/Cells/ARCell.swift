@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class ARCell: UICollectionViewCell {
     var index: IndexPath?
@@ -33,6 +34,12 @@ class ARCell: UICollectionViewCell {
         return iv
     }()
     
+    public lazy var arIconAnimation: AnimationView = {
+        let v = AnimationView()
+        
+        return v
+    }()
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
@@ -40,7 +47,8 @@ class ARCell: UICollectionViewCell {
         prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
         setupPrevButton()
         setupHeaderLabel()
-        setupARIcon()
+        setupARAnimation()
+//        setupARIcon()
 //        animateLabel()
         animateARIcon()
     }
@@ -88,6 +96,17 @@ class ARCell: UICollectionViewCell {
         ])
     }
     
+    private func setupARAnimation() {
+        addSubview(arIconAnimation)
+        arIconAnimation.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            arIconAnimation.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10),
+            arIconAnimation.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            arIconAnimation.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.45),
+            arIconAnimation.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.60)
+        ])
+    }
+    
     
     @objc func prevButtonPressed(_ sender: UIButton) {
         
@@ -98,8 +117,10 @@ class ARCell: UICollectionViewCell {
     
     private func animateARIcon(){
         UIView.animate(withDuration: 0.75, delay: 0.0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: {
-            self.arIconImage.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)
-            self.arIconImage.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+            self.arIconAnimation.animation = Animation.named("ARAnimation")
+            self.arIconAnimation.play()
+            // self.arIconImage.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)
+            // self.arIconImage.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
         }, completion: nil)
     }
 }
