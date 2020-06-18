@@ -68,7 +68,8 @@ class LocationDetailController: UIViewController {
     @objc func backButtonPressed(_ sender: UIButton) {
         
         print("Back Button Pressed")
-        self.dismiss(animated: true)
+        let locationsVC = LocationsViewController()
+        UIViewController.resetWindow(locationsVC)
     }
     
     private func animateRightScroll() {
