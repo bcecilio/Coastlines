@@ -38,7 +38,7 @@ class ExperimentARController: UIViewController {
         
         setupARView()
 //        setupBackButton()
-        setupCoachingOverlayView()
+//        setupCoachingOverlayView()
         
         arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
         
@@ -103,7 +103,7 @@ class ExperimentARController: UIViewController {
         print("please be flipped")
         
         
-        let blue = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        let blue = PaletteColour.lightBlue.colour
         
         riseSegmentScene.isEnabled = true
         flipScene.isEnabled = false

@@ -8,7 +8,7 @@
 
 import ARKit
 import RealityKit
-​
+
 struct CityLights {
     
     static func addSpotlights() -> (SpotLight, SpotLight, SpotLight, SpotLight) {
@@ -82,7 +82,6 @@ struct CityLights {
         return (lightOne, lightTwo, lightThree, lightFour)
     }
 }
-Collapse
 
 
 
