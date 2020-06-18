@@ -177,7 +177,7 @@
 		B7B59BDF2497E532004CA137 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
 		B7B59BE22497E8C9004CA137 /* ResourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
 		B7BC816724993AAF00EB6A57 /* ARAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ARAnimation.json; sourceTree = "<group>"; };
-		C40F2CD02490123800AA1756 /* TestFeatureTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFeatureTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40F2CD02490123800AA1756 /* Coasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40F2CD22490123800AA1756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD42490123800AA1756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD62490123800AA1756 /* TestARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARController.swift; sourceTree = "<group>"; };
@@ -364,7 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				0B1F21382476DEC300729365 /* Coastlines.app */,
-				C40F2CD02490123800AA1756 /* TestFeatureTarget.app */,
+				C40F2CD02490123800AA1756 /* Coasts.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -499,7 +499,7 @@
 				024128D02497DB5F0070FEAC /* RealityUI */,
 			);
 			productName = TestFeatureTarget;
-			productReference = C40F2CD02490123800AA1756 /* TestFeatureTarget.app */;
+			productReference = C40F2CD02490123800AA1756 /* Coasts.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -977,7 +977,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronrivera13.TestFeatureTarget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Coasts;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -997,7 +997,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronrivera13.TestFeatureTarget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Coasts;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
