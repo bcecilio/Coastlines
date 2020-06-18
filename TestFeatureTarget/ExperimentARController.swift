@@ -15,6 +15,8 @@ class ExperimentARController: UIViewController {
     
     let arView = ARView()
     
+    let location: Location
+    
     let backButton = UIButton().previousButton()
     
     lazy var coachingOverlay = ARCoachingOverlayView()
@@ -26,18 +28,42 @@ class ExperimentARController: UIViewController {
     
     var newSlider = RUISlider()
     
+    var (_, _, brook, redLight) = CityLights.addSpotlights()
+    
+    var (cityLightOne, cityLightTwo, cityLightThree, cityLightFour) = CityLights.addCityLights()
+    
+    init(_ location: Location) {
+        self.location = location
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupARView()
-        setupBackButton()
-//        setupCoachingOverlayView()
+//        setupBackButton()
+        setupCoachingOverlayView()
         
         arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
         
         loadScene()
 //        setupOccBox()
         setupSlider()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setupBackButton()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        arView.session.pause()
         
     }
     
@@ -83,13 +109,32 @@ class ExperimentARController: UIViewController {
     
     func wasFlipped(_ entity: Entity?) {
         print("please be flipped")
-        let (cityLight, _, _, _) = CityLights.addSpotlights()
+        
+        
+        let blue = PaletteColours.lightBlue.rawValue.convertHexToColour()
         
         riseSegmentScene.isEnabled = true
         flipScene.isEnabled = false
         
-        riseSegmentScene.addChild(cityLight)
-//        riseSegmentScene.addChild(spotlight2)
+//        riseSegmentScene.addChild(cityLight)
+        redLight.light.color = .white
+        riseSegmentScene.addChild(redLight)
+        
+        cityLightOne.light.color = blue
+        riseSegmentScene.addChild(cityLightOne)
+        
+        cityLightTwo.light.color = blue
+        riseSegmentScene.addChild(cityLightTwo)
+        
+        cityLightThree.light.color = blue
+        riseSegmentScene.addChild(cityLightThree)
+        
+        cityLightFour.light.color = blue
+        riseSegmentScene.addChild(cityLightFour)
+        
+        brook.light.color = blue
+        riseSegmentScene.addChild(brook)
+        
         riseSegmentScene.addChild(newSlider)
     }
     
@@ -104,6 +149,16 @@ class ExperimentARController: UIViewController {
             let scene = self.riseSegmentScene
             
             print(slider.value)
+            
+            if slider.value > 0.5 {
+                self.redLight.light.color = .red
+                self.redLight.light.intensity = 100000
+                self.brook.light.color = .red
+            } else if slider.value <= 0.5 {
+                self.redLight.light.intensity = 800
+                self.redLight.light.color = .white
+                self.brook.light.color = .white
+            }
             
             
             if let transformOne = CompSeaLevel.riseDropOne(sliderVal: slider.value, entity: scene.riserOne) {
@@ -156,7 +211,8 @@ class ExperimentARController: UIViewController {
     @objc
     func goBack(_ sender: UIButton) {
         arView.scene.anchors.removeAll()
-        self.dismiss(animated: true)
+        let detailVC = LocationDetailController(location)
+        UIViewController.resetWindow(detailVC)
     }
     
     

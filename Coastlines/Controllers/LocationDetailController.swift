@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import AVFoundation
 
 class LocationDetailController: UIViewController {
     
@@ -18,6 +19,7 @@ class LocationDetailController: UIViewController {
     private var isStatusBarHidden = false
     
     private var seaChartCell = GraphCell()
+    
     
     init(_ location: Location) {
         self.location = location
@@ -56,6 +58,7 @@ class LocationDetailController: UIViewController {
         locationView.collectionView.delegate = self
         locationView.collectionView.dataSource = self
         locationView.collectionView.isScrollEnabled = false
+        
     }
     
     private func setupUI() {
@@ -67,9 +70,8 @@ class LocationDetailController: UIViewController {
         
         print("AR Button Pressed")
         
-        let arVC = ExperimentARController()
-        arVC.modalPresentationStyle = .fullScreen
-        present(arVC, animated: true)
+        let arVC = ExperimentARController(location)
+        UIViewController.resetWindow(arVC)
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
@@ -90,6 +92,13 @@ class LocationDetailController: UIViewController {
             self.locationView.layoutIfNeeded()
         }, completion: nil)
         print(locationView.collectionView.contentOffset.x.description)
+        
+//        let utterance = AVSpeechUtterance(string: "Hello world")
+//        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+//        utterance.rate = 0.1
+//
+//        let synthesizer = AVSpeechSynthesizer()
+//        synthesizer.speak(utterance)
     }
     
     private func animateLeftScroll() {
@@ -175,6 +184,7 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
         case 5:
             contentCell.headerLabel.text = indexPath.row.description
             contentCell.contentLabel.text = ""
+            arCell.arIconAnimation.play()
             return arCell
         default:
             break
@@ -201,8 +211,8 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
         if indexPath.row == 5 {
             print("AR Button Pressed")
             
-            let arVC = ExperimentARController()
-            present(arVC, animated: true)
+            let arVC = ExperimentARController(location)
+            UIViewController.resetWindow(arVC)
         }
     }
 }
