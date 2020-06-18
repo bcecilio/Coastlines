@@ -1,11 +1,3 @@
-//
-//  ExperimentARController.swift
-//  TestFeatureTarget
-//
-//  Created by Kelby Mittan on 6/10/20.
-//  Copyright © 2020 Ahad Islam. All rights reserved.
-//
-
 import RealityKit
 import ARKit
 import Combine
@@ -13,29 +5,40 @@ import RealityUI
 
 class ExperimentARController: UIViewController {
     
-    
-    
-    
-    //    lazy var arView = ARView(frame: view.frame)
-    
     let arView = ARView()
+    
+    let location: Location
+    
+    let backButton = UIButton().previousButton()
     
     lazy var coachingOverlay = ARCoachingOverlayView()
     
     var flipScene = FlipRiseSlider.FlipScene()
-//    var riseScene = FlipRiseSlider.RiseScene()
-//    var seaRiseScene = FlipRiseSlider.SeaRiseScene()
     var riseSegmentScene = FlipRiseSlider.RiseSegmentScene()
     
     var occBox = ModelEntity()
     
     var newSlider = RUISlider()
     
+    var (_, _, brook, redLight) = CityLights.addSpotlights()
+    
+    var (cityLightOne, cityLightTwo, cityLightThree, cityLightFour) = CityLights.addCityLights()
+    
+    init(_ location: Location) {
+        self.location = location
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupARView()
-//        setupCoachingOverlayView()
+//        setupBackButton()
+        setupCoachingOverlayView()
         
         arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
         
@@ -45,30 +48,15 @@ class ExperimentARController: UIViewController {
         
     }
     
-    private func addSpotlights() -> (SpotLight, SpotLight, SpotLight, SpotLight) {
-        let redLightManh = SpotLight()
-        let whiteLightOne = SpotLight()
-        let redLightBrook = SpotLight()
-        let whiteLightBrook = SpotLight()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setupBackButton()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        arView.session.pause()
         
-        redLightManh.position =  [-0.2335, 0, 0.1584]
-        redLightManh.light.attenuationRadius = 0.96
-        redLightManh.light.color = .red
-        redLightManh.light.intensity = 500000
-        
-        redLightManh.transform.rotation = simd_quatf(vector: [GLKMathDegreesToRadians(-60),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
-        
-        whiteLightOne.position = [-0.1261, 0.0487, -0.2044]
-        whiteLightOne.light.attenuationRadius = 0.26
-        whiteLightOne.light.color = .systemTeal
-        whiteLightOne.light.innerAngleInDegrees = 180
-        whiteLightOne.light.outerAngleInDegrees = 0
-        
-        redLightBrook.position = [0.1644, 0.0487, 0.2044]
-        redLightBrook.light.attenuationRadius = 0.16
-        redLightBrook.light.color = .green
-        redLightBrook.light.outerAngleInDegrees = 135
-        return (redLightManh, whiteLightOne, redLightBrook, whiteLightBrook)
     }
     
     private func loadScene() {
@@ -82,40 +70,11 @@ class ExperimentARController: UIViewController {
                 self.flipScene = scene
                 
                 self.arView.scene.anchors.append(scene)
-                self.coachingOverlay.isHidden = true
-                
-                self.flipScene.addChild(self.occBox)
+//                self.coachingOverlay.isHidden = true
+//                self.flipScene.addChild(self.occBox)
                 self.flipScene.actions.flipModel.onAction = self.wasFlipped(_:)
             }
         }
-        
-//        FlipRiseMapSlide.loadRiseSceneAsync { [unowned self] result in
-//            switch result {
-//            case .failure(let error):
-//                print("The rise error is..... \(error)")
-//            case .success(let scene):
-//
-//                self.riseScene = scene
-//
-//                self.arView.scene.anchors.append(self.riseScene)
-//                self.riseScene.isEnabled = false
-//
-//            }
-//        }
-        
-//        FlipRiseMapSlide.loadSeaRiseSceneAsync { [unowned self] result in
-//            switch result {
-//            case .failure(let error):
-//                print("The seaRise error is..... \(error)")
-//            case .success(let scene):
-//
-//                self.seaRiseScene = scene
-//
-//                self.arView.scene.anchors.append(self.seaRiseScene)
-//                self.seaRiseScene.isEnabled = false
-//
-//            }
-//        }
         
         FlipRiseSlider.loadRiseSegmentSceneAsync { [unowned self] result in
             switch result {
@@ -142,13 +101,32 @@ class ExperimentARController: UIViewController {
     
     func wasFlipped(_ entity: Entity?) {
         print("please be flipped")
-//        let (redManh, spotlight2, _, _) = self.addSpotlights()
+        
+        
+        let blue = PaletteColours.lightBlue.rawValue.convertHexToColour()
         
         riseSegmentScene.isEnabled = true
         flipScene.isEnabled = false
         
-//        riseSegmentScene.addChild(redManh)
-//        riseSegmentScene.addChild(spotlight2)
+//        riseSegmentScene.addChild(cityLight)
+        redLight.light.color = .white
+        riseSegmentScene.addChild(redLight)
+        
+        cityLightOne.light.color = blue
+        riseSegmentScene.addChild(cityLightOne)
+        
+        cityLightTwo.light.color = blue
+        riseSegmentScene.addChild(cityLightTwo)
+        
+        cityLightThree.light.color = blue
+        riseSegmentScene.addChild(cityLightThree)
+        
+        cityLightFour.light.color = blue
+        riseSegmentScene.addChild(cityLightFour)
+        
+        brook.light.color = blue
+        riseSegmentScene.addChild(brook)
+        
         riseSegmentScene.addChild(newSlider)
     }
     
@@ -161,7 +139,19 @@ class ExperimentARController: UIViewController {
         ) { (slider, _) in
             
             let scene = self.riseSegmentScene
+            
             print(slider.value)
+            
+            if slider.value > 0.5 {
+                self.redLight.light.color = .red
+                self.redLight.light.intensity = 100000
+                self.brook.light.color = .red
+            } else if slider.value <= 0.5 {
+                self.redLight.light.intensity = 800
+                self.redLight.light.color = .white
+                self.brook.light.color = .white
+            }
+            
             
             if let transformOne = CompSeaLevel.riseDropOne(sliderVal: slider.value, entity: scene.riserOne) {
                 scene.riserOne?.move(to: transformOne, relativeTo: scene, duration: 8)
@@ -205,20 +195,18 @@ class ExperimentARController: UIViewController {
 
     }
     
-    var count = 0
-    var year = 0
-    
     @objc
     func handleTap(recognizer: UITapGestureRecognizer) {
-        
-        occBox.isEnabled = false
-        count += 1
-        print(count)
-        
-        if count == 3 {
-                        
-        }
+                
     }
+    
+    @objc
+    func goBack(_ sender: UIButton) {
+        arView.scene.anchors.removeAll()
+        let detailVC = LocationDetailController(location)
+        UIViewController.resetWindow(detailVC)
+    }
+    
     
     private func setupARView() {
         view.addSubview(arView)
@@ -230,5 +218,19 @@ class ExperimentARController: UIViewController {
             arView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             arView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             arView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
+    }
+    
+    private func setupBackButton() {
+        view.addSubview(backButton)
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        backButton.addTarget(self, action: #selector(goBack(_:)), for: .touchUpInside)
+        NSLayoutConstraint.activate([
+            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            backButton.widthAnchor.constraint(equalToConstant: 44),
+            backButton.heightAnchor.constraint(equalToConstant: 44)
+        ])
     }
 }
