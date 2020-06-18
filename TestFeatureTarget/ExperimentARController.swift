@@ -38,7 +38,7 @@ class ExperimentARController: UIViewController {
         
         setupARView()
 //        setupBackButton()
-//        setupCoachingOverlayView()
+        setupCoachingOverlayView()
         
         arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
         
