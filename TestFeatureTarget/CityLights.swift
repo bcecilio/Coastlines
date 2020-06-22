@@ -18,6 +18,7 @@ struct CityLights {
         let lightFour = SpotLight()
         
         lightOne.position =  [-0.2035, 0, 0.1084]
+        
         lightOne.light.attenuationRadius = 1.3
         lightOne.light.color = .purple
         lightOne.light.intensity = 5000
@@ -59,9 +60,9 @@ struct CityLights {
         
         lightOne.transform.rotation = simd_quatf(vector: [GLKMathDegreesToRadians(-45),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
         
-        lightTwo.position =  [-0.2035, 0, 0.1084]
+        lightTwo.position =  [-0.3035, 0, 0.2084] //[-0.2035, 0, 0.1084]
         lightTwo.light.attenuationRadius = 1.3
-        lightTwo.light.color = .purple
+        lightTwo.light.color = .green
         lightTwo.light.intensity = 700
         
         lightTwo.transform.rotation = simd_quatf(vector: [GLKMathDegreesToRadians(-70),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
@@ -80,6 +81,58 @@ struct CityLights {
         lightFour.transform.rotation = simd_quatf(vector: [GLKMathDegreesToRadians(-130),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
         
         return (lightOne, lightTwo, lightThree, lightFour)
+    }
+    
+    static func movelights(sliderVal: Float, light: SpotLight?) -> Transform? {
+        var transform = light?.transform
+        let angle = simd_quatf(vector: [GLKMathDegreesToRadians(-70),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
+        
+        switch sliderVal {
+//        case 0.0..<0.2:
+//            transform?.translation = [-0.3035, 0, 0.2084]
+////            transform?.translation = [-0.25,0.041,0.14]
+////            transform?.scale = [1,1,1]
+//            break
+//        case 0.2..<0.3:
+////            transform?.translation = [-0.2035, 0, 0.1084]//[-0.24,0.041,0.125]
+////            transform?.scale = [1.375,1,1.375]
+//            break
+//        case 0.3..<0.4:
+////            transform?.translation = [-0.2035, 0, 0.1084]//[-0.23,0.041,0.11]
+////            transform?.scale = [1.75,1,1.75]
+//            break
+//        case 0.4..<0.5:
+////            transform?.translation = [-0.2035, 0, 0.1084]//[-0.22,0.041,0.095]
+////            transform?.scale = [2.125,1,2.125]
+//            break
+//        case 0.5..<0.6:
+////            transform?.translation = [-0.2035, 0, 0.1084]//[-0.21,0.041,0.08]
+////            transform?.scale = [2.5,1,2.5]
+//            break
+//        case 0.6..<0.7:
+////            transform?.translation = [-0.2035, 0, 0.1084]//[-0.20,0.041,0.065]
+////            transform?.scale = [2.875,1,2.875]
+//            break
+//        case 0.7..<0.8:
+////            transform?.translation = [-0.2035, 0, 0.1084]//[-0.19,0.041,0.05]
+////            transform?.scale = [3.25,1,3.25]
+//            break
+//        case 0.8..<0.9:
+//            transform?.translation = [-0.2035, 0, 0.1084]//[-0.18,0.041,0.035]
+////            transform?.scale = [3.625,1,3.625]
+//            break
+            
+        case 0..<0.5:
+            transform?.rotation = angle
+            transform?.translation = [-0.3035, 0, 0.2084]
+        case 0.5...:
+            transform?.rotation = angle
+            transform?.translation = [-0.2035, 0, 0.1084]
+        default:
+            transform?.translation = [0, 0, 0]//[-0.17,0.041,0.02]
+//            transform?.scale = [4,1,4]
+        }
+        return transform
     }
 }
 

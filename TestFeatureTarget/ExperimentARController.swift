@@ -13,6 +13,7 @@ class ExperimentARController: UIViewController {
     
     lazy var coachingOverlay = ARCoachingOverlayView()
     
+    var dropScene = FlipRiseSlider.DropScene()
     var flipScene = FlipRiseSlider.FlipScene()
     var riseSegmentScene = FlipRiseSlider.RiseSegmentScene()
     
@@ -37,13 +38,13 @@ class ExperimentARController: UIViewController {
         super.viewDidLoad()
         
         setupARView()
-//        setupBackButton()
+        //        setupBackButton()
         setupCoachingOverlayView()
         
         arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
         
         loadScene()
-//        setupOccBox()
+        //        setupOccBox()
         setupSlider()
         
     }
@@ -61,6 +62,20 @@ class ExperimentARController: UIViewController {
     
     private func loadScene() {
         
+        FlipRiseSlider.loadDropSceneAsync { [unowned self] result in
+            switch result {
+            case .failure(let error):
+                print("The flip scene error is..... \(error)")
+            case .success(let scene):
+                
+                self.dropScene = scene
+                
+                self.arView.scene.anchors.append(scene)
+                //                self.coachingOverlay.isHidden = true
+                self.dropScene.actions.drop.onAction = self.wasDropped(_:)
+            }
+        }
+        
         FlipRiseSlider.loadFlipSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
@@ -70,8 +85,9 @@ class ExperimentARController: UIViewController {
                 self.flipScene = scene
                 
                 self.arView.scene.anchors.append(scene)
-//                self.coachingOverlay.isHidden = true
-//                self.flipScene.addChild(self.occBox)
+                //                self.coachingOverlay.isHidden = true
+                //                self.flipScene.addChild(self.occBox)
+                self.flipScene.isEnabled = false
                 self.flipScene.actions.flipModel.onAction = self.wasFlipped(_:)
             }
         }
@@ -83,7 +99,7 @@ class ExperimentARController: UIViewController {
             case .success(let scene):
                 
                 self.riseSegmentScene = scene
-                                
+                
                 self.arView.scene.anchors.append(self.riseSegmentScene)
                 self.riseSegmentScene.isEnabled = false
                 
@@ -97,7 +113,13 @@ class ExperimentARController: UIViewController {
         occBox = ModelEntity(mesh: boxMesh, materials: [material])
         occBox.position.y = -0.25
     }
+    
+    func wasDropped(_ entity: Entity?) {
+        print("please be DROPPED")
         
+        flipScene.isEnabled = true
+        dropScene.isEnabled = false
+    }
     
     func wasFlipped(_ entity: Entity?) {
         print("please be flipped")
@@ -108,24 +130,24 @@ class ExperimentARController: UIViewController {
         riseSegmentScene.isEnabled = true
         flipScene.isEnabled = false
         
-//        riseSegmentScene.addChild(cityLight)
-        redLight.light.color = .white
-        riseSegmentScene.addChild(redLight)
+        //        riseSegmentScene.addChild(cityLight)
+        //        redLight.light.color = .red
+        //        riseSegmentScene.addChild(redLight)
+        //
+        //        cityLightOne.light.color = blue
+        //        riseSegmentScene.addChild(cityLightOne)
         
-        cityLightOne.light.color = blue
-        riseSegmentScene.addChild(cityLightOne)
-        
-        cityLightTwo.light.color = blue
+        //        cityLightTwo.light.color = .green
         riseSegmentScene.addChild(cityLightTwo)
         
-        cityLightThree.light.color = blue
-        riseSegmentScene.addChild(cityLightThree)
-        
-        cityLightFour.light.color = blue
-        riseSegmentScene.addChild(cityLightFour)
-        
-        brook.light.color = blue
-        riseSegmentScene.addChild(brook)
+        //        cityLightThree.light.color = blue
+        //        riseSegmentScene.addChild(cityLightThree)
+        //
+        //        cityLightFour.light.color = blue
+        //        riseSegmentScene.addChild(cityLightFour)
+        //
+        //        brook.light.color = blue
+        //        riseSegmentScene.addChild(brook)
         
         riseSegmentScene.addChild(newSlider)
     }
@@ -151,6 +173,23 @@ class ExperimentARController: UIViewController {
                 self.redLight.light.color = .white
                 self.brook.light.color = .white
             }
+            
+            if slider.value > 0.5 {
+                let moveTo = float4x4.makeTranslation(x: 0, 0, 0)
+                
+                self.cityLightTwo.move(to: moveTo, relativeTo: scene, duration: 8)
+                //                self.cityLightTwo.position = [-0.2035, 0, 0.1084]
+            }
+            
+            //            let angle = simd_quatf(vector: [GLKMathDegreesToRadians(-70),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
+            //
+            
+            
+            //            if let lightTransform = CityLights.movelights(sliderVal: slider.value, light: self.cityLightTwo) {
+            ////                self.cityLightTwo.transform.rotation = angle
+            //                self.cityLightTwo.move(to: lightTransform, relativeTo: scene, duration: 2)
+            //
+            //            }
             
             
             if let transformOne = CompSeaLevel.riseDropOne(sliderVal: slider.value, entity: scene.riserOne) {
@@ -192,12 +231,12 @@ class ExperimentARController: UIViewController {
         
         newSlider.position = [0,0.1,0.30]
         newSlider.transform.scale = [0.05,0.05,0.05]
-
+        
     }
     
     @objc
     func handleTap(recognizer: UITapGestureRecognizer) {
-                
+        
     }
     
     @objc

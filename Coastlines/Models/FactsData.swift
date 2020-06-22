@@ -14,12 +14,28 @@ struct FactsData: Decodable {
 
 struct Location: Decodable {
     let name: String
-    let imageName: String
+    let images: LocationImages
     let facts: Facts
     let dataSet: [LocationData]
 }
 
+struct LocationImages: Decodable {
+    let one: String
+    let two: String
+    let three: String
+    let four: String
+    let five: String
+    let six: String
+    let seven: String
+}
+
 struct Facts: Decodable {
+    let quickFact1: String
+    let quickFact2: String
+    let quickFact3: String
+    let quickFact4: String
+    let quickFact5: String
+    let quickFact6: String
     let generalFacts: String
     let seaLevelFacts: String
     let populationFacts: String

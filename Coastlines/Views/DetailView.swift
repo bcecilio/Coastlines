@@ -13,7 +13,7 @@ class DetailView: UIView {
     
     public lazy var backButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
         button.backgroundColor = .clear
         button.tintColor = .white
         button.contentMode = .scaleToFill
@@ -27,13 +27,10 @@ class DetailView: UIView {
         return view
     }()
     
-    public lazy var locationImage: UIImageView = {
+    public lazy var imageOne: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.image = UIImage(named: "nycHeader")
-        iv.backgroundColor = .yellow
         iv.clipsToBounds = true
-        iv.alpha = 1
         return iv
     }()
     
@@ -45,12 +42,10 @@ class DetailView: UIView {
     
     public lazy var locationLabel: UILabel = {
         let label = UILabel()
-        label.text = "New York City"
         label.numberOfLines = 0
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 35)
-        //        label.font = UIFont(name: "CooperHewitt-Bold", size: 35)
-        label.textColor = .white
+        label.textColor = PaletteColour.offWhite.colour
         return label
     }()
     
@@ -59,6 +54,7 @@ class DetailView: UIView {
         layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collection.backgroundColor = PaletteColour.lightBlue.colour
+        collection.register(TOCCell.self, forCellWithReuseIdentifier: "tocCell")
         collection.register(ContentCell.self, forCellWithReuseIdentifier: "contentCell")
         collection.register(GraphCell.self, forCellWithReuseIdentifier: "graphCell")
         collection.register(PieChartCell.self, forCellWithReuseIdentifier: "pieCell")
@@ -73,6 +69,8 @@ class DetailView: UIView {
     
     var nameLabelLeading: NSLayoutConstraint!
     var wavyLeading: NSLayoutConstraint!
+    var imageLeading: NSLayoutConstraint!
+    var imageTrailing: NSLayoutConstraint!
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -89,9 +87,10 @@ class DetailView: UIView {
         setupLocationImageConstraints()
         setupWaveView()
         setupLocationLabel()
-        arButtonConstraints()
+//        arButtonConstraints()
         backButtonConstraints()
         setupCollectionViewConstraints()
+        arButtonConstraints()
     }
     
     private func headerContainer() {
@@ -108,14 +107,17 @@ class DetailView: UIView {
     
     private func setupLocationImageConstraints() {
         
-        headerContainerView.addSubview(locationImage)
-        locationImage.translatesAutoresizingMaskIntoConstraints = false
+        headerContainerView.addSubview(imageOne)
+        imageOne.translatesAutoresizingMaskIntoConstraints = false
+        
+        imageLeading = imageOne.leadingAnchor.constraint(equalTo: leadingAnchor)
+        imageLeading.isActive = true
+        imageTrailing = imageOne.trailingAnchor.constraint(equalTo: trailingAnchor)
+        imageTrailing.isActive = true
         
         NSLayoutConstraint.activate([
-            locationImage.topAnchor.constraint(equalTo: headerContainerView.topAnchor),
-            locationImage.leadingAnchor.constraint(equalTo: leadingAnchor),
-            locationImage.trailingAnchor.constraint(equalTo: trailingAnchor),
-            locationImage.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3)
+            imageOne.topAnchor.constraint(equalTo: headerContainerView.topAnchor),
+            imageOne.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3)
         ])
         
     }
@@ -125,9 +127,9 @@ class DetailView: UIView {
         wView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            wView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: self.frame.width * 5),
-            wView.topAnchor.constraint(equalTo: locationImage.topAnchor),
-            wView.heightAnchor.constraint(equalTo: locationImage.heightAnchor)
+            wView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: self.frame.width * 6),
+            wView.topAnchor.constraint(equalTo: imageOne.topAnchor),
+            wView.heightAnchor.constraint(equalTo: imageOne.heightAnchor)
         ])
         
         wavyLeading = wView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
@@ -135,14 +137,14 @@ class DetailView: UIView {
     }
     
     private func setupLocationLabel() {
-        locationImage.addSubview(locationLabel)
+        imageOne.addSubview(locationLabel)
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             
-            locationLabel.bottomAnchor.constraint(equalTo: locationImage.bottomAnchor, constant: -10),
+            locationLabel.bottomAnchor.constraint(equalTo: imageOne.bottomAnchor, constant: -10),
             locationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            locationLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            locationLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25)
         ])
         
         nameLabelLeading = locationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
@@ -153,12 +155,12 @@ class DetailView: UIView {
     private func setupCollectionViewConstraints() {
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
+        collectionView.backgroundColor = .clear
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: wView.bottomAnchor, constant: 5),
             collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: wView.trailingAnchor, constant: -40),
-            collectionView.bottomAnchor.constraint(equalTo: goToARButton.topAnchor, constant: -5)
+            collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
     
@@ -179,8 +181,8 @@ class DetailView: UIView {
         backButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            backButton.widthAnchor.constraint(equalToConstant: 44),
-            backButton.heightAnchor.constraint(equalToConstant: 44),
+            backButton.widthAnchor.constraint(equalToConstant: 24),
+            backButton.heightAnchor.constraint(equalToConstant: 34),
             backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 40)
         ])
