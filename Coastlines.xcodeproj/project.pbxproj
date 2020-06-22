@@ -47,6 +47,8 @@
 		5D700857BBD059F2237BFD0C /* Pods_TestFeatureTarget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B9E8FE61F7AAE1A1CB365C /* Pods_TestFeatureTarget.framework */; };
 		B724305524A14E2400EF211F /* IcebergPan.mov in Resources */ = {isa = PBXBuildFile; fileRef = B724305424A14E2400EF211F /* IcebergPan.mov */; };
 		B724305624A14E2400EF211F /* IcebergPan.mov in Resources */ = {isa = PBXBuildFile; fileRef = B724305424A14E2400EF211F /* IcebergPan.mov */; };
+		B724305824A1665B00EF211F /* IcebergPan2.mov in Resources */ = {isa = PBXBuildFile; fileRef = B724305724A1665B00EF211F /* IcebergPan2.mov */; };
+		B724305924A1665B00EF211F /* IcebergPan2.mov in Resources */ = {isa = PBXBuildFile; fileRef = B724305724A1665B00EF211F /* IcebergPan2.mov */; };
 		B776AD412497F5AF00034A4E /* ResourcesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */; };
 		B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */; };
 		B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsVew.swift */; };
@@ -188,6 +190,7 @@
 		90B7802E35291B5353608B3B /* Pods-Coastlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.debug.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.debug.xcconfig"; sourceTree = "<group>"; };
 		93B9E8FE61F7AAE1A1CB365C /* Pods_TestFeatureTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestFeatureTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B724305424A14E2400EF211F /* IcebergPan.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IcebergPan.mov; sourceTree = "<group>"; };
+		B724305724A1665B00EF211F /* IcebergPan2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IcebergPan2.mov; sourceTree = "<group>"; };
 		B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		B7A4588D247F10BE001F8E51 /* LocationsVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVew.swift; sourceTree = "<group>"; };
 		B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesController.swift; sourceTree = "<group>"; };
@@ -396,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				B724305424A14E2400EF211F /* IcebergPan.mov */,
+				B724305724A1665B00EF211F /* IcebergPan2.mov */,
 				02858577248304B70003E31A /* JSON Data */,
 				0289F8F8247DA0D2008D3910 /* Models */,
 				0289F8F7247DA0BA008D3910 /* Services */,
@@ -588,6 +592,7 @@
 				B724305524A14E2400EF211F /* IcebergPan.mov in Resources */,
 				C48EBCE6248846C6001DB0A3 /* CooperHewitt-Book.otf in Resources */,
 				C48EBCE1248846C6001DB0A3 /* CooperHewitt-SemiboldItalic.otf in Resources */,
+				B724305824A1665B00EF211F /* IcebergPan2.mov in Resources */,
 				C48EBCCC24884626001DB0A3 /* LaunchScreen.storyboard in Resources */,
 				C48EBCEC248846C6001DB0A3 /* CooperHewitt-Light.otf in Resources */,
 				C48EBCEE248846C6001DB0A3 /* CooperHewitt-Semibold.otf in Resources */,
@@ -613,6 +618,7 @@
 				B7BC816924993AAF00EB6A57 /* ARAnimation.json in Resources */,
 				C40F2D12249012E400AA1756 /* CooperHewitt-Light.otf in Resources */,
 				C40F2D07249012E400AA1756 /* CooperHewitt-SemiboldItalic.otf in Resources */,
+				B724305924A1665B00EF211F /* IcebergPan2.mov in Resources */,
 				C40F2CDA2490123800AA1756 /* Main.storyboard in Resources */,
 				C40F2D0F249012E400AA1756 /* CooperHewitt-LightItalic.otf in Resources */,
 				C40F2D0E249012E400AA1756 /* CooperHewitt-Medium.otf in Resources */,
