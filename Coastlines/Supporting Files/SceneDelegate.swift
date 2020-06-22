@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
 //        if !notFirstTime {
-            window?.rootViewController = FirstOnboardingController()
+            window?.rootViewController = WelcomeController()
 //            UserDefaults.standard.set(true, forKey: OnboardingKey.ftuexKey)
 //        } else {
 //            window?.rootViewController = UINavigationController(rootViewController: LocationsViewController())

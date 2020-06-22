@@ -20,10 +20,11 @@ class ARCell: UICollectionViewCell {
     
     public lazy var headerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Experience AR"
+        label.text = ContentText.seeInAR
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .title1)
-        label.numberOfLines = 1
+        label.font = Font.cooper34
+        label.textColor = PaletteColour.offWhite.colour
+        label.numberOfLines = 0
         label.alpha = 1
         return label
     }()
@@ -71,13 +72,12 @@ class ARCell: UICollectionViewCell {
         ])
     }
     
-    
     private func setupHeaderLabel() {
         addSubview(headerLabel)
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            headerLabel.bottomAnchor.constraint(equalTo: prevButton.topAnchor, constant: -10),
+            headerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: -10),
             headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             headerLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
@@ -108,17 +108,17 @@ class ARCell: UICollectionViewCell {
     
     
     @objc func prevButtonPressed(_ sender: UIButton) {
-        print("Prev Button Pressed")
         cellDelegate?.clickedOnPrev(index: (index?.row)!, cell: self)
-        
     }
     
-    private func animateARIcon(){
-        UIView.animate(withDuration: 0.75, delay: 0.0, options: [.allowUserInteraction, .curveEaseIn], animations: {
-            self.arIconAnimation.animation = Animation.named("ARAnimation")
-            self.arIconAnimation.play()
-            // self.arIconImage.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)
-            // self.arIconImage.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
-        }, completion: nil)
+    public func animateARIcon(){
+//        UIView.animate(withDuration: 10, delay: 0.0, options: [.allowUserInteraction, .curveEaseIn], animations: {
+//            self.arIconAnimation.animation = Animation.named("ARAnimation")
+//            self.arIconAnimation.play()
+//            // self.arIconImage.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)
+//            // self.arIconImage.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+//        }, completion: nil)
+        arIconAnimation.animation = Animation.named("ARAnimation")
+        arIconAnimation.play()
     }
 }

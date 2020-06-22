@@ -3,12 +3,12 @@
   "data" : {
     "orientation" : 1,
     "alpha" : false,
-    "width" : 1280,
+    "width" : 2982,
     "resolution" : {
       "x" : 72,
       "y" : 72,
       "unit" : "dpi"
     },
-    "height" : 848
+    "height" : 1704
   }
 }

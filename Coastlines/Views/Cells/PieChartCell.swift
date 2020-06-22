@@ -27,11 +27,11 @@ class PieChartCell: UICollectionViewCell {
     
     public lazy var headerLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
+        label.text = "\nPeople Displaced"
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .title1)
-        label.numberOfLines = 1
-        label.alpha = 1
+        label.font = Font.cooper34
+        label.textColor = PaletteColour.offWhite.colour
+        label.numberOfLines = 0
         return label
     }()
     
@@ -42,11 +42,9 @@ class PieChartCell: UICollectionViewCell {
         pieChart.clipsToBounds = true
         pieChart.chartDescription?.enabled = false
         pieChart.drawHoleEnabled = false
-        pieChart.rotationAngle = 0
+        pieChart.rotationAngle = 20
         pieChart.rotationEnabled = false
-        //        pieChart.isUserInteractionEnabled = false
         pieChart.legend.enabled = true
-//        pieChart.isHidden = false
         return pieChart
     }()
     
@@ -60,14 +58,7 @@ class PieChartCell: UICollectionViewCell {
         setupNextButton()
         setupHeaderLabel()
         setupPieChart()
-//        animateLabel()
         setPopulationGraphData()
-    }
-    
-    private func animateLabel() {
-        UIView.animate(withDuration: 2, delay: 0, options: [.transitionCrossDissolve], animations: {
-            self.headerLabel.alpha = 1
-        }, completion: nil)
     }
     
     private func setupPrevButton() {
@@ -99,7 +90,7 @@ class PieChartCell: UICollectionViewCell {
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            headerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: -10),
             headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             headerLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
@@ -111,22 +102,17 @@ class PieChartCell: UICollectionViewCell {
 //        populationGraphView.delegate = self
         
         NSLayoutConstraint.activate([
-            populationGraphView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 20),
-            populationGraphView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            populationGraphView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            populationGraphView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.6)
+            populationGraphView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10),
+            populationGraphView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            populationGraphView.heightAnchor.constraint(equalTo: populationGraphView.widthAnchor, multiplier: 0.85)
         ])
     }
     
     @objc func prevButtonPressed(_ sender: UIButton) {
-
-        print("Prev Button Pressed")
         cellDelegate?.clickedOnPrev(index: (index?.row)!, cell: self)
-
     }
 
     @objc func nextButtonPressed(_ sender: UIButton) {
-        print("next button pressed")
         cellDelegate?.clickedOnNext(index: (index?.row)!, cell: self)
     }
 }
@@ -141,21 +127,26 @@ extension PieChartCell: ChartViewDelegate {
         guard let location = location else { return }
         
         populationGraphView.isHidden = false
+        populationGraphView.legend.enabled = false
         entries.append(PieChartDataEntry(value: Double(location.facts.population), label: "Population"))
         entries.append(PieChartDataEntry(value: Double(location.facts.populationDisplaced), label: "Displaced"))
         
         let dataSet = PieChartDataSet(entries: entries, label: "")
         
-        let c1 = NSUIColor(hex: 0xf9f7e3)
-        let c2 = NSUIColor(hex: 0xa1c5c5)
+        let c1 = NSUIColor(hex: 0xa9bd95)
+        let c2 = NSUIColor(hex: 0xe2a093)
         
         dataSet.colors = [c1, c2]
         
         dataSet.drawValuesEnabled = false
         
-        
+        populationGraphView.entryLabelColor = NSUIColor(hex: 0xf9f7e3)
+        populationGraphView.entryLabelFont = Font.cooper20
+            
+        dataSet.sliceSpace = 3
         populationGraphView.data = PieChartData(dataSet: dataSet)
-        populationGraphView.isUserInteractionEnabled = true
-        populationGraphView.setExtraOffsets(left: 0, top: 0, right: 0, bottom: 0)
+        populationGraphView.isUserInteractionEnabled = false
+        populationGraphView.setExtraOffsets(left: -16, top: -16, right: -16, bottom: -16)
+        
     }
 }

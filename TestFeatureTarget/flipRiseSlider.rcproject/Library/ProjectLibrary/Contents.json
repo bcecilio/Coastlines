@@ -5,11 +5,6 @@
     "displayName" : "Landscape5_sScale.usdz"
   },
   {
-    "libraryIdentifier" : "1af13aa818ebb445e0f139cd35de08a1",
-    "format" : "image",
-    "displayName" : "nycSeaLevel2.jpeg"
-  },
-  {
     "libraryIdentifier" : "3fb4eef86e3b0bd271a936cc08e6ad91",
     "format" : "image",
     "displayName" : "nycSeaRise.jpeg"
@@ -23,5 +18,10 @@
     "libraryIdentifier" : "c2dceb0c3d5498daafdf9150586de56a",
     "format" : "model",
     "displayName" : "flipRiseMapCpaint.usdz"
+  },
+  {
+    "libraryIdentifier" : "47ce60cd0b8b3df729d934dc909c6946",
+    "format" : "image",
+    "displayName" : "nycSeaTwo3.jpeg"
   }
 ]

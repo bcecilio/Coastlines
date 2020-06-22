@@ -9,12 +9,17 @@
 import UIKit
 import Charts
 
+protocol GraphClicked {
+    func clickedOnGraph(year: Double, rise: Double)
+}
+
 class GraphCell: UICollectionViewCell {
     
     public var seaLevelSet = LineChartDataSet()
     public var location: Location?
     public var index: IndexPath?
     public var cellDelegate: PrevNextButton?
+    public var graphDelegate: GraphClicked?
     
     public lazy var nextButton: UIButton = {
         let button = UIButton()
@@ -28,11 +33,10 @@ class GraphCell: UICollectionViewCell {
     
     public lazy var headerLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .title1)
-        label.numberOfLines = 1
-        label.alpha = 0
+        label.font = Font.cooper34
+        label.textColor = PaletteColour.offWhite.colour
+        label.numberOfLines = 0
         return label
     }()
     
@@ -59,6 +63,17 @@ class GraphCell: UICollectionViewCell {
         return lineChart
     }()
     
+    public lazy var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.textAlignment = .center
+        label.textColor = PaletteColour.offWhite.colour
+        label.font = Font.cooper20
+        label.numberOfLines = 0
+        label.alpha = 1
+        return label
+    }()
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = PaletteColour.lightBlue.colour
@@ -69,15 +84,8 @@ class GraphCell: UICollectionViewCell {
         setupNextButton()
         setupHeaderLabel()
         setupSeaLevelGraph()
-        animateLabel()
+        setupDescriptionLabel()
         setSeaLevelData()
-    }
-    
-    private func animateLabel() {
-        UIView.animate(withDuration: 2, delay: 0, options: [.transitionCrossDissolve], animations: {
-            self.headerLabel.alpha = 1
-            self.seaLevelLineChart.alpha = 1
-        }, completion: nil)
     }
     
     private func setupPrevButton() {
@@ -107,9 +115,9 @@ class GraphCell: UICollectionViewCell {
     private func setupHeaderLabel() {
         addSubview(headerLabel)
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+        headerLabel.text = ContentText.seaLevels
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            headerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: -10),
             headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             headerLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
@@ -124,7 +132,18 @@ class GraphCell: UICollectionViewCell {
             seaLevelLineChart.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 20),
             seaLevelLineChart.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
             seaLevelLineChart.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            seaLevelLineChart.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.6)
+            seaLevelLineChart.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5)
+        ])
+    }
+    
+    private func setupDescriptionLabel() {
+        addSubview(descriptionLabel)
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.text = "\nRise in inches by 2100"
+        NSLayoutConstraint.activate([
+            descriptionLabel.topAnchor.constraint(equalTo: seaLevelLineChart.bottomAnchor, constant: 0),
+            descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
     }
     
@@ -143,7 +162,7 @@ class GraphCell: UICollectionViewCell {
 
 extension GraphCell: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print(entry)
+        graphDelegate?.clickedOnGraph(year: entry.x, rise: entry.y)
     }
     
     public func setSeaLevelData() {
