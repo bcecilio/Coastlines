@@ -18,6 +18,7 @@ class FirstOnboardingView: UIView {
         button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
         button.layer.cornerRadius = 22.0
         button.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
+        button.addAccessibility(.button, "Get Started", "Begins onboarding experience", true, nil)
         return button
     }()
     
@@ -28,6 +29,8 @@ class FirstOnboardingView: UIView {
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "CooperHewitt-Medium", size: 30)
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
+        label.addAccessibility(.none, OnboardingText.appTitle, nil, true, nil)
         return label
     }()
     
@@ -39,6 +42,7 @@ class FirstOnboardingView: UIView {
         label.numberOfLines = 0
         label.text = OnboardingText.welcomeMessage
         label.backgroundColor = PaletteColour.lightBlue.colour
+        label.addAccessibility(.none, OnboardingText.welcomeMessage, nil, true, nil)
         return label
     }()
     
@@ -47,6 +51,7 @@ class FirstOnboardingView: UIView {
         button.setTitle("Skip", for: .normal)
         button.setTitleColor(PaletteColour.darkBlue.colour, for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
+        button.addAccessibility(.button, "Skip", "Skips onboarding experience", true, nil)
 //        button.layer.borderWidth = 1.0
 //        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
 //        button.layer.cornerRadius = 22.0

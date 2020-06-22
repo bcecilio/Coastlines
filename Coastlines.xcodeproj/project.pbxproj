@@ -114,6 +114,8 @@
 		C40F2D1F2490168500AA1756 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
 		C40F2D212490171F00AA1756 /* TestARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2D202490171F00AA1756 /* TestARView.swift */; };
 		C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */; };
+		C45DDA8A24A14988002E5C40 /* UIView+AddAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DDA8924A14988002E5C40 /* UIView+AddAccessibility.swift */; };
+		C45DDA8B24A14988002E5C40 /* UIView+AddAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DDA8924A14988002E5C40 /* UIView+AddAccessibility.swift */; };
 		C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */; };
 		C463925924847AA200DDB4DE /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925824847AA200DDB4DE /* OnboardingController.swift */; };
 		C463925B24847EB900DDB4DE /* ThirdOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */; };
@@ -202,6 +204,7 @@
 		C40F2CE02490123A00AA1756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C40F2D202490171F00AA1756 /* TestARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARView.swift; sourceTree = "<group>"; };
 		C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+resetWindow.swift"; path = "Coastlines/UIViewController+resetWindow.swift"; sourceTree = SOURCE_ROOT; };
+		C45DDA8924A14988002E5C40 /* UIView+AddAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddAccessibility.swift"; sourceTree = "<group>"; };
 		C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingView.swift; sourceTree = "<group>"; };
 		C463925824847AA200DDB4DE /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboardingView.swift; sourceTree = "<group>"; };
@@ -309,6 +312,7 @@
 				02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */,
 				02737071249C317100A10E7B /* simd+ext.swift */,
 				02737077249FB8AA00A10E7B /* UIController+Extension.swift */,
+				C45DDA8924A14988002E5C40 /* UIView+AddAccessibility.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -713,6 +717,7 @@
 				C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
 				02737072249C317100A10E7B /* simd+ext.swift in Sources */,
+				C45DDA8A24A14988002E5C40 /* UIView+AddAccessibility.swift in Sources */,
 				0B35424C2488000600AAB02C /* WavyView2.swift in Sources */,
 				B7B59BDD2497E4E8004CA137 /* ResourceView.swift in Sources */,
 				028423772489E617000C1A9B /* ContentCell.swift in Sources */,
@@ -800,6 +805,7 @@
 				C40F2CF42490128300AA1756 /* LocationDetailView.swift in Sources */,
 				C40F2CF82490128E00AA1756 /* ContentCell.swift in Sources */,
 				C40F2CFC2490129800AA1756 /* LocationCell.swift in Sources */,
+				C45DDA8B24A14988002E5C40 /* UIView+AddAccessibility.swift in Sources */,
 				C40F2D212490171F00AA1756 /* TestARView.swift in Sources */,
 				C40F2D1F2490168500AA1756 /* ARViewController.swift in Sources */,
 				C40F2D1D2490157200AA1756 /* FourthOnboardingView.swift in Sources */,
