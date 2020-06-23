@@ -38,8 +38,9 @@ class ARCell: UICollectionViewCell {
         super.layoutSubviews()
         backgroundColor = PaletteColour.lightBlue.colour
         
-        setupHeaderLabel()
         setupARAnimation()
+        setupHeaderLabel()
+        
         animateLabel()
 //        animateARIcon()
     }
@@ -76,12 +77,13 @@ class ARCell: UICollectionViewCell {
     
     private func setupARAnimation() {
         addSubview(arIconAnimation)
+        arIconAnimation.backgroundColor = .clear
         arIconAnimation.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            arIconAnimation.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 20),
+            arIconAnimation.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             arIconAnimation.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            arIconAnimation.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.85),
-            arIconAnimation.heightAnchor.constraint(equalTo: arIconAnimation.heightAnchor, multiplier: 1)
+            arIconAnimation.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.2),
+            arIconAnimation.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
     

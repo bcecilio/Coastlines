@@ -55,8 +55,8 @@ class LocationDetailController: UIViewController {
         
         print("AR Button Pressed")
         
-//            let arVC = ExperimentARController(location)
-//            UIViewController.resetWindow(arVC)
+            let arVC = ExperimentARController(location)
+            UIViewController.resetWindow(arVC)
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
@@ -223,8 +223,8 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
         if indexPath.row == 6 {
             print("AR Button Pressed")
             
-            //            let arVC = ExperimentARController(location)
-            //            UIViewController.resetWindow(arVC)
+            let arVC = ExperimentARController(location)
+            UIViewController.resetWindow(arVC)
             
         } else if indexPath.row == 4 {
             let showAlert = GraphShowAlert.makeAlert(year: 0, rise: 0, vc: self)

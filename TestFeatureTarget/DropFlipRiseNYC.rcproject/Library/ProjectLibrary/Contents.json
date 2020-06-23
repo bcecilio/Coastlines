@@ -43,5 +43,10 @@
     "libraryIdentifier" : "c4dd3d94fc00d8b7692ebb262aaac776",
     "format" : "image",
     "displayName" : "brooklynOne.jpeg"
+  },
+  {
+    "libraryIdentifier" : "7724c4511eef833ddb0ac55bcb919871",
+    "format" : "model",
+    "displayName" : "orbitFlip.usdz"
   }
 ]
