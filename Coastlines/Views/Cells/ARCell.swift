@@ -10,13 +10,6 @@ import UIKit
 import Lottie
 
 class ARCell: UICollectionViewCell {
-    var index: IndexPath?
-    var cellDelegate: PrevNextButton?
-    
-    public lazy var prevButton: UIButton = {
-        let button = UIButton()
-        return button.previousButton()
-    }()
     
     public lazy var headerLabel: UILabel = {
         let label = UILabel()
@@ -29,14 +22,15 @@ class ARCell: UICollectionViewCell {
         return label
     }()
     
-    public lazy var arIconImage: UIImageView = {
-        let iv = UIImageView()
-        iv.image = UIImage(named: "ar5")
-        return iv
-    }()
+//    public lazy var arIconImage: UIImageView = {
+//        let iv = UIImageView()
+//        iv.image = UIImage(named: "ar5")
+//        return iv
+//    }()
     
     public lazy var arIconAnimation: AnimationView = {
         let v = AnimationView()
+        v.animation = Animation.named("arIconAnimation")
         return v
     }()
     
@@ -44,13 +38,11 @@ class ARCell: UICollectionViewCell {
         super.layoutSubviews()
         backgroundColor = PaletteColour.lightBlue.colour
         
-        prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
-        setupPrevButton()
-        setupHeaderLabel()
         setupARAnimation()
-//        setupARIcon()
+        setupHeaderLabel()
+        
         animateLabel()
-        animateARIcon()
+//        animateARIcon()
     }
     
     private func animateLabel() {
@@ -58,18 +50,6 @@ class ARCell: UICollectionViewCell {
             self.headerLabel.alpha = 1
             
         }, completion: nil)
-    }
-    
-    private func setupPrevButton() {
-        addSubview(prevButton)
-        prevButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            prevButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            prevButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            prevButton.widthAnchor.constraint(equalToConstant: 44),
-            prevButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
     }
     
     private func setupHeaderLabel() {
@@ -83,42 +63,39 @@ class ARCell: UICollectionViewCell {
         ])
     }
     
-    private func setupARIcon() {
-        addSubview(arIconImage)
-        arIconImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            arIconImage.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -20),
-            arIconImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            arIconImage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.45),
-            arIconImage.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.35)
-        ])
-    }
+//    private func setupARIcon() {
+//        addSubview(arIconImage)
+//        arIconImage.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            arIconImage.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -20),
+//            arIconImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+//            arIconImage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.45),
+//            arIconImage.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.35)
+//        ])
+//    }
     
     private func setupARAnimation() {
         addSubview(arIconAnimation)
+        arIconAnimation.backgroundColor = .clear
         arIconAnimation.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            arIconAnimation.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10),
+            arIconAnimation.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             arIconAnimation.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            arIconAnimation.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.45),
-            arIconAnimation.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.60)
+            arIconAnimation.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.2),
+            arIconAnimation.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
     
-    
-    @objc func prevButtonPressed(_ sender: UIButton) {
-        cellDelegate?.clickedOnPrev(index: (index?.row)!, cell: self)
-    }
-    
-    public func animateARIcon(){
-//        UIView.animate(withDuration: 10, delay: 0.0, options: [.allowUserInteraction, .curveEaseIn], animations: {
-//            self.arIconAnimation.animation = Animation.named("ARAnimation")
-//            self.arIconAnimation.play()
-//            // self.arIconImage.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)
-//            // self.arIconImage.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
-//        }, completion: nil)
-        arIconAnimation.animation = Animation.named("ARAnimation")
-        arIconAnimation.play()
-    }
+//    public func animateARIcon(){
+////        UIView.animate(withDuration: 10, delay: 0.0, options: [.allowUserInteraction, .curveEaseIn], animations: {
+////            self.arIconAnimation.animation = Animation.named("ARAnimation")
+////            self.arIconAnimation.play()
+////            // self.arIconImage.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)
+////            // self.arIconImage.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+////        }, completion: nil)
+//        arIconAnimation.animation = Animation.named("ARAnimation")
+//        arIconAnimation.loopMode = .loop
+//        arIconAnimation.play()
+//    }
 }

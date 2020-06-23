@@ -9,6 +9,7 @@ class LocationDetailController: UIViewController {
     private var tableOfContentsCell = TOCCell()
     private var seaChartCell = GraphCell()
     private var augCell = ARCell()
+    private var buttonTag = 0
     
     init(_ location: Location) {
         self.location = location
@@ -33,12 +34,17 @@ class LocationDetailController: UIViewController {
         locationView.collectionView.delegate = self
         locationView.collectionView.dataSource = self
         
+        showHideButtons()
+        
     }
     
     private func setupUIandTargets() {
         locationView.goToARButton.addTarget(self, action: #selector(goToARButtonPressed(_:)), for: .touchUpInside)
         locationView.backButton.addTarget(self, action: #selector(backButtonPressed(_:)), for: .touchUpInside)
-
+        locationView.infoButton.addTarget(self, action: #selector(infoButtonPressed(_:)), for: .touchUpInside)
+        locationView.nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
+        locationView.prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
+        
         locationView.imageOne.image = UIImage(named: location.images.one)
         locationView.locationLabel.text = location.name
         
@@ -57,6 +63,51 @@ class LocationDetailController: UIViewController {
         
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
+    }
+    
+    @objc func infoButtonPressed(_ sender: UIButton) {
+        
+        let resourcesVC = ResourcesController()
+        UIViewController.resetWindow(resourcesVC)
+    }
+    
+    @objc func nextButtonPressed(_ sender: UIButton) {
+        print("next button waaaas pressed")
+        scrollRightTo()
+        
+        buttonTag += 1
+        showHideButtons()
+        print(buttonTag)
+    }
+    
+    @objc func prevButtonPressed(_ sender: UIButton) {
+        print("previous button waaaas pressed")
+        scrollLeftTo()
+        
+        buttonTag -= 1
+        showHideButtons()
+        print(buttonTag)
+    }
+    
+    private func showHideButtons() {
+        switch buttonTag {
+        case 0:
+            locationView.hidePrev()
+        case 2:
+            animateChart()
+        case 5:
+            locationView.showPrev()
+            locationView.showNext()
+            locationView.showARButton()
+        case 6:
+            locationView.hideNext()
+            locationView.showPrev()
+            locationView.hideARButton()
+            augCell.arIconAnimation.play()
+            augCell.arIconAnimation.loopMode = .loop
+        default:
+            locationView.showPrev()
+        }
     }
     
     private func scrollRightTo(time: Double = 1.0) {
@@ -110,12 +161,6 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             fatalError("Failed to create cells")
         }
         
-        tocCell.index = indexPath ; tocCell.cellDelegate = self
-        contentCell.index = indexPath ; contentCell.cellDelegate = self
-        graphCell.index = indexPath ; graphCell.cellDelegate = self
-        pieCell.index = indexPath ; pieCell.cellDelegate = self
-        arCell.index = indexPath ; arCell.cellDelegate = self
-        
         switch indexPath.row {
             
         case 0:
@@ -151,7 +196,8 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             return contentCell
         case 6:
             augCell = arCell
-            augCell.animateARIcon()
+//            augCell.arIconAnimation.play()
+//            augCell.arIconAnimation.loopMode = .loop
             return augCell
         default:
             break
@@ -177,8 +223,8 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
         if indexPath.row == 6 {
             print("AR Button Pressed")
             
-            //            let arVC = ExperimentARController(location)
-            //            UIViewController.resetWindow(arVC)
+            let arVC = ExperimentARController(location)
+            UIViewController.resetWindow(arVC)
             
         } else if indexPath.row == 4 {
             let showAlert = GraphShowAlert.makeAlert(year: 0, rise: 0, vc: self)
@@ -193,50 +239,23 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
     }
 }
 
-extension LocationDetailController: PrevNextButton, TapContents {
+extension LocationDetailController: TapContents {
     func onItem(content: Content) {
         
         scrollHelper(to: content.rawValue)
+        buttonTag = content.rawValue
+        
+        locationView.showPrev(delay: TimeInterval(content.rawValue)*0.5)
         
         if content == .seeInAR {
             locationView.hideARButton()
+            locationView.hideNext()
         }
     }
     
     private func scrollHelper(to: Int) {
         for _ in 1...to {
             scrollRightTo(time: Double(to)*0.8)
-        }
-    }
-    
-    func clickedOnPrev(index: Int, cell: Any) {
-        print("clicked on previous at this \(index)")
-        scrollLeftTo()
-        switch index {
-        case 1:
-            break
-        case 3:
-            animateChart()
-        case 6:
-            locationView.showARButton()
-        default:
-            break
-        }
-    }
-    
-    func clickedOnNext(index: Int, cell: Any) {
-        print("clicked on next at this \(index)")
-        scrollRightTo()
-        switch index {
-        case 0:
-            break
-        case 1:
-            animateChart()
-        case 5:
-            locationView.hideARButton()
-            augCell.animateARIcon()
-        default:
-            break
         }
     }
 }
@@ -248,6 +267,5 @@ extension LocationDetailController: GraphClicked {
         
         self.present(showAlert, animated: true, completion: nil)
     }
-    
     
 }

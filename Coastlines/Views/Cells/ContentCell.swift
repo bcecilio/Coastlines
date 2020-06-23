@@ -14,19 +14,7 @@ protocol TapSayMore {
 
 class ContentCell: UICollectionViewCell {
     
-    var index: IndexPath?
-    var cellDelegate: PrevNextButton?
     var sayMoreDelegate: TapSayMore?
-    
-    public lazy var nextButton: UIButton = {
-        let button = UIButton()
-        return button.nextButton()
-    }()
-    
-    public lazy var prevButton: UIButton = {
-        let button = UIButton()
-        return button.previousButton()
-    }()
     
     public lazy var sayMoreView: UIView = {
         var view = UIView()
@@ -113,8 +101,6 @@ class ContentCell: UICollectionViewCell {
         super.layoutSubviews()
         backgroundColor = PaletteColour.lightBlue.colour
         
-        prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
-        nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
         sayMoreButton.addTarget(self, action: #selector(sayMorePressed(_:)), for: .touchUpInside)
         
         setupScrollView()
@@ -125,34 +111,7 @@ class ContentCell: UICollectionViewCell {
         setupSayMoreView()
         setupLearnMoreLabel()
         setupContentLabel()
-        setupPrevButton()
-        setupNextButton()
         
-    }
-    
-    
-    private func setupPrevButton() {
-        addSubview(prevButton)
-        prevButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            prevButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            prevButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            prevButton.widthAnchor.constraint(equalToConstant: 44),
-            prevButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
-    }
-    
-    private func setupNextButton() {
-        addSubview(nextButton)
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            nextButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            nextButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            nextButton.widthAnchor.constraint(equalToConstant: 44),
-            nextButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
     }
     
     private func setupScrollView() {
@@ -245,15 +204,6 @@ class ContentCell: UICollectionViewCell {
             contentLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             contentLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80)
         ])
-    }
-    
-    
-    @objc func prevButtonPressed(_ sender: UIButton) {
-        cellDelegate?.clickedOnPrev(index: (index?.row)!, cell: self)
-    }
-    
-    @objc func nextButtonPressed(_ sender: UIButton) {
-        cellDelegate?.clickedOnNext(index: (index?.row)!, cell: self)
     }
     
     @objc func sayMorePressed(_ sender: UIButton) {

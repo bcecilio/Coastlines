@@ -13,9 +13,10 @@ class ExperimentARController: UIViewController {
     
     lazy var coachingOverlay = ARCoachingOverlayView()
     
-    var dropScene = FlipRiseSlider.DropScene()
-    var flipScene = FlipRiseSlider.FlipScene()
-    var riseSegmentScene = FlipRiseSlider.RiseSegmentScene()
+    
+    var dropScene = DropFlipRiseNYC.DropScene()
+    var orbitFlipScene = DropFlipRiseNYC.FlipScene()
+    var riseSegmentScene = DropFlipRiseNYC.RiseSegmentScene()
     
     var occBox = ModelEntity()
     
@@ -62,7 +63,7 @@ class ExperimentARController: UIViewController {
     
     private func loadScene() {
         
-        FlipRiseSlider.loadDropSceneAsync { [unowned self] result in
+        DropFlipRiseNYC.loadDropSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
                 print("The flip scene error is..... \(error)")
@@ -76,23 +77,23 @@ class ExperimentARController: UIViewController {
             }
         }
         
-        FlipRiseSlider.loadFlipSceneAsync { [unowned self] result in
+        DropFlipRiseNYC.loadFlipSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
                 print("The flip scene error is..... \(error)")
             case .success(let scene):
                 
-                self.flipScene = scene
+                self.orbitFlipScene = scene
                 
                 self.arView.scene.anchors.append(scene)
                 //                self.coachingOverlay.isHidden = true
                 //                self.flipScene.addChild(self.occBox)
-                self.flipScene.isEnabled = false
-                self.flipScene.actions.flipModel.onAction = self.wasFlipped(_:)
+                self.orbitFlipScene.isEnabled = false
+                self.orbitFlipScene.actions.flipModel.onAction = self.wasFlipped(_:)
             }
         }
         
-        FlipRiseSlider.loadRiseSegmentSceneAsync { [unowned self] result in
+        DropFlipRiseNYC.loadRiseSegmentSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
                 print("The seaRise error is..... \(error)")
@@ -117,7 +118,7 @@ class ExperimentARController: UIViewController {
     func wasDropped(_ entity: Entity?) {
         print("please be DROPPED")
         
-        flipScene.isEnabled = true
+        orbitFlipScene.isEnabled = true
         dropScene.isEnabled = false
     }
     
@@ -128,7 +129,7 @@ class ExperimentARController: UIViewController {
         let blue = PaletteColour.lightBlue.colour
         
         riseSegmentScene.isEnabled = true
-        flipScene.isEnabled = false
+        orbitFlipScene.isEnabled = false
         
         //        riseSegmentScene.addChild(cityLight)
         //        redLight.light.color = .red

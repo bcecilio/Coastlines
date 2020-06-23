@@ -55,7 +55,7 @@ struct CityLights {
         
         lightOne.position =  [-0.2635, 0, 0.0704]
         lightOne.light.attenuationRadius = 1.3
-        lightOne.light.color = .systemGreen
+        lightOne.light.color = .blue
         lightOne.light.intensity = 700
         
         lightOne.transform.rotation = simd_quatf(vector: [GLKMathDegreesToRadians(-45),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
