@@ -30,6 +30,7 @@ class ResourcesController: UIViewController {
         view = resourceView
     }
     
+    // testing UI when dark mode is toggled!!! - brendon
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if traitCollection.userInterfaceStyle == .dark {
             resourceView.header.tintColor = .white
