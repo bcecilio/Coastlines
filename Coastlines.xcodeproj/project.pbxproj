@@ -19,6 +19,7 @@
 		0273707C249FEC9700A10E7B /* UIController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02737077249FB8AA00A10E7B /* UIController+Extension.swift */; };
 		0273707E24A00D2C00A10E7B /* FactText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273707D24A00D2C00A10E7B /* FactText.swift */; };
 		0273708124A047BF00A10E7B /* FactText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273707D24A00D2C00A10E7B /* FactText.swift */; };
+		0273708324A10BDE00A10E7B /* DropFlipRiseNYC.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0273708224A10BDE00A10E7B /* DropFlipRiseNYC.rcproject */; };
 		028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423722489C8D1000C1A9B /* LocationDetailController.swift */; };
 		028423752489C984000C1A9B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
 		028423772489E617000C1A9B /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423762489E617000C1A9B /* ContentCell.swift */; };
@@ -32,6 +33,8 @@
 		02AC5AA424999A1900468145 /* flipRiseSlider.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AA324999A1900468145 /* flipRiseSlider.rcproject */; };
 		02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */; };
 		02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4D15624913FCE0095560B /* ExperimentARController.swift */; };
+		02D2F71324A199EC005E89D6 /* arIconAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 02D2F71224A199EC005E89D6 /* arIconAnimation.json */; };
+		02D2F71424A199EC005E89D6 /* arIconAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 02D2F71224A199EC005E89D6 /* arIconAnimation.json */; };
 		02F53F04248AA7E200227C62 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F03248AA7E200227C62 /* GraphCell.swift */; };
 		02F53F06248AAB3C00227C62 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */; };
 		02F53F12248AF87600227C62 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F11248AF87600227C62 /* PieChartCell.swift */; };
@@ -155,6 +158,7 @@
 		02737077249FB8AA00A10E7B /* UIController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIController+Extension.swift"; sourceTree = "<group>"; };
 		02737079249FBC2B00A10E7B /* GraphShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphShowAlert.swift; sourceTree = "<group>"; };
 		0273707D24A00D2C00A10E7B /* FactText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactText.swift; sourceTree = "<group>"; };
+		0273708224A10BDE00A10E7B /* DropFlipRiseNYC.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = DropFlipRiseNYC.rcproject; sourceTree = "<group>"; };
 		028423722489C8D1000C1A9B /* LocationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailController.swift; sourceTree = "<group>"; };
 		028423742489C984000C1A9B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		028423762489E617000C1A9B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 		02AC5AA324999A1900468145 /* flipRiseSlider.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = flipRiseSlider.rcproject; sourceTree = "<group>"; };
 		02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingView.swift; sourceTree = "<group>"; };
 		02C4D15624913FCE0095560B /* ExperimentARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentARController.swift; sourceTree = "<group>"; };
+		02D2F71224A199EC005E89D6 /* arIconAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = arIconAnimation.json; sourceTree = "<group>"; };
 		02F53F03248AA7E200227C62 /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
 		02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		02F53F11248AF87600227C62 /* PieChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
@@ -263,6 +268,7 @@
 			children = (
 				02858578248305410003E31A /* locationFactsData.json */,
 				B7BC816724993AAF00EB6A57 /* ARAnimation.json */,
+				02D2F71224A199EC005E89D6 /* arIconAnimation.json */,
 			);
 			path = "JSON Data";
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				02AC5AA324999A1900468145 /* flipRiseSlider.rcproject */,
+				0273708224A10BDE00A10E7B /* DropFlipRiseNYC.rcproject */,
 				C40F2CD22490123800AA1756 /* AppDelegate.swift */,
 				C40F2CD42490123800AA1756 /* SceneDelegate.swift */,
 				C40F2CD62490123800AA1756 /* TestARController.swift */,
@@ -583,6 +590,7 @@
 				C48EBCEA248846C6001DB0A3 /* CooperHewitt-HeavyItalic.otf in Resources */,
 				C48EBCE6248846C6001DB0A3 /* CooperHewitt-Book.otf in Resources */,
 				C48EBCE1248846C6001DB0A3 /* CooperHewitt-SemiboldItalic.otf in Resources */,
+				02D2F71324A199EC005E89D6 /* arIconAnimation.json in Resources */,
 				C48EBCCC24884626001DB0A3 /* LaunchScreen.storyboard in Resources */,
 				C48EBCEC248846C6001DB0A3 /* CooperHewitt-Light.otf in Resources */,
 				C48EBCEE248846C6001DB0A3 /* CooperHewitt-Semibold.otf in Resources */,
@@ -605,6 +613,7 @@
 				C40F2D13249012E400AA1756 /* CooperHewitt-MediumItalic.otf in Resources */,
 				C40F2D14249012E400AA1756 /* CooperHewitt-Semibold.otf in Resources */,
 				B7BC816924993AAF00EB6A57 /* ARAnimation.json in Resources */,
+				02D2F71424A199EC005E89D6 /* arIconAnimation.json in Resources */,
 				C40F2D12249012E400AA1756 /* CooperHewitt-Light.otf in Resources */,
 				C40F2D07249012E400AA1756 /* CooperHewitt-SemiboldItalic.otf in Resources */,
 				C40F2CDA2490123800AA1756 /* Main.storyboard in Resources */,
@@ -768,6 +777,7 @@
 				C40F2CED2490126800AA1756 /* GlobalConstants.swift in Sources */,
 				02AC5AA424999A1900468145 /* flipRiseSlider.rcproject in Sources */,
 				02737076249D23E800A10E7B /* TOCCell.swift in Sources */,
+				0273708324A10BDE00A10E7B /* DropFlipRiseNYC.rcproject in Sources */,
 				C40F2CFF249012A100AA1756 /* NSUIColor+Hex.swift in Sources */,
 				C40F2CF02490127500AA1756 /* TestView.swift in Sources */,
 				C40F2D1B2490157200AA1756 /* SecondOnboardingView.swift in Sources */,

@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol PrevNextButton {
-    func clickedOnPrev(index: Int, cell: Any)
-    func clickedOnNext(index: Int, cell: Any)
-}
-
 protocol TapContents {
     func onItem(content: Content)
 }
@@ -44,14 +39,8 @@ enum Content: Int {
 }
 
 class TOCCell: UICollectionViewCell {
-    var index: IndexPath?
-    var cellDelegate: PrevNextButton?
+
     var contentDelegate: TapContents?
-    
-    public lazy var nextButton: UIButton = {
-        let button = UIButton()
-        return button.nextButton()
-    }()
     
     public lazy var headerLabel: UILabel = {
         let label = UILabel()
@@ -136,25 +125,9 @@ class TOCCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = PaletteColour.lightBlue.colour
-        
-        nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
         setupHeaderLabel()
-        setupNextButton()
         configStackView()
         
-    }
-    
-    private func setupNextButton() {
-        addSubview(nextButton)
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        NSLayoutConstraint.activate([
-            nextButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            nextButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            nextButton.widthAnchor.constraint(equalToConstant: 44),
-            nextButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
     }
     
     private func setupHeaderLabel() {
@@ -190,7 +163,7 @@ class TOCCell: UICollectionViewCell {
             stackView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 8),
             stackView.leadingAnchor.constraint(equalTo: headerLabel.leadingAnchor, constant: 0),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            stackView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -15)
+            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -70)
         ])
     }
     
@@ -203,12 +176,6 @@ class TOCCell: UICollectionViewCell {
         print(content)
         
         contentDelegate?.onItem(content: content)
-    }
-    
-    
-    @objc func nextButtonPressed(_ sender: UIButton) {
-        print("next button pressed")
-        cellDelegate?.clickedOnNext(index: (index?.row)!, cell: self)
     }
 }
 

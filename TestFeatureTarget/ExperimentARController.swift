@@ -13,9 +13,10 @@ class ExperimentARController: UIViewController {
     
     lazy var coachingOverlay = ARCoachingOverlayView()
     
-    var dropScene = FlipRiseSlider.DropScene()
-    var flipScene = FlipRiseSlider.FlipScene()
-    var riseSegmentScene = FlipRiseSlider.RiseSegmentScene()
+    
+    var dropScene = DropFlipRiseNYC.DropScene()
+    var flipScene = DropFlipRiseNYC.FlipScene()
+    var riseSegmentScene = DropFlipRiseNYC.RiseSegmentScene()
     
     var occBox = ModelEntity()
     
@@ -62,7 +63,7 @@ class ExperimentARController: UIViewController {
     
     private func loadScene() {
         
-        FlipRiseSlider.loadDropSceneAsync { [unowned self] result in
+        DropFlipRiseNYC.loadDropSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
                 print("The flip scene error is..... \(error)")
@@ -76,7 +77,7 @@ class ExperimentARController: UIViewController {
             }
         }
         
-        FlipRiseSlider.loadFlipSceneAsync { [unowned self] result in
+        DropFlipRiseNYC.loadFlipSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
                 print("The flip scene error is..... \(error)")
@@ -92,7 +93,7 @@ class ExperimentARController: UIViewController {
             }
         }
         
-        FlipRiseSlider.loadRiseSegmentSceneAsync { [unowned self] result in
+        DropFlipRiseNYC.loadRiseSegmentSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
                 print("The seaRise error is..... \(error)")

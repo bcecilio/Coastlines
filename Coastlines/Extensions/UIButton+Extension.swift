@@ -19,11 +19,11 @@ extension UIButton {
         button.contentMode = .scaleToFill
         button.tintColor = .black
         button.layer.borderWidth = 3
-        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 5, height: 5)
-        button.layer.shadowRadius = 3
-        button.layer.shadowOpacity = 0.65
+        button.layer.borderColor = PaletteColour.lightGreen.colour.cgColor
+//        button.layer.shadowColor = UIColor.black.cgColor
+//        button.layer.shadowOffset = CGSize(width: 5, height: 5)
+//        button.layer.shadowRadius = 3
+//        button.layer.shadowOpacity = 0.65
         button.layer.masksToBounds = false
         return button
     }
@@ -38,11 +38,11 @@ extension UIButton {
         button.contentMode = .scaleToFill
         button.tintColor = .black
         button.layer.borderWidth = 3
-        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 5, height: 5)
-        button.layer.shadowRadius = 3
-        button.layer.shadowOpacity = 0.65
+        button.layer.borderColor = PaletteColour.lightGreen.colour.cgColor
+//        button.layer.shadowColor = UIColor.black.cgColor
+//        button.layer.shadowOffset = CGSize(width: 5, height: 5)
+//        button.layer.shadowRadius = 3
+//        button.layer.shadowOpacity = 0.65
         button.layer.masksToBounds = false
         return button
     }
@@ -56,12 +56,12 @@ extension UIButton {
         button.backgroundColor = PaletteColour.offWhite.colour
         button.contentMode = .scaleAspectFit
         button.tintColor = .white
-        button.layer.borderWidth = 3
-        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 5, height: 5)
-        button.layer.shadowRadius = 3
-        button.layer.shadowOpacity = 0.65
+        button.layer.borderWidth = 5
+        button.layer.borderColor = PaletteColour.lightGreen.colour.cgColor
+//        button.layer.shadowColor = UIColor.black.cgColor
+//        button.layer.shadowOffset = CGSize(width: 5, height: 5)
+//        button.layer.shadowRadius = 3
+//        button.layer.shadowOpacity = 0.65
         button.layer.masksToBounds = false
         return button
     }
