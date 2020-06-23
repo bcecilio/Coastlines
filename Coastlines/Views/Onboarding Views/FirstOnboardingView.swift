@@ -12,16 +12,17 @@ class FirstOnboardingView: UIView {
     
     public lazy var nextButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Get Started", for: .normal)
+        button.setTitle("Begin", for: .normal)
         button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
         button.layer.borderWidth = 1.0
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
-//        button.layer.cornerRadius = 22.0
+        button.layer.cornerRadius = 25.0
         button.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.titleLabel?.numberOfLines = 1
+        button.titleLabel?.textAlignment = .center
         button.addAccessibility(.button, "Get Started", "Begins onboarding experience", nil)
         return button
     }()
@@ -63,9 +64,13 @@ class FirstOnboardingView: UIView {
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.titleLabel?.adjustsFontSizeToFitWidth = true
-//        button.layer.borderWidth = 1.0
-//        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
-//        button.layer.cornerRadius = 22.0
+        button.titleLabel?.minimumScaleFactor = 0.5
+        button.titleLabel?.numberOfLines = 1
+        button.titleLabel?.textAlignment = .center
+        //button.titleLabel?.
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
+        button.layer.cornerRadius = 25.0
         return button
     }()
     
@@ -106,14 +111,14 @@ class FirstOnboardingView: UIView {
         topView.addSubview(welcomeLabel)
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([welcomeLabel.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 10.0), welcomeLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), welcomeLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), welcomeLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.16)])
+        NSLayoutConstraint.activate([welcomeLabel.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0), welcomeLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), welcomeLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), welcomeLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.16)])
     }
     
     private func setUpNextButtonConstaints(){
         addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20), nextButton.heightAnchor.constraint(equalToConstant: 44.0), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+        NSLayoutConstraint.activate([nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20), nextButton.heightAnchor.constraint(equalToConstant: 50.0), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.4)])
     }
     
     private func setUpInfoViewConstraints() {
@@ -127,7 +132,7 @@ class FirstOnboardingView: UIView {
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16), skipButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16), skipButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20), skipButton.heightAnchor.constraint(equalToConstant: 50.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
     }
     
     private func setUpTestViewConstraints(){

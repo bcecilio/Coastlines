@@ -41,12 +41,14 @@ class FifthOnboardingView: UIView {
     
     public lazy var beginButton: UIButton = {
        let button = UIButton()
-        button.setTitle("Begin", for: .normal)
+        button.setTitle("Explore", for: .normal)
         button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
         button.layer.borderWidth = 1.0
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
-        button.layer.cornerRadius = 22
+        button.layer.cornerRadius = 25
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.addAccessibility(.button, "Begin", "Begin the main application experience.", nil)
         return button
     }()
@@ -93,7 +95,7 @@ class FifthOnboardingView: UIView {
         addSubview(beginButton)
         beginButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([beginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8), beginButton.centerXAnchor.constraint(equalTo: centerXAnchor), beginButton.heightAnchor.constraint(equalToConstant: 44.0), beginButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+        NSLayoutConstraint.activate([beginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8), beginButton.centerXAnchor.constraint(equalTo: centerXAnchor), beginButton.heightAnchor.constraint(equalToConstant: 50.0), beginButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)])
     }
     
     @objc

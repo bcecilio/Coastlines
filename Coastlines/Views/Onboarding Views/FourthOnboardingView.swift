@@ -55,7 +55,9 @@ class FourthOnboardingView: UIView {
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
         button.layer.borderWidth = 1.0
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
-        button.layer.cornerRadius = 22.0
+        button.layer.cornerRadius = 25.0
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.addAccessibility(.button, "Skip", "Skips the remainder of the onboarding process", nil)
         return button
     }()
@@ -110,7 +112,7 @@ class FourthOnboardingView: UIView {
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor), skipButton.heightAnchor.constraint(equalToConstant: 50.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)])
     }
     
     @objc
