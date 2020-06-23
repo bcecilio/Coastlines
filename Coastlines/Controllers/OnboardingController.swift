@@ -54,10 +54,10 @@ extension OnboardingController {
             playBackgroundVideo("IcebergPan2")
         } else if let displayView = view as? FourthOnboardingView{
             displayView.animateChevrons()
-            playBackgroundVideo("IcebergPan3")
+            playBackgroundVideo("coastPan")
         } else if let displayView = view as? FifthOnboardingView{
             displayView.animatePrevButton()
-            playBackgroundVideo("IcebergPan4")
+            playBackgroundVideo("IcebergPan3")
         }
     }
     

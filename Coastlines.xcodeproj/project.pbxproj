@@ -61,6 +61,10 @@
 		B7B59BE42497E8C9004CA137 /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BE22497E8C9004CA137 /* ResourceModel.swift */; };
 		B7BC816824993AAF00EB6A57 /* ARAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B7BC816724993AAF00EB6A57 /* ARAnimation.json */; };
 		B7BC816924993AAF00EB6A57 /* ARAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B7BC816724993AAF00EB6A57 /* ARAnimation.json */; };
+		B7C49F8524A29ABC00D07683 /* IcebergPan3.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */; };
+		B7C49F8624A29ABC00D07683 /* IcebergPan3.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */; };
+		B7C49F8724A29ABC00D07683 /* coastPan.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8424A29ABC00D07683 /* coastPan.mov */; };
+		B7C49F8824A29ABC00D07683 /* coastPan.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8424A29ABC00D07683 /* coastPan.mov */; };
 		C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD22490123800AA1756 /* AppDelegate.swift */; };
 		C40F2CD52490123800AA1756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD42490123800AA1756 /* SceneDelegate.swift */; };
 		C40F2CD72490123800AA1756 /* TestARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD62490123800AA1756 /* TestARController.swift */; };
@@ -198,6 +202,8 @@
 		B7B59BDF2497E532004CA137 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
 		B7B59BE22497E8C9004CA137 /* ResourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
 		B7BC816724993AAF00EB6A57 /* ARAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ARAnimation.json; sourceTree = "<group>"; };
+		B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IcebergPan3.mov; sourceTree = "<group>"; };
+		B7C49F8424A29ABC00D07683 /* coastPan.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = coastPan.mov; sourceTree = "<group>"; };
 		C40F2CD02490123800AA1756 /* Coasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40F2CD22490123800AA1756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD42490123800AA1756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -400,6 +406,8 @@
 			children = (
 				B724305424A14E2400EF211F /* IcebergPan.mov */,
 				B724305724A1665B00EF211F /* IcebergPan2.mov */,
+				B7C49F8424A29ABC00D07683 /* coastPan.mov */,
+				B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */,
 				02858577248304B70003E31A /* JSON Data */,
 				0289F8F8247DA0D2008D3910 /* Models */,
 				0289F8F7247DA0BA008D3910 /* Services */,
@@ -579,7 +587,9 @@
 				C48EBCE9248846C6001DB0A3 /* CooperHewitt-LightItalic.otf in Resources */,
 				B7BC816824993AAF00EB6A57 /* ARAnimation.json in Resources */,
 				C48EBCE7248846C6001DB0A3 /* CooperHewitt-BookItalic.otf in Resources */,
+				B7C49F8524A29ABC00D07683 /* IcebergPan3.mov in Resources */,
 				02858579248305410003E31A /* locationFactsData.json in Resources */,
+				B7C49F8724A29ABC00D07683 /* coastPan.mov in Resources */,
 				C48EBCE0248846C6001DB0A3 /* CooperHewitt-Thin.otf in Resources */,
 				C48EBCE3248846C6001DB0A3 /* CooperHewitt-Bold.otf in Resources */,
 				C48EBCE8248846C6001DB0A3 /* CooperHewitt-Medium.otf in Resources */,
@@ -605,6 +615,7 @@
 			files = (
 				C40F2D06249012E400AA1756 /* CooperHewitt-Thin.otf in Resources */,
 				C40F2D09249012E400AA1756 /* CooperHewitt-Bold.otf in Resources */,
+				B7C49F8624A29ABC00D07683 /* IcebergPan3.mov in Resources */,
 				C40F2D10249012E400AA1756 /* CooperHewitt-HeavyItalic.otf in Resources */,
 				B724305624A14E2400EF211F /* IcebergPan.mov in Resources */,
 				C40F2D0C249012E400AA1756 /* CooperHewitt-Book.otf in Resources */,
@@ -615,6 +626,7 @@
 				C40F2CEF2490126E00AA1756 /* locationFactsData.json in Resources */,
 				C40F2D13249012E400AA1756 /* CooperHewitt-MediumItalic.otf in Resources */,
 				C40F2D14249012E400AA1756 /* CooperHewitt-Semibold.otf in Resources */,
+				B7C49F8824A29ABC00D07683 /* coastPan.mov in Resources */,
 				B7BC816924993AAF00EB6A57 /* ARAnimation.json in Resources */,
 				C40F2D12249012E400AA1756 /* CooperHewitt-Light.otf in Resources */,
 				C40F2D07249012E400AA1756 /* CooperHewitt-SemiboldItalic.otf in Resources */,
