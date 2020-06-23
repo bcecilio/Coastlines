@@ -30,9 +30,17 @@ class ResourcesController: UIViewController {
         view = resourceView
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if traitCollection.userInterfaceStyle == .dark {
+            resourceView.header.tintColor = .white
+        } else {
+            resourceView.header.tintColor = .black
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+//        view.backgroundColor = .white
         setupTableView()
     }
     
@@ -65,7 +73,7 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
         if selectedIndex == indexPath {
             return 220
         }
-        return 60
+        return 65
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
