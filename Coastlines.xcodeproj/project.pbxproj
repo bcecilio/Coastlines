@@ -45,6 +45,10 @@
 		0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */; };
 		1393FDC357C87C1B91849D65 /* Pods_Coastlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */; };
 		5D700857BBD059F2237BFD0C /* Pods_TestFeatureTarget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B9E8FE61F7AAE1A1CB365C /* Pods_TestFeatureTarget.framework */; };
+		B724305524A14E2400EF211F /* IcebergPan.mov in Resources */ = {isa = PBXBuildFile; fileRef = B724305424A14E2400EF211F /* IcebergPan.mov */; };
+		B724305624A14E2400EF211F /* IcebergPan.mov in Resources */ = {isa = PBXBuildFile; fileRef = B724305424A14E2400EF211F /* IcebergPan.mov */; };
+		B724305824A1665B00EF211F /* IcebergPan2.mov in Resources */ = {isa = PBXBuildFile; fileRef = B724305724A1665B00EF211F /* IcebergPan2.mov */; };
+		B724305924A1665B00EF211F /* IcebergPan2.mov in Resources */ = {isa = PBXBuildFile; fileRef = B724305724A1665B00EF211F /* IcebergPan2.mov */; };
 		B776AD412497F5AF00034A4E /* ResourcesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */; };
 		B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */; };
 		B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsVew.swift */; };
@@ -57,6 +61,10 @@
 		B7B59BE42497E8C9004CA137 /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BE22497E8C9004CA137 /* ResourceModel.swift */; };
 		B7BC816824993AAF00EB6A57 /* ARAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B7BC816724993AAF00EB6A57 /* ARAnimation.json */; };
 		B7BC816924993AAF00EB6A57 /* ARAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B7BC816724993AAF00EB6A57 /* ARAnimation.json */; };
+		B7C49F8524A29ABC00D07683 /* IcebergPan3.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */; };
+		B7C49F8624A29ABC00D07683 /* IcebergPan3.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */; };
+		B7C49F8724A29ABC00D07683 /* coastPan.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8424A29ABC00D07683 /* coastPan.mov */; };
+		B7C49F8824A29ABC00D07683 /* coastPan.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8424A29ABC00D07683 /* coastPan.mov */; };
 		C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD22490123800AA1756 /* AppDelegate.swift */; };
 		C40F2CD52490123800AA1756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD42490123800AA1756 /* SceneDelegate.swift */; };
 		C40F2CD72490123800AA1756 /* TestARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD62490123800AA1756 /* TestARController.swift */; };
@@ -185,6 +193,8 @@
 		3E4C564036176640CEBB70C2 /* Pods-TestFeatureTarget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestFeatureTarget.debug.xcconfig"; path = "Target Support Files/Pods-TestFeatureTarget/Pods-TestFeatureTarget.debug.xcconfig"; sourceTree = "<group>"; };
 		90B7802E35291B5353608B3B /* Pods-Coastlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.debug.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.debug.xcconfig"; sourceTree = "<group>"; };
 		93B9E8FE61F7AAE1A1CB365C /* Pods_TestFeatureTarget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestFeatureTarget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B724305424A14E2400EF211F /* IcebergPan.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IcebergPan.mov; sourceTree = "<group>"; };
+		B724305724A1665B00EF211F /* IcebergPan2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IcebergPan2.mov; sourceTree = "<group>"; };
 		B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		B7A4588D247F10BE001F8E51 /* LocationsVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVew.swift; sourceTree = "<group>"; };
 		B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesController.swift; sourceTree = "<group>"; };
@@ -192,6 +202,8 @@
 		B7B59BDF2497E532004CA137 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
 		B7B59BE22497E8C9004CA137 /* ResourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
 		B7BC816724993AAF00EB6A57 /* ARAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ARAnimation.json; sourceTree = "<group>"; };
+		B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IcebergPan3.mov; sourceTree = "<group>"; };
+		B7C49F8424A29ABC00D07683 /* coastPan.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = coastPan.mov; sourceTree = "<group>"; };
 		C40F2CD02490123800AA1756 /* Coasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40F2CD22490123800AA1756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD42490123800AA1756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -392,6 +404,10 @@
 		0B1F213A2476DEC300729365 /* Coastlines */ = {
 			isa = PBXGroup;
 			children = (
+				B724305424A14E2400EF211F /* IcebergPan.mov */,
+				B724305724A1665B00EF211F /* IcebergPan2.mov */,
+				B7C49F8424A29ABC00D07683 /* coastPan.mov */,
+				B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */,
 				02858577248304B70003E31A /* JSON Data */,
 				0289F8F8247DA0D2008D3910 /* Models */,
 				0289F8F7247DA0BA008D3910 /* Services */,
@@ -571,7 +587,9 @@
 				C48EBCE9248846C6001DB0A3 /* CooperHewitt-LightItalic.otf in Resources */,
 				B7BC816824993AAF00EB6A57 /* ARAnimation.json in Resources */,
 				C48EBCE7248846C6001DB0A3 /* CooperHewitt-BookItalic.otf in Resources */,
+				B7C49F8524A29ABC00D07683 /* IcebergPan3.mov in Resources */,
 				02858579248305410003E31A /* locationFactsData.json in Resources */,
+				B7C49F8724A29ABC00D07683 /* coastPan.mov in Resources */,
 				C48EBCE0248846C6001DB0A3 /* CooperHewitt-Thin.otf in Resources */,
 				C48EBCE3248846C6001DB0A3 /* CooperHewitt-Bold.otf in Resources */,
 				C48EBCE8248846C6001DB0A3 /* CooperHewitt-Medium.otf in Resources */,
@@ -581,8 +599,10 @@
 				C48EBCE2248846C6001DB0A3 /* SIL Open Font License.txt in Resources */,
 				C48EBCED248846C6001DB0A3 /* CooperHewitt-MediumItalic.otf in Resources */,
 				C48EBCEA248846C6001DB0A3 /* CooperHewitt-HeavyItalic.otf in Resources */,
+				B724305524A14E2400EF211F /* IcebergPan.mov in Resources */,
 				C48EBCE6248846C6001DB0A3 /* CooperHewitt-Book.otf in Resources */,
 				C48EBCE1248846C6001DB0A3 /* CooperHewitt-SemiboldItalic.otf in Resources */,
+				B724305824A1665B00EF211F /* IcebergPan2.mov in Resources */,
 				C48EBCCC24884626001DB0A3 /* LaunchScreen.storyboard in Resources */,
 				C48EBCEC248846C6001DB0A3 /* CooperHewitt-Light.otf in Resources */,
 				C48EBCEE248846C6001DB0A3 /* CooperHewitt-Semibold.otf in Resources */,
@@ -595,7 +615,9 @@
 			files = (
 				C40F2D06249012E400AA1756 /* CooperHewitt-Thin.otf in Resources */,
 				C40F2D09249012E400AA1756 /* CooperHewitt-Bold.otf in Resources */,
+				B7C49F8624A29ABC00D07683 /* IcebergPan3.mov in Resources */,
 				C40F2D10249012E400AA1756 /* CooperHewitt-HeavyItalic.otf in Resources */,
+				B724305624A14E2400EF211F /* IcebergPan.mov in Resources */,
 				C40F2D0C249012E400AA1756 /* CooperHewitt-Book.otf in Resources */,
 				C40F2CDF2490123A00AA1756 /* LaunchScreen.storyboard in Resources */,
 				C40F2CDC2490123A00AA1756 /* Assets.xcassets in Resources */,
@@ -604,9 +626,11 @@
 				C40F2CEF2490126E00AA1756 /* locationFactsData.json in Resources */,
 				C40F2D13249012E400AA1756 /* CooperHewitt-MediumItalic.otf in Resources */,
 				C40F2D14249012E400AA1756 /* CooperHewitt-Semibold.otf in Resources */,
+				B7C49F8824A29ABC00D07683 /* coastPan.mov in Resources */,
 				B7BC816924993AAF00EB6A57 /* ARAnimation.json in Resources */,
 				C40F2D12249012E400AA1756 /* CooperHewitt-Light.otf in Resources */,
 				C40F2D07249012E400AA1756 /* CooperHewitt-SemiboldItalic.otf in Resources */,
+				B724305924A1665B00EF211F /* IcebergPan2.mov in Resources */,
 				C40F2CDA2490123800AA1756 /* Main.storyboard in Resources */,
 				C40F2D0F249012E400AA1756 /* CooperHewitt-LightItalic.otf in Resources */,
 				C40F2D0E249012E400AA1756 /* CooperHewitt-Medium.otf in Resources */,
@@ -961,7 +985,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = Coastlines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -980,7 +1004,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = Coastlines/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -999,7 +1023,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1019,7 +1043,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (

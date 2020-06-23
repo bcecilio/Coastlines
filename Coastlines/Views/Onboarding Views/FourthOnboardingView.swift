@@ -45,10 +45,10 @@ class FourthOnboardingView: UIView {
     public lazy var skipButton: UIButton = {
        let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(PaletteColour.darkBlue.colour, for: .normal)
+        button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
         button.layer.borderWidth = 1.0
-        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
+        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
         button.layer.cornerRadius = 22.0
         return button
     }()
@@ -64,7 +64,7 @@ class FourthOnboardingView: UIView {
     }
     
     private func commonInit(){
-        setUpCenterImageConstraints()
+        // setUpCenterImageConstraints()
         setUpPrevButtonConstraints()
         setUpNextButtonConstraints()
         setUpInfoLabelConstraints()
@@ -72,31 +72,31 @@ class FourthOnboardingView: UIView {
     }
     
     private func setUpPrevButtonConstraints(){
-        centerImage.addSubview(prevButton)
+        addSubview(prevButton)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([prevButton.centerYAnchor.constraint(equalTo: centerYAnchor), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
     private func setUpNextButtonConstraints() {
-        centerImage.addSubview(nextButton)
+        addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([nextButton.centerYAnchor.constraint(equalTo: centerYAnchor), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
-    private func setUpCenterImageConstraints() {
-        addSubview(centerImage)
-        centerImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
-    }
+//    private func setUpCenterImageConstraints() {
+//        addSubview(centerImage)
+//        centerImage.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
+//    }
     
     private func setUpInfoLabelConstraints() {
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)])
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 350), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)])
     }
     
     private func setUpSkipButtonConstraints(){

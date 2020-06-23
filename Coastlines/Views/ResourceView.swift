@@ -19,7 +19,7 @@ class ResourceView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = PaletteColour.offWhite.colour
+        button.tintColor = PaletteColour.lightBlue.colour
         button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         return button
     }()
