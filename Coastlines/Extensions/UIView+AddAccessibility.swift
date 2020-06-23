@@ -20,7 +20,7 @@ extension UIView{
         - isAccessible: Indicates whether the accessibility element is an assistive application can access.
         - value: Represents the current value of the accessibility element. For example, a slider might have a value of 10. If this is applied to a text field, it is the text that the field contains.
  */
-    func addAccessibility(_ trait: UIAccessibilityTraits, _ label: String, _ hint: String?, _ isAccessibile: Bool = true, _ value: String?){
+    func addAccessibility(_ trait: UIAccessibilityTraits, _ label: String, _ hint: String?, _ value: String?, _ isAccessibile: Bool = true){
         self.accessibilityTraits = trait
         self.accessibilityLabel = label
         self.accessibilityHint = hint

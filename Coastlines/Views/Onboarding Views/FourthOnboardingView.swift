@@ -15,6 +15,7 @@ class FourthOnboardingView: UIView {
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
         button.tintColor = PaletteColour.offWhite.colour
+        button.addAccessibility(.button, "Left Chevron", "Indicates that the user can swipe right", nil)
         return button
     }()
     
@@ -23,33 +24,39 @@ class FourthOnboardingView: UIView {
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
         button.tintColor = PaletteColour.offWhite.colour
+        button.addAccessibility(.button, "Right Chevron", "Indicates that the user can swipe left", nil)
         return button
     }()
     
     public lazy var centerImage: UIImageView = {
        let iv = UIImageView()
         iv.image = UIImage(named: "coastlineIMG1")
+        iv.addAccessibility(.image, "An image of a coast with waves receding from a bird's eye view", nil, nil)
         return iv
     }()
     
-    public lazy var infoLabel: UILabel = {
-       let label = UILabel()
-        label.textColor = PaletteColour.offWhite.colour
-        label.text = OnboardingText.thirdOnboardingLabel
-        label.textAlignment = NSTextAlignment.center
-        label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
-        label.numberOfLines = 0
-        return label
+    public lazy var infoView: UITextView = {
+       let view = UITextView()
+        view.textColor = PaletteColour.offWhite.colour
+        view.text = OnboardingText.thirdOnboardingLabel
+        view.textAlignment = NSTextAlignment.center
+        view.font = UIFont.preferredFont(forTextStyle: .body)
+        view.adjustsFontForContentSizeCategory = true
+        view.isEditable = false
+        view.backgroundColor = PaletteColour.darkBlue.colour
+        view.addAccessibility(.none, OnboardingText.thirdOnboardingLabel, nil, nil)
+        return view
     }()
     
     public lazy var skipButton: UIButton = {
        let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(PaletteColour.darkBlue.colour, for: .normal)
+        button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
         button.layer.borderWidth = 1.0
-        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
+        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
         button.layer.cornerRadius = 22.0
+        button.addAccessibility(.button, "Skip", "Skips the remainder of the onboarding process", nil)
         return button
     }()
     
@@ -67,22 +74,22 @@ class FourthOnboardingView: UIView {
         setUpCenterImageConstraints()
         setUpPrevButtonConstraints()
         setUpNextButtonConstraints()
-        setUpInfoLabelConstraints()
         setUpSkipButtonConstraints()
+        setUpInfoViewConstraints()
     }
     
     private func setUpPrevButtonConstraints(){
         centerImage.addSubview(prevButton)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([prevButton.centerYAnchor.constraint(equalTo: centerYAnchor), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
+        NSLayoutConstraint.activate([prevButton.centerYAnchor.constraint(equalTo: centerImage.centerYAnchor), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8.0), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
     private func setUpNextButtonConstraints() {
         centerImage.addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([nextButton.centerYAnchor.constraint(equalTo: centerYAnchor), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
+        NSLayoutConstraint.activate([nextButton.centerYAnchor.constraint(equalTo: centerImage.centerYAnchor), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
     private func setUpCenterImageConstraints() {
@@ -92,11 +99,11 @@ class FourthOnboardingView: UIView {
         NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
     }
     
-    private func setUpInfoLabelConstraints() {
-        addSubview(infoLabel)
-        infoLabel.translatesAutoresizingMaskIntoConstraints = false
+    private func setUpInfoViewConstraints() {
+        addSubview(infoView)
+        infoView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)])
+        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 2.0), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.bottomAnchor.constraint(equalTo: skipButton.topAnchor, constant: -16)])
     }
     
     private func setUpSkipButtonConstraints(){

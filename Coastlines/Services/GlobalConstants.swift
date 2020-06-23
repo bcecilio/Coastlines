@@ -17,15 +17,14 @@ public struct OnboardingKey{
 public struct OnboardingText{
     static let appTitle = "Welcome to Coasts"
     static let welcomeMessage = """
-    \n
 Thank you for installing this application. Before you begin your experience, we'd like to take a moment to inform you a bit about climate change and its effect on the global sea level.
 
 Alternatively, if you are a climate change expert, you can go ahead and skip the introductory portion of this application.
 """
-    static let firstOnboardingLabel = "\nAs the global temperature increases, the ice caps begin to melt, and the world’s oceans begin to heat up, which causes the sea level to rise."
-    static let secondOnboaringLabel = "\nHistorically, a rise and fall in the Earth’s sea levels is not uncommon. However, the sea level has never risen at a rate that we have seen in recent years."
-    static let thirdOnboardingLabel = "\nRoughly 40% of the world’s population lives near Coastal Regions. If the sea level continues to rise at this rate, our coasts will slowly recede."
-    static let fourthOnboardingLabel = "\nWith that, you are now ready to explore locations around the world to learn more about the impact of rising sea levels."
+    static let firstOnboardingLabel = "As the global temperature increases, the ice caps begin to melt, and the world’s oceans begin to heat up, which causes the sea level to rise."
+    static let secondOnboaringLabel = "Historically, a rise and fall in the Earth’s sea levels is not uncommon. However, the sea level has never risen at a rate that we have seen in recent years."
+    static let thirdOnboardingLabel = "Roughly 40% of the world’s population lives near Coastal Regions. If the sea level continues to rise at this rate, our coasts will slowly recede."
+    static let fourthOnboardingLabel = "With that, you are now ready to explore locations around the world to learn more about the impact of rising sea levels."
     
 }
 
