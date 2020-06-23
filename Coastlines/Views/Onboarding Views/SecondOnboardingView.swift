@@ -21,10 +21,10 @@ class SecondOnboardingView: UIView {
     public lazy var skipButton: UIButton = {
        let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(PaletteColour.darkBlue.colour, for: .normal)
+        button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
         button.layer.borderWidth = 1.0
-        button.layer.borderColor = PaletteColour.darkBlue.colour.cgColor
+        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
         button.layer.cornerRadius = 22.0
         return button
     }()
@@ -56,14 +56,14 @@ class SecondOnboardingView: UIView {
     }
     
     private func commonInit(){
-        setUpImageViewConstraints()
+//        setUpImageViewConstraints()
         setUpInfoLabelConstraints()
         setUpSkipButtonConstraints()
         setUpNextButtonConstraints()
     }
     
     private func setUpNextButtonConstraints() {
-        centerImage.addSubview(nextButton)
+        addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([nextButton.centerYAnchor.constraint(equalTo: centerYAnchor), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
@@ -80,7 +80,7 @@ class SecondOnboardingView: UIView {
         addSubview(infoLabel)
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)])
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 400), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)])
     }
     
     private func setUpSkipButtonConstraints(){
