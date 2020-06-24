@@ -28,6 +28,18 @@ Alternatively, if you are a climate change expert, you can go ahead and skip the
     
 }
 
+/// A description of the locations in the locationsVC. For accessibility purposes.
+public struct LocationDescription{
+    static let nycImage = "A yellow taxi cab is shown waiting at a busy new york city corner."
+    static let nycImageValue = "Tap to learn more about how the rising sea level will affect nyc."
+    static let newOrleansImage = "A view of buildings is shown from a high vantage point."
+    static let newOrleansValue = "Tap to learn more about how the rising sea level will affect New Orleans."
+    static let floridaImage = "A Miami beach with clear blue water is shown extending into the distance."
+    static let floridaValue = "Tap to learn more about how the rising sea level will affect Miami."
+    static let bangladeshImage = "A view of buildings is shown from a high vantage point. The scene is bathed in the light of a bangladesh sunset."
+    static let bangladeshValue = "Tap to learn more about how the rising sea level will affect Bangladesh."
+}
+
 /// An enum containing hex vaules that correspond to colours from the chosen colour palette.
 enum PaletteColour: String{
     case offWhite = "#f9f7e3"
@@ -36,6 +48,7 @@ enum PaletteColour: String{
     case peach = "#e2a093"
     case pink = "#c67eb2"
     case darkBlue = "#3e54c7"
+    case black = "#000000"
     
     var colour: UIColor{
         guard self.rawValue.count == 7 else { return UIColor.black }

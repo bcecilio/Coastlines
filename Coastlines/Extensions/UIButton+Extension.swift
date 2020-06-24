@@ -66,3 +66,12 @@ extension UIButton {
         return button
     }
 }
+
+extension UIButton {
+    /// Makes the font within a button dynamic. For accessibility purposes.
+    func makeFontAccessible(){
+        self.titleLabel?.adjustsFontForContentSizeCategory = true
+        self.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        self.titleLabel?.textAlignment = .center
+    }
+}
