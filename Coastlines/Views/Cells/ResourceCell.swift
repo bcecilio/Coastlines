@@ -23,20 +23,25 @@ class ResourceCell: UITableViewCell {
     private lazy var title: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.adjustsFontForContentSizeCategory = true
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         label.textColor = .white
         label.textAlignment = .left
         return label
     }()
-    
-    private lazy var subtext: UILabel = {
-        let label = UILabel()
-        label.text = ""
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        label.textColor = .white
-        label.textAlignment = .left
-        label.numberOfLines = 0
-        return label
+        
+    private lazy var subtext: UITextView = {
+        let tv = UITextView()
+        tv.text = ""
+        tv.font = UIFont.preferredFont(forTextStyle: .body)
+        tv.adjustsFontForContentSizeCategory = true
+        tv.textColor = .white
+        tv.isEditable = false
+        tv.textAlignment = .left
+        tv.backgroundColor = #colorLiteral(red: 0.5626521111, green: 0.7976604104, blue: 0.8191232085, alpha: 1)
+        return tv
     }()
     
     private let container: UIView = {
@@ -80,7 +85,7 @@ class ResourceCell: UITableViewCell {
             title.topAnchor.constraint(equalTo: container.topAnchor, constant: 20),
             title.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
             title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
-            //             title.heightAnchor.constraint(equalToConstant: 60)
+            title.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
@@ -91,7 +96,8 @@ class ResourceCell: UITableViewCell {
             subtext.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 15),
             subtext.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 15),
             subtext.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -15),
-            subtext.heightAnchor.constraint(equalToConstant: 120)
+            subtext.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8)
+//            subtext.heightAnchor.constraint(equalToConstant: 120)
         ])
     }
     
@@ -104,5 +110,7 @@ class ResourceCell: UITableViewCell {
     public func configureCell(with resource: Resources) {
         title.text = resource.title
         subtext.text = resource.description
+        title.addAccessibility(.none, resource.title, nil, nil)
+        subtext.addAccessibility(.none, resource.description, nil, nil)
     }
 }

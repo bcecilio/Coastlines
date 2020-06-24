@@ -61,7 +61,7 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
         if selectedIndex == indexPath {
             return 220
         }
-        return 60
+        return 90
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
