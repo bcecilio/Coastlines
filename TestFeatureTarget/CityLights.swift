@@ -67,7 +67,7 @@ struct CityLights {
         
         lightTwo.transform.rotation = simd_quatf(vector: [GLKMathDegreesToRadians(-70),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
         
-        lightThree.position = [-0.1035, 0, 0.1584]
+        lightThree.position = [-0.035,0,0.08]// [-0.1035, 0, 0.1584]
         lightThree.light.attenuationRadius = 1.3
         lightThree.light.color = .yellow
         lightThree.light.intensity = 700
@@ -134,7 +134,97 @@ struct CityLights {
         }
         return transform
     }
+    
+    static func moveCenterCityLight(sliderVal: Float, light: SpotLight, oldVal: Float) -> SpotLight {
+        let newLight = light
+        let moveX: Float = 0.0175
+//        var direction: Float = 1
+//
+//        if oldVal > sliderVal {
+//            direction = -1
+//        } else if oldVal == sliderVal {
+//            direction = 0
+//        } else {
+//            direction = 1
+//        }
+        
+//        [-0.3035, 0, 0.2084] [-0.2035, 0, 0.2084]
+        
+        
+        
+        switch sliderVal {
+        case 0.0..<0.2:
+//            newLight.position.x += 0
+//            newLight.position.z -= 0
+            newLight.position = [-0.3035, 0, 0.2084]
+        case 0.2..<0.3:
+//            newLight.position.x += moveX*direction
+//            newLight.position.z -= moveX*direction
+            newLight.position = [(-0.3035)+moveX, 0, 0.2084-moveX]
+        case 0.3..<0.4:
+//            newLight.position.x += moveX*2*direction
+//            newLight.position.z -= moveX*2*direction
+            newLight.position = [(-0.3035)+(moveX*2), 0, 0.2084-(moveX*2)]
+        case 0.4..<0.5:
+//            newLight.position.x += moveX*3*direction
+//            newLight.position.z -= moveX*3*direction
+            newLight.position = [(-0.3035)+(moveX*3), 0, 0.2084-(moveX*3)]
+        case 0.5..<0.6:
+//            newLight.position.x += moveX*4*direction
+//            newLight.position.z -= moveX*4*direction
+            newLight.position = [(-0.3035)+(moveX*4), 0, 0.2084-(moveX*4)]
+        case 0.6..<0.7:
+//            newLight.position.x += moveX*5*direction
+//            newLight.position.z -= moveX*5*direction
+            newLight.position = [(-0.3035)+(moveX*5), 0, 0.2084-(moveX*5)]
+        case 0.7..<0.8:
+//            newLight.position.x += moveX*6*direction
+//            newLight.position.z -= moveX*6*direction
+            newLight.position = [(-0.3035)+(moveX*6), 0, 0.2084-(moveX*6)]
+        case 0.8..<0.9:
+//            newLight.position.x += moveX*7*direction
+//            newLight.position.z -= moveX*7*direction
+            newLight.position = [(-0.3035)+(moveX*7), 0, 0.2084-(moveX*7)]
+        default:
+//            newLight.position.x += moveX*8*direction
+//            newLight.position.z -= moveX*8*direction
+            newLight.position = [(-0.3035)+(moveX*8), 0, 0.2084-(moveX*8)]
+        }
+        return newLight
+    }
+    
+    static func moveRightCityLight(sliderVal: Float, light: SpotLight) -> SpotLight {
+            let newLight = light
+            let moveX: Float = 0.086
+        let moveZ: Float = 0.009
+        
+     // [-0.1035, 0, 0.1584] //   [-0.035,0,0.08]
+        
+            switch sliderVal {
+            case 0.0..<0.2:
+                newLight.position = [-0.1035, 0, 0.1584]
+            case 0.2..<0.3:
+                newLight.position = [(-0.1035)+moveX, 0, 0.2084-moveZ]
+            case 0.3..<0.4:
+                newLight.position = [(-0.3035)+(moveX*2), 0, 0.2084-(moveZ*2)]
+            case 0.4..<0.5:
+                newLight.position = [(-0.3035)+(moveX*3), 0, 0.2084-(moveZ*3)]
+            case 0.5..<0.6:
+                newLight.position = [(-0.3035)+(moveX*4), 0, 0.2084-(moveZ*4)]
+            case 0.6..<0.7:
+                newLight.position = [(-0.3035)+(moveX*5), 0, 0.2084-(moveZ*5)]
+            case 0.7..<0.8:
+                newLight.position = [(-0.3035)+(moveX*6), 0, 0.2084-(moveZ*6)]
+            case 0.8..<0.9:
+                newLight.position = [(-0.3035)+(moveX*7), 0, 0.2084-(moveZ*7)]
+            default:
+                newLight.position = [(-0.3035)+(moveX*8), 0, 0.2084-(moveZ*8)]
+            }
+            return newLight
+        }
 }
+
+
 
 
 

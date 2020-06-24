@@ -10,6 +10,7 @@ class LocationDetailController: UIViewController {
     private var seaChartCell = GraphCell()
     private var augCell = ARCell()
     private var buttonTag = 0
+    private var selection = Selection(selected: "")
     
     init(_ location: Location) {
         self.location = location
@@ -22,6 +23,10 @@ class LocationDetailController: UIViewController {
     
     override func loadView() {
         view = locationView
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func viewDidLoad() {
@@ -55,8 +60,8 @@ class LocationDetailController: UIViewController {
         
         print("AR Button Pressed")
         
-            let arVC = ExperimentARController(location)
-            UIViewController.resetWindow(arVC)
+//            let arVC = ExperimentARController(location)
+//            UIViewController.resetWindow(arVC)
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
@@ -223,17 +228,21 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
         if indexPath.row == 6 {
             print("AR Button Pressed")
             
-            let arVC = ExperimentARController(location)
-            UIViewController.resetWindow(arVC)
+//            let arVC = ExperimentARController(location)
+//            UIViewController.resetWindow(arVC)
             
         } else if indexPath.row == 4 {
+            
+            let selection = Selection(selected: location.name)
+            let (fact1,fact2) = FactText.getFact(selection)
             let showAlert = GraphShowAlert.makeAlert(year: 0, rise: 0, vc: self)
-            showAlert.title = FactText.nycPop1
-            showAlert.message = FactText.nycPop2
             
-            showAlert.setTitle(font: Font.boldArial26, color: PaletteColour.lightGreen.colour)
+            showAlert.title = fact1
+            showAlert.message = fact2
             
-            showAlert.setMessage(font: Font.boldArial26, color: PaletteColour.lightGreen.colour)
+            showAlert.setTitle(font: Font.boldArial26, color: PaletteColour.lightBlue.colour)
+            
+            showAlert.setMessage(font: Font.boldArial26, color: PaletteColour.lightBlue.colour)
             self.present(showAlert, animated: true, completion: nil)
         }
     }

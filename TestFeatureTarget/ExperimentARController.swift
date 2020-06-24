@@ -26,6 +26,8 @@ class ExperimentARController: UIViewController {
     
     var (cityLightOne, cityLightTwo, cityLightThree, cityLightFour) = CityLights.addCityLights()
     
+    var oldSliderVal: Float = 0.1
+    
     init(_ location: Location) {
         self.location = location
         super.init(nibName: nil, bundle: nil)
@@ -141,8 +143,8 @@ class ExperimentARController: UIViewController {
         //        cityLightTwo.light.color = .green
         riseSegmentScene.addChild(cityLightTwo)
         
-        //        cityLightThree.light.color = blue
-        //        riseSegmentScene.addChild(cityLightThree)
+        cityLightThree.light.color = blue
+        riseSegmentScene.addChild(cityLightThree)
         //
         //        cityLightFour.light.color = blue
         //        riseSegmentScene.addChild(cityLightFour)
@@ -163,24 +165,34 @@ class ExperimentARController: UIViewController {
             
             let scene = self.riseSegmentScene
             
+            print("slider")
             print(slider.value)
             
-            if slider.value > 0.5 {
-                self.redLight.light.color = .red
-                self.redLight.light.intensity = 100000
-                self.brook.light.color = .red
-            } else if slider.value <= 0.5 {
-                self.redLight.light.intensity = 800
-                self.redLight.light.color = .white
-                self.brook.light.color = .white
-            }
+            print("\nOld Value")
+            print(self.oldSliderVal)
             
-            if slider.value > 0.5 {
-                let moveTo = float4x4.makeTranslation(x: 0, 0, 0)
+            
+            
+            self.cityLightTwo = CityLights.moveCenterCityLight(sliderVal: slider.value, light: self.cityLightTwo, oldVal: self.oldSliderVal)
+            
                 
-                self.cityLightTwo.move(to: moveTo, relativeTo: scene, duration: 8)
-                //                self.cityLightTwo.position = [-0.2035, 0, 0.1084]
-            }
+            self.cityLightThree = CityLights.moveRightCityLight(sliderVal: slider.value, light: self.cityLightThree)
+//            if slider.value > 0.5 {
+//                self.redLight.light.color = .red
+//                self.redLight.light.intensity = 100000
+//                self.brook.light.color = .red
+//            } else if slider.value <= 0.5 {
+//                self.redLight.light.intensity = 800
+//                self.redLight.light.color = .white
+//                self.brook.light.color = .white
+//            }
+            
+//            if slider.value > 0.5 {
+//                let moveTo = float4x4.makeTranslation(x: 0, 0, 0)
+//
+//                self.cityLightTwo.move(to: moveTo, relativeTo: scene, duration: 8)
+//                //                self.cityLightTwo.position = [-0.2035, 0, 0.1084]
+//            }
             
             //            let angle = simd_quatf(vector: [GLKMathDegreesToRadians(-70),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
             //
