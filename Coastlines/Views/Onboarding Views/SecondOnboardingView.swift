@@ -36,7 +36,7 @@ class SecondOnboardingView: UIView {
     public lazy var infoView: UITextView = {
        let view = UITextView()
         view.textAlignment = NSTextAlignment.center
-        view.textColor = PaletteColour.offWhite.colour
+        view.textColor = UIColor.black
         view.text = OnboardingText.firstOnboardingLabel
         view.font = UIFont.preferredFont(forTextStyle: .body)
         view.adjustsFontForContentSizeCategory = true
@@ -90,7 +90,7 @@ class SecondOnboardingView: UIView {
         addSubview(infoView)
         infoView.translatesAutoresizingMaskIntoConstraints = false
     
-        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 65.0), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.bottomAnchor.constraint(equalTo: skipButton.topAnchor, constant: -8)])
+        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 50.0), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.bottomAnchor.constraint(equalTo: skipButton.topAnchor, constant: -8)])
     }
     
     private func setUpSkipButtonConstraints(){
