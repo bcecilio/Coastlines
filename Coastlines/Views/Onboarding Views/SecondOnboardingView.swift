@@ -36,7 +36,7 @@ class SecondOnboardingView: UIView {
     public lazy var infoView: UITextView = {
        let view = UITextView()
         view.textAlignment = NSTextAlignment.center
-        view.textColor = UIColor.black
+        view.textColor = PaletteColour.offWhite.colour
         view.text = OnboardingText.firstOnboardingLabel
         view.font = UIFont.preferredFont(forTextStyle: .body)
         view.adjustsFontForContentSizeCategory = true
