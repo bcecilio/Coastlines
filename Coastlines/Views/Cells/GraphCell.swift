@@ -17,19 +17,7 @@ class GraphCell: UICollectionViewCell {
     
     public var seaLevelSet = LineChartDataSet()
     public var location: Location?
-    public var index: IndexPath?
-    public var cellDelegate: PrevNextButton?
     public var graphDelegate: GraphClicked?
-    
-    public lazy var nextButton: UIButton = {
-        let button = UIButton()
-        return button.nextButton()
-    }()
-    
-    public lazy var prevButton: UIButton = {
-        let button = UIButton()
-        return button.previousButton()
-    }()
     
     public lazy var headerLabel: UILabel = {
         let label = UILabel()
@@ -78,38 +66,11 @@ class GraphCell: UICollectionViewCell {
         super.layoutSubviews()
         backgroundColor = PaletteColour.darkBlue.colour
         
-        prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
-        nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
-        setupPrevButton()
-        setupNextButton()
         setupHeaderLabel()
         setupSeaLevelGraph()
         setupDescriptionLabel()
         setSeaLevelData()
-    }
-    
-    private func setupPrevButton() {
-        addSubview(prevButton)
-        prevButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            prevButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            prevButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            prevButton.widthAnchor.constraint(equalToConstant: 44),
-            prevButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
-    }
-    
-    private func setupNextButton() {
-        addSubview(nextButton)
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            nextButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            nextButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            nextButton.widthAnchor.constraint(equalToConstant: 44),
-            nextButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
+        flashChart()
     }
     
     private func setupHeaderLabel() {
@@ -147,17 +108,10 @@ class GraphCell: UICollectionViewCell {
         ])
     }
     
-    @objc func prevButtonPressed(_ sender: UIButton) {
-        
-        print("Prev Button Pressed")
-        cellDelegate?.clickedOnPrev(index: (index?.row)!, cell: self)
-        
+    public func flashChart() {
+        seaLevelLineChart.pulsate()
     }
     
-    @objc func nextButtonPressed(_ sender: UIButton) {
-        print("next button pressed")
-        cellDelegate?.clickedOnNext(index: (index?.row)!, cell: self)
-    }
 }
 
 extension GraphCell: ChartViewDelegate {
@@ -196,3 +150,16 @@ extension GraphCell: ChartViewDelegate {
     }
 }
 
+extension LineChartView {
+    func pulsate() {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.7
+        pulse.fromValue = 0.98
+        pulse.toValue = 1.0
+        pulse.autoreverses = true
+        pulse.repeatCount = .infinity
+        pulse.initialVelocity = 0
+        pulse.damping = 5
+        layer.add(pulse, forKey: nil)
+    }
+}

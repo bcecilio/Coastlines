@@ -21,6 +21,24 @@ class DetailView: UIView {
         return button
     }()
     
+    public lazy var infoButton: UIButton = {
+        var button = UIButton()
+        button = button.nextButton()
+        button.setImage(UIImage(named: "info1"), for: .normal)
+        button.contentMode = .scaleAspectFit
+        return button
+    }()
+    
+    public lazy var nextButton: UIButton = {
+        let button = UIButton()
+        return button.nextButton()
+    }()
+    
+    public lazy var prevButton: UIButton = {
+        let button = UIButton()
+        return button.previousButton()
+    }()
+    
     public lazy var headerContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -83,14 +101,17 @@ class DetailView: UIView {
     }
     
     private func commonInit() {
+        
         headerContainer()
         setupLocationImageConstraints()
         setupWaveView()
         setupLocationLabel()
-//        arButtonConstraints()
         backButtonConstraints()
+        infoButtonConstraints()
         setupCollectionViewConstraints()
         arButtonConstraints()
+        nextButtonConstraints()
+        prevButtonConstraints()
     }
     
     private func headerContainer() {
@@ -176,6 +197,30 @@ class DetailView: UIView {
         ])
     }
     
+    private func nextButtonConstraints() {
+        addSubview(nextButton)
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            nextButton.centerYAnchor.constraint(equalTo: goToARButton.centerYAnchor),
+            nextButton.widthAnchor.constraint(equalToConstant: 44),
+            nextButton.heightAnchor.constraint(equalToConstant: 44),
+            nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+    }
+    
+    private func prevButtonConstraints() {
+        addSubview(prevButton)
+        prevButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            prevButton.centerYAnchor.constraint(equalTo: goToARButton.centerYAnchor),
+            prevButton.widthAnchor.constraint(equalToConstant: 44),
+            prevButton.heightAnchor.constraint(equalToConstant: 44),
+            prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20)
+        ])
+    }
+    
     private func backButtonConstraints() {
         addSubview(backButton)
         backButton.translatesAutoresizingMaskIntoConstraints = false
@@ -185,6 +230,18 @@ class DetailView: UIView {
             backButton.heightAnchor.constraint(equalToConstant: 34),
             backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             backButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 40)
+        ])
+    }
+    
+    private func infoButtonConstraints() {
+        addSubview(infoButton)
+        infoButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            infoButton.widthAnchor.constraint(equalToConstant: 44),
+            infoButton.heightAnchor.constraint(equalToConstant: 44),
+            infoButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            infoButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 40)
         ])
     }
     
@@ -206,6 +263,38 @@ class DetailView: UIView {
         })  { (completed) in
             
         }
+    }
+    
+    public func hidePrev(delay: TimeInterval = 0) {
+        UIView.animate(withDuration: 1.25, delay: delay, options: [.transitionCrossDissolve], animations: {
+            
+            self.prevButton.alpha = 0
+            
+        },completion: nil)
+    }
+    
+    public func showPrev(delay: TimeInterval = 0) {
+        UIView.animate(withDuration: 1.25, delay: delay, options: [.transitionCrossDissolve], animations: {
+            
+            self.prevButton.alpha = 1
+            
+        },completion: nil)
+    }
+    
+    public func hideNext() {
+        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
+            
+            self.nextButton.alpha = 0
+            
+        },completion: nil)
+    }
+    
+    public func showNext() {
+        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
+            
+            self.nextButton.alpha = 1
+            
+        },completion: nil)
     }
     
 }

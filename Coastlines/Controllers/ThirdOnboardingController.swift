@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ThirdOnboardingController: UIViewController {
     
     private let thirdOnboardingView = ThirdOnboardingView()
+    private var player: AVPlayer?
     
     override func loadView(){
         view = thirdOnboardingView

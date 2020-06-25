@@ -14,8 +14,9 @@ struct GraphShowAlert {
         let forYear = self.imageObjectHelper(year: year)
         
         let showAlert = UIAlertController(title: "By \(Int(year)) sea levels could rise as much as \(Int(rise) + 1) inches", message: forYear.thing, preferredStyle: .alert)
+
+        showAlert.setTitle(font: Font.boldArial24, color: PaletteColour.lightBlue.colour)
         
-        showAlert.setTitle(font: Font.boldArial24, color: PaletteColour.lightGreen.colour)
         showAlert.setMessage(font: Font.boldArial24, color: PaletteColour.lightBlue.colour)
         showAlert.setBackgroudColor(color: PaletteColour.offWhite.colour)
         showAlert.title?.accessibilityLabel = showAlert.title
@@ -59,39 +60,39 @@ struct GraphShowAlert {
         
         switch yearInt {
         case 2020:
-            return ("2020", "\nThat's not much but wait...")
+            return ("20201", "\nThat's not much but wait...")
         case 2025:
-            return ("2025", "\nThat's the diameter of a pool ball!")
+            return ("20251", "\nThat's the diameter of a pool ball!")
         case 2030:
-            return ("2030", "\nThat's almost as tall as an iPhone!")
+            return ("20301", "\nThat's almost as tall as an iPhone!")
         case 2035:
-            return ("2035", "\nThat's more than a new pencil!")
+            return ("20351", "\nThat's more than a new pencil!")
         case 2040:
-            return ("2040", "\nThat's almost a whole ruler!")
+            return ("20401", "\nThat's an entire ruler!")
         case 2045:
-            return ("2045", "\nThat's the size of a bowling pin!")
+            return ("20451", "\nThat's the size of a bowling pin!")
         case 2050:
-            return ("2050", "\nThat's the diameter of a dartboard!")
+            return ("20501", "\nThat's the diameter of a dartboard!")
         case 2055:
-            return ("2055", "\nThat's as tall as a labrador!")
+            return ("20551", "\nThat's as tall as a labrador!")
         case 2060:
-            return ("2060", "\nThat's more than 3 basketballs")
+            return ("20601", "\nThat's more than 3 basketballs")
         case 2065:
-            return ("2065", "\nThat's the size of a person's footstep!")
+            return ("20651", "\nThat's the size of a person's footstep!")
         case 2070:
-            return ("2070", "\nThat's the height of a kitchen counter!")
+            return ("20701", "\nThat's the height of a kitchen counter!")
         case 2075:
-            return ("2075", "\nThat's as high as a guitar is long!")
+            return ("20751", "\nThat's as high as a guitar is long!")
         case 2080:
-            return ("2080", "\nThat's the height of a mailbox!")
+            return ("20801", "\nThat's the height of a mailbox!")
         case 2085:
-            return ("2085", "\nThat's as tall as Napoleon!")
+            return ("20851", "\nThat's as tall as Napoleon!")
         case 2090:
-            return ("2090", "\nThat's the height of a VW Beetle!")
+            return ("20901", "\nThat's the height of a VW Beetle!")
         case 2095:
-            return ("2095", "\nThat's more than the height of a cow!")
+            return ("20951", "\nThat's more than the height of a cow!")
         case 2100:
-            return ("21002", "\nThat's more than a refrigerator!")
+            return ("21001", "\nThat's more than a refrigerator!")
         default:
             return ("nycPopDisplacedd", "")
         }

@@ -64,31 +64,32 @@ class FifthOnboardingView: UIView {
     }
     
     private func commonInit(){
-        setUpCentralImageConstraints()
+        // setUpCentralImageConstraints()
         setUpPrevButtonConstraints()
         setUpBeginButtonConstraints()
         setUpInfoViewConstraints()
     }
     
     private func setUpPrevButtonConstraints(){
-        centralImage.addSubview(prevButton)
+        addSubview(prevButton)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([prevButton.centerYAnchor.constraint(equalTo: centralImage.centerYAnchor), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
-    private func setUpCentralImageConstraints() {
-        addSubview(centralImage)
-        centralImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([centralImage.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0), centralImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centralImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centralImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
-    }
+//    private func setUpCentralImageConstraints() {
+//        addSubview(centralImage)
+//        centralImage.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([centralImage.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0), centralImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centralImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centralImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
+//    }
     
     private func setUpInfoViewConstraints(){
         addSubview(infoView)
         infoView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: centralImage.bottomAnchor, multiplier: 2.0), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16.0), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0), infoView.bottomAnchor.constraint(equalTo: beginButton.topAnchor, constant: -16)])
+
+        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 400), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16.0), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0)])
     }
     
     private func setUpBeginButtonConstraints(){

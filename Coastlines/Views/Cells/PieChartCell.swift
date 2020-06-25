@@ -12,18 +12,6 @@ import Charts
 class PieChartCell: UICollectionViewCell {
     
     public var location: Location?
-    public var index: IndexPath?
-    public var cellDelegate: PrevNextButton?
-    
-    public lazy var nextButton: UIButton = {
-        let button = UIButton()
-        return button.nextButton()
-    }()
-    
-    public lazy var prevButton: UIButton = {
-        let button = UIButton()
-        return button.previousButton()
-    }()
     
     public lazy var headerLabel: UILabel = {
         let label = UILabel()
@@ -50,39 +38,16 @@ class PieChartCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = PaletteColour.darkBlue.colour
         
         prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
         setupPrevButton()
         setupNextButton()
+        backgroundColor = PaletteColour.lightBlue.colour
         setupHeaderLabel()
         setupPieChart()
         setPopulationGraphData()
-    }
-    
-    private func setupPrevButton() {
-        addSubview(prevButton)
-        prevButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            prevButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            prevButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            prevButton.widthAnchor.constraint(equalToConstant: 44),
-            prevButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
-    }
-    
-    private func setupNextButton() {
-        addSubview(nextButton)
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            nextButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            nextButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            nextButton.widthAnchor.constraint(equalToConstant: 44),
-            nextButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
+        animatePieChart()
     }
     
     private func setupHeaderLabel() {
@@ -99,7 +64,6 @@ class PieChartCell: UICollectionViewCell {
     private func setupPieChart() {
         addSubview(populationGraphView)
         populationGraphView.translatesAutoresizingMaskIntoConstraints = false
-//        populationGraphView.delegate = self
         
         NSLayoutConstraint.activate([
             populationGraphView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10),
@@ -108,13 +72,10 @@ class PieChartCell: UICollectionViewCell {
         ])
     }
     
-    @objc func prevButtonPressed(_ sender: UIButton) {
-        cellDelegate?.clickedOnPrev(index: (index?.row)!, cell: self)
+    public func animatePieChart() {
+        populationGraphView.pulsate()
     }
-
-    @objc func nextButtonPressed(_ sender: UIButton) {
-        cellDelegate?.clickedOnNext(index: (index?.row)!, cell: self)
-    }
+    
 }
 
 extension PieChartCell: ChartViewDelegate {
@@ -147,6 +108,19 @@ extension PieChartCell: ChartViewDelegate {
         populationGraphView.data = PieChartData(dataSet: dataSet)
         populationGraphView.isUserInteractionEnabled = false
         populationGraphView.setExtraOffsets(left: -16, top: -16, right: -16, bottom: -16)
-        
+    }
+}
+
+extension PieChartView {
+    func pulsate() {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.4
+        pulse.fromValue = 0.98
+        pulse.toValue = 1.0
+        pulse.autoreverses = true
+        pulse.repeatCount = .infinity
+        pulse.initialVelocity = 0
+        pulse.damping = 5
+        layer.add(pulse, forKey: nil)
     }
 }
