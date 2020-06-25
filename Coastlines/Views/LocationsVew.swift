@@ -34,6 +34,8 @@ class LocationsVew: UIView {
 //        button.setImage(UIImage(named: "leafIcon"), for: .normal)
         button.layer.cornerRadius = 18
         button.backgroundColor = PaletteColour.lightGreen.colour
+        button.addAccessibility(.button, "Get involved", nil, "Shows a list of actions that can be taken to reduce your carbon footprint.")
+        button.makeFontAccessible()
 //        button.layer.borderColor = PaletteColours.lightBlue.rawValue.convertHexToColour().cgColor
         button.addTarget(self, action: #selector(goToResourceVC), for: .touchUpInside)
         return button
@@ -82,10 +84,10 @@ class LocationsVew: UIView {
         collectionView.addSubview(resourceButton)
         resourceButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            resourceButton.topAnchor.constraint(equalTo: bottomAnchor, constant: -60),
-            resourceButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            resourceButton.widthAnchor.constraint(equalToConstant: 140),
-            resourceButton.heightAnchor.constraint(equalToConstant: 40)
+            resourceButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            resourceButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            resourceButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.7),
+            resourceButton.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     

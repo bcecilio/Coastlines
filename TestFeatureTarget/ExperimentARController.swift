@@ -58,7 +58,7 @@ class ExperimentARController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-        arView.session.pause()
+        //arView.session.pause()
         
     }
     

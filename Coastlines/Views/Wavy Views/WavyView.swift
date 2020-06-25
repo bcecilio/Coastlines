@@ -29,6 +29,7 @@ class WavyView: UIView {
         let top1: CGFloat = 17.0
         let wave1 = wavyPath(rect: CGRect(x: 0, y: top1, width: frame.width, height: frame.height - top1), periods: (0.75 * 5), amplitude: 10, start: start)
         //        let wave1 = wavyPath(rect: CGRect(x: 0, y: top1, width: frame.width, height: frame.height - top1), periods: 0.75, amplitude: 20, start: -5)
+
         let waveColor: UIColor = PaletteColour.lightBlue.colour
         waveColor.set()
         wave1.fill()

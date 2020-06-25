@@ -32,7 +32,7 @@ class LocationDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = PaletteColour.lightBlue.colour
+        view.backgroundColor = PaletteColour.darkBlue.colour
         
         setupUIandTargets()
         
@@ -174,9 +174,13 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             return tableOfContentsCell
         case 1:
             contentCell.headerLabel.text = ContentText.didYouKnow
+            contentCell.headerLabel.addAccessibility(.none, ContentText.didYouKnow, nil, nil)
             contentCell.factOneLabel.text = location.facts.quickFact1
+            contentCell.factOneLabel.addAccessibility(.none, location.facts.quickFact1, nil, nil)
             contentCell.factTwoLabel.text = location.facts.quickFact2
+            contentCell.factTwoLabel.addAccessibility(.none, location.facts.quickFact2, nil, nil)
             contentCell.contentLabel.text = location.facts.generalFacts
+            contentCell.contentLabel.addAccessibility(.none, location.facts.generalFacts, nil, nil)
             return contentCell
         case 2:
             seaChartCell = graphCell
@@ -185,9 +189,13 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             return seaChartCell
         case 3:
             contentCell.headerLabel.text = ContentText.whatsHappening
+            contentCell.headerLabel.addAccessibility(.none, ContentText.whatsHappening, nil, nil)
             contentCell.factOneLabel.text = location.facts.quickFact3
+            contentCell.factOneLabel.addAccessibility(.none, location.facts.quickFact3, nil, nil)
             contentCell.factTwoLabel.text = location.facts.quickFact4
+            contentCell.factTwoLabel.addAccessibility(.none, location.facts.quickFact4, nil, nil)
             contentCell.contentLabel.text = location.facts.seaLevelFacts
+            contentCell.contentLabel.addAccessibility(.none, location.facts.seaLevelFacts, nil, nil)
             return contentCell
         case 4:
             pieCell.location = location
@@ -195,9 +203,13 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             return pieCell
         case 5:
             contentCell.headerLabel.text = ContentText.whereWillWeGo
+            contentCell.headerLabel.addAccessibility(.none, ContentText.whereWillWeGo, nil, nil)
             contentCell.factOneLabel.text = location.facts.quickFact5
+            contentCell.factOneLabel.addAccessibility(.none, location.facts.quickFact5, nil, nil)
             contentCell.factTwoLabel.text = location.facts.quickFact6
+            contentCell.factTwoLabel.addAccessibility(.none, location.facts.quickFact6, nil, nil)
             contentCell.contentLabel.text = location.facts.populationFacts
+            contentCell.contentLabel.addAccessibility(.none, location.facts.populationFacts, nil, nil)
             return contentCell
         case 6:
             augCell = arCell

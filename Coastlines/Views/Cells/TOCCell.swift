@@ -47,7 +47,8 @@ class TOCCell: UICollectionViewCell {
         label.text = ""
         label.textColor = PaletteColour.offWhite.colour
         label.textAlignment = .left
-        label.font = .preferredFont(forTextStyle: .title1)
+//        label.font = .preferredFont(forTextStyle: .title1)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.numberOfLines = 1
         label.alpha = 1
         return label
@@ -69,6 +70,7 @@ class TOCCell: UICollectionViewCell {
         tap.accessibilityLabel = "didYouKnow"
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
+        view.addAccessibility(.button, "Did you know?", nil, "Shows information about why coasts are important at the current location.")
         return view
     }()
     
@@ -79,6 +81,7 @@ class TOCCell: UICollectionViewCell {
         tap.accessibilityLabel = "whatsHappening"
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
+        view.addAccessibility(.button, "What's happening?", nil, "Shows information explaining how the sea level will rise at the current location.")
         return view
     }()
     
@@ -89,6 +92,7 @@ class TOCCell: UICollectionViewCell {
         tap.accessibilityLabel = "seaLevels"
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
+        view.addAccessibility(.button, "Expected sea levels", nil, "Shows a line graph displaying sea levels from the year 2020 to 2100.")
         return view
     }()
     
@@ -99,6 +103,7 @@ class TOCCell: UICollectionViewCell {
         tap.accessibilityLabel = "whereWillWeGo"
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
+        view.addAccessibility(.button, "Where will we go?", nil, "Shows information about how rising sea levels will affect the current location.")
         return view
     }()
     
@@ -109,6 +114,7 @@ class TOCCell: UICollectionViewCell {
         tap.accessibilityLabel = "popDisplaced"
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
+        view.addAccessibility(.button, "Population Displacement", nil, "Shows a pie chart displaying potential population displacement for the current location.")
         return view
     }()
     
@@ -119,11 +125,14 @@ class TOCCell: UICollectionViewCell {
         tap.accessibilityLabel = "seeInAR"
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
+        view.addAccessibility(.button, "See in AR", nil, "Displays a page that bring you to an AR experience if tapped.")
         return view
     }()
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
         backgroundColor = PaletteColour.lightBlue.colour
         setupHeaderLabel()
         configStackView()
@@ -200,7 +209,9 @@ extension UIView {
             label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
         ])
         label.backgroundColor = .clear
-        label.font = .preferredFont(forTextStyle: .title2)
+//        label.font = .preferredFont(forTextStyle: .title2)
+        label.font = UIFont.systemFont(ofSize: 26, weight: .medium)
+        label.adjustsFontForContentSizeCategory = false
         label.textColor = PaletteColour.offWhite.colour
         label.alpha = 0
         
@@ -209,7 +220,7 @@ extension UIView {
         iv.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             iv.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 0),
-            iv.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 10),
+            iv.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 0),
             iv.widthAnchor.constraint(equalToConstant: 38),
             iv.heightAnchor.constraint(equalToConstant: 38)
         ])
@@ -220,6 +231,7 @@ extension UIView {
             label.alpha = 1
             iv.alpha = 1
         }, completion: nil)
+        label.trailingAnchor.constraint(equalTo: iv.leadingAnchor, constant: -8).isActive = true
         
         return view
     }

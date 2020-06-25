@@ -19,15 +19,19 @@ class ResourceView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
+
         button.tintColor = PaletteColour.lightBlue.colour
         button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        button.addAccessibility(.button, "Back", nil, "Returns to the locations screen.")
         return button
     }()
     
     public lazy var header: UILabel = {
         let label = UILabel()
         label.text = "Actions"
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.font = UIFont.preferredFont(forTextStyle: .title1)
+        label.adjustsFontForContentSizeCategory = true
+        label.addAccessibility(.none, "Actions", nil, nil)
         return label
     }()
     

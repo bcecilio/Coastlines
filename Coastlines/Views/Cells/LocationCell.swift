@@ -30,6 +30,7 @@ class LocationCell: UICollectionViewCell {
         l.textColor = .white
         l.textAlignment = .right
         l.font = .preferredFont(forTextStyle: .title1)
+        l.adjustsFontForContentSizeCategory = true
         l.alpha = 1
         return l
     }()
@@ -44,20 +45,34 @@ class LocationCell: UICollectionViewCell {
     }
     
     public func configureCell(_ location: Location) {
+        var imageDescription = ""
+        var imageValue = ""
+        
         switch location {
         case .newYork:
-            label.text = "New York"
+            label.text = "New York City"
             imageView.image = UIImage(named: "nyc")
+            imageDescription = LocationDescription.nycImage
+            imageValue = LocationDescription.nycImageValue
         case .florida:
             label.text = "Florida"
             imageView.image = UIImage(named: "miami")
+            imageDescription = LocationDescription.floridaImage
+            imageValue = LocationDescription.floridaValue
         case .newOrleans:
             label.text = "New Orleans"
             imageView.image = UIImage(named: "new-orleans")
+            imageDescription = LocationDescription.newOrleansImage
+            imageValue = LocationDescription.newOrleansValue
         case .bangladesh:
             label.text = "Bangladesh"
             imageView.image = UIImage(named: "bangladesh")
+            imageDescription = LocationDescription.bangladeshImage
+            imageValue = LocationDescription.bangladeshValue
         }
+        
+        label.addAccessibility(.none, label.text ?? "", nil, nil)
+        imageView.addAccessibility(.image, imageDescription, nil, imageValue)
     }
     
     private func setupViews() {

@@ -53,7 +53,7 @@ class LocationDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = PaletteColour.lightBlue.colour
+        view.backgroundColor = PaletteColour.darkBlue.colour
         
         locationView.goToARButton.addTarget(self, action: #selector(goToARButtonPressed(_:)), for: .touchUpInside)
         locationView.backButton.addTarget(self, action: #selector(backButtonPressed(_:)), for: .touchUpInside)

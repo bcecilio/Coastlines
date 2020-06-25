@@ -11,9 +11,10 @@ import UIKit
 class LocationIntroCell: UICollectionViewCell {
     private lazy var label: UILabel = {
         let l = UILabel()
-        l.text = "Swipe left\n to view locations"
+        l.text = "Swipe left to\n view locations"
         l.textAlignment = .right
-        l.font = .preferredFont(forTextStyle: .largeTitle)
+        l.font = UIFont.preferredFont(forTextStyle: .headline)
+        l.adjustsFontForContentSizeCategory = true
         l.numberOfLines = 2
         l.alpha = 0
         return l
@@ -27,6 +28,7 @@ class LocationIntroCell: UICollectionViewCell {
         layer.borderWidth = 2.0
         layer.cornerRadius = 8
         animateLabel()
+        self.addAccessibility(.none, "Swipe left to browse locations.", nil, nil)
     }
     
     private func animateLabel() {
@@ -41,6 +43,6 @@ class LocationIntroCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            label.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -8)])
+            label.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -8), label.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9)])
     }
 }
