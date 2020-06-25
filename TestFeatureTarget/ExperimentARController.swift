@@ -1,6 +1,6 @@
 import RealityKit
 import ARKit
-import Combine
+//import Combine
 import RealityUI
 
 class ExperimentARController: UIViewController {
@@ -13,7 +13,6 @@ class ExperimentARController: UIViewController {
     
     lazy var coachingOverlay = ARCoachingOverlayView()
     
-    
     var dropScene = DropFlipRiseNYC.DropScene()
     var orbitFlipScene = DropFlipRiseNYC.FlipScene()
     var riseSegmentScene = DropFlipRiseNYC.RiseSegmentScene()
@@ -25,6 +24,8 @@ class ExperimentARController: UIViewController {
     var (_, _, brook, redLight) = CityLights.addSpotlights()
     
     var (cityLightOne, cityLightTwo, cityLightThree, cityLightFour) = CityLights.addCityLights()
+    
+    var oldSliderVal: Float = 0.1
     
     init(_ location: Location) {
         self.location = location
@@ -42,7 +43,7 @@ class ExperimentARController: UIViewController {
         //        setupBackButton()
         setupCoachingOverlayView()
         
-        arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
+//        arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
         
         loadScene()
         //        setupOccBox()
@@ -131,24 +132,23 @@ class ExperimentARController: UIViewController {
         riseSegmentScene.isEnabled = true
         orbitFlipScene.isEnabled = false
         
-        //        riseSegmentScene.addChild(cityLight)
-        //        redLight.light.color = .red
-        //        riseSegmentScene.addChild(redLight)
-        //
-        //        cityLightOne.light.color = blue
-        //        riseSegmentScene.addChild(cityLightOne)
-        
-        //        cityLightTwo.light.color = .green
+        redLight.light.color = .red
+        riseSegmentScene.addChild(redLight)
+
+        cityLightOne.light.color = .white
+        riseSegmentScene.addChild(cityLightOne)
+
+        cityLightTwo.light.color = .white
         riseSegmentScene.addChild(cityLightTwo)
-        
-        //        cityLightThree.light.color = blue
-        //        riseSegmentScene.addChild(cityLightThree)
-        //
-        //        cityLightFour.light.color = blue
-        //        riseSegmentScene.addChild(cityLightFour)
-        //
-        //        brook.light.color = blue
-        //        riseSegmentScene.addChild(brook)
+
+        cityLightThree.light.color = .white
+        riseSegmentScene.addChild(cityLightThree)
+
+        cityLightFour.light.color = blue
+        riseSegmentScene.addChild(cityLightFour)
+
+        brook.light.color = .red
+        riseSegmentScene.addChild(brook)
         
         riseSegmentScene.addChild(newSlider)
     }
@@ -156,31 +156,32 @@ class ExperimentARController: UIViewController {
     private func setupSlider() {
         arView.enableRealityUIGestures(.all)
         
-        newSlider = RUISlider( slider: SliderComponent(startingValue: 0.1, isContinuous: false)
+        newSlider = RUISlider(slider: SliderComponent(startingValue: 0.1, isContinuous: true)
             
             
         ) { (slider, _) in
             
             let scene = self.riseSegmentScene
             
+            print("slider")
             print(slider.value)
             
-            if slider.value > 0.5 {
-                self.redLight.light.color = .red
-                self.redLight.light.intensity = 100000
-                self.brook.light.color = .red
-            } else if slider.value <= 0.5 {
-                self.redLight.light.intensity = 800
-                self.redLight.light.color = .white
-                self.brook.light.color = .white
-            }
+            print("\nOld Value")
+            print(self.oldSliderVal)
             
-            if slider.value > 0.5 {
-                let moveTo = float4x4.makeTranslation(x: 0, 0, 0)
-                
-                self.cityLightTwo.move(to: moveTo, relativeTo: scene, duration: 8)
-                //                self.cityLightTwo.position = [-0.2035, 0, 0.1084]
-            }
+            
+            self.redLight = CityLights.highlightManhattan(sliderVal: slider.value, light: self.redLight)
+            
+            self.cityLightTwo = CityLights.moveCenterCityLight(sliderVal: slider.value, light: self.cityLightTwo)
+            
+            self.cityLightThree = CityLights.moveRightCityLight(sliderVal: slider.value, light: self.cityLightThree)
+            
+//            if slider.value > 0.5 {
+//                let moveTo = float4x4.makeTranslation(x: 0, 0, 0)
+//
+//                self.cityLightTwo.move(to: moveTo, relativeTo: scene, duration: 8)
+//                //                self.cityLightTwo.position = [-0.2035, 0, 0.1084]
+//            }
             
             //            let angle = simd_quatf(vector: [GLKMathDegreesToRadians(-70),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
             //
@@ -235,10 +236,10 @@ class ExperimentARController: UIViewController {
         
     }
     
-    @objc
-    func handleTap(recognizer: UITapGestureRecognizer) {
-        
-    }
+//    @objc
+//    func handleTap(recognizer: UITapGestureRecognizer) {
+//
+//    }
     
     @objc
     func goBack(_ sender: UIButton) {

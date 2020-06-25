@@ -24,7 +24,7 @@ class DetailView: UIView {
     public lazy var infoButton: UIButton = {
         var button = UIButton()
         button = button.nextButton()
-        button.setImage(UIImage(named: "info2"), for: .normal)
+        button.setImage(UIImage(named: "info1"), for: .normal)
         button.contentMode = .scaleAspectFit
         return button
     }()

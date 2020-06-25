@@ -27,7 +27,7 @@ public struct OnboardingText{
 /// An enum containing hex vaules that correspond to colours from the chosen colour palette.
 enum PaletteColour: String{
     case offWhite = "#f9f7e3"
-    case lightBlue = "#a1c5c5"
+    case lightBlue = "#333fc1"
     case lightGreen = "#a9bd95"
     case peach = "#e2a093"
     case pink = "#c67eb2"
