@@ -16,9 +16,12 @@ struct GraphShowAlert {
         let showAlert = UIAlertController(title: "By \(Int(year)) sea levels could rise as much as \(Int(rise) + 1) inches", message: forYear.thing, preferredStyle: .alert)
         
         showAlert.setTitle(font: Font.boldArial24, color: PaletteColour.lightGreen.colour)
-        
         showAlert.setMessage(font: Font.boldArial24, color: PaletteColour.lightBlue.colour)
         showAlert.setBackgroudColor(color: PaletteColour.offWhite.colour)
+        showAlert.title?.accessibilityLabel = showAlert.title
+        showAlert.title?.accessibilityTraits = .none
+        showAlert.message?.accessibilityLabel = forYear.thing
+        showAlert.message?.accessibilityTraits = .none
         showAlert.view.tintColor = PaletteColour.peach.colour
         
         let height = NSLayoutConstraint(item: showAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)

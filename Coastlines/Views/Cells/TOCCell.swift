@@ -227,7 +227,6 @@ extension UIView {
         let iv = UIImageView()
         iv.image = UIImage(named: image)
         label.text = "\u{2022} \(text)"
-        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         
         view.backgroundColor = .clear
         view.layer.borderWidth = 3
@@ -241,7 +240,9 @@ extension UIView {
             label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
         ])
         label.backgroundColor = .clear
-        label.font = .preferredFont(forTextStyle: .title2)
+//        label.font = .preferredFont(forTextStyle: .title2)
+        label.font = UIFont.systemFont(ofSize: 26, weight: .medium)
+        label.adjustsFontForContentSizeCategory = false
         label.textColor = PaletteColour.offWhite.colour
         label.alpha = 0
         
