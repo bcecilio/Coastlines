@@ -76,7 +76,7 @@ class GraphCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = PaletteColour.lightBlue.colour
+        backgroundColor = PaletteColour.darkBlue.colour
         
         prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
