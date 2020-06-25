@@ -131,8 +131,7 @@ class TOCCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
+    
         backgroundColor = PaletteColour.lightBlue.colour
         setupHeaderLabel()
         configStackView()

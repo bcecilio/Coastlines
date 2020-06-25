@@ -57,7 +57,7 @@ class ThirdOnboardingView: UIView {
         view.textAlignment = NSTextAlignment.center
         view.font = UIFont.preferredFont(forTextStyle: .body)
         view.adjustsFontForContentSizeCategory = true
-        view.backgroundColor = PaletteColour.darkBlue.colour
+        view.backgroundColor = UIColor.clear
         view.isEditable = false
         view.addAccessibility(.none, OnboardingText.secondOnboaringLabel, nil, nil)
         return view
@@ -75,8 +75,8 @@ class ThirdOnboardingView: UIView {
     
     private func commonInit(){
         // setUpCenterImageConstraints()
-        setUpPrevButtonConstraints()
-        setUpNextButtonConstraints()
+//        setUpPrevButtonConstraints()
+//        setUpNextButtonConstraints()
         setUpSkipButtonConstraints()
         setUpInfoViewConstraints()
     }
@@ -107,7 +107,7 @@ class ThirdOnboardingView: UIView {
         infoView.translatesAutoresizingMaskIntoConstraints = false
         
 
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 250), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)])
+        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 40), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3)])
     }
     
     private func setUpSkipButtonConstraints(){

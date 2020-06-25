@@ -34,7 +34,7 @@ class FifthOnboardingView: UIView {
         view.adjustsFontForContentSizeCategory = true
         view.text = OnboardingText.fourthOnboardingLabel
         view.isEditable = false
-        view.backgroundColor = PaletteColour.darkBlue.colour
+        view.backgroundColor = UIColor.clear
         view.addAccessibility(.none, OnboardingText.fourthOnboardingLabel, nil, nil)
         return view
     }()
@@ -65,7 +65,7 @@ class FifthOnboardingView: UIView {
     
     private func commonInit(){
         // setUpCentralImageConstraints()
-        setUpPrevButtonConstraints()
+//        setUpPrevButtonConstraints()
         setUpBeginButtonConstraints()
         setUpInfoViewConstraints()
     }
@@ -88,8 +88,7 @@ class FifthOnboardingView: UIView {
         addSubview(infoView)
         infoView.translatesAutoresizingMaskIntoConstraints = false
         
-
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 400), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16.0), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0)])
+        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 50), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16.0), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0), infoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3)])
     }
     
     private func setUpBeginButtonConstraints(){

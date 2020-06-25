@@ -38,11 +38,7 @@ class PieChartCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
-        nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
-        setupPrevButton()
-        setupNextButton()
+
         backgroundColor = PaletteColour.lightBlue.colour
         setupHeaderLabel()
         setupPieChart()

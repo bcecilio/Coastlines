@@ -30,7 +30,6 @@ class SecondOnboardingView: UIView {
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.addAccessibility(.button, "Skip", "Skips the remainder of the onboarding experience", nil)
-
         return button
     }()
     
@@ -41,7 +40,7 @@ class SecondOnboardingView: UIView {
         view.text = OnboardingText.firstOnboardingLabel
         view.font = UIFont.preferredFont(forTextStyle: .body)
         view.adjustsFontForContentSizeCategory = true
-        view.backgroundColor = PaletteColour.darkBlue.colour
+        view.backgroundColor = UIColor.clear
         view.isEditable = false
         view.addAccessibility(.none, OnboardingText.firstOnboardingLabel, nil, nil)
         return view
@@ -67,10 +66,10 @@ class SecondOnboardingView: UIView {
     private func commonInit(){
 
 //        setUpImageViewConstraints()
-        setUpInfoLabelConstraints()
-        setUpSkipButtonConstraints()
         setUpInfoViewConstraints()
-        setUpNextButtonConstraints()
+        setUpSkipButtonConstraints()
+//        setUpInfoViewConstraints()
+//        setUpNextButtonConstraints()
     }
     
     private func setUpNextButtonConstraints() {
@@ -90,9 +89,8 @@ class SecondOnboardingView: UIView {
     private func setUpInfoViewConstraints(){
         addSubview(infoView)
         infoView.translatesAutoresizingMaskIntoConstraints = false
-        
-
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 400), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)])
+    
+        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 65.0), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3)])
     }
     
     private func setUpSkipButtonConstraints(){

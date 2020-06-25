@@ -43,7 +43,7 @@ class FourthOnboardingView: UIView {
         view.font = UIFont.preferredFont(forTextStyle: .body)
         view.adjustsFontForContentSizeCategory = true
         view.isEditable = false
-        view.backgroundColor = PaletteColour.darkBlue.colour
+        view.backgroundColor = UIColor.clear
         view.addAccessibility(.none, OnboardingText.thirdOnboardingLabel, nil, nil)
         return view
     }()
@@ -75,8 +75,8 @@ class FourthOnboardingView: UIView {
     
     private func commonInit(){
         // setUpCenterImageConstraints()
-        setUpPrevButtonConstraints()
-        setUpNextButtonConstraints()
+//        setUpPrevButtonConstraints()
+//        setUpNextButtonConstraints()
         setUpSkipButtonConstraints()
         setUpInfoViewConstraints()
     }
@@ -105,9 +105,8 @@ class FourthOnboardingView: UIView {
     private func setUpInfoViewConstraints() {
         addSubview(infoView)
         infoView.translatesAutoresizingMaskIntoConstraints = false
-        
-
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 350), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)])
+    
+        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 50), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3)])
     }
     
     private func setUpSkipButtonConstraints(){
