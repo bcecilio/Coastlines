@@ -60,8 +60,8 @@ class LocationDetailController: UIViewController {
         
         print("AR Button Pressed")
         
-//            let arVC = ExperimentARController(location)
-//            UIViewController.resetWindow(arVC)
+            let arVC = ExperimentARController(location)
+            UIViewController.resetWindow(arVC)
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
