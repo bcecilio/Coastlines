@@ -106,7 +106,7 @@ class FourthOnboardingView: UIView {
         addSubview(infoView)
         infoView.translatesAutoresizingMaskIntoConstraints = false
     
-        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 50), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3)])
+        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 50), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.bottomAnchor.constraint(equalTo: skipButton.topAnchor, constant: -8)])
     }
     
     private func setUpSkipButtonConstraints(){

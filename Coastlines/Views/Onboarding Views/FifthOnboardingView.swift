@@ -88,7 +88,7 @@ class FifthOnboardingView: UIView {
         addSubview(infoView)
         infoView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 50), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16.0), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0), infoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3)])
+        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 50), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16.0), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0), infoView.bottomAnchor.constraint(equalTo: beginButton.topAnchor, constant: -8)])
     }
     
     private func setUpBeginButtonConstraints(){
@@ -96,6 +96,7 @@ class FifthOnboardingView: UIView {
         beginButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([beginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8), beginButton.centerXAnchor.constraint(equalTo: centerXAnchor), beginButton.heightAnchor.constraint(equalToConstant: 50.0), beginButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)])
+        beginButton.setContentHuggingPriority(.required, for: .vertical)
     }
     
     @objc

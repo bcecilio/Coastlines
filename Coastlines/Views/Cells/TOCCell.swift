@@ -209,7 +209,7 @@ extension UIView {
         ])
         label.backgroundColor = .clear
 //        label.font = .preferredFont(forTextStyle: .title2)
-        label.font = UIFont.systemFont(ofSize: 26, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 23, weight: .medium)
         label.adjustsFontForContentSizeCategory = false
         label.textColor = PaletteColour.offWhite.colour
         label.alpha = 0
