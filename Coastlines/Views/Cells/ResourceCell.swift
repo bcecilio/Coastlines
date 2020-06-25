@@ -20,13 +20,14 @@ class ResourceCell: UITableViewCell {
         }
     }
     
+    private var titleHeightConstraint = NSLayoutConstraint()
+    
     private lazy var title: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.adjustsFontForContentSizeCategory = true
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
+        label.font = UIFont.systemFont(ofSize: 23, weight: .bold)
+//        label.adjustsFontForContentSizeCategory = true
+//        label.adjustsFontSizeToFitWidth = true
         label.textColor = .white
         label.textAlignment = .left
         return label
@@ -85,8 +86,9 @@ class ResourceCell: UITableViewCell {
             title.topAnchor.constraint(equalTo: container.topAnchor, constant: 20),
             title.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
             title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
-            title.heightAnchor.constraint(equalToConstant: 60)
+            //title.heightAnchor.constraint(equalToConstant: 60)
         ])
+        
     }
     
     private func setupSubText() {
