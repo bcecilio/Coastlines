@@ -12,7 +12,7 @@ Finally, we have included a resources section that allows users to get involved.
 
 ## Technologies Used
 
-Xcode 11, Swift 5, ARKit, RealityKit
+Xcode 11, Swift 5, ARKit, RealityKit, AVFoundation
 
 ## Code Snippet of Challenging parts
 
