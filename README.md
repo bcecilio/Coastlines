@@ -8,9 +8,11 @@ What sets this application apart from other resources is its use of an AR featur
 
 It should be noted that the water levels are not to scale with the model. No one knows how climate change will progress in the future, which means we cannot provide a 100% accurate model of how sea levels will exist in the coming years. However, in an effort to demonstrate just how bad the situation could be, we have decided to use data that falls more in line with worst case scenario predictions.
 
-Finally, we have included a resources section that allows users to get involved. The sections informs users about certain lifestyle changes they can make in order to reduce their carbon footprint.
+Finally, we have included a resources section that allows users to get involved. This section informs users about lifestyle changes they can make in order to reduce their carbon footprint.
 
-## Technologies used
+## Technologies Used
+
+ARKit, RealityKit
 
 ## Code Snippet of Challenging parts
 
