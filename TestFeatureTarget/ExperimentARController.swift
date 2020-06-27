@@ -117,15 +117,19 @@ class ExperimentARController: UIViewController {
             case .success(let scene):
                 
                 self.riseSegmentScene = scene
-                
+                let markerScene = self.riseSegmentScene
                 self.arView.scene.anchors.append(self.riseSegmentScene)
                 self.riseSegmentScene.isEnabled = false
+                markerScene.twenty20?.isEnabled = true
+                markerScene.twenty30?.isEnabled = false
+                markerScene.twenty40?.isEnabled = false
+                markerScene.twenty50?.isEnabled = false
+                markerScene.twenty60?.isEnabled = false
+                markerScene.twenty70?.isEnabled = false
+                markerScene.twenty80?.isEnabled = false
+                markerScene.twenty90?.isEnabled = false
+                markerScene.twenty100?.isEnabled = false
                 
-                //                for entity in self.riseSegmentScene.dumboMarkerEntities {
-                //                    entity.isEnabled = false
-                //                }
-                //
-                //                self.showMarkers(self.riseSegmentScene.sssMarkerEntities, show: false)
             }
         }
     }
@@ -165,6 +169,7 @@ class ExperimentARController: UIViewController {
         
         addLightsToScene()
         addMarkerLightsToScene()
+        
     }
     
     private func addLightsToScene() {
@@ -213,6 +218,12 @@ class ExperimentARController: UIViewController {
         ) { (slider, _) in
             
             let scene = self.riseSegmentScene
+            
+            let yearLabels = [scene.twenty20,scene.twenty30,scene.twenty40,scene.twenty50,scene.twenty60,scene.twenty70,scene.twenty80,scene.twenty90,scene.twenty100]
+            
+            let year = HandleYears.getYearLabel(sliderVal: slider.value, scene: scene)
+            
+            HandleYears.showYearLabel(labels: yearLabels, year: year)
             
             print(slider.value)
             
