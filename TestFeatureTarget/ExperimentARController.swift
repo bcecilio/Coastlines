@@ -8,22 +8,23 @@ class ExperimentARController: UIViewController {
     let arView = ARView()
     
     let location: Location
-    
     let backButton = UIButton().previousButton()
-    
     lazy var coachingOverlay = ARCoachingOverlayView()
+//    var sceneLight: SCNLight!
     
     var dropScene = DropFlipRiseNYC.DropScene()
-    var orbitFlipScene = DropFlipRiseNYC.FlipScene()
+    var flipScene = DropFlipRiseNYC.FlipScene()
     var riseSegmentScene = DropFlipRiseNYC.RiseSegmentScene()
     
     var occBox = ModelEntity()
     
     var newSlider = RUISlider()
     
-    var (_, _, brook, redLight) = CityLights.addSpotlights()
+    var (bParkLight, sssLight, dumboLight) = CityLights.addMarkerLights()
     
-    var (cityLightOne, cityLightTwo, cityLightThree, cityLightFour) = CityLights.addCityLights()
+    var (cityLightOne, cityLightTwo, cityLightThree, cityLightFour, brookLight) = CityLights.addCityLights()
+    
+    var (redLight, brookRed) = CityLights.addDangerLights()
     
     var oldSliderVal: Float = 0.1
     
@@ -40,14 +41,29 @@ class ExperimentARController: UIViewController {
         super.viewDidLoad()
         
         setupARView()
-        //        setupBackButton()
         setupCoachingOverlayView()
         
-//        arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
+        //        arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
         
         loadScene()
         //        setupOccBox()
         setupSlider()
+        
+        
+        
+//        let arBackground = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+//        
+//
+//        arView.environment.background = .color(arBackground)
+        
+//        sceneLight = SCNLight()
+//        sceneLight.type = .omni
+//
+//        let lightNode = SCNNode()
+//        lightNode.light = sceneLight
+//        lightNode.position = SCNVector3(0,0,2)
+        
+        
         
     }
     
@@ -84,13 +100,13 @@ class ExperimentARController: UIViewController {
                 print("The flip scene error is..... \(error)")
             case .success(let scene):
                 
-                self.orbitFlipScene = scene
+                self.flipScene = scene
                 
                 self.arView.scene.anchors.append(scene)
                 //                self.coachingOverlay.isHidden = true
                 //                self.flipScene.addChild(self.occBox)
-                self.orbitFlipScene.isEnabled = false
-                self.orbitFlipScene.actions.flipModel.onAction = self.wasFlipped(_:)
+                self.flipScene.isEnabled = false
+                self.flipScene.actions.flipModel.onAction = self.wasFlipped(_:)
             }
         }
         
@@ -105,7 +121,18 @@ class ExperimentARController: UIViewController {
                 self.arView.scene.anchors.append(self.riseSegmentScene)
                 self.riseSegmentScene.isEnabled = false
                 
+                //                for entity in self.riseSegmentScene.dumboMarkerEntities {
+                //                    entity.isEnabled = false
+                //                }
+                //
+                //                self.showMarkers(self.riseSegmentScene.sssMarkerEntities, show: false)
             }
+        }
+    }
+    
+    private func showMarkers(_ entities: [Entity], show: Bool) {
+        for entity in entities {
+            entity.isEnabled = show
         }
     }
     
@@ -117,40 +144,64 @@ class ExperimentARController: UIViewController {
     }
     
     func wasDropped(_ entity: Entity?) {
-        print("please be DROPPED")
+        let flipImageLight = SpotLight()
+        flipImageLight.position = [0,0.6,0.1]
+        flipImageLight.light.attenuationRadius = 0.85
+        flipImageLight.light.color = .white
+        flipImageLight.light.intensity = 4000
+        flipImageLight.look(at: flipScene.nycImage?.position ?? [0,0,0], from: flipImageLight.position, relativeTo: nil)
+        flipScene.addChild(flipImageLight)
+        flipScene.isEnabled = true
         
-        orbitFlipScene.isEnabled = true
         dropScene.isEnabled = false
     }
     
     func wasFlipped(_ entity: Entity?) {
-        print("please be flipped")
-        
-        
-        let blue = PaletteColour.lightBlue.colour
         
         riseSegmentScene.isEnabled = true
-        orbitFlipScene.isEnabled = false
-        
-        redLight.light.color = .red
-        riseSegmentScene.addChild(redLight)
-
-        cityLightOne.light.color = .white
-        riseSegmentScene.addChild(cityLightOne)
-
-        cityLightTwo.light.color = .white
-        riseSegmentScene.addChild(cityLightTwo)
-
-        cityLightThree.light.color = .white
-        riseSegmentScene.addChild(cityLightThree)
-
-        cityLightFour.light.color = blue
-        riseSegmentScene.addChild(cityLightFour)
-
-        brook.light.color = .red
-        riseSegmentScene.addChild(brook)
+        flipScene.isEnabled = false
         
         riseSegmentScene.addChild(newSlider)
+        
+        addLightsToScene()
+        addMarkerLightsToScene()
+    }
+    
+    private func addLightsToScene() {
+        
+        redLight.light.color = .red
+        redLight.light.attenuationRadius = 0
+        riseSegmentScene.addChild(redLight)
+        
+//        cityLightOne.light.color = .white
+//        riseSegmentScene.addChild(cityLightOne)
+        
+        cityLightTwo.light.color = .white
+        riseSegmentScene.addChild(cityLightTwo)
+        
+        cityLightThree.light.color = .white
+        riseSegmentScene.addChild(cityLightThree)
+        
+        //        cityLightFour.light.color = .green
+        //        riseSegmentScene.addChild(cityLightFour)
+        
+        riseSegmentScene.addChild(brookLight)
+        
+        riseSegmentScene.addChild(brookRed)
+        
+    }
+    
+    private func addMarkerLightsToScene() {
+        sssLight.look(at: riseSegmentScene.sssImage?.position ?? [0,0,0], from: sssLight.position, relativeTo: nil)
+        
+        riseSegmentScene.addChild(sssLight)
+        
+        bParkLight.look(at: riseSegmentScene.bParkImage?.position ?? [0,0,0], from: bParkLight.position, relativeTo: nil)
+        
+        riseSegmentScene.addChild(bParkLight)
+        
+        dumboLight.look(at: riseSegmentScene.dumboImage?.position ?? [0,0,0], from: dumboLight.position, relativeTo: nil)
+        riseSegmentScene.addChild(dumboLight)
     }
     
     private func setupSlider() {
@@ -163,12 +214,7 @@ class ExperimentARController: UIViewController {
             
             let scene = self.riseSegmentScene
             
-            print("slider")
             print(slider.value)
-            
-            print("\nOld Value")
-            print(self.oldSliderVal)
-            
             
             self.redLight = CityLights.highlightManhattan(sliderVal: slider.value, light: self.redLight)
             
@@ -176,22 +222,10 @@ class ExperimentARController: UIViewController {
             
             self.cityLightThree = CityLights.moveRightCityLight(sliderVal: slider.value, light: self.cityLightThree)
             
-//            if slider.value > 0.5 {
-//                let moveTo = float4x4.makeTranslation(x: 0, 0, 0)
-//
-//                self.cityLightTwo.move(to: moveTo, relativeTo: scene, duration: 8)
-//                //                self.cityLightTwo.position = [-0.2035, 0, 0.1084]
-//            }
+            self.brookLight = CityLights.moveBKLight(sliderVal: slider.value, light: self.brookLight)
             
-            //            let angle = simd_quatf(vector: [GLKMathDegreesToRadians(-70),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
-            //
+            self.brookRed = CityLights.highlightBrooklyn(sliderVal: slider.value, light: self.brookRed)
             
-            
-            //            if let lightTransform = CityLights.movelights(sliderVal: slider.value, light: self.cityLightTwo) {
-            ////                self.cityLightTwo.transform.rotation = angle
-            //                self.cityLightTwo.move(to: lightTransform, relativeTo: scene, duration: 2)
-            //
-            //            }
             
             
             if let transformOne = CompSeaLevel.riseDropOne(sliderVal: slider.value, entity: scene.riserOne) {
@@ -236,10 +270,10 @@ class ExperimentARController: UIViewController {
         
     }
     
-//    @objc
-//    func handleTap(recognizer: UITapGestureRecognizer) {
-//
-//    }
+    //    @objc
+    //    func handleTap(recognizer: UITapGestureRecognizer) {
+    //
+    //    }
     
     @objc
     func goBack(_ sender: UIButton) {
@@ -251,7 +285,6 @@ class ExperimentARController: UIViewController {
     
     private func setupARView() {
         view.addSubview(arView)
-        
         arView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -275,3 +308,29 @@ class ExperimentARController: UIViewController {
         ])
     }
 }
+
+//extension ExperimentARController: ARSCNViewDelegate{
+//
+//    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+//
+//        //1. Get The Current Light Estimate
+//        guard let lightEstimate = self.arView.session.currentFrame?.lightEstimate else { return }
+//
+//        //2. Get The Ambient Intensity & Colour Temperatures
+//        let ambientLightEstimate = lightEstimate.ambientIntensity
+//
+//        let ambientColourTemperature = lightEstimate.ambientColorTemperature
+//
+//        print(
+//            """
+//            Current Light Estimate = \(ambientLightEstimate)
+//            Current Ambient Light Colour Temperature Estimate = \(ambientColourTemperature)
+//            """)
+//
+//        if ambientLightEstimate < 100 { print("Lighting Is Too Dark") }
+//
+//        //3. Adjust The Scene Lighting
+//        sceneLight.intensity = ambientLightEstimate
+//        sceneLight.temperature = ambientColourTemperature
+//    }
+//}
