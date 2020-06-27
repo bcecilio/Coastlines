@@ -10,7 +10,6 @@ class ExperimentARController: UIViewController {
     let location: Location
     let backButton = UIButton().previousButton()
     lazy var coachingOverlay = ARCoachingOverlayView()
-//    var sceneLight: SCNLight!
     
     var dropScene = DropFlipRiseNYC.DropScene()
     var flipScene = DropFlipRiseNYC.FlipScene()
@@ -43,17 +42,12 @@ class ExperimentARController: UIViewController {
         setupARView()
         setupCoachingOverlayView()
         
-        //        arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
-        
         loadScene()
         //        setupOccBox()
         setupSlider()
         
-        
-        
 //        let arBackground = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
 //        
-//
 //        arView.environment.background = .color(arBackground)
         
 //        sceneLight = SCNLight()
@@ -62,8 +56,6 @@ class ExperimentARController: UIViewController {
 //        let lightNode = SCNNode()
 //        lightNode.light = sceneLight
 //        lightNode.position = SCNVector3(0,0,2)
-        
-        
         
     }
     
@@ -129,9 +121,33 @@ class ExperimentARController: UIViewController {
                 markerScene.twenty80?.isEnabled = false
                 markerScene.twenty90?.isEnabled = false
                 markerScene.twenty100?.isEnabled = false
+                self.showMarkers(markerScene.bParkMarkerEntities, show: false)
+                self.showMarkers(markerScene.sssMarkerEntities, show: false)
+                self.showMarkers(markerScene.dumboMarkerEntities, show: false)
+                markerScene.bParkImage?.isEnabled = false
+                markerScene.sssImage?.isEnabled = false
+                markerScene.dumboImage?.isEnabled = false
                 
+                self.riseSegmentScene.actions.showBPark.onAction = self.showBPark(_:)
+                self.riseSegmentScene.actions.showSSS.onAction = self.showSSS(_:)
+                self.riseSegmentScene.actions.showDumbo.onAction = self.showDumbo(_:)
             }
         }
+    }
+    
+    func showBPark(_ entity: Entity?) {
+        riseSegmentScene.bParkImage?.isEnabled = true
+        showMarkers(riseSegmentScene.bParkMarkerEntities, show: true)
+    }
+    
+    func showSSS(_ entity: Entity?) {
+        riseSegmentScene.sssImage?.isEnabled = true
+        showMarkers(riseSegmentScene.sssMarkerEntities, show: true)
+    }
+    
+    func showDumbo(_ entity: Entity?) {
+        riseSegmentScene.dumboImage?.isEnabled = true
+        showMarkers(riseSegmentScene.dumboMarkerEntities, show: true)
     }
     
     private func showMarkers(_ entities: [Entity], show: Bool) {
@@ -276,15 +292,10 @@ class ExperimentARController: UIViewController {
             
         }
         
-        newSlider.position = [0,0.1,0.30]
-        newSlider.transform.scale = [0.05,0.05,0.05]
+        newSlider.position = [0,0.1,0.28]
+        newSlider.transform.scale = [0.06,0.06,0.06]
         
     }
-    
-    //    @objc
-    //    func handleTap(recognizer: UITapGestureRecognizer) {
-    //
-    //    }
     
     @objc
     func goBack(_ sender: UIButton) {
