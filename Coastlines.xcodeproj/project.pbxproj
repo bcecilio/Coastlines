@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0200C36324A6E69D00D94229 /* HandleYears.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200C36224A6E69D00D94229 /* HandleYears.swift */; };
-		02100B7424A294F20077E893 /* flipRiseSlider.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AA324999A1900468145 /* flipRiseSlider.rcproject */; };
 		024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024035D3248D8B7800C7F7B2 /* ARCell.swift */; };
 		024128D12497DB5F0070FEAC /* RealityUI in Frameworks */ = {isa = PBXBuildFile; productRef = 024128D02497DB5F0070FEAC /* RealityUI */; };
 		02737072249C317100A10E7B /* simd+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02737071249C317100A10E7B /* simd+ext.swift */; };
@@ -181,7 +180,6 @@
 		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
 		02AC5AA124996FCE00468145 /* SeaLevelComputations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaLevelComputations.swift; sourceTree = "<group>"; };
-		02AC5AA324999A1900468145 /* flipRiseSlider.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = flipRiseSlider.rcproject; sourceTree = "<group>"; };
 		02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingView.swift; sourceTree = "<group>"; };
 		02C4D15624913FCE0095560B /* ExperimentARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentARController.swift; sourceTree = "<group>"; };
 		02D2F71224A199EC005E89D6 /* arIconAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = arIconAnimation.json; sourceTree = "<group>"; };
@@ -455,7 +453,6 @@
 		C40F2CD12490123800AA1756 /* TestFeatureTarget */ = {
 			isa = PBXGroup;
 			children = (
-				02AC5AA324999A1900468145 /* flipRiseSlider.rcproject */,
 				0273708224A10BDE00A10E7B /* DropFlipRiseNYC.rcproject */,
 				C40F2CD22490123800AA1756 /* AppDelegate.swift */,
 				C40F2CD42490123800AA1756 /* SceneDelegate.swift */,
@@ -835,7 +832,6 @@
 				C40F2D01249012A700AA1756 /* UIButton+Extension.swift in Sources */,
 				0273708124A047BF00A10E7B /* FactText.swift in Sources */,
 				C40F2CFB2490129500AA1756 /* ARCell.swift in Sources */,
-				02100B7424A294F20077E893 /* flipRiseSlider.rcproject in Sources */,
 				C40F2CEA2490126000AA1756 /* LocationDetailVC.swift in Sources */,
 				C40F2CE62490125400AA1756 /* ThirdOnboardingController.swift in Sources */,
 				C40F2CD52490123800AA1756 /* SceneDelegate.swift in Sources */,
