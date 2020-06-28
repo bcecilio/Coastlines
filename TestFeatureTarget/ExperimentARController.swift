@@ -1,135 +1,312 @@
-//
-//  ExperimentARController.swift
-//  TestFeatureTarget
-//
-//  Created by Kelby Mittan on 6/10/20.
-//  Copyright © 2020 Ahad Islam. All rights reserved.
-//
-
 import RealityKit
 import ARKit
-import Combine
+//import Combine
+import RealityUI
 
 class ExperimentARController: UIViewController {
     
-    //    lazy var arView = ARView(frame: view.frame)
-    
     let arView = ARView()
     
+    let location: Location
+    let backButton = UIButton().previousButton()
     lazy var coachingOverlay = ARCoachingOverlayView()
     
-    var flipScene = FlipRiseMap.FlipScene()
+    var dropScene = DropFlipRiseNYC.DropScene()
+    var flipScene = DropFlipRiseNYC.FlipScene()
+    var riseSegmentScene = DropFlipRiseNYC.RiseSegmentScene()
+    
     var occBox = ModelEntity()
+    
+    var newSlider = RUISlider()
+    
+    var (bParkLight, sssLight, dumboLight) = CityLights.addMarkerLights()
+    
+    var (cityLightOne, cityLightTwo, cityLightThree, cityLightFour, brookLight) = CityLights.addCityLights()
+    
+    var (redLight, brookRed) = CityLights.addDangerLights()
+    
+    var oldSliderVal: Float = 0.1
+    
+    init(_ location: Location) {
+        self.location = location
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupARView()
         setupCoachingOverlayView()
-        arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
         
         loadScene()
+        //        setupOccBox()
+        setupSlider()
+        
+//        let arBackground = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+//        
+//        arView.environment.background = .color(arBackground)
+        
+//        sceneLight = SCNLight()
+//        sceneLight.type = .omni
+//
+//        let lightNode = SCNNode()
+//        lightNode.light = sceneLight
+//        lightNode.position = SCNVector3(0,0,2)
+        
     }
     
-    
-    private func addSpotlights() -> (SpotLight, SpotLight) {
-        let sLight = SpotLight()
-        let sLight2 = SpotLight()
-        let sLight3 = SpotLight()
-        
-        //        let boxMesh = MeshResource.generateBox(width: 72, height: 5, depth: 42)
-        //        let material = SimpleMaterial()
-        //        occBox = ModelEntity(mesh: boxMesh, materials: [material])
-        //        occBox.position.y = 0.5
-        sLight.position =  [-0.2335, 0, 0.1584]
-        sLight.light.attenuationRadius = 0.96
-        sLight.light.color = .red
-        sLight.light.intensity = 500000
-        //        sLight.light.innerAngleInDegrees = 310
-        //        sLight.light.outerAngleInDegrees = 135
-        
-        sLight.transform.rotation = simd_quatf(vector: [GLKMathDegreesToRadians(-60),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
-        
-        sLight2.position = [-0.1261, 0.0487, -0.2044]
-        sLight2.light.attenuationRadius = 0.26
-        sLight2.light.color = .systemTeal
-        sLight2.light.innerAngleInDegrees = 180
-        sLight2.light.outerAngleInDegrees = 0
-        //        sLight2.transform.rotation = simd_quatf(vector: [-30,0,90])
-        
-        sLight3.position = [0.1644, 0.0487, 0.2044]
-        sLight3.light.attenuationRadius = 0.16
-        sLight3.light.color = .green
-        sLight3.light.outerAngleInDegrees = 135
-        
-        return (sLight, sLight3)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setupBackButton()
     }
     
-    private func addSpotlightComponent() -> SpotLightComponent {
-        return SpotLightComponent(color: .white, intensity: 500000, innerAngleInDegrees: 10, outerAngleInDegrees: 120, attenuationRadius: 20)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        //arView.session.pause()
+        
     }
     
     private func loadScene() {
-        FlipRiseMap.loadFlipSceneAsync { [unowned self] result in
+        
+        DropFlipRiseNYC.loadDropSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
-                print(error)
+                print("The flip scene error is..... \(error)")
             case .success(let scene):
                 
-                let (spotlight1, spotlight2) = self.addSpotlights()
-                let spotlightComp = self.addSpotlightComponent()
+                self.dropScene = scene
+                
+                self.arView.scene.anchors.append(scene)
+                //                self.coachingOverlay.isHidden = true
+                self.dropScene.actions.drop.onAction = self.wasDropped(_:)
+            }
+        }
+        
+        DropFlipRiseNYC.loadFlipSceneAsync { [unowned self] result in
+            switch result {
+            case .failure(let error):
+                print("The flip scene error is..... \(error)")
+            case .success(let scene):
                 
                 self.flipScene = scene
                 
-                scene.addChild(spotlight1)
-                scene.addChild(spotlight2)
-                scene.components.set(spotlightComp)
                 self.arView.scene.anchors.append(scene)
+                //                self.coachingOverlay.isHidden = true
+                //                self.flipScene.addChild(self.occBox)
+                self.flipScene.isEnabled = false
+                self.flipScene.actions.flipModel.onAction = self.wasFlipped(_:)
+            }
+        }
+        
+        DropFlipRiseNYC.loadRiseSegmentSceneAsync { [unowned self] result in
+            switch result {
+            case .failure(let error):
+                print("The seaRise error is..... \(error)")
+            case .success(let scene):
+                
+                self.riseSegmentScene = scene
+                let markerScene = self.riseSegmentScene
+                self.arView.scene.anchors.append(self.riseSegmentScene)
+                self.riseSegmentScene.isEnabled = false
+                markerScene.twenty20?.isEnabled = true
+                markerScene.twenty30?.isEnabled = false
+                markerScene.twenty40?.isEnabled = false
+                markerScene.twenty50?.isEnabled = false
+                markerScene.twenty60?.isEnabled = false
+                markerScene.twenty70?.isEnabled = false
+                markerScene.twenty80?.isEnabled = false
+                markerScene.twenty90?.isEnabled = false
+                markerScene.twenty100?.isEnabled = false
+                self.showMarkers(markerScene.bParkMarkerEntities, show: false)
+                self.showMarkers(markerScene.sssMarkerEntities, show: false)
+                self.showMarkers(markerScene.dumboMarkerEntities, show: false)
+                markerScene.bParkImage?.isEnabled = false
+                markerScene.sssImage?.isEnabled = false
+                markerScene.dumboImage?.isEnabled = false
+                
+                self.riseSegmentScene.actions.showBPark.onAction = self.showBPark(_:)
+                self.riseSegmentScene.actions.showSSS.onAction = self.showSSS(_:)
+                self.riseSegmentScene.actions.showDumbo.onAction = self.showDumbo(_:)
             }
         }
     }
     
+    func showBPark(_ entity: Entity?) {
+        riseSegmentScene.bParkImage?.isEnabled = true
+        showMarkers(riseSegmentScene.bParkMarkerEntities, show: true)
+    }
+    
+    func showSSS(_ entity: Entity?) {
+        riseSegmentScene.sssImage?.isEnabled = true
+        showMarkers(riseSegmentScene.sssMarkerEntities, show: true)
+    }
+    
+    func showDumbo(_ entity: Entity?) {
+        riseSegmentScene.dumboImage?.isEnabled = true
+        showMarkers(riseSegmentScene.dumboMarkerEntities, show: true)
+    }
+    
+    private func showMarkers(_ entities: [Entity], show: Bool) {
+        for entity in entities {
+            entity.isEnabled = show
+        }
+    }
+    
+    public func setupOccBox() {
+        let boxMesh = MeshResource.generateBox(width: 0.72, height: 0.5, depth: 0.42)
+        let material = OcclusionMaterial()
+        occBox = ModelEntity(mesh: boxMesh, materials: [material])
+        occBox.position.y = -0.25
+    }
+    
+    func wasDropped(_ entity: Entity?) {
+        let flipImageLight = SpotLight()
+        flipImageLight.position = [0,0.6,0.1]
+        flipImageLight.light.attenuationRadius = 0.85
+        flipImageLight.light.color = .white
+        flipImageLight.light.intensity = 4000
+        flipImageLight.look(at: flipScene.nycImage?.position ?? [0,0,0], from: flipImageLight.position, relativeTo: nil)
+        flipScene.addChild(flipImageLight)
+        flipScene.isEnabled = true
+        
+        dropScene.isEnabled = false
+    }
+    
+    func wasFlipped(_ entity: Entity?) {
+        
+        riseSegmentScene.isEnabled = true
+        flipScene.isEnabled = false
+        
+        riseSegmentScene.addChild(newSlider)
+        
+        addLightsToScene()
+        addMarkerLightsToScene()
+        
+    }
+    
+    private func addLightsToScene() {
+        
+        redLight.light.color = .red
+        redLight.light.attenuationRadius = 0
+        riseSegmentScene.addChild(redLight)
+        
+//        cityLightOne.light.color = .white
+//        riseSegmentScene.addChild(cityLightOne)
+        
+        cityLightTwo.light.color = .white
+        riseSegmentScene.addChild(cityLightTwo)
+        
+        cityLightThree.light.color = .white
+        riseSegmentScene.addChild(cityLightThree)
+        
+        //        cityLightFour.light.color = .green
+        //        riseSegmentScene.addChild(cityLightFour)
+        
+        riseSegmentScene.addChild(brookLight)
+        
+        riseSegmentScene.addChild(brookRed)
+        
+    }
+    
+    private func addMarkerLightsToScene() {
+        sssLight.look(at: riseSegmentScene.sssImage?.position ?? [0,0,0], from: sssLight.position, relativeTo: nil)
+        
+        riseSegmentScene.addChild(sssLight)
+        
+        bParkLight.look(at: riseSegmentScene.bParkImage?.position ?? [0,0,0], from: bParkLight.position, relativeTo: nil)
+        
+        riseSegmentScene.addChild(bParkLight)
+        
+        dumboLight.look(at: riseSegmentScene.dumboImage?.position ?? [0,0,0], from: dumboLight.position, relativeTo: nil)
+        riseSegmentScene.addChild(dumboLight)
+    }
+    
+    private func setupSlider() {
+        arView.enableRealityUIGestures(.all)
+        
+        newSlider = RUISlider(slider: SliderComponent(startingValue: 0.1, isContinuous: true)
+            
+            
+        ) { (slider, _) in
+            
+            let scene = self.riseSegmentScene
+            
+            let yearLabels = [scene.twenty20,scene.twenty30,scene.twenty40,scene.twenty50,scene.twenty60,scene.twenty70,scene.twenty80,scene.twenty90,scene.twenty100]
+            
+            let year = HandleYears.getYearLabel(sliderVal: slider.value, scene: scene)
+            
+            HandleYears.showYearLabel(labels: yearLabels, year: year)
+            
+            print(slider.value)
+            
+            self.redLight = CityLights.highlightManhattan(sliderVal: slider.value, light: self.redLight)
+            
+            self.cityLightTwo = CityLights.moveCenterCityLight(sliderVal: slider.value, light: self.cityLightTwo)
+            
+            self.cityLightThree = CityLights.moveRightCityLight(sliderVal: slider.value, light: self.cityLightThree)
+            
+            self.brookLight = CityLights.moveBKLight(sliderVal: slider.value, light: self.brookLight)
+            
+            self.brookRed = CityLights.highlightBrooklyn(sliderVal: slider.value, light: self.brookRed)
+            
+            
+            
+            if let transformOne = CompSeaLevel.riseDropOne(sliderVal: slider.value, entity: scene.riserOne) {
+                scene.riserOne?.move(to: transformOne, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformTwo = CompSeaLevel.riseDropTwo(sliderVal: slider.value, entity: scene.riserTwo) {
+                scene.riserTwo?.move(to: transformTwo, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformThree = CompSeaLevel.riseDropThree(sliderVal: slider.value, entity: scene.riserThree) {
+                
+                scene.riserThree?.move(to: transformThree, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformFour = CompSeaLevel.riseDropFour(sliderVal: slider.value, entity: scene.riserFour) {
+                
+                scene.riserFour?.move(to: transformFour, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformFive = CompSeaLevel.riseDropFive(sliderVal: slider.value, entity: scene.riserFive) {
+                
+                scene.riserFive?.move(to: transformFive, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformSix = CompSeaLevel.riseDropSix(sliderVal: slider.value, entity: scene.riserSix) {
+                
+                scene.riserSix?.move(to: transformSix, relativeTo: scene, duration: 8)
+            }
+            
+            if let transformSeven = CompSeaLevel.riseDropSeven(sliderVal: slider.value, entity: scene.riserSeven) {
+                
+                scene.riserSeven?.move(to: transformSeven, relativeTo: scene, duration: 8)
+            }
+            
+            slider.isEnabled = true
+            
+        }
+        
+        newSlider.position = [0,0.1,0.28]
+        newSlider.transform.scale = [0.06,0.06,0.06]
+        
+    }
     
     @objc
-    func handleTap(recognizer: UITapGestureRecognizer) {
-        
-        flipScene.notifications.flipBehavior.post()
-        //        let location = recognizer.location(in: arView)
-        //
-        //
-        //        let results = arView.raycast(from: location, allowing: .estimatedPlane, alignment: .horizontal)
-        //
-        //        if let firstResult = results.first {
-        //            let anchor = ARAnchor(name: "baseMapNYC-2", transform: firstResult.worldTransform)
-        //
-        //            arView.session.add(anchor: anchor)
-        //
-        //        } else {
-        //            print("Object Placement Failed")
-        //        }
-        
-        
-        
+    func goBack(_ sender: UIButton) {
+        arView.scene.anchors.removeAll()
+        let detailVC = LocationDetailController(location)
+        UIViewController.resetWindow(detailVC)
     }
     
-    func placeObject(named entityName: String, for anchor: ARAnchor) {
-        let entity = try! ModelEntity.loadModel(named: "baseMapNYC-2")
-        
-        
-        entity.generateCollisionShapes(recursive: true)
-        
-        arView.installGestures([.rotation, .translation], for: entity)
-        
-        let anchorEntity = AnchorEntity(anchor: anchor)
-        
-        anchorEntity.addChild(entity)
-        
-        arView.scene.addAnchor(anchorEntity)
-    }
     
     private func setupARView() {
         view.addSubview(arView)
-        
         arView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -138,15 +315,44 @@ class ExperimentARController: UIViewController {
             arView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             arView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
     }
-}
-
-extension ExperimentARController: ARSessionDelegate {
     
-    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
-        for anchor in anchors {
-            if let anchorName = anchor.name, anchorName == "baseMapNYC-2" {
-                placeObject(named: anchorName, for: anchor)
-            }
-        }
+    private func setupBackButton() {
+        view.addSubview(backButton)
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        backButton.addTarget(self, action: #selector(goBack(_:)), for: .touchUpInside)
+        NSLayoutConstraint.activate([
+            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            backButton.widthAnchor.constraint(equalToConstant: 44),
+            backButton.heightAnchor.constraint(equalToConstant: 44)
+        ])
     }
 }
+
+//extension ExperimentARController: ARSCNViewDelegate{
+//
+//    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+//
+//        //1. Get The Current Light Estimate
+//        guard let lightEstimate = self.arView.session.currentFrame?.lightEstimate else { return }
+//
+//        //2. Get The Ambient Intensity & Colour Temperatures
+//        let ambientLightEstimate = lightEstimate.ambientIntensity
+//
+//        let ambientColourTemperature = lightEstimate.ambientColorTemperature
+//
+//        print(
+//            """
+//            Current Light Estimate = \(ambientLightEstimate)
+//            Current Ambient Light Colour Temperature Estimate = \(ambientColourTemperature)
+//            """)
+//
+//        if ambientLightEstimate < 100 { print("Lighting Is Too Dark") }
+//
+//        //3. Adjust The Scene Lighting
+//        sceneLight.intensity = ambientLightEstimate
+//        sceneLight.temperature = ambientColourTemperature
+//    }
+//}

@@ -53,7 +53,7 @@ class LocationDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        view.backgroundColor = PaletteColour.darkBlue.colour
         
         locationView.goToARButton.addTarget(self, action: #selector(goToARButtonPressed(_:)), for: .touchUpInside)
         locationView.backButton.addTarget(self, action: #selector(backButtonPressed(_:)), for: .touchUpInside)
@@ -67,7 +67,7 @@ class LocationDetailVC: UIViewController {
     }
     
     private func setupUI() {
-        locationView.locationImage.image = UIImage(named: location.imageName)
+        locationView.locationImage.image = UIImage(named: location.images.one)
         locationView.locationLabel.text = location.name
         locationView.seaLevelContentLabel.text = location.facts.generalFacts
         locationView.looksLikeContentLabel.text = location.facts.seaLevelFacts
@@ -127,9 +127,9 @@ extension LocationDetailVC: UIScrollViewDelegate {
         let triggerHeight = locationView.triggerSLView2.frame.height - locationView.triggerSLView1.frame.height
         if triggerHeight > 15 && !animateSLGraphCalled {
             setSeaLevelData()
-            seaLevelSet.setCircleColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
-            seaLevelSet.setColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
-            seaLevelSet.fill = Fill(color: PaletteColours.lightBlue.rawValue.convertHexToColour())
+            seaLevelSet.setCircleColor(PaletteColour.lightBlue.colour)
+            seaLevelSet.setColor(PaletteColour.lightBlue.colour)
+            seaLevelSet.fill = Fill(color: PaletteColour.lightBlue.colour)
             locationView.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 5, easingOption: .easeInCirc)
             animateSLGraphCalled = true
         }

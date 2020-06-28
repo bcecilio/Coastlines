@@ -9,36 +9,28 @@
 import UIKit
 import Charts
 
+protocol GraphClicked {
+    func clickedOnGraph(year: Double, rise: Double)
+}
+
 class GraphCell: UICollectionViewCell {
     
     public var seaLevelSet = LineChartDataSet()
     public var location: Location?
-    public var index: IndexPath?
-    public var cellDelegate: PrevNextButton?
-    
-    public lazy var nextButton: UIButton = {
-        let button = UIButton()
-        return button.nextButton()
-    }()
-    
-    public lazy var prevButton: UIButton = {
-        let button = UIButton()
-        return button.previousButton()
-    }()
+    public var graphDelegate: GraphClicked?
     
     public lazy var headerLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .title1)
-        label.numberOfLines = 1
-        label.alpha = 0
+        label.font = Font.cooper34
+        label.textColor = PaletteColour.offWhite.colour
+        label.numberOfLines = 0
         return label
     }()
     
     public lazy var seaLevelLineChart: LineChartView = {
         let lineChart = LineChartView()
-        lineChart.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        lineChart.backgroundColor = PaletteColour.offWhite.colour
         lineChart.layer.cornerRadius = 5
         lineChart.clipsToBounds = true
         lineChart.rightAxis.enabled = false
@@ -46,11 +38,11 @@ class GraphCell: UICollectionViewCell {
         yAxis.labelFont = .boldSystemFont(ofSize: 12)
         lineChart.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         yAxis.setLabelCount(5, force: false)
-        yAxis.axisLineColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
-        yAxis.labelTextColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        yAxis.axisLineColor = PaletteColour.lightBlue.colour
+        yAxis.labelTextColor = PaletteColour.lightBlue.colour
         lineChart.xAxis.labelPosition = .bottom
-        lineChart.xAxis.labelTextColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
-        lineChart.xAxis.axisLineColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        lineChart.xAxis.labelTextColor = PaletteColour.lightBlue.colour
+        lineChart.xAxis.axisLineColor = PaletteColour.lightBlue.colour
         yAxis.drawGridLinesEnabled = false
         lineChart.xAxis.drawGridLinesEnabled = false
         lineChart.xAxis.setLabelCount(5, force: false)
@@ -59,57 +51,34 @@ class GraphCell: UICollectionViewCell {
         return lineChart
     }()
     
+    public lazy var descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.textAlignment = .center
+        label.textColor = PaletteColour.offWhite.colour
+        label.font = Font.cooper20
+        label.numberOfLines = 0
+        label.alpha = 1
+        return label
+    }()
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        backgroundColor = PaletteColour.darkBlue.colour
         
-        prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
-        nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
-        setupPrevButton()
-        setupNextButton()
         setupHeaderLabel()
         setupSeaLevelGraph()
-        animateLabel()
+        setupDescriptionLabel()
         setSeaLevelData()
-    }
-    
-    private func animateLabel() {
-        UIView.animate(withDuration: 2, delay: 0, options: [.transitionCrossDissolve], animations: {
-            self.headerLabel.alpha = 1
-            self.seaLevelLineChart.alpha = 1
-        }, completion: nil)
-    }
-    
-    private func setupPrevButton() {
-        addSubview(prevButton)
-        prevButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            prevButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            prevButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            prevButton.widthAnchor.constraint(equalToConstant: 44),
-            prevButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
-    }
-    
-    private func setupNextButton() {
-        addSubview(nextButton)
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            nextButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            nextButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            nextButton.widthAnchor.constraint(equalToConstant: 44),
-            nextButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
+        flashChart()
     }
     
     private func setupHeaderLabel() {
         addSubview(headerLabel)
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+        headerLabel.text = ContentText.seaLevels
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            headerLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: -10),
             headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             headerLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
@@ -124,26 +93,30 @@ class GraphCell: UICollectionViewCell {
             seaLevelLineChart.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 20),
             seaLevelLineChart.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
             seaLevelLineChart.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            seaLevelLineChart.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.6)
+            seaLevelLineChart.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5)
         ])
     }
     
-    @objc func prevButtonPressed(_ sender: UIButton) {
-        
-        print("Prev Button Pressed")
-        cellDelegate?.clickedOnPrev(index: (index?.row)!, cell: self)
-        
+    private func setupDescriptionLabel() {
+        addSubview(descriptionLabel)
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.text = "\nRise in inches by 2100"
+        NSLayoutConstraint.activate([
+            descriptionLabel.topAnchor.constraint(equalTo: seaLevelLineChart.bottomAnchor, constant: 0),
+            descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+        ])
     }
     
-    @objc func nextButtonPressed(_ sender: UIButton) {
-        print("next button pressed")
-        cellDelegate?.clickedOnNext(index: (index?.row)!, cell: self)
+    public func flashChart() {
+        seaLevelLineChart.pulsate()
     }
+    
 }
 
 extension GraphCell: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print(entry)
+        graphDelegate?.clickedOnGraph(year: entry.x, rise: entry.y)
     }
     
     public func setSeaLevelData() {
@@ -152,9 +125,9 @@ extension GraphCell: ChartViewDelegate {
         seaLevelSet.drawCirclesEnabled = false
         seaLevelSet.mode = .cubicBezier
         seaLevelSet.lineWidth = 3
-        seaLevelSet.setCircleColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
-        seaLevelSet.setColor(PaletteColours.lightBlue.rawValue.convertHexToColour())
-        seaLevelSet.fill = Fill(color: PaletteColours.lightBlue.rawValue.convertHexToColour())
+        seaLevelSet.setCircleColor(PaletteColour.lightBlue.colour)
+        seaLevelSet.setColor(PaletteColour.lightBlue.colour)
+        seaLevelSet.fill = Fill(color: PaletteColour.lightBlue.colour)
         seaLevelSet.fillAlpha = 0.6
         seaLevelSet.drawFilledEnabled = true
         seaLevelSet.drawHorizontalHighlightIndicatorEnabled = false
@@ -177,3 +150,16 @@ extension GraphCell: ChartViewDelegate {
     }
 }
 
+extension LineChartView {
+    func pulsate() {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.7
+        pulse.fromValue = 0.98
+        pulse.toValue = 1.0
+        pulse.autoreverses = true
+        pulse.repeatCount = .infinity
+        pulse.initialVelocity = 0
+        pulse.damping = 5
+        layer.add(pulse, forKey: nil)
+    }
+}

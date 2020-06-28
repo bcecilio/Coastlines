@@ -8,46 +8,80 @@
 
 import UIKit
 
-protocol PrevNextButton {
-    func clickedOnPrev(index: Int, cell: Any)
-    func clickedOnNext(index: Int, cell: Any)
+protocol TapSayMore {
+    func onSayMore()
 }
 
 class ContentCell: UICollectionViewCell {
     
-    var index: IndexPath?
-    var cellDelegate: PrevNextButton?
+    var sayMoreDelegate: TapSayMore?
     
-    public lazy var nextButton: UIButton = {
-        let button = UIButton()
-        return button.nextButton()
-    }()
-    
-    public lazy var prevButton: UIButton = {
-        let button = UIButton()
-//        button.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
-        return button.previousButton()
+    public lazy var sayMoreView: UIView = {
+        var view = UIView()
+        view.backgroundColor = .clear
+        view.alpha = 1
+        return view
     }()
     
     public lazy var scrollView: UIScrollView = {
         let scrollview = UIScrollView()
         scrollview.backgroundColor = .clear
         scrollview.showsVerticalScrollIndicator = false
+        scrollview.alpha = 1
+        scrollview.isScrollEnabled = false
         return scrollview
-    }()
-    
-    public lazy var cellContentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .green
-        return view
     }()
     
     public lazy var headerLabel: UILabel = {
         let label = UILabel()
         label.text = ""
         label.textAlignment = .left
-        label.font = .preferredFont(forTextStyle: .title1)
-        label.numberOfLines = 1
+        label.textColor = PaletteColour.offWhite.colour
+        label.font = Font.cooper34
+        label.numberOfLines = 0
+        label.alpha = 1
+        return label
+    }()
+    
+    public lazy var factOneLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.textAlignment = .left
+        label.font = Font.cooper24
+        label.textColor = PaletteColour.offWhite.colour
+        label.numberOfLines = 0
+        label.alpha = 1
+        return label
+    }()
+    
+    public lazy var factTwoLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.textAlignment = .left
+        label.font = Font.cooper24
+        label.textColor = PaletteColour.offWhite.colour
+        label.numberOfLines = 0
+        label.alpha = 1
+        return label
+    }()
+    
+    public lazy var sayMoreButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("learn more", for: .normal)
+        button.titleLabel?.textColor = PaletteColour.offWhite.colour
+        button.layer.cornerRadius = 6
+        button.layer.borderWidth = 3
+        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
+        return button
+    }()
+    
+    public lazy var learnMoreLabel: UILabel = {
+        let label = UILabel()
+        label.text = "More to learn..."
+        label.textAlignment = .left
+        label.textColor = PaletteColour.offWhite.colour
+        label.font = Font.cooper24
+        label.numberOfLines = 0
         label.alpha = 0
         return label
     }()
@@ -56,7 +90,8 @@ class ContentCell: UICollectionViewCell {
         let label = UILabel()
         label.text = ""
         label.textAlignment = .left
-        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.textColor = PaletteColour.offWhite.colour
+        label.font = Font.cooper20
         label.numberOfLines = 0
         label.alpha = 0
         return label
@@ -64,49 +99,19 @@ class ContentCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        backgroundColor = PaletteColour.darkBlue.colour
         
-        prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
-        nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
-        
+        sayMoreButton.addTarget(self, action: #selector(sayMorePressed(_:)), for: .touchUpInside)
         
         setupScrollView()
         setupHeaderLabel()
+        setupFactOneLabel()
+        setupFactTwoLabel()
+        setupSayMoreButton()
+        setupSayMoreView()
+        setupLearnMoreLabel()
         setupContentLabel()
-        setupPrevButton()
-        setupNextButton()
-        animateLabel()
-    }
-    
-    private func animateLabel() {
-        UIView.animate(withDuration: 2, delay: 0, options: [.transitionCrossDissolve], animations: {
-            self.headerLabel.alpha = 1
-            self.contentLabel.alpha = 1
-        }, completion: nil)
-    }
-    
-    private func setupPrevButton() {
-        addSubview(prevButton)
-        prevButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            prevButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            prevButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            prevButton.widthAnchor.constraint(equalToConstant: 44),
-            prevButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
-    }
-    
-    private func setupNextButton() {
-        addSubview(nextButton)
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            nextButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            nextButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            nextButton.widthAnchor.constraint(equalToConstant: 44),
-            nextButton.heightAnchor.constraint(equalToConstant: 44)
-        ])
     }
     
     private func setupScrollView() {
@@ -126,9 +131,66 @@ class ContentCell: UICollectionViewCell {
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
+            headerLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -10),
             headerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             headerLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+        ])
+    }
+    
+    private func setupFactOneLabel() {
+        scrollView.addSubview(factOneLabel)
+        factOneLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            factOneLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 0),
+            factOneLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            factOneLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+        ])
+    }
+    
+    private func setupFactTwoLabel() {
+        scrollView.addSubview(factTwoLabel)
+        factTwoLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            factTwoLabel.topAnchor.constraint(equalTo: factOneLabel.bottomAnchor, constant: -2),
+            factTwoLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            factTwoLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+        ])
+    }
+    
+    private func setupSayMoreButton() {
+        scrollView.addSubview(sayMoreButton)
+        sayMoreButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            sayMoreButton.topAnchor.constraint(equalTo: factTwoLabel.bottomAnchor, constant: 10),
+            sayMoreButton.widthAnchor.constraint(equalToConstant: 100),
+            sayMoreButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            sayMoreButton.heightAnchor.constraint(equalToConstant: 34)
+        ])
+    }
+    
+    private func setupSayMoreView() {
+        scrollView.addSubview(sayMoreView)
+        sayMoreView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            sayMoreView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            sayMoreView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            sayMoreView.widthAnchor.constraint(equalToConstant: 1),
+            sayMoreView.bottomAnchor.constraint(equalTo: sayMoreButton.bottomAnchor)
+        ])
+    }
+    
+    private func setupLearnMoreLabel() {
+        scrollView.addSubview(learnMoreLabel)
+        learnMoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            learnMoreLabel.topAnchor.constraint(equalTo: sayMoreButton.bottomAnchor, constant: 10),
+            learnMoreLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            learnMoreLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
     }
     
@@ -137,22 +199,25 @@ class ContentCell: UICollectionViewCell {
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            contentLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10),
+            contentLabel.topAnchor.constraint(equalTo: learnMoreLabel.bottomAnchor, constant: 0),
             contentLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             contentLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            contentLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -60)
+            contentLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80)
         ])
     }
     
-    @objc func prevButtonPressed(_ sender: UIButton) {
+    @objc func sayMorePressed(_ sender: UIButton) {
         
-        print("Prev Button Pressed")
-        cellDelegate?.clickedOnPrev(index: (index?.row)!, cell: self)
+        scrollView.isScrollEnabled = true
         
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
+            self.scrollView.contentOffset.y += self.sayMoreView.frame.height
+            self.learnMoreLabel.alpha = 1
+            self.contentLabel.alpha = 1
+        }, completion: nil)
+        
+        sayMoreButton.isHidden = true
     }
     
-    @objc func nextButtonPressed(_ sender: UIButton) {
-        print("next button pressed")
-        cellDelegate?.clickedOnNext(index: (index?.row)!, cell: self)
-    }
 }
+

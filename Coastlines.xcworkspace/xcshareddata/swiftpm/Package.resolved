@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RealityUI",
+        "repositoryURL": "https://github.com/maxxfrazer/RealityUI.git",
+        "state": {
+          "branch": null,
+          "revision": "3d713a93b1d2618229e6f98f68179cca2f8623a3",
+          "version": "1.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

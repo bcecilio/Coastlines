@@ -14,7 +14,7 @@ extension ExperimentARController: ARCoachingOverlayViewDelegate {
     func setupCoachingOverlayView() {
         arView.addSubview(coachingOverlay)
         
-        coachingOverlay.session = arView.session
+        //coachingOverlay.session = arView.session
         
         coachingOverlay.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

@@ -19,9 +19,20 @@ class ResourceView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+
+        button.tintColor = PaletteColour.lightBlue.colour
         button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        button.addAccessibility(.button, "Back", nil, "Returns to the locations screen.")
         return button
+    }()
+    
+    public lazy var header: UILabel = {
+        let label = UILabel()
+        label.text = "Actions"
+        label.font = UIFont.preferredFont(forTextStyle: .title1)
+        label.adjustsFontForContentSizeCategory = true
+        label.addAccessibility(.none, "Actions", nil, nil)
+        return label
     }()
     
     override init(frame: CGRect) {
@@ -36,6 +47,7 @@ class ResourceView: UIView {
     
     private func commonInit() {
         setupPrevButton()
+        setupHeader()
         setupTableView()
     }
     
@@ -43,8 +55,17 @@ class ResourceView: UIView {
         addSubview(prevButton)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            prevButton.topAnchor.constraint(equalTo: topAnchor, constant: 25),
+            prevButton.topAnchor.constraint(equalTo: topAnchor, constant: 35),
             prevButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15)
+        ])
+    }
+    
+    private func setupHeader() {
+        addSubview(header)
+        header.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            header.topAnchor.constraint(equalTo: prevButton.bottomAnchor, constant: 13),
+            header.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18)
         ])
     }
     
@@ -52,10 +73,10 @@ class ResourceView: UIView {
         addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: prevButton.bottomAnchor, constant: 15),
+            tableView.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 10),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ])
     }
     

@@ -14,51 +14,43 @@ class SecondOnboardingView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.right"), for: .normal)
-        button.tintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        button.tintColor = PaletteColour.offWhite.colour
+        button.addAccessibility(.button, "Right chevron", "Indicates that the user can swipe left", nil)
         return button
     }()
     
     public lazy var skipButton: UIButton = {
        let button = UIButton()
         button.setTitle("Skip", for: .normal)
-        button.setTitleColor(PaletteColours.darkBlue.rawValue.convertHexToColour(), for: .normal)
+        button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
         button.layer.borderWidth = 1.0
-        button.layer.borderColor = PaletteColours.darkBlue.rawValue.convertHexToColour().cgColor
-        button.layer.cornerRadius = 22.0
+        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
+        button.layer.cornerRadius = 25.0
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
+        button.addAccessibility(.button, "Skip", "Skips the remainder of the onboarding experience", nil)
         return button
     }()
     
-    public lazy var infoLabel: UILabel = {
-       let label = UILabel()
-        label.numberOfLines = 0
-        label.textAlignment = NSTextAlignment.center
-        label.textColor = PaletteColours.offWhite.rawValue.convertHexToColour()
-        label.text = "\nAs the global temperature increases, the ice caps begin to melt, and the world’s oceans begin to heat up, which causes the sea level to rise."
-        label.font = UIFont(name: "CooperHewitt-Medium", size: 18)
-        return label
-    }()
-    
-    public lazy var pageControl: UIPageControl = {
-        let pc = UIPageControl()
-        pc.currentPage = 1
-        pc.numberOfPages = 4
-        pc.currentPageIndicatorTintColor = PaletteColours.offWhite.rawValue.convertHexToColour()
-        pc.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
-        pc.isUserInteractionEnabled = false
-        return pc
+    public lazy var infoView: UITextView = {
+       let view = UITextView()
+        view.textAlignment = NSTextAlignment.center
+        view.textColor = PaletteColour.offWhite.colour
+        view.text = OnboardingText.firstOnboardingLabel
+        view.font = UIFont.preferredFont(forTextStyle: .body)
+        view.adjustsFontForContentSizeCategory = true
+        view.backgroundColor = UIColor.clear
+        view.isEditable = false
+        view.addAccessibility(.none, OnboardingText.firstOnboardingLabel, nil, nil)
+        return view
     }()
     
     public lazy var centerImage: UIImageView = {
        let imageView = UIImageView()
         imageView.image = UIImage(named: "coastlineIMG5")
+        imageView.addAccessibility(.image, "An image of an iceburg melting", nil, nil)
         return imageView
-    }()
-    
-    public lazy var leftSwipe: UISwipeGestureRecognizer = {
-        let swipe = UISwipeGestureRecognizer()
-        swipe.direction = .left
-        return swipe
     }()
     
     override init(frame: CGRect) {
@@ -72,53 +64,53 @@ class SecondOnboardingView: UIView {
     }
     
     private func commonInit(){
-        setUpPageControlConstraints()
-        setUpNextButtonConstraints()
-        setUpImageViewConstraints()
-        setUpInfoLabelConstraints()
+
+//        setUpImageViewConstraints()
         setUpSkipButtonConstraints()
-        addGestureRecognizer(leftSwipe)
-    }
-    
-    private func setUpPageControlConstraints(){
-        addSubview(pageControl)
-        pageControl.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([pageControl.centerXAnchor.constraint(equalTo: centerXAnchor), pageControl.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), pageControl.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), pageControl.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3)])
+        setUpInfoViewConstraints()
+//        setUpInfoViewConstraints()
+//        setUpNextButtonConstraints()
     }
     
     private func setUpNextButtonConstraints() {
         addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([nextButton.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 1.0), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
+        NSLayoutConstraint.activate([nextButton.centerYAnchor.constraint(equalTo: centerImage.centerYAnchor), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
     private func setUpImageViewConstraints() {
         addSubview(centerImage)
         centerImage.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 5.0), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)])
+        NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
     }
     
-    private func setUpInfoLabelConstraints(){
-        addSubview(infoLabel)
-        infoLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([infoLabel.topAnchor.constraint(equalToSystemSpacingBelow: centerImage.bottomAnchor, multiplier: 2.0), infoLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16)])
+    private func setUpInfoViewConstraints(){
+        addSubview(infoView)
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+    
+        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 50.0), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.bottomAnchor.constraint(equalTo: skipButton.topAnchor, constant: -8)])
     }
     
     private func setUpSkipButtonConstraints(){
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8), skipButton.heightAnchor.constraint(equalToConstant: 44.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor)])
+        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8), skipButton.heightAnchor.constraint(equalToConstant: 50.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor)])
     }
     
     @objc
     private func showLocationsVC(){
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
+    }
+    
+    public func animateNextButton(){
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat,.autoreverse], animations: {
+            self.nextButton.transform = CGAffineTransform(translationX: -5.0, y: 0.0)
+            self.nextButton.transform = CGAffineTransform(translationX: 5.0, y: 0.0)
+        })
     }
 }
 

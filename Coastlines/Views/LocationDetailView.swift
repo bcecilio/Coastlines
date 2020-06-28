@@ -57,6 +57,7 @@ class LocationDetailView: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 35)
 //        label.font = UIFont(name: "CooperHewitt-Bold", size: 35)
         label.textColor = .white
+        label.addAccessibility(.none, "New York City", nil, nil)
         return label
     }()
     
@@ -66,6 +67,7 @@ class LocationDetailView: UIView {
         label.numberOfLines = 0
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.addAccessibility(.none, "Did you know?", nil, nil)
         return label
     }()
     
@@ -83,6 +85,7 @@ class LocationDetailView: UIView {
         label.numberOfLines = 0
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.addAccessibility(.none, "What this looks like", nil, nil)
         return label
     }()
     
@@ -100,12 +103,13 @@ class LocationDetailView: UIView {
         label.text = "Sea Level Rise by 2100"
         label.textAlignment = .center
         label.font = UIFont.monospacedDigitSystemFont(ofSize: 17, weight: .bold)
+        label.addAccessibility(.none, "Sea Level Rise by 2100", nil, nil)
         return label
     }()
     
     public lazy var seaLevelLineChart: LineChartView = {
         let lineChart = LineChartView()
-        lineChart.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        lineChart.backgroundColor = PaletteColour.offWhite.colour
         lineChart.layer.cornerRadius = 5
         lineChart.clipsToBounds = true
         lineChart.rightAxis.enabled = false
@@ -113,11 +117,11 @@ class LocationDetailView: UIView {
         yAxis.labelFont = .boldSystemFont(ofSize: 12)
         lineChart.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         yAxis.setLabelCount(5, force: false)
-        yAxis.axisLineColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
-        yAxis.labelTextColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        yAxis.axisLineColor = PaletteColour.lightBlue.colour
+        yAxis.labelTextColor = PaletteColour.lightBlue.colour
         lineChart.xAxis.labelPosition = .bottom
-        lineChart.xAxis.labelTextColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
-        lineChart.xAxis.axisLineColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        lineChart.xAxis.labelTextColor = PaletteColour.lightBlue.colour
+        lineChart.xAxis.axisLineColor = PaletteColour.lightBlue.colour
         yAxis.drawGridLinesEnabled = false
         lineChart.xAxis.drawGridLinesEnabled = false
         lineChart.xAxis.setLabelCount(5, force: false)
@@ -132,6 +136,7 @@ class LocationDetailView: UIView {
         label.numberOfLines = 0
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.addAccessibility(.none, "Where will we go?", nil, nil)
         return label
     }()
     
@@ -149,12 +154,13 @@ class LocationDetailView: UIView {
         label.text = "Population Displacement"
         label.textAlignment = .center
         label.font = UIFont.monospacedDigitSystemFont(ofSize: 17, weight: .bold)
+        label.addAccessibility(.none, "Population Displacement", nil, nil)
         return label
     }()
     
     public lazy var populationGraphView: PieChartView = {
         let pieChart = PieChartView()
-        pieChart.backgroundColor = PaletteColours.lightBlue.rawValue.convertHexToColour()
+        pieChart.backgroundColor = PaletteColour.lightBlue.colour
         pieChart.layer.cornerRadius = 5
         pieChart.clipsToBounds = true
         pieChart.chartDescription?.enabled = false
@@ -173,7 +179,7 @@ class LocationDetailView: UIView {
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         button.clipsToBounds = true
         button.setBackgroundImage(UIImage(named:"ar2"), for: .normal)
-        button.backgroundColor = PaletteColours.offWhite.rawValue.convertHexToColour()
+        button.backgroundColor = PaletteColour.offWhite.colour
         button.contentMode = .scaleAspectFit
         button.tintColor = .white
         button.layer.borderWidth = 3
@@ -183,6 +189,7 @@ class LocationDetailView: UIView {
         button.layer.shadowRadius = 3
         button.layer.shadowOpacity = 0.65
         button.layer.masksToBounds = false
+        button.addAccessibility(.button, "Augmented Reality", nil, "Shows sea level rise via an augmented reality experience.")
         return button
     }()
     
