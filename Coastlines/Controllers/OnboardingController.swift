@@ -39,7 +39,7 @@ class OnboardingController: UIViewController {
     }
     
     private func setUp(){
-        secondOnboardingView.backgroundColor = PaletteColour.darkBlue.colour
+        secondOnboardingView.backgroundColor = PaletteColour.lightBlue.colour
     }
 }
 

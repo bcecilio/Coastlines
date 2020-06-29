@@ -36,7 +36,7 @@ class ARCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = PaletteColour.darkBlue.colour
+        backgroundColor = PaletteColour.lightBlue.colour
         
         setupARAnimation()
         setupHeaderLabel()

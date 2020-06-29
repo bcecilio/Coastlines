@@ -12,26 +12,38 @@ import ARKit
 extension ExperimentARController: ARCoachingOverlayViewDelegate {
     
     func setupCoachingOverlayView() {
-        arView.addSubview(coachingOverlay)
-        
         //coachingOverlay.session = arView.session
-        
+        setUpCoachingOverlayConstraints()
+        coachingOverlay.delegate = self
+        coachingOverlay.setActive(true,animated: true)
+//        setActivatesAutomatically()
+        setGoal()
+    }
+    
+    private func setActivatesAutomatically() {
+        coachingOverlay.activatesAutomatically = true
+    }
+    
+    private func setGoal() {
+        coachingOverlay.goal = .horizontalPlane
+    }
+    
+    private func setUpCoachingOverlayConstraints(){
+        arView.addSubview(coachingOverlay)
         coachingOverlay.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             coachingOverlay.centerXAnchor.constraint(equalTo: arView.centerXAnchor),
             coachingOverlay.centerYAnchor.constraint(equalTo: arView.centerYAnchor),
             coachingOverlay.heightAnchor.constraint(equalTo: arView.heightAnchor),
             coachingOverlay.widthAnchor.constraint(equalTo: arView.widthAnchor)])
-        
-        setActivatesAutomatically()
-        setGoal()
     }
     
-    func setActivatesAutomatically() {
-        coachingOverlay.activatesAutomatically = true
+    func coachingOverlayViewWillActivate(_ coachingOverlayView: ARCoachingOverlayView) {
+        coachingOverlayView.isHidden = false
     }
     
-    func setGoal() {
-        coachingOverlay.goal = .horizontalPlane
+    func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
+        coachingOverlayView.isHidden = true
     }
 }

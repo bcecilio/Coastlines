@@ -18,7 +18,7 @@ class LocationsVew: UIView {
         collection.register(LocationCell.self, forCellWithReuseIdentifier: "locationCell")
         collection.register(LocationIntroCell.self, forCellWithReuseIdentifier: "introCell")
         // TODO: Fix paging, it's alignment sucks.
-//        collection.isPagingEnabled = true
+        collection.isPagingEnabled = true
         return collection
     }()
     

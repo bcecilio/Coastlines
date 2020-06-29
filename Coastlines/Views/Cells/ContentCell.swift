@@ -99,7 +99,7 @@ class ContentCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = PaletteColour.darkBlue.colour
+        backgroundColor = PaletteColour.lightBlue.colour
         
         sayMoreButton.addTarget(self, action: #selector(sayMorePressed(_:)), for: .touchUpInside)
         

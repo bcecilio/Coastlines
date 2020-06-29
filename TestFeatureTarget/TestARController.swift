@@ -16,7 +16,7 @@
 //}
 //
 
-//import UIKit
+import UIKit
 //import RealityKit
 //import ARKit
 //
@@ -25,7 +25,7 @@
 //    case disappeared
 //}
 //
-//class TestARController: UIViewController {
+class TestARController: UIViewController {
 //
 //    private let arView = TestARView()
 //    private var ent = ModelEntity()
@@ -93,7 +93,7 @@
 //            boxState = .appeared
 //        }
 //    }
-//}
+}
 //class TestARController: UIViewController {
 //
 //    private let arView = TestARView()

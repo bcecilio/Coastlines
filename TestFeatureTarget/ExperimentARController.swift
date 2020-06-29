@@ -1,6 +1,5 @@
 import RealityKit
 import ARKit
-//import Combine
 import RealityUI
 
 class ExperimentARController: UIViewController {
@@ -67,7 +66,6 @@ class ExperimentARController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         //arView.session.pause()
-        
     }
     
     private func loadScene() {
@@ -81,7 +79,8 @@ class ExperimentARController: UIViewController {
                 self.dropScene = scene
                 
                 self.arView.scene.anchors.append(scene)
-                //                self.coachingOverlay.isHidden = true
+                // self.coachingOverlay.isHidden = true
+                self.coachingOverlay.setActive(false, animated: true)
                 self.dropScene.actions.drop.onAction = self.wasDropped(_:)
             }
         }
@@ -329,6 +328,7 @@ class ExperimentARController: UIViewController {
             backButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
+    
 }
 
 //extension ExperimentARController: ARSCNViewDelegate{
