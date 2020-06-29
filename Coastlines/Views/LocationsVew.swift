@@ -36,7 +36,7 @@ class LocationsVew: UIView {
         button.backgroundColor = PaletteColour.lightGreen.colour
         button.addAccessibility(.button, "Get involved", nil, "Shows a list of actions that can be taken to reduce your carbon footprint.")
         button.makeFontAccessible()
-//        button.layer.borderColor = PaletteColours.lightBlue.rawValue.convertHexToColour().cgColor
+//        button.layer.borderColor = PaletteColours.darkBlue.rawValue.convertHexToColour().cgColor
         button.addTarget(self, action: #selector(goToResourceVC), for: .touchUpInside)
         return button
     }()

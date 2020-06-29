@@ -33,7 +33,7 @@ class LocationDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = PaletteColour.lightBlue.colour
+        view.backgroundColor = PaletteColour.darkBlue.colour
         
         setupUIandTargets()
         
@@ -65,8 +65,8 @@ class LocationDetailController: UIViewController {
         comingSoonAlert.title = "\n\nComing Soon!!!"
         comingSoonAlert.message = "\n\nAn Augmented Reality Experience for \(location.name) is on its way"
         
-        comingSoonAlert.setTitle(font: Font.boldArial26, color: PaletteColour.lightBlue.colour)
-        comingSoonAlert.setMessage(font: Font.boldArial24, color: PaletteColour.lightBlue.colour)
+        comingSoonAlert.setTitle(font: Font.boldArial26, color: PaletteColour.darkBlue.colour)
+        comingSoonAlert.setMessage(font: Font.boldArial24, color: PaletteColour.darkBlue.colour)
     }
     
     @objc func goToARButtonPressed(_ sender: UIButton) {
@@ -77,8 +77,8 @@ class LocationDetailController: UIViewController {
             present(comingSoonAlert, animated: true, completion: nil)
         } else {
             print("AR Pressed")
-            //            let arVC = ExperimentARController(location)
-            //            UIViewController.resetWindow(arVC)
+            let arVC = ExperimentARController(location)
+            UIViewController.resetWindow(arVC)
         }
     
     }
@@ -158,9 +158,9 @@ class LocationDetailController: UIViewController {
     private func setSeaLevelChart() {
         seaChartCell.location = location
         seaChartCell.setSeaLevelData()
-        seaChartCell.seaLevelSet.setCircleColor(PaletteColour.lightBlue.colour)
-        seaChartCell.seaLevelSet.setColor(PaletteColour.lightBlue.colour)
-        seaChartCell.seaLevelSet.fill = Fill(color: PaletteColour.lightBlue.colour)
+        seaChartCell.seaLevelSet.setCircleColor(PaletteColour.darkBlue.colour)
+        seaChartCell.seaLevelSet.setColor(PaletteColour.darkBlue.colour)
+        seaChartCell.seaLevelSet.fill = Fill(color: PaletteColour.darkBlue.colour)
     }
     
 }
@@ -259,8 +259,8 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
                 makeComingSoonAlert()
                 present(comingSoonAlert, animated: true, completion: nil)
             } else {
-                //            let arVC = ExperimentARController(location)
-                //            UIViewController.resetWindow(arVC)
+                let arVC = ExperimentARController(location)
+                UIViewController.resetWindow(arVC)
             }
             
         } else if indexPath.row == 4 {
@@ -271,9 +271,9 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             showAlert.title = fact1
             showAlert.message = fact2
             
-            showAlert.setTitle(font: Font.boldArial26, color: PaletteColour.lightBlue.colour)
+            showAlert.setTitle(font: Font.boldArial26, color: PaletteColour.darkBlue.colour)
             
-            showAlert.setMessage(font: Font.boldArial26, color: PaletteColour.lightBlue.colour)
+            showAlert.setMessage(font: Font.boldArial26, color: PaletteColour.darkBlue.colour)
             self.present(showAlert, animated: true, completion: nil)
         }
     }

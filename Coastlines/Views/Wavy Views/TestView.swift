@@ -26,7 +26,7 @@ class TestView: UIView {
          // Add the first sin wave filled with a very transparent white
         let wave1 = wavyPath(rect: CGRect(x: 0, y: frame.height * -0.0001, width: frame.width, height: frame.height), periods: 2.0, amplitude: 20, start: 0)
          //        let wave1 = wavyPath(rect: CGRect(x: 0, y: top1, width: frame.width, height: frame.height - top1), periods: 0.75, amplitude: 20, start: -5)
-        let clear: UIColor = PaletteColour.lightBlue.colour
+        let clear: UIColor = PaletteColour.darkBlue.colour
          clear.set()
          wave1.fill()
      }

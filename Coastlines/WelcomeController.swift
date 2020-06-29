@@ -22,6 +22,6 @@ class WelcomeController: UIViewController {
     }
     
     private func setUp(){
-        view.backgroundColor = PaletteColour.lightBlue.colour
+        view.backgroundColor = PaletteColour.darkBlue.colour
     }
 }

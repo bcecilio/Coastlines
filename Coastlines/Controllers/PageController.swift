@@ -41,7 +41,7 @@ class PageController: UIPageViewController {
         
         pageControl.backgroundColor = PaletteColour.offWhite.colour
         pageControl.pageIndicatorTintColor = PaletteColour.offWhite.colour
-        pageControl.currentPageIndicatorTintColor = PaletteColour.lightBlue.colour
+        pageControl.currentPageIndicatorTintColor = PaletteColour.darkBlue.colour
         pageControl.isUserInteractionEnabled = false
     }
 

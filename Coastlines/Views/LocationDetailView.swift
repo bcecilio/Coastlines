@@ -117,11 +117,11 @@ class LocationDetailView: UIView {
         yAxis.labelFont = .boldSystemFont(ofSize: 12)
         lineChart.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         yAxis.setLabelCount(5, force: false)
-        yAxis.axisLineColor = PaletteColour.lightBlue.colour
-        yAxis.labelTextColor = PaletteColour.lightBlue.colour
+        yAxis.axisLineColor = PaletteColour.darkBlue.colour
+        yAxis.labelTextColor = PaletteColour.darkBlue.colour
         lineChart.xAxis.labelPosition = .bottom
-        lineChart.xAxis.labelTextColor = PaletteColour.lightBlue.colour
-        lineChart.xAxis.axisLineColor = PaletteColour.lightBlue.colour
+        lineChart.xAxis.labelTextColor = PaletteColour.darkBlue.colour
+        lineChart.xAxis.axisLineColor = PaletteColour.darkBlue.colour
         yAxis.drawGridLinesEnabled = false
         lineChart.xAxis.drawGridLinesEnabled = false
         lineChart.xAxis.setLabelCount(5, force: false)
@@ -160,7 +160,7 @@ class LocationDetailView: UIView {
     
     public lazy var populationGraphView: PieChartView = {
         let pieChart = PieChartView()
-        pieChart.backgroundColor = PaletteColour.lightBlue.colour
+        pieChart.backgroundColor = PaletteColour.darkBlue.colour
         pieChart.layer.cornerRadius = 5
         pieChart.clipsToBounds = true
         pieChart.chartDescription?.enabled = false

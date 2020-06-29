@@ -30,7 +30,7 @@ class FirstOnboardingView: UIView {
     public lazy var welcomeLabel: UILabel = {
         let label = UILabel()
         label.text = OnboardingText.appTitle
-        label.textColor = PaletteColour.lightBlue.colour
+        label.textColor = PaletteColour.darkBlue.colour
         label.textAlignment = NSTextAlignment.center
 //        label.font = UIFont(name: "CooperHewitt-Medium", size: 30)
         label.font = .preferredFont(forTextStyle: .title1, compatibleWith: .current)
@@ -48,7 +48,7 @@ class FirstOnboardingView: UIView {
         view.font = UIFont.preferredFont(forTextStyle: .body)
         view.adjustsFontForContentSizeCategory = true
         view.text = OnboardingText.welcomeMessage
-        view.backgroundColor = PaletteColour.lightBlue.colour
+        view.backgroundColor = PaletteColour.darkBlue.colour
         view.addAccessibility(.none, OnboardingText.welcomeMessage, nil, nil)
         view.isEditable = false
         return view

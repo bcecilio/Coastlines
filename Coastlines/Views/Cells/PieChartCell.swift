@@ -25,7 +25,7 @@ class PieChartCell: UICollectionViewCell {
     
     public lazy var populationGraphView: PieChartView = {
         let pieChart = PieChartView()
-        pieChart.backgroundColor = PaletteColour.lightBlue.colour
+        pieChart.backgroundColor = PaletteColour.darkBlue.colour
         pieChart.layer.cornerRadius = 5
         pieChart.clipsToBounds = true
         pieChart.chartDescription?.enabled = false

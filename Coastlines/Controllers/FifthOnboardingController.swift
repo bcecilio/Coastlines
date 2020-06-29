@@ -22,7 +22,7 @@ class FifthOnboardingController: UIViewController {
     }
     
     private func setUp(){
-        fifthOnboardingView.backgroundColor = PaletteColour.lightBlue.colour
+        fifthOnboardingView.backgroundColor = PaletteColour.darkBlue.colour
     }
 
 }

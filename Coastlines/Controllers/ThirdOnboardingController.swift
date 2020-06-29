@@ -24,6 +24,6 @@ class ThirdOnboardingController: UIViewController {
     }
     
     private func setUp(){
-        thirdOnboardingView.backgroundColor = PaletteColour.lightBlue.colour
+        thirdOnboardingView.backgroundColor = PaletteColour.darkBlue.colour
     }
 }

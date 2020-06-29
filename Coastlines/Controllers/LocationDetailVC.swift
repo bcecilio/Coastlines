@@ -53,7 +53,7 @@ class LocationDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = PaletteColour.lightBlue.colour
+        view.backgroundColor = PaletteColour.darkBlue.colour
         
         locationView.goToARButton.addTarget(self, action: #selector(goToARButtonPressed(_:)), for: .touchUpInside)
         locationView.backButton.addTarget(self, action: #selector(backButtonPressed(_:)), for: .touchUpInside)
@@ -127,9 +127,9 @@ extension LocationDetailVC: UIScrollViewDelegate {
         let triggerHeight = locationView.triggerSLView2.frame.height - locationView.triggerSLView1.frame.height
         if triggerHeight > 15 && !animateSLGraphCalled {
             setSeaLevelData()
-            seaLevelSet.setCircleColor(PaletteColour.lightBlue.colour)
-            seaLevelSet.setColor(PaletteColour.lightBlue.colour)
-            seaLevelSet.fill = Fill(color: PaletteColour.lightBlue.colour)
+            seaLevelSet.setCircleColor(PaletteColour.darkBlue.colour)
+            seaLevelSet.setColor(PaletteColour.darkBlue.colour)
+            seaLevelSet.fill = Fill(color: PaletteColour.darkBlue.colour)
             locationView.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 5, easingOption: .easeInCirc)
             animateSLGraphCalled = true
         }
