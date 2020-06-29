@@ -11,6 +11,7 @@ class LocationDetailController: UIViewController {
     private var augCell = ARCell()
     private var buttonTag = 0
     private var selection = Selection(selected: "")
+    private var comingSoonAlert = UIAlertController()
     
     init(_ location: Location) {
         self.location = location
@@ -54,14 +55,32 @@ class LocationDetailController: UIViewController {
         locationView.locationLabel.text = location.name
         
         locationView.collectionView.isScrollEnabled = false
+        
+//        makeComingSoonAlert()
+    }
+    
+    private func makeComingSoonAlert() {
+        comingSoonAlert = GraphShowAlert.makeAlert(year: 0, rise: 0, vc: self)
+        
+        comingSoonAlert.title = "\n\nComing Soon!!!"
+        comingSoonAlert.message = "\n\nAn Augmented Reality Experience for \(location.name) is on its way"
+        
+        comingSoonAlert.setTitle(font: Font.boldArial26, color: PaletteColour.lightBlue.colour)
+        comingSoonAlert.setMessage(font: Font.boldArial24, color: PaletteColour.lightBlue.colour)
     }
     
     @objc func goToARButtonPressed(_ sender: UIButton) {
         
-        print("AR Button Pressed")
-        
-            let arVC = ExperimentARController(location)
-            UIViewController.resetWindow(arVC)
+        let selection = Selection(selected: location.name)
+        if selection != .newYork {
+            makeComingSoonAlert()
+            present(comingSoonAlert, animated: true, completion: nil)
+        } else {
+            print("AR Pressed")
+            //            let arVC = ExperimentARController(location)
+            //            UIViewController.resetWindow(arVC)
+        }
+    
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
@@ -77,18 +96,14 @@ class LocationDetailController: UIViewController {
     }
     
     @objc func nextButtonPressed(_ sender: UIButton) {
-        print("next button waaaas pressed")
         scrollRightTo()
-        
         buttonTag += 1
         showHideButtons()
         print(buttonTag)
     }
     
     @objc func prevButtonPressed(_ sender: UIButton) {
-        print("previous button waaaas pressed")
         scrollLeftTo()
-        
         buttonTag -= 1
         showHideButtons()
         print(buttonTag)
@@ -237,15 +252,19 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let selection = Selection(selected: location.name)
+        
         if indexPath.row == 6 {
-            print("AR Button Pressed")
-            
-//            let arVC = ExperimentARController(location)
-//            UIViewController.resetWindow(arVC)
+            if selection != .newYork {
+                makeComingSoonAlert()
+                present(comingSoonAlert, animated: true, completion: nil)
+            } else {
+                //            let arVC = ExperimentARController(location)
+                //            UIViewController.resetWindow(arVC)
+            }
             
         } else if indexPath.row == 4 {
             
-            let selection = Selection(selected: location.name)
             let (fact1,fact2) = FactText.getFact(selection)
             let showAlert = GraphShowAlert.makeAlert(year: 0, rise: 0, vc: self)
             
@@ -271,6 +290,8 @@ extension LocationDetailController: TapContents {
         if content == .seeInAR {
             locationView.hideARButton()
             locationView.hideNext()
+            augCell.arIconAnimation.play()
+            augCell.arIconAnimation.loopMode = .loop
         }
     }
     
