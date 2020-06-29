@@ -49,15 +49,15 @@ class LocationsViewController: UIViewController {
 extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // TODO: Implement items
         switch section {
+//        case 0:
+//            return 1
         case 0:
-            return 1
-        case 1:
             return locations.count
         default:
             return 0
@@ -66,13 +66,13 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
+//        case 0:
+//            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "introCell", for: indexPath) as? LocationIntroCell else {
+//                print("Failed to create introCell")
+//                break
+//            }
+//            return cell
         case 0:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "introCell", for: indexPath) as? LocationIntroCell else {
-                print("Failed to create introCell")
-                break
-            }
-            return cell
-        case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "locationCell", for: indexPath) as? LocationCell else {
                 print("Failed to create locationCell")
                 break
@@ -117,7 +117,7 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if indexPath.section == 1 {
+        if indexPath.section == 0 {
             let vc = LocationDetailController(locationData[indexPath.row])
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)

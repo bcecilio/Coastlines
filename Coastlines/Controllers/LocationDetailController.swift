@@ -32,7 +32,7 @@ class LocationDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = PaletteColour.darkBlue.colour
+        view.backgroundColor = PaletteColour.lightBlue.colour
         
         setupUIandTargets()
         
