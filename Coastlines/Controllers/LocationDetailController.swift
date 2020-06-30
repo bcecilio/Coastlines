@@ -77,8 +77,8 @@ class LocationDetailController: UIViewController {
             present(comingSoonAlert, animated: true, completion: nil)
         } else {
             print("AR Pressed")
-            let arVC = ExperimentARController(location)
-            UIViewController.resetWindow(arVC)
+//            let arVC = ExperimentARController(location)
+//            UIViewController.resetWindow(arVC)
         }
     
     }
@@ -259,8 +259,8 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
                 makeComingSoonAlert()
                 present(comingSoonAlert, animated: true, completion: nil)
             } else {
-                let arVC = ExperimentARController(location)
-                UIViewController.resetWindow(arVC)
+//                let arVC = ExperimentARController(location)
+//                UIViewController.resetWindow(arVC)
             }
             
         } else if indexPath.row == 4 {

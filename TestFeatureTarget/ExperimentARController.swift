@@ -330,29 +330,3 @@ class ExperimentARController: UIViewController {
     }
     
 }
-
-//extension ExperimentARController: ARSCNViewDelegate{
-//
-//    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-//
-//        //1. Get The Current Light Estimate
-//        guard let lightEstimate = self.arView.session.currentFrame?.lightEstimate else { return }
-//
-//        //2. Get The Ambient Intensity & Colour Temperatures
-//        let ambientLightEstimate = lightEstimate.ambientIntensity
-//
-//        let ambientColourTemperature = lightEstimate.ambientColorTemperature
-//
-//        print(
-//            """
-//            Current Light Estimate = \(ambientLightEstimate)
-//            Current Ambient Light Colour Temperature Estimate = \(ambientColourTemperature)
-//            """)
-//
-//        if ambientLightEstimate < 100 { print("Lighting Is Too Dark") }
-//
-//        //3. Adjust The Scene Lighting
-//        sceneLight.intensity = ambientLightEstimate
-//        sceneLight.temperature = ambientColourTemperature
-//    }
-//}
