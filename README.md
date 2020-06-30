@@ -1,6 +1,6 @@
 # Coasts
 
-## Short Discription
+## About
 
 Coasts is an application that aims to promote awareness about climate change. More specifically, Coasts is focused on how climate change impacts the sea level. Rather than focus on the world as a whole, we have decided to make use of specific locations around the world to demonstrate the severity of the issue. Each location featured within the app contains a brief summary of the location, as well as some interesting facts, accompanied by charts and graphs to help the user visualize what is happening. 
 
@@ -11,8 +11,12 @@ It should be noted that the water levels are not to scale with the model. No one
 Finally, we have included a resources section that allows users to get involved. This section informs users about lifestyle changes they can make in order to reduce their carbon footprint.
 
 ## Technologies Used
-
 Xcode 11, Swift 5, ARKit, RealityKit, AVFoundation
+
+## Using this Application
+
+ - Currently this application only supports iOS 13.5 and beyond. 
+ - This application makes use of CocoaPods.
 
 ## Code Snippet of Challenging parts
 
