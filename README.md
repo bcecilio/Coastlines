@@ -15,8 +15,8 @@ Xcode 11, Swift 5, ARKit, RealityKit, AVFoundation
 
 ## Using this Application
 
- - Currently this application only supports iOS 13.5 and beyond. 
- - This application makes use of CocoaPods.
+- Currently this application only supports iOS 13.5 and beyond. 
+- This application makes use of CocoaPods.
 
 ## Code Snippet of Challenging parts
 
