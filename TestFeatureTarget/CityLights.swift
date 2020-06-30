@@ -113,20 +113,6 @@ struct CityLights {
         lightTwo.light.intensity = 6000
         lightTwo.transform.rotation = simd_quatf(vector: [GLKMathDegreesToRadians(-250),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(40), 10])
         
-//        lightOne.position =  [-0.2035, 0, 0.1084]
-//
-//        lightOne.light.attenuationRadius = 1.3
-//        lightOne.light.color = .purple
-//        lightOne.light.intensity = 5000
-//
-//        lightOne.transform.rotation = simd_quatf(vector: [GLKMathDegreesToRadians(-70),GLKMathDegreesToRadians(0),GLKMathDegreesToRadians(90), 10])
-        
-//        lightTwo.position = [-0.1261, 0.0487, -0.2044]
-//        lightTwo.light.attenuationRadius = 0.26
-//        lightTwo.light.color = .systemTeal
-//        lightTwo.light.innerAngleInDegrees = 180
-//        lightTwo.light.outerAngleInDegrees = 0
-        
         
         return (lightOne, lightTwo)
     }

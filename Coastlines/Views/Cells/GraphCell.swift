@@ -38,11 +38,11 @@ class GraphCell: UICollectionViewCell {
         yAxis.labelFont = .boldSystemFont(ofSize: 12)
         lineChart.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         yAxis.setLabelCount(5, force: false)
-        yAxis.axisLineColor = PaletteColour.lightBlue.colour
-        yAxis.labelTextColor = PaletteColour.lightBlue.colour
+        yAxis.axisLineColor = PaletteColour.darkBlue.colour
+        yAxis.labelTextColor = PaletteColour.darkBlue.colour
         lineChart.xAxis.labelPosition = .bottom
-        lineChart.xAxis.labelTextColor = PaletteColour.lightBlue.colour
-        lineChart.xAxis.axisLineColor = PaletteColour.lightBlue.colour
+        lineChart.xAxis.labelTextColor = PaletteColour.darkBlue.colour
+        lineChart.xAxis.axisLineColor = PaletteColour.darkBlue.colour
         yAxis.drawGridLinesEnabled = false
         lineChart.xAxis.drawGridLinesEnabled = false
         lineChart.xAxis.setLabelCount(5, force: false)
@@ -125,9 +125,9 @@ extension GraphCell: ChartViewDelegate {
         seaLevelSet.drawCirclesEnabled = false
         seaLevelSet.mode = .cubicBezier
         seaLevelSet.lineWidth = 3
-        seaLevelSet.setCircleColor(PaletteColour.lightBlue.colour)
-        seaLevelSet.setColor(PaletteColour.lightBlue.colour)
-        seaLevelSet.fill = Fill(color: PaletteColour.lightBlue.colour)
+        seaLevelSet.setCircleColor(PaletteColour.darkBlue.colour)
+        seaLevelSet.setColor(PaletteColour.darkBlue.colour)
+        seaLevelSet.fill = Fill(color: PaletteColour.darkBlue.colour)
         seaLevelSet.fillAlpha = 0.6
         seaLevelSet.drawFilledEnabled = true
         seaLevelSet.drawHorizontalHighlightIndicatorEnabled = false

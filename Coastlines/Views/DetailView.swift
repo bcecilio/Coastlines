@@ -71,7 +71,7 @@ class DetailView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collection.backgroundColor = PaletteColour.lightBlue.colour
+        collection.backgroundColor = PaletteColour.darkBlue.colour
         collection.register(TOCCell.self, forCellWithReuseIdentifier: "tocCell")
         collection.register(ContentCell.self, forCellWithReuseIdentifier: "contentCell")
         collection.register(GraphCell.self, forCellWithReuseIdentifier: "graphCell")

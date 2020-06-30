@@ -20,7 +20,8 @@ class ResourceView: UIView {
        let button = UIButton()
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = PaletteColour.lightBlue.colour
+
+        button.tintColor = PaletteColour.darkBlue.colour
         button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         button.addAccessibility(.button, "Back", nil, "Returns to the locations screen.")
         return button

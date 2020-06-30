@@ -23,6 +23,7 @@ struct GraphShowAlert {
         showAlert.title?.accessibilityTraits = .none
         showAlert.message?.accessibilityLabel = forYear.thing
         showAlert.message?.accessibilityTraits = .none
+
         showAlert.view.tintColor = PaletteColour.peach.colour
         
         let height = NSLayoutConstraint(item: showAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)

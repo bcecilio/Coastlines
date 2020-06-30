@@ -1,6 +1,5 @@
 import RealityKit
 import ARKit
-//import Combine
 import RealityUI
 
 class ExperimentARController: UIViewController {
@@ -67,7 +66,6 @@ class ExperimentARController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         //arView.session.pause()
-        
     }
     
     private func loadScene() {
@@ -81,7 +79,8 @@ class ExperimentARController: UIViewController {
                 self.dropScene = scene
                 
                 self.arView.scene.anchors.append(scene)
-                //                self.coachingOverlay.isHidden = true
+                // self.coachingOverlay.isHidden = true
+                self.coachingOverlay.setActive(false, animated: true)
                 self.dropScene.actions.drop.onAction = self.wasDropped(_:)
             }
         }
@@ -329,30 +328,5 @@ class ExperimentARController: UIViewController {
             backButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
+    
 }
-
-//extension ExperimentARController: ARSCNViewDelegate{
-//
-//    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-//
-//        //1. Get The Current Light Estimate
-//        guard let lightEstimate = self.arView.session.currentFrame?.lightEstimate else { return }
-//
-//        //2. Get The Ambient Intensity & Colour Temperatures
-//        let ambientLightEstimate = lightEstimate.ambientIntensity
-//
-//        let ambientColourTemperature = lightEstimate.ambientColorTemperature
-//
-//        print(
-//            """
-//            Current Light Estimate = \(ambientLightEstimate)
-//            Current Ambient Light Colour Temperature Estimate = \(ambientColourTemperature)
-//            """)
-//
-//        if ambientLightEstimate < 100 { print("Lighting Is Too Dark") }
-//
-//        //3. Adjust The Scene Lighting
-//        sceneLight.intensity = ambientLightEstimate
-//        sceneLight.temperature = ambientColourTemperature
-//    }
-//}

@@ -49,6 +49,7 @@ class TOCCell: UICollectionViewCell {
         label.textAlignment = .left
 //        label.font = .preferredFont(forTextStyle: .title1)
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+
         label.numberOfLines = 1
         label.alpha = 1
         return label
@@ -115,6 +116,7 @@ class TOCCell: UICollectionViewCell {
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
         view.addAccessibility(.button, "Population Displacement", nil, "Shows a pie chart displaying potential population displacement for the current location.")
+
         return view
     }()
     
@@ -220,6 +222,7 @@ extension UIView {
         NSLayoutConstraint.activate([
             iv.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 0),
             iv.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 0),
+
             iv.widthAnchor.constraint(equalToConstant: 38),
             iv.heightAnchor.constraint(equalToConstant: 38)
         ])
