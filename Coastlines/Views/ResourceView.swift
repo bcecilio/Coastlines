@@ -12,6 +12,7 @@ class ResourceView: UIView {
     
     public lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = PaletteColour.offWhite.colour
         return tableView
     }()
     

@@ -30,18 +30,9 @@ class ResourcesController: UIViewController {
         view = resourceView
     }
     
-    // testing UI when dark mode is toggled!!! - brendon
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if traitCollection.userInterfaceStyle == .dark {
-            resourceView.header.tintColor = .white
-        } else {
-            resourceView.header.tintColor = .black
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .white
+        view.backgroundColor = PaletteColour.offWhite.colour
         setupTableView()
     }
     
@@ -50,6 +41,7 @@ class ResourcesController: UIViewController {
         resourceView.tableView.delegate = self
         resourceView.tableView.register(ResourceCell.self, forCellReuseIdentifier: "cell")
         resourceView.tableView.separatorStyle = .none
+        resourceView.tableView.backgroundColor = PaletteColour.offWhite.colour
     }
 }
 
@@ -72,7 +64,7 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if selectedIndex == indexPath {
-            return 220
+            return 230
         }
         return 65
     }

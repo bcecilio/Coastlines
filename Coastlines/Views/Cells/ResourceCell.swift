@@ -25,9 +25,7 @@ class ResourceCell: UITableViewCell {
     private lazy var title: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.font = UIFont.systemFont(ofSize: 23, weight: .bold)
-//        label.adjustsFontForContentSizeCategory = true
-//        label.adjustsFontSizeToFitWidth = true
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.textColor = .white
         label.textAlignment = .left
         return label
@@ -41,14 +39,14 @@ class ResourceCell: UITableViewCell {
         tv.textColor = .white
         tv.isEditable = false
         tv.textAlignment = .left
-        tv.backgroundColor = #colorLiteral(red: 0.5626521111, green: 0.7976604104, blue: 0.8191232085, alpha: 1)
+        tv.backgroundColor = PaletteColour.lightBlue.colour
         return tv
     }()
     
     private let container: UIView = {
         let v = UIView()
         v.clipsToBounds = true
-        v.backgroundColor = #colorLiteral(red: 0.5626521111, green: 0.7976604104, blue: 0.8191232085, alpha: 1)
+        v.backgroundColor = PaletteColour.lightBlue.colour
         v.layer.cornerRadius = 12
         return v
     }()
@@ -72,10 +70,10 @@ class ResourceCell: UITableViewCell {
         contentView.addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
-            container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4),
-            container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
-            container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
+            container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 1),
+            container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 1),
+            container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -1),
+            container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -1)
         ])
     }
     
@@ -95,10 +93,10 @@ class ResourceCell: UITableViewCell {
         container.addSubview(subtext)
         subtext.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            subtext.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 15),
+            subtext.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10),
             subtext.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 15),
             subtext.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -15),
-            subtext.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8)
+            subtext.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -5)
 //            subtext.heightAnchor.constraint(equalToConstant: 120)
         ])
     }
