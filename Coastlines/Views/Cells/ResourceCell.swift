@@ -26,8 +26,6 @@ class ResourceCell: UITableViewCell {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-//        label.adjustsFontForContentSizeCategory = true
-//        label.adjustsFontSizeToFitWidth = true
         label.textColor = .white
         label.textAlignment = .left
         return label
@@ -41,14 +39,14 @@ class ResourceCell: UITableViewCell {
         tv.textColor = .white
         tv.isEditable = false
         tv.textAlignment = .left
-        tv.backgroundColor = #colorLiteral(red: 0.5626521111, green: 0.7976604104, blue: 0.8191232085, alpha: 1)
+        tv.backgroundColor = PaletteColour.lightBlue.colour
         return tv
     }()
     
     private let container: UIView = {
         let v = UIView()
         v.clipsToBounds = true
-        v.backgroundColor = #colorLiteral(red: 0.5626521111, green: 0.7976604104, blue: 0.8191232085, alpha: 1)
+        v.backgroundColor = PaletteColour.lightBlue.colour
         v.layer.cornerRadius = 12
         return v
     }()
