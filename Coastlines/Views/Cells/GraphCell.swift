@@ -70,7 +70,7 @@ class GraphCell: UICollectionViewCell {
         setupSeaLevelGraph()
         setupDescriptionLabel()
         setSeaLevelData()
-        flashChart()
+//        flashChart()
     }
     
     private func setupHeaderLabel() {
