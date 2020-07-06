@@ -12,7 +12,7 @@ class ResourceView: UIView {
     
     public lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = PaletteColour.offWhite.colour
+        tableView.backgroundColor = .clear
         return tableView
     }()
     
@@ -57,7 +57,9 @@ class ResourceView: UIView {
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             prevButton.topAnchor.constraint(equalTo: topAnchor, constant: 35),
-            prevButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15)
+            prevButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            prevButton.widthAnchor.constraint(equalToConstant: 38),
+            prevButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
     
