@@ -12,7 +12,7 @@ class WelcomeController: UIViewController {
 
     private let introView = FirstOnboardingView()
     
-    override func loadView(){
+    override func loadView() {
         view = introView
     }
     
@@ -21,7 +21,7 @@ class WelcomeController: UIViewController {
         setUp()
     }
     
-    private func setUp(){
+    private func setUp() {
         view.backgroundColor = PaletteColour.darkBlue.colour
     }
 }

@@ -12,7 +12,7 @@ class FifthOnboardingController: UIViewController {
 
     private let fifthOnboardingView = FifthOnboardingView()
     
-    override func loadView(){
+    override func loadView() {
         view = fifthOnboardingView
     }
     
@@ -21,7 +21,7 @@ class FifthOnboardingController: UIViewController {
         setUp()
     }
     
-    private func setUp(){
+    private func setUp() {
         fifthOnboardingView.backgroundColor = PaletteColour.darkBlue.colour
     }
 

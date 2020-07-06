@@ -54,7 +54,7 @@
 		B724305924A1665B00EF211F /* IcebergPan2.mov in Resources */ = {isa = PBXBuildFile; fileRef = B724305724A1665B00EF211F /* IcebergPan2.mov */; };
 		B776AD412497F5AF00034A4E /* ResourcesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */; };
 		B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */; };
-		B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsVew.swift */; };
+		B7A4588E247F10BE001F8E51 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsView.swift */; };
 		B7B59BDB2497E4A0004CA137 /* ResourcesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */; };
 		B7B59BDD2497E4E8004CA137 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDC2497E4E8004CA137 /* ResourceView.swift */; };
 		B7B59BDE2497E4E8004CA137 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDC2497E4E8004CA137 /* ResourceView.swift */; };
@@ -90,7 +90,7 @@
 		C40F2CF22490127D00AA1756 /* WavyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35424B2488000600AAB02C /* WavyView2.swift */; };
 		C40F2CF32490128000AA1756 /* ARCoastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F373247EF4B4001E17F0 /* ARCoastView.swift */; };
 		C40F2CF42490128300AA1756 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
-		C40F2CF52490128500AA1756 /* LocationsVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsVew.swift */; };
+		C40F2CF52490128500AA1756 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsView.swift */; };
 		C40F2CF62490128800AA1756 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
 		C40F2CF72490128A00AA1756 /* LocationReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB92485376A007A94BF /* LocationReusableView.swift */; };
 		C40F2CF82490128E00AA1756 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423762489E617000C1A9B /* ContentCell.swift */; };
@@ -203,7 +203,7 @@
 		B724305424A14E2400EF211F /* IcebergPan.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IcebergPan.mov; sourceTree = "<group>"; };
 		B724305724A1665B00EF211F /* IcebergPan2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IcebergPan2.mov; sourceTree = "<group>"; };
 		B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
-		B7A4588D247F10BE001F8E51 /* LocationsVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVew.swift; sourceTree = "<group>"; };
+		B7A4588D247F10BE001F8E51 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesController.swift; sourceTree = "<group>"; };
 		B7B59BDC2497E4E8004CA137 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 		B7B59BDF2497E532004CA137 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
@@ -295,7 +295,7 @@
 				02B9AC9C248EC3AE0037971E /* Onboarding Views */,
 				0B09F373247EF4B4001E17F0 /* ARCoastView.swift */,
 				0289F8F9247DB933008D3910 /* LocationDetailView.swift */,
-				B7A4588D247F10BE001F8E51 /* LocationsVew.swift */,
+				B7A4588D247F10BE001F8E51 /* LocationsView.swift */,
 				028423742489C984000C1A9B /* DetailView.swift */,
 				0BCDFFB92485376A007A94BF /* LocationReusableView.swift */,
 				B7B59BDC2497E4E8004CA137 /* ResourceView.swift */,
@@ -414,10 +414,7 @@
 		0B1F213A2476DEC300729365 /* Coastlines */ = {
 			isa = PBXGroup;
 			children = (
-				B724305424A14E2400EF211F /* IcebergPan.mov */,
-				B724305724A1665B00EF211F /* IcebergPan2.mov */,
-				B7C49F8424A29ABC00D07683 /* coastPan.mov */,
-				B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */,
+				C451F30C24B3C4C300353AD3 /* KenBurnsEffect */,
 				02858577248304B70003E31A /* JSON Data */,
 				0289F8F8247DA0D2008D3910 /* Models */,
 				0289F8F7247DA0BA008D3910 /* Services */,
@@ -469,6 +466,17 @@
 				C40F2CE02490123A00AA1756 /* Info.plist */,
 			);
 			path = TestFeatureTarget;
+			sourceTree = "<group>";
+		};
+		C451F30C24B3C4C300353AD3 /* KenBurnsEffect */ = {
+			isa = PBXGroup;
+			children = (
+				B724305424A14E2400EF211F /* IcebergPan.mov */,
+				B724305724A1665B00EF211F /* IcebergPan2.mov */,
+				B7C49F8424A29ABC00D07683 /* coastPan.mov */,
+				B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */,
+			);
+			path = KenBurnsEffect;
 			sourceTree = "<group>";
 		};
 		C48EBCC424884626001DB0A3 /* Supporting Files */ = {
@@ -772,7 +780,7 @@
 				C4CFF34C249AC87C00777962 /* PageController.swift in Sources */,
 				0273707E24A00D2C00A10E7B /* FactText.swift in Sources */,
 				0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */,
-				B7A4588E247F10BE001F8E51 /* LocationsVew.swift in Sources */,
+				B7A4588E247F10BE001F8E51 /* LocationsView.swift in Sources */,
 				C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */,
 				C463926124847EE800DDB4DE /* ThirdOnboardingController.swift in Sources */,
 				C48EBCCE24884626001DB0A3 /* AppDelegate.swift in Sources */,
@@ -826,7 +834,7 @@
 				C40F2CE42490124F00AA1756 /* WelcomeController.swift in Sources */,
 				02AC5AA224996FCE00468145 /* SeaLevelComputations.swift in Sources */,
 				B7B59BE42497E8C9004CA137 /* ResourceModel.swift in Sources */,
-				C40F2CF52490128500AA1756 /* LocationsVew.swift in Sources */,
+				C40F2CF52490128500AA1756 /* LocationsView.swift in Sources */,
 				C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */,
 				C40F2CF12490127700AA1756 /* WavyView.swift in Sources */,
 				C40F2D01249012A700AA1756 /* UIButton+Extension.swift in Sources */,

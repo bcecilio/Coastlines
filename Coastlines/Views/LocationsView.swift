@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocationsVew: UIView {
+class LocationsView: UIView {
 
     public lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
