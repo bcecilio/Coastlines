@@ -9,6 +9,8 @@
 import UIKit
 import Charts
 
+// このファイル無要
+
 class LocationDetailVC: UIViewController {
     
     private let locations = FactsData.getLocations()
@@ -72,10 +74,8 @@ class LocationDetailVC: UIViewController {
     
     
     @objc func goToARButtonPressed(_ sender: UIBarButtonItem) {
-//        let arVC = ARViewController()
-//        present(arVC, animated: true)
-//        let arcV = TestARController()
-//        present(arcV, animated: true)
+//        let arVC = ExperimentARController(location)
+//        present(arVC, animated: true, completion: nil)
     }
     
     @objc func backButtonPressed(_ sender: UIBarButtonItem) {

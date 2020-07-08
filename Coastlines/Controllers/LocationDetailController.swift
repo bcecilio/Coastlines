@@ -32,16 +32,12 @@ class LocationDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = PaletteColour.darkBlue.colour
         
         setupUIandTargets()
-        
+        showHideButtons()
         locationView.collectionView.delegate = self
         locationView.collectionView.dataSource = self
-        
-        showHideButtons()
-        
     }
     
     private func setupUIandTargets() {
@@ -53,10 +49,7 @@ class LocationDetailController: UIViewController {
         
         locationView.imageOne.image = UIImage(named: location.images.one)
         locationView.locationLabel.text = location.name
-        
         locationView.collectionView.isScrollEnabled = false
-        
-//        makeComingSoonAlert()
     }
     
     private func makeComingSoonAlert() {
@@ -76,7 +69,6 @@ class LocationDetailController: UIViewController {
             makeComingSoonAlert()
             present(comingSoonAlert, animated: true, completion: nil)
         } else {
-            print("AR Pressed")
 //            let arVC = ExperimentARController(location)
 //            UIViewController.resetWindow(arVC)
         }

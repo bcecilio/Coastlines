@@ -25,21 +25,6 @@ class LocationsViewController: UIViewController {
         super.viewDidLoad()
         locationsView.collectionView.dataSource = self
         locationsView.collectionView.delegate = self
-        title = "Locations" //無要
-    }
-    //無要
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
-    }
-    
-    //無要
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 
@@ -75,11 +60,7 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let verticalSpace = view.frame.height / 5
-        if section == 0 {
-            return UIEdgeInsets(top: verticalSpace, left: 0, bottom: verticalSpace, right: 0)
-        } else {
-            return UIEdgeInsets(top: verticalSpace, left: 0, bottom: verticalSpace, right: 0)
-        }
+        return UIEdgeInsets(top: verticalSpace, left: 0, bottom: verticalSpace, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -94,7 +75,7 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        /// The horizontal position of the scrollview.
+        // The horizontal position of the scrollview.
         let x = scrollView.contentOffset.x
         let change = x - oldValue
         
