@@ -1,5 +1,13 @@
 # Coasts
 
+## Contributors 
+
+[Cameron Rivera](https://github.com/CameronRivera) 
+
+[Brendon Cecilio](https://github.com/bcecilio)
+
+[Kelby Mittan](https://github.com/kelby-mittan)
+
 ## About
 
 Coasts is an application that aims to promote awareness about climate change. More specifically, Coasts is focused on how climate change impacts the sea level. Rather than focus on the world as a whole, we have decided to make use of specific locations around the world to demonstrate the severity of the issue. Each location featured within the app contains a brief summary of the location, as well as some interesting facts, accompanied by charts and graphs to help the user visualize what is happening. 
