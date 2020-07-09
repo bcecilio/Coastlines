@@ -11,7 +11,6 @@ class LocationDetailController: UIViewController {
     private var augCell = ARCell()
     private var buttonTag = 0
     private var selection = Selection(selected: "")
-    private var comingSoonAlert = UIAlertController()
     
     init(_ location: Location) {
         self.location = location
@@ -52,27 +51,17 @@ class LocationDetailController: UIViewController {
         locationView.collectionView.isScrollEnabled = false
     }
     
-    private func makeComingSoonAlert() {
-        comingSoonAlert = GraphShowAlert.makeAlert(year: 0, rise: 0, vc: self)
+    @objc func goToARButtonPressed(_ sender: UIButton?) {
         
-        comingSoonAlert.title = "\n\nComing Soon!!!"
-        comingSoonAlert.message = "\n\nAn Augmented Reality Experience for \(location.name) is on its way"
-        
-        comingSoonAlert.setTitle(font: Font.boldArial26, color: PaletteColour.darkBlue.colour)
-        comingSoonAlert.setMessage(font: Font.boldArial24, color: PaletteColour.darkBlue.colour)
-    }
-    
-    @objc func goToARButtonPressed(_ sender: UIButton) {
-        
-        let selection = Selection(selected: location.name)
-        if selection != .newYork {
-            makeComingSoonAlert()
+        if Selection(selected: location.name) != .newYork {
+            let comingSoonAlert = makeAlert("\n\nComing Soon!!!", "\n\nAn Augmented Reality Experience for \(location.name) is on its way", Font.boldArial26, PaletteColour.darkBlue.colour)
+            comingSoonAlert.setMessage(font: Font.boldArial24, color: PaletteColour.darkBlue.colour)
             present(comingSoonAlert, animated: true, completion: nil)
         } else {
-//            let arVC = ExperimentARController(location)
-//            UIViewController.resetWindow(arVC)
+            //            let arVC = ExperimentARController(location)
+            //            UIViewController.resetWindow(arVC)
         }
-    
+        
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
@@ -220,8 +209,8 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             return contentCell
         case 6:
             augCell = arCell
-//            augCell.arIconAnimation.play()
-//            augCell.arIconAnimation.loopMode = .loop
+            //            augCell.arIconAnimation.play()
+            //            augCell.arIconAnimation.loopMode = .loop
             return augCell
         default:
             break
@@ -244,28 +233,13 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let selection = Selection(selected: location.name)
-        
         if indexPath.row == 6 {
-            if selection != .newYork {
-                makeComingSoonAlert()
-                present(comingSoonAlert, animated: true, completion: nil)
-            } else {
-//                let arVC = ExperimentARController(location)
-//                UIViewController.resetWindow(arVC)
-            }
-            
+            goToARButtonPressed(nil)
         } else if indexPath.row == 4 {
-            
+            let selection = Selection(selected: location.name)
             let (fact1,fact2) = FactText.getFact(selection)
-            let showAlert = GraphShowAlert.makeAlert(year: 0, rise: 0, vc: self)
+            let showAlert = makeAlert(fact1, fact2, Font.boldArial26, PaletteColour.darkBlue.colour)
             
-            showAlert.title = fact1
-            showAlert.message = fact2
-            
-            showAlert.setTitle(font: Font.boldArial26, color: PaletteColour.darkBlue.colour)
-            
-            showAlert.setMessage(font: Font.boldArial26, color: PaletteColour.darkBlue.colour)
             self.present(showAlert, animated: true, completion: nil)
         }
     }
@@ -298,7 +272,6 @@ extension LocationDetailController: GraphClicked {
     
     func clickedOnGraph(year: Double, rise: Double) {
         let showAlert = GraphShowAlert.makeAlert(year: year, rise: rise, vc: self)
-        
         self.present(showAlert, animated: true, completion: nil)
     }
     
