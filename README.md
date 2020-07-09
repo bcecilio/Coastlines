@@ -25,14 +25,13 @@ Xcode 11, Swift 5, ARKit, RealityKit, AVFoundation
 
 ## Gif
 
-Onboarding | Detail | Resources
+_Onboarding_ | _Detail_ | _Resources_
 ------------ | ------------- | -------------
 ![gif](Assets/coastsGIF1.gif) | ![gif](Assets/coastsGIF2.gif) | ![gif](Assets/resourcesGIF.gif)
 
-AR One | AR Two
+_AR_ _One_ | _AR_ _Two_
 ------------ | -------------
 ![gif](Assets/coastsARGIF.gif) | ![gif](Assets/coastsARGIF2.gif)
-
 
 ## Code Snippet of Challenging parts
 
