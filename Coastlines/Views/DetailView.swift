@@ -246,23 +246,25 @@ class DetailView: UIView {
     }
     
     public func hideARButton() {
-        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
-            self.goToARButton.alpha = 0
-            
-        })  { (completed) in
-            self.goToARButton.isHidden = true
-        }
+//        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
+//            self.goToARButton.alpha = 0
+//
+//        })  { (completed) in
+//            self.goToARButton.isHidden = true
+//        }
+        goToARButton.pulsate()
     }
     
     public func showARButton() {
-        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
-            
-            self.goToARButton.isHidden = false
-            self.goToARButton.alpha = 1
-            
-        })  { (completed) in
-            
-        }
+//        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
+//
+//            self.goToARButton.isHidden = false
+//            self.goToARButton.alpha = 1
+//
+//        })  { (completed) in
+//
+//        }
+        goToARButton.pulsate(1, 1)
     }
     
     public func hidePrev(delay: TimeInterval = 0) {
@@ -297,4 +299,18 @@ class DetailView: UIView {
         },completion: nil)
     }
     
+}
+
+extension UIButton {
+    func pulsate(_ start: Float = 0.97, _ stop: Float = 1.1) {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.7
+        pulse.fromValue = start
+        pulse.toValue = stop
+        pulse.autoreverses = true
+        pulse.repeatCount = .infinity
+        pulse.initialVelocity = 0
+        pulse.damping = 5
+        layer.add(pulse, forKey: nil)
+    }
 }
