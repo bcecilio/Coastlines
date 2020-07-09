@@ -53,6 +53,56 @@ extension UIView{
 }
 ```
 
+### Manipulating position and scale of Reality Composer entity
+```swift
+struct CompSeaLevel {
+    /**
+     - Description:
+     This function returns a transform property to manipulate the position and scale of an entity from a reality composer project.
+     
+     - Parameters:
+        - sliderVal: Represents the float value of a slider in an augmented reality view controller.
+        - entity: The entity in the reality composer project to perform a transform on.
+     */
+    
+    static func riseDropOne(sliderVal: Float, entity: Entity?) -> Transform? {
+        
+        var transform = entity?.transform
+        
+        switch sliderVal {
+        case 0.0..<0.2:
+            transform?.translation = [-0.31,0.041,-0.02]
+            transform?.scale = [1,1,1]
+        case 0.2..<0.3:
+            transform?.translation = [-0.297,0.041,-0.029]
+            transform?.scale = [1.375,1,1.375]
+        case 0.3..<0.4:
+            transform?.translation = [-0.286,0.041,-0.038]
+            transform?.scale = [1.75,1,1.75]
+        case 0.4..<0.5:
+            transform?.translation = [-0.274,0.041,-0.046]
+            transform?.scale = [2.125,1,2.125]
+        case 0.5..<0.6:
+            transform?.translation = [-0.262,0.041,-0.055]
+            transform?.scale = [2.5,1,2.5]
+        case 0.6..<0.7:
+            transform?.translation = [-0.249,0.041,-0.064]
+            transform?.scale = [2.875,1,2.875]
+        case 0.7..<0.8:
+            transform?.translation = [-0.237,0.041,-0.073]
+            transform?.scale = [3.25,1,3.25]
+        case 0.8..<0.9:
+            transform?.translation = [-0.225,0.041,-0.081]
+            transform?.scale = [3.625,1,3.625]
+        default:
+            transform?.translation = [-0.213,0.041,-0.09]
+            transform?.scale = [4,1,4]
+        }
+        return transform
+    }
+  }
+  ```
+
 ## Screenshot of the App
 
 ## Gif
