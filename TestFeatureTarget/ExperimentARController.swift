@@ -45,17 +45,6 @@ class ExperimentARController: UIViewController {
         //        setupOccBox()
         setupSlider()
         
-//        let arBackground = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-//        
-//        arView.environment.background = .color(arBackground)
-        
-//        sceneLight = SCNLight()
-//        sceneLight.type = .omni
-//
-//        let lightNode = SCNNode()
-//        lightNode.light = sceneLight
-//        lightNode.position = SCNVector3(0,0,2)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

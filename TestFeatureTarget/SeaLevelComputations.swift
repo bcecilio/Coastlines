@@ -12,6 +12,16 @@ import RealityUI
 
 struct CompSeaLevel {
     
+    /**
+     - Description:
+     This function returns a transform property to manipulate the position and scale of an entity from a reality composer project.
+     
+     - Parameters:
+        - sliderVal: Represents the float value of a slider in an augmented reality view controller.
+        - entity: The entity in the reality composer project to perform a transform on.
+     
+     */
+    
     static func riseDropOne(sliderVal: Float, entity: Entity?) -> Transform? {
         
         var transform = entity?.transform
