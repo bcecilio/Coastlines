@@ -2,11 +2,7 @@
 
 ## Contributors 
 
-[Cameron Rivera](https://github.com/CameronRivera) 
-
-[Brendon Cecilio](https://github.com/bcecilio)
-
-[Kelby Mittan](https://github.com/kelby-mittan)
+[Cameron Rivera](https://github.com/CameronRivera) | [Brendon Cecilio](https://github.com/bcecilio) | [Kelby Mittan](https://github.com/kelby-mittan)
 
 ## About
 
@@ -113,5 +109,3 @@ struct CompSeaLevel {
     }
   }
   ```
-
-## Screenshot of the App
