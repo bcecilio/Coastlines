@@ -11,6 +11,7 @@ import UIKit
 class ResourcesController: UIViewController {
     
     private let resourceView = ResourceView()
+    private var resourceCell = ResourceCell()
     
     private var resources = [
         Resources(title: "Bike to Work!", description: "\u{2022} To help, we've rounded up our best tips for eco-friendly commuting, starting a carpool, commuting by bike, and much more in this guide. You'll save money, time, and reduce your carbon footprint -- and could even lose weight!"),
@@ -24,7 +25,8 @@ class ResourcesController: UIViewController {
     let url = URL(string: "https://globalclimatestrike.net/more/")
 //    UIApplication.shared.open(url)
     
-    private var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
+    private var selectedIndex: IndexPath = IndexPath(row: -1, section: 0)
+    private var lastIndex: IndexPath = IndexPath(row: 0, section: 0)
     
     override func loadView() {
         view = resourceView
@@ -43,6 +45,8 @@ class ResourcesController: UIViewController {
         resourceView.tableView.separatorStyle = .none
         resourceView.tableView.backgroundColor = .clear
     }
+    
+    var lastRowHeight = CGFloat()
 }
 
 extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
@@ -54,15 +58,20 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ResourceCell else {
             fatalError("it no dequeue bro")
         }
+        resourceCell = cell
         let data = resources[indexPath.row]
-        cell.configureCell(with: data)
-        cell.selectionStyle = .none
-        cell.animate()
-        cell.backgroundColor = .clear
-        return cell
+        resourceCell.configureCell(with: data)
+        resourceCell.selectionStyle = .none
+        resourceCell.animate()
+        resourceCell.backgroundColor = PaletteColour.offWhite.colour
+        return resourceCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            
+        if lastRowHeight == 230 {
+            return 65
+        }
         
         if selectedIndex == indexPath {
             return 230
@@ -71,10 +80,47 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         selectedIndex = indexPath
         
+        let upChevron = UIImage(systemName: "chevron.compact.up")
+        let downChevron = UIImage(systemName: "chevron.compact.down")
+        
+        guard let cell = tableView.cellForRow(at: selectedIndex) as? ResourceCell, let lastCell = tableView.cellForRow(at: lastIndex) as? ResourceCell else {
+            fatalError()
+        }
+        
+        print("last: \(lastCell.frame.height)")
+        
+        print("current: \(cell.frame.height)")
+        
+        if cell.frame.height == 65 {
+            cell.downExpand.image = upChevron
+            if cell != lastCell {
+               lastCell.downExpand.image = downChevron
+            }
+        } else if cell.frame.height == 230 {
+            cell.downExpand.image = downChevron
+            if cell != lastCell {
+                lastCell.downExpand.image = upChevron
+            }
+        }
+        
+//        if lastCell.frame.height == 230 && cell.frame.height == 230 {
+//            cell.downExpand.image = upChevron
+//        } else if lastCell.frame.height == 230 && cell.frame.height == 65 {
+//            cell.downExpand.image = upChevron
+//        } else {
+//            cell.downExpand.image = downChevron
+//        }
+        
+        lastRowHeight = cell.frame.height
+//        print(selectedIndex.row)
         tableView.beginUpdates()
         tableView.reloadRows(at: [indexPath], with: .none)
         tableView.endUpdates()
+        lastIndex = indexPath
+                
     }
+    
 }

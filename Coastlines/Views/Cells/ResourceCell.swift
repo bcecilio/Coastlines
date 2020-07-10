@@ -26,7 +26,9 @@ class ResourceCell: UITableViewCell {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.textColor = .white
+        label.textColor = PaletteColour.offWhite.colour
+        label.backgroundColor = .green
+        label.clipsToBounds = true
         label.textAlignment = .left
         return label
     }()
@@ -36,17 +38,35 @@ class ResourceCell: UITableViewCell {
         tv.text = ""
         tv.font = UIFont.preferredFont(forTextStyle: .body)
         tv.adjustsFontForContentSizeCategory = true
-        tv.textColor = .white
+        tv.textColor = PaletteColour.offWhite.colour
         tv.isEditable = false
         tv.textAlignment = .left
-        tv.backgroundColor = PaletteColour.lightBlue.colour
+        tv.backgroundColor = .clear//PaletteColour.lightBlue.colour
         return tv
+    }()
+    
+    public lazy var downExpand: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(systemName: "chevron.compact.down")
+        iv.tintColor = PaletteColour.offWhite.colour
+        return iv
+    }()
+    
+    private lazy var linkLabel: UILabel = {
+       let label = UILabel()
+        label.text = "learn more"
+        label.textAlignment = .right
+        label.textColor = PaletteColour.offWhite.colour
+        label.backgroundColor = .brown
+        label.isUserInteractionEnabled = true
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        return label
     }()
     
     private let container: UIView = {
         let v = UIView()
         v.clipsToBounds = true
-        v.backgroundColor = PaletteColour.lightBlue.colour
+        v.backgroundColor = .systemPurple//PaletteColour.lightBlue.colour
         v.layer.cornerRadius = 12
         return v
     }()
@@ -63,7 +83,9 @@ class ResourceCell: UITableViewCell {
     private func commonInit() {
         setupContainer()
         setupTitle()
+        setupDownExpand()
         setupSubText()
+//        setupLinkLabel()
     }
     
     private func setupContainer() {
@@ -89,6 +111,18 @@ class ResourceCell: UITableViewCell {
         
     }
     
+    private func setupDownExpand() {
+        container.addSubview(downExpand)
+        downExpand.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            downExpand.centerYAnchor.constraint(equalTo: title.centerYAnchor),
+            downExpand.centerXAnchor.constraint(equalTo: title.trailingAnchor),
+            downExpand.heightAnchor.constraint(equalTo: title.heightAnchor),
+            downExpand.widthAnchor.constraint(equalTo: downExpand.heightAnchor)
+        ])
+    }
+    
     private func setupSubText() {
         container.addSubview(subtext)
         subtext.translatesAutoresizingMaskIntoConstraints = false
@@ -101,6 +135,17 @@ class ResourceCell: UITableViewCell {
         ])
     }
     
+    private func setupLinkLabel() {
+        subtext.addSubview(linkLabel)
+        linkLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            linkLabel.bottomAnchor.constraint(equalTo: subtext.bottomAnchor, constant: -5),
+            linkLabel.leadingAnchor.constraint(equalTo: subtext.leadingAnchor, constant: 10),
+            linkLabel.trailingAnchor.constraint(equalTo: subtext.trailingAnchor, constant: -10)
+        ])
+    }
+    
     public func animate() {
         UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.8, initialSpringVelocity: 1,options: [.curveEaseIn], animations: {
             self.contentView.layoutIfNeeded()
@@ -108,9 +153,14 @@ class ResourceCell: UITableViewCell {
     }
     
     public func configureCell(with resource: Resources) {
-        title.text = resource.title
+        title.text = "\(resource.title)"
         subtext.text = resource.description
         title.addAccessibility(.none, resource.title, nil, nil)
         subtext.addAccessibility(.none, resource.description, nil, nil)
+//        if self.frame.height < 200 {
+//            linkLabel.isHidden = true
+//        } else {
+//            linkLabel.isHidden = false
+//        }
     }
 }

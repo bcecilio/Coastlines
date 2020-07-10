@@ -13,9 +13,9 @@ class DetailView: UIView {
     
     public lazy var backButton: UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.setBackgroundImage(UIImage(systemName: "chevron.compact.left"), for: .normal)
         button.backgroundColor = .clear
-        button.tintColor = .white
+        button.tintColor = PaletteColour.offWhite.colour
         button.contentMode = .scaleToFill
         button.layer.cornerRadius = 5
         return button

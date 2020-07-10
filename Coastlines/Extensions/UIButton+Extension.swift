@@ -75,3 +75,18 @@ extension UIButton {
         self.titleLabel?.textAlignment = .center
     }
 }
+
+extension UIImageView {
+    func hide() {
+        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
+            self.alpha = 0
+        },completion: nil)
+    }
+    
+    func show() {
+        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
+            self.alpha = 1
+        },completion: nil)
+    }
+}
+
