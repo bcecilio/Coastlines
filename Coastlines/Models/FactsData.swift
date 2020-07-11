@@ -21,6 +21,7 @@ struct Location: Decodable {
 
 struct LocationImages: Decodable {
     let one: String
+    let accessibility: String
     let two: String
     let three: String
     let four: String

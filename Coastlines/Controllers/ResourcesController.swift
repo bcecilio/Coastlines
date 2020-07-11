@@ -95,12 +95,12 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
         print("current: \(cell.frame.height)")
         
         if cell.frame.height == 65 {
-            cell.downExpand.image = upChevron
+            cell.downExpand.image = downChevron
             if cell != lastCell {
                lastCell.downExpand.image = downChevron
             }
         } else if cell.frame.height == 230 {
-            cell.downExpand.image = downChevron
+            cell.downExpand.image = upChevron
             if cell != lastCell {
                 lastCell.downExpand.image = upChevron
             }
@@ -119,6 +119,7 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
         tableView.beginUpdates()
         tableView.reloadRows(at: [indexPath], with: .none)
         tableView.endUpdates()
+        
         lastIndex = indexPath
                 
     }

@@ -54,6 +54,8 @@ class LocationDetailController: UIViewController {
         locationView.imageOne.image = UIImage(named: location.images.one)
         locationView.locationLabel.text = location.name
         
+        locationView.imageOne.addAccessibility(.image, location.images.accessibility, nil, "")
+        
         locationView.collectionView.isScrollEnabled = false
         
 //        makeComingSoonAlert()
@@ -161,6 +163,7 @@ class LocationDetailController: UIViewController {
         seaChartCell.seaLevelSet.setCircleColor(PaletteColour.darkBlue.colour)
         seaChartCell.seaLevelSet.setColor(PaletteColour.darkBlue.colour)
         seaChartCell.seaLevelSet.fill = Fill(color: PaletteColour.darkBlue.colour)
+        seaChartCell.headerLabel.addAccessibility(.none, "This is a line chart that shows how sea levels might rise from now until 2100. It is even possible that by the year 2100 sea levels could surpass 6 feet.", nil, "Tapping on this chart displays a pop up view for the rise in sea level for the selected year")
     }
     
 }
