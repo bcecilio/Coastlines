@@ -36,14 +36,17 @@ class ResourceCell: UITableViewCell {
         tv.text = ""
         tv.font = UIFont.preferredFont(forTextStyle: .body)
         tv.adjustsFontForContentSizeCategory = true
-        tv.textColor = .white
+        tv.linkTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange, NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+        tv.isUserInteractionEnabled = true
         tv.isEditable = false
+        tv.isSelectable = true
+        tv.dataDetectorTypes = UIDataDetectorTypes.link
         tv.textAlignment = .left
-        tv.backgroundColor = PaletteColour.lightBlue.colour
+        tv.backgroundColor = UIColor.clear
         return tv
     }()
     
-    private let container: UIView = {
+    private lazy var container: UIView = {
         let v = UIView()
         v.clipsToBounds = true
         v.backgroundColor = PaletteColour.lightBlue.colour
@@ -109,7 +112,12 @@ class ResourceCell: UITableViewCell {
     
     public func configureCell(with resource: Resources) {
         title.text = resource.title
-        subtext.text = resource.description
+//        subtext.text = resource.description
+        let attString = NSMutableAttributedString(string: resource.description)
+        let url = "https://www.apple.com"
+        attString.setAttributes([.link: url, NSAttributedString.Key.foregroundColor: UIColor.black], range: NSMakeRange(attString.length - 11, 11))
+        subtext.attributedText = attString
+    
         title.addAccessibility(.none, resource.title, nil, nil)
         subtext.addAccessibility(.none, resource.description, nil, nil)
     }
