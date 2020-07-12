@@ -32,7 +32,7 @@ Alternatively, if you are a climate change expert, you can go ahead and skip the
 public struct LocationDescription{
     static let nycImage = "A yellow taxi cab is shown waiting at a busy new york city street corner."
     static let nycImageValue = "Tap to learn more about how the rising sea level will affect new york city."
-    static let newOrleansImage = "A view of buildings is shown from a high vantage point."
+    static let newOrleansImage = "New Orleans' bustling Bourbon Street is shown with ominous clouds overhead."
     static let newOrleansValue = "Tap to learn more about how the rising sea level will affect New Orleans."
     static let floridaImage = "A Miami beach with clear blue water is shown extending into the distance."
     static let floridaValue = "Tap to learn more about how the rising sea level will affect Miami."

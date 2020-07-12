@@ -88,7 +88,6 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.cellForRow(at: selectedIndex) as? ResourceCell, let lastCell = tableView.cellForRow(at: lastIndex) as? ResourceCell else {
             fatalError()
         }
-        
         if cell != lastCell{
             lastCell.downExpand.image = downChevron
         }
@@ -97,6 +96,7 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
         tableView.beginUpdates()
         tableView.reloadRows(at: [indexPath], with: .none)
         tableView.endUpdates()
+        
         lastIndex = indexPath
                 
     }

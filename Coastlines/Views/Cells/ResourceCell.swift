@@ -27,7 +27,7 @@ class ResourceCell: UITableViewCell {
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.textColor = PaletteColour.offWhite.colour
-        label.backgroundColor = .green
+        label.backgroundColor = .clear
         label.clipsToBounds = true
         label.textAlignment = .left
         return label
@@ -41,7 +41,7 @@ class ResourceCell: UITableViewCell {
         tv.textColor = PaletteColour.offWhite.colour
         tv.isEditable = false
         tv.textAlignment = .left
-        tv.backgroundColor = .clear//PaletteColour.lightBlue.colour
+        tv.backgroundColor = PaletteColour.lightBlue.colour
         return tv
     }()
     
@@ -66,7 +66,7 @@ class ResourceCell: UITableViewCell {
     private let container: UIView = {
         let v = UIView()
         v.clipsToBounds = true
-        v.backgroundColor = .systemPurple//PaletteColour.lightBlue.colour
+        v.backgroundColor = PaletteColour.lightBlue.colour
         v.layer.cornerRadius = 12
         return v
     }()
@@ -85,7 +85,6 @@ class ResourceCell: UITableViewCell {
         setupTitle()
         setupDownExpand()
         setupSubText()
-//        setupLinkLabel()
     }
     
     private func setupContainer() {
@@ -135,21 +134,16 @@ class ResourceCell: UITableViewCell {
         ])
     }
     
-    private func setupLinkLabel() {
-        subtext.addSubview(linkLabel)
-        linkLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            linkLabel.bottomAnchor.constraint(equalTo: subtext.bottomAnchor, constant: -5),
-            linkLabel.leadingAnchor.constraint(equalTo: subtext.leadingAnchor, constant: 10),
-            linkLabel.trailingAnchor.constraint(equalTo: subtext.trailingAnchor, constant: -10)
-        ])
-    }
-    
     public func animate() {
         UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.8, initialSpringVelocity: 1,options: [.curveEaseIn], animations: {
             self.contentView.layoutIfNeeded()
         })
+    }
+    
+    public func rotate() {
+        UIView.animate(withDuration: 0) {
+            self.downExpand.transform = self.downExpand.transform.rotated(by: .pi)
+        }
     }
     
     public func configureCell(with resource: Resources) {
@@ -157,11 +151,12 @@ class ResourceCell: UITableViewCell {
         subtext.text = resource.description
         title.addAccessibility(.none, resource.title, nil, nil)
         subtext.addAccessibility(.none, resource.description, nil, nil)
-        
+
         if frame.height == 65 {
             downExpand.image = UIImage(systemName: "chevron.compact.down")
         } else {
             downExpand.image = UIImage(systemName: "chevron.compact.up")
         }
+
     }
 }

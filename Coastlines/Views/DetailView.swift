@@ -14,6 +14,7 @@ class DetailView: UIView {
     public lazy var backButton: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "chevron.compact.left"), for: .normal)
+        button.addAccessibility(.button, "Back Button", nil, "Brings you back to the previous screen with a selection of locations.")
         button.backgroundColor = .clear
         button.tintColor = PaletteColour.offWhite.colour
         button.contentMode = .scaleToFill
@@ -25,6 +26,7 @@ class DetailView: UIView {
         var button = UIButton()
         button = button.nextButton()
         button.setImage(UIImage(named: "info1"), for: .normal)
+        button.addAccessibility(.button, "Resources", nil, "Shows a list of actions that can be taken to reduce your carbon footprint.")
         button.contentMode = .scaleAspectFit
         return button
     }()
@@ -49,6 +51,7 @@ class DetailView: UIView {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
+        
         return iv
     }()
     
@@ -81,8 +84,10 @@ class DetailView: UIView {
     }()
     
     public lazy var goToARButton: UIButton = {
-        let button = UIButton()
-        return button.arButton()
+        var button = UIButton()
+        button = button.arButton()
+        button.addAccessibility(.button, "Augmented Reality", nil, "Will bring you to an IMPACTFUL!!! augmented reality experience.")
+        return button
     }()
     
     var nameLabelLeading: NSLayoutConstraint!
