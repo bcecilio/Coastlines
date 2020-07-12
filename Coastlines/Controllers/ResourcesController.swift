@@ -82,40 +82,18 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedIndex = indexPath
-        
-        let upChevron = UIImage(systemName: "chevron.compact.up")
+    
         let downChevron = UIImage(systemName: "chevron.compact.down")
-        
+
         guard let cell = tableView.cellForRow(at: selectedIndex) as? ResourceCell, let lastCell = tableView.cellForRow(at: lastIndex) as? ResourceCell else {
             fatalError()
         }
         
-        print("last: \(lastCell.frame.height)")
-        
-        print("current: \(cell.frame.height)")
-        
-        if cell.frame.height == 65 {
-            cell.downExpand.image = upChevron
-            if cell != lastCell {
-               lastCell.downExpand.image = downChevron
-            }
-        } else if cell.frame.height == 230 {
-            cell.downExpand.image = downChevron
-            if cell != lastCell {
-                lastCell.downExpand.image = upChevron
-            }
+        if cell != lastCell{
+            lastCell.downExpand.image = downChevron
         }
         
-//        if lastCell.frame.height == 230 && cell.frame.height == 230 {
-//            cell.downExpand.image = upChevron
-//        } else if lastCell.frame.height == 230 && cell.frame.height == 65 {
-//            cell.downExpand.image = upChevron
-//        } else {
-//            cell.downExpand.image = downChevron
-//        }
-        
         lastRowHeight = cell.frame.height
-//        print(selectedIndex.row)
         tableView.beginUpdates()
         tableView.reloadRows(at: [indexPath], with: .none)
         tableView.endUpdates()
