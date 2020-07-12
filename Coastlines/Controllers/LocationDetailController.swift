@@ -17,9 +17,9 @@ class LocationDetailController: UIViewController {
     init(_ location: Location) {
         self.location = location
         self.selection = Selection(selected: self.location.name)
-        self.didYouKnowText = [ContentText.didYouKnow,location.facts.quickFact1,location.facts.quickFact2,location.facts.generalFacts]
-        self.whatsHappeningText = [ContentText.whatsHappening,location.facts.quickFact3,location.facts.quickFact4,location.facts.seaLevelFacts]
-        self.whereWillWeGoText = [ContentText.whereWillWeGo,location.facts.quickFact5, location.facts.quickFact6, location.facts.populationFacts]
+        self.didYouKnowText = location.getDidYouKnowText()
+        self.whatsHappeningText = location.getWhatsHappeningText()
+        self.whereWillWeGoText = location.getWhereWillWeGoText()
         super.init(nibName: nil, bundle: nil)
     }
     

@@ -34,19 +34,22 @@ extension LocationDetailController {
             - cellText: Text used to populate the contents of the content cell. There should be at least four elements in the array. The 0th element will be assigned to the headerLabel, the 1st element will be assigned to factOneLabel, the 2nd element will be assigned to the factTwoLabel, and the 3rd element will be assigned to the contentLabel. Any further elements will be unused. 
      */
     func configureContentCell(_ collectionView: UICollectionView, _ indexPath: IndexPath, _ cellText: [String]) -> ContentCell {
-        guard let contentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentCell", for: indexPath) as? ContentCell, cellText.count > 3 else {
+        guard let contentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentCell", for: indexPath) as? ContentCell else {
             fatalError("Error creating content cell.")
         }
         
         contentCell.headerLabel.text = cellText[0]
         contentCell.factOneLabel.text = cellText[1]
         contentCell.factTwoLabel.text = cellText[2]
-        contentCell.contentLabel.text = cellText[3]
         
         contentCell.headerLabel.addAccessibility(.none, cellText[0], nil, nil)
         contentCell.factOneLabel.addAccessibility(.none, cellText[1], nil, nil)
         contentCell.factTwoLabel.addAccessibility(.none, cellText[2], nil, nil)
-        contentCell.contentLabel.addAccessibility(.none, cellText[3], nil, nil)
+        
+        if cellText.count > 3 {
+            contentCell.contentLabel.text = cellText[3]
+            contentCell.contentLabel.addAccessibility(.none, cellText[3], nil, nil)
+        }
         
         return contentCell
     }
