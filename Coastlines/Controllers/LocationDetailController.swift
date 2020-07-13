@@ -71,8 +71,8 @@ class LocationDetailController: UIViewController {
         } else {
 
             print("AR Pressed")
-            let arVC = ExperimentARController(location)
-            UIViewController.resetWindow(arVC)
+//            let arVC = ExperimentARController(location)
+//            UIViewController.resetWindow(arVC)
             
         }
         
