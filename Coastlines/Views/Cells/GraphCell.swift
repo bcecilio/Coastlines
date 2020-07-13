@@ -48,6 +48,7 @@ class GraphCell: UICollectionViewCell {
         lineChart.xAxis.setLabelCount(5, force: false)
         lineChart.legend.enabled = false
         lineChart.xAxis.avoidFirstLastClippingEnabled = true
+//        lineChart.addAccessibility(.none, "This is a line chart that shows how sea levels might rise from now until 2100. It is even possible that by the year 2100 sea levels could surpass 6 feet.", nil, "Tapping on this chart displays a pop up view for the rise in sea level for the selected year")
         return lineChart
     }()
     

@@ -4,6 +4,7 @@
             "name": "New York City",
             "images": {
                 "one": "nycSea",
+                "accessibility": "New York City. A beautiful view of lower Manhattan with it's incredible skyline and busy water ways of the Hudson and East rivers is shown. Some prominent New York City staples in this image are One World Trade, Battery Park, the Staten Island Ferry, and in the distance the Brooklyn Bridge.",
                 "two": "nycSeaOne",
                 "three": "nycHeader",
                 "four": "nycSeaTwo",
@@ -99,6 +100,7 @@
             "name": "New Orleans",
             "images": {
                 "one": "newOrleansHeader",
+                "accessibility": "New Orleans, Louisiana. Street musicians perform on a New Orleans street lined with vibrant pink and yellow buildings on a very sunny day. People walking by seem to be enjoying the music produced by the washboard player and trumpeteers.",
                 "two": "newOrleansHeader",
                 "three": "newOrleansHeader",
                 "four": "newOrleansHeader",
@@ -194,6 +196,7 @@
             "name": "Miami",
             "images": {
                 "one": "miamiOne",
+                "accessibility": "Miami, Florida. A night time scene of downtown Miami is shown. In this image are a row of some notable South Florida hotels and palm trees emphasized by the classic neon lights Miami is known for.",
                 "two": "miamiHeader",
                 "three": "miamiHeader",
                 "four": "miamiHeader",
@@ -289,6 +292,7 @@
             "name": "Bangladesh",
             "images": {
                 "one": "bangladeshHeader",
+                "accessibility": "Bangladesh. A breathtaking overhead view of a Bangladeshi neighborhood is shown with prophetic line of clouds above the residential buildings.",
                 "two": "bangladeshHeader",
                 "three": "bangladeshHeader",
                 "four": "bangladeshHeader",
@@ -384,6 +388,7 @@
             "name": "Polar Ice Caps",
             "images": {
                 "one": "iceCapsHeader",
+                "accessibility": "A beautiful view of lower Manhattan with it's incredible skyline and busy water ways of the Hudson and East rivers is shown. Some prominent New York City staples in this image are One World Trade, Battery Park, the Staten Island Ferry, and in the distance the Brooklyn Bridge.",
                 "two": "iceCapsHeader",
                 "three": "iceCapsHeader",
                 "four": "iceCapsHeader",

@@ -11,6 +11,7 @@ import RealityKit
 import RealityUI
 
 struct HandleYears {
+    
     static func getYearLabel(sliderVal: Float, scene: DropFlipRiseNYC.RiseSegmentScene) -> Entity {
         
         var yearLabel: Entity?

@@ -26,7 +26,9 @@ class ResourceCell: UITableViewCell {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.textColor = .white
+        label.textColor = PaletteColour.offWhite.colour
+        label.backgroundColor = .clear
+        label.clipsToBounds = true
         label.textAlignment = .left
         return label
     }()
@@ -46,7 +48,25 @@ class ResourceCell: UITableViewCell {
         return tv
     }()
     
-    private lazy var container: UIView = {
+    public lazy var downExpand: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(systemName: "chevron.compact.down")
+        iv.tintColor = PaletteColour.offWhite.colour
+        return iv
+    }()
+    
+    private lazy var linkLabel: UILabel = {
+       let label = UILabel()
+        label.text = "learn more"
+        label.textAlignment = .right
+        label.textColor = PaletteColour.offWhite.colour
+        label.backgroundColor = .brown
+        label.isUserInteractionEnabled = true
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        return label
+    }()
+    
+    private let container: UIView = {
         let v = UIView()
         v.clipsToBounds = true
         v.backgroundColor = PaletteColour.lightBlue.colour
@@ -66,6 +86,7 @@ class ResourceCell: UITableViewCell {
     private func commonInit() {
         setupContainer()
         setupTitle()
+        setupDownExpand()
         setupSubText()
     }
     
@@ -92,6 +113,18 @@ class ResourceCell: UITableViewCell {
         
     }
     
+    private func setupDownExpand() {
+        container.addSubview(downExpand)
+        downExpand.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            downExpand.centerYAnchor.constraint(equalTo: title.centerYAnchor),
+            downExpand.centerXAnchor.constraint(equalTo: title.trailingAnchor),
+            downExpand.heightAnchor.constraint(equalTo: title.heightAnchor),
+            downExpand.widthAnchor.constraint(equalTo: downExpand.heightAnchor)
+        ])
+    }
+    
     private func setupSubText() {
         container.addSubview(subtext)
         subtext.translatesAutoresizingMaskIntoConstraints = false
@@ -110,14 +143,26 @@ class ResourceCell: UITableViewCell {
         })
     }
     
+    public func rotate() {
+        UIView.animate(withDuration: 0) {
+            self.downExpand.transform = self.downExpand.transform.rotated(by: .pi)
+        }
+    }
+    
     public func configureCell(with resource: Resources) {
         title.text = resource.title
         let attString = NSMutableAttributedString(string: resource.description, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)])
         let url = "https://www.apple.com"
         attString.setAttributes([.link: url, NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)], range: NSMakeRange(attString.length - 11, 11))
         subtext.attributedText = attString
-    
         title.addAccessibility(.none, resource.title, nil, nil)
         subtext.addAccessibility(.none, resource.description, nil, nil)
+
+        if frame.height == 65 {
+            downExpand.image = UIImage(systemName: "chevron.compact.down")
+        } else {
+            downExpand.image = UIImage(systemName: "chevron.compact.up")
+        }
+        
     }
 }

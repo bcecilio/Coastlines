@@ -13,9 +13,10 @@ class DetailView: UIView {
     
     public lazy var backButton: UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.setBackgroundImage(UIImage(systemName: "chevron.compact.left"), for: .normal)
+        button.addAccessibility(.button, "Back Button", nil, "Brings you back to the previous screen with a selection of locations.")
         button.backgroundColor = .clear
-        button.tintColor = .white
+        button.tintColor = PaletteColour.offWhite.colour
         button.contentMode = .scaleToFill
         button.layer.cornerRadius = 5
         return button
@@ -25,6 +26,7 @@ class DetailView: UIView {
         var button = UIButton()
         button = button.nextButton()
         button.setImage(UIImage(named: "info1"), for: .normal)
+        button.addAccessibility(.button, "Resources", nil, "Shows a list of actions that can be taken to reduce your carbon footprint.")
         button.contentMode = .scaleAspectFit
         return button
     }()
@@ -49,6 +51,7 @@ class DetailView: UIView {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
+        
         return iv
     }()
     
@@ -81,8 +84,10 @@ class DetailView: UIView {
     }()
     
     public lazy var goToARButton: UIButton = {
-        let button = UIButton()
-        return button.arButton()
+        var button = UIButton()
+        button = button.arButton()
+        button.addAccessibility(.button, "Augmented Reality", nil, "Will bring you to an impactful augmented reality experience. Once in ay are, pan your phone around to find a horizontal surface.")
+        return button
     }()
     
     var nameLabelLeading: NSLayoutConstraint!
@@ -246,23 +251,25 @@ class DetailView: UIView {
     }
     
     public func hideARButton() {
-        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
-            self.goToARButton.alpha = 0
-            
-        })  { (completed) in
-            self.goToARButton.isHidden = true
-        }
+//        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
+//            self.goToARButton.alpha = 0
+//
+//        })  { (completed) in
+//            self.goToARButton.isHidden = true
+//        }
+        goToARButton.pulsate()
     }
     
     public func showARButton() {
-        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
-            
-            self.goToARButton.isHidden = false
-            self.goToARButton.alpha = 1
-            
-        })  { (completed) in
-            
-        }
+//        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
+//
+//            self.goToARButton.isHidden = false
+//            self.goToARButton.alpha = 1
+//
+//        })  { (completed) in
+//
+//        }
+        goToARButton.pulsate(1, 1)
     }
     
     public func hidePrev(delay: TimeInterval = 0) {
@@ -297,4 +304,18 @@ class DetailView: UIView {
         },completion: nil)
     }
     
+}
+
+extension UIButton {
+    func pulsate(_ start: Float = 0.97, _ stop: Float = 1.1) {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.7
+        pulse.fromValue = start
+        pulse.toValue = stop
+        pulse.autoreverses = true
+        pulse.repeatCount = .infinity
+        pulse.initialVelocity = 0
+        pulse.damping = 5
+        layer.add(pulse, forKey: nil)
+    }
 }

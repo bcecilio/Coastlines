@@ -84,7 +84,7 @@ class LocationsView: UIView {
         collectionView.addSubview(resourceButton)
         resourceButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            resourceButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            resourceButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -26),
             resourceButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             resourceButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.7),
             resourceButton.heightAnchor.constraint(equalToConstant: 60)

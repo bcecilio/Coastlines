@@ -12,16 +12,18 @@ class ResourceView: UIView {
     
     public lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = PaletteColour.offWhite.colour
         return tableView
     }()
     
     public lazy var prevButton: UIButton = {
        let button = UIButton()
         button.setTitle("", for: .normal)
-        button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
-
-        button.tintColor = PaletteColour.darkBlue.colour
+        button.setBackgroundImage(UIImage(systemName: "chevron.compact.left"), for: .normal)
+        button.backgroundColor = .clear
+        button.tintColor = PaletteColour.lightBlue.colour
+        button.contentMode = .scaleToFill
+        button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         button.addAccessibility(.button, "Back", nil, "Returns to the locations screen.")
         return button
@@ -30,6 +32,7 @@ class ResourceView: UIView {
     public lazy var header: UILabel = {
         let label = UILabel()
         label.text = "Actions"
+        label.textColor = .black
         label.font = UIFont.preferredFont(forTextStyle: .title1)
         label.adjustsFontForContentSizeCategory = true
         label.addAccessibility(.none, "Actions", nil, nil)
@@ -56,10 +59,10 @@ class ResourceView: UIView {
         addSubview(prevButton)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            prevButton.topAnchor.constraint(equalTo: topAnchor, constant: 35),
-            prevButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            prevButton.widthAnchor.constraint(equalToConstant: 38),
-            prevButton.heightAnchor.constraint(equalToConstant: 44)
+            prevButton.widthAnchor.constraint(equalToConstant: 24),
+            prevButton.heightAnchor.constraint(equalToConstant: 34),
+            prevButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            prevButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 40)
         ])
     }
     

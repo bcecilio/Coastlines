@@ -31,7 +31,8 @@ extension ExperimentARController: ARCoachingOverlayViewDelegate {
     private func setUpCoachingOverlayConstraints(){
         arView.addSubview(coachingOverlay)
         coachingOverlay.translatesAutoresizingMaskIntoConstraints = false
-        
+//        coachingOverlay.isAccessibilityElement
+        coachingOverlay.addAccessibility(.none, "Find a horizontal surface to load augmented reality.", nil, nil)
         NSLayoutConstraint.activate([
             coachingOverlay.centerXAnchor.constraint(equalTo: arView.centerXAnchor),
             coachingOverlay.centerYAnchor.constraint(equalTo: arView.centerYAnchor),

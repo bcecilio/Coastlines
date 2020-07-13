@@ -10,6 +10,7 @@
 		0200C36324A6E69D00D94229 /* HandleYears.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200C36224A6E69D00D94229 /* HandleYears.swift */; };
 		024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024035D3248D8B7800C7F7B2 /* ARCell.swift */; };
 		024128D12497DB5F0070FEAC /* RealityUI in Frameworks */ = {isa = PBXBuildFile; productRef = 024128D02497DB5F0070FEAC /* RealityUI */; };
+		0271163324B7746D00FC9165 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0271163224B7746D00FC9165 /* AppInfo.swift */; };
 		02737072249C317100A10E7B /* simd+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02737071249C317100A10E7B /* simd+ext.swift */; };
 		02737073249C324B00A10E7B /* simd+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02737071249C317100A10E7B /* simd+ext.swift */; };
 		02737075249D22F300A10E7B /* TOCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02737074249D22F300A10E7B /* TOCCell.swift */; };
@@ -170,6 +171,7 @@
 /* Begin PBXFileReference section */
 		0200C36224A6E69D00D94229 /* HandleYears.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleYears.swift; sourceTree = "<group>"; };
 		024035D3248D8B7800C7F7B2 /* ARCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCell.swift; sourceTree = "<group>"; };
+		0271163224B7746D00FC9165 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		02737071249C317100A10E7B /* simd+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "simd+ext.swift"; sourceTree = "<group>"; };
 		02737074249D22F300A10E7B /* TOCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCCell.swift; sourceTree = "<group>"; };
 		02737077249FB8AA00A10E7B /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				C48EBCC824884626001DB0A3 /* GlobalConstants.swift */,
 				02737079249FBC2B00A10E7B /* GraphShowAlert.swift */,
 				0273707D24A00D2C00A10E7B /* FactText.swift */,
+				0271163224B7746D00FC9165 /* AppInfo.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -809,6 +812,7 @@
 				C463926524847F0B00DDB4DE /* FifthOnboardingController.swift in Sources */,
 				0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */,
 				0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */,
+				0271163324B7746D00FC9165 /* AppInfo.swift in Sources */,
 				C463925B24847EB900DDB4DE /* ThirdOnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

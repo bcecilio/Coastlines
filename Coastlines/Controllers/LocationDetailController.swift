@@ -54,6 +54,8 @@ class LocationDetailController: UIViewController {
         
         locationView.imageOne.image = UIImage(named: location.images.one)
         locationView.locationLabel.text = location.name
+        
+        locationView.imageOne.addAccessibility(.image, location.images.accessibility, nil, "")
         locationView.collectionView.isScrollEnabled = false
     }
     
@@ -67,8 +69,11 @@ class LocationDetailController: UIViewController {
             present(comingSoonAlert, animated: true, completion: nil)
             
         } else {
-            //            let arVC = ExperimentARController(location)
-            //            UIViewController.resetWindow(arVC)
+
+            print("AR Pressed")
+            let arVC = ExperimentARController(location)
+            UIViewController.resetWindow(arVC)
+            
         }
         
     }
@@ -144,7 +149,15 @@ class LocationDetailController: UIViewController {
     private func animateChart() {
         seaChartCell.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 3, easingOption: .easeInCirc)
     }
-    
+
+    private func setSeaLevelChart() {
+        seaChartCell.location = location
+        seaChartCell.setSeaLevelData()
+        seaChartCell.seaLevelSet.setCircleColor(PaletteColour.darkBlue.colour)
+        seaChartCell.seaLevelSet.setColor(PaletteColour.darkBlue.colour)
+        seaChartCell.seaLevelSet.fill = Fill(color: PaletteColour.darkBlue.colour)
+        seaChartCell.headerLabel.addAccessibility(.none, "This is a line chart that shows how sea levels might rise from now until 2100. It is even possible that by the year 2100 sea levels could surpass 6 feet.", nil, "Tapping on this chart displays a pop up view for the rise in sea level for the selected year")
+    }
 }
 
 extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
