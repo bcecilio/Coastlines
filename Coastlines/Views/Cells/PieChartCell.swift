@@ -84,9 +84,24 @@ extension PieChartCell: ChartViewDelegate {
         guard let location = location else { return }
         
         populationGraphView.isHidden = false
-        populationGraphView.legend.enabled = false
-        entries.append(PieChartDataEntry(value: Double(location.facts.population), label: "Population"))
-        entries.append(PieChartDataEntry(value: Double(location.facts.populationDisplaced), label: "Displaced"))
+        populationGraphView.legend.enabled = true
+        let percentDisplaced = Int((Double(location.facts.populationDisplaced)/Double(location.facts.population)) * 100)
+        let percentNotDisplaced = 100 - percentDisplaced
+        
+        
+        
+        var entryOne = PieChartDataEntry(value: Double(location.facts.population), label: "\(percentNotDisplaced)%")
+        var entryTwo = PieChartDataEntry(value: Double(location.facts.populationDisplaced), label: "\(percentDisplaced)%")
+        
+        populationGraphView.legend.textColor = PaletteColour.offWhite.colour
+        
+        entries.append(entryOne)
+        entries.append(entryTwo)
+        
+        let entryOneo = LegendEntry()
+        entryOneo.label = "JKDJNVKSDJBVKB"
+        populationGraphView.legend.entries = [entryOneo]
+        
         
         let dataSet = PieChartDataSet(entries: entries, label: "")
         
@@ -100,10 +115,12 @@ extension PieChartCell: ChartViewDelegate {
         populationGraphView.entryLabelColor = NSUIColor(hex: 0xf9f7e3)
         populationGraphView.entryLabelFont = Font.cooper20
             
+        
         dataSet.sliceSpace = 3
         populationGraphView.data = PieChartData(dataSet: dataSet)
         populationGraphView.isUserInteractionEnabled = false
         populationGraphView.setExtraOffsets(left: -16, top: -16, right: -16, bottom: -16)
+        
     }
 }
 
