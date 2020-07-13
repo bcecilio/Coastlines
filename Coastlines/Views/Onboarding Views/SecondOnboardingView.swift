@@ -48,7 +48,7 @@ class SecondOnboardingView: UIView {
     public lazy var transparentView: UIView = {
        let view = UIView()
         view.backgroundColor = UIColor.black
-        view.alpha = 0.6
+        view.alpha = 1.0
         return view
     }()
     
@@ -73,7 +73,7 @@ class SecondOnboardingView: UIView {
 
 //        setUpImageViewConstraints()
         setUpSkipButtonConstraints()
-        setUpTransparentViewConstraints()
+//        setUpTransparentViewConstraints()
         setUpInfoViewConstraints()
 //        setUpInfoViewConstraints()
         setUpNextButtonConstraints()
@@ -94,10 +94,10 @@ class SecondOnboardingView: UIView {
     }
     
     private func setUpInfoViewConstraints() {
-        transparentView.addSubview(infoView)
+        addSubview(infoView)
         infoView.translatesAutoresizingMaskIntoConstraints = false
     
-        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalTo: transparentView.topAnchor), infoView.leadingAnchor.constraint(equalTo: transparentView.leadingAnchor), infoView.trailingAnchor.constraint(equalTo: transparentView.trailingAnchor), infoView.bottomAnchor.constraint(equalTo: transparentView.bottomAnchor)])
+        NSLayoutConstraint.activate([infoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor , constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8)])
     }
     
     private func setUpTransparentViewConstraints() {
