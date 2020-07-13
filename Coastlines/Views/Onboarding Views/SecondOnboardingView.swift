@@ -21,15 +21,14 @@ class SecondOnboardingView: UIView {
     
     public lazy var skipButton: UIButton = {
        let button = UIButton()
-        button.setTitle("Skip", for: .normal)
-        button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
+        button.setBackgroundImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+        button.tintColor = PaletteColour.offWhite.colour
         button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
-        button.layer.borderWidth = 1.0
-        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
-        button.layer.cornerRadius = 25.0
-        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
-        button.titleLabel?.adjustsFontForContentSizeCategory = true
-        button.addAccessibility(.button, "Skip", "Skips the remainder of the onboarding experience", nil)
+//        button.layer.borderWidth = 1.0
+//        button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
+//        button.layer.cornerRadius = 25.0
+        button.makeFontAccessible()
+        button.addAccessibility(.button, "X", "Skips the remainder of the onboarding experience", nil)
         return button
     }()
     
@@ -43,6 +42,13 @@ class SecondOnboardingView: UIView {
         view.backgroundColor = UIColor.clear
         view.isEditable = false
         view.addAccessibility(.none, OnboardingText.firstOnboardingLabel, nil, nil)
+        return view
+    }()
+    
+    public lazy var transparentView: UIView = {
+       let view = UIView()
+        view.backgroundColor = UIColor.black
+        view.alpha = 1.0
         return view
     }()
     
@@ -63,20 +69,21 @@ class SecondOnboardingView: UIView {
         commonInit()
     }
     
-    private func commonInit(){
+    private func commonInit() {
 
 //        setUpImageViewConstraints()
         setUpSkipButtonConstraints()
+//        setUpTransparentViewConstraints()
         setUpInfoViewConstraints()
 //        setUpInfoViewConstraints()
-//        setUpNextButtonConstraints()
+        setUpNextButtonConstraints()
     }
     
     private func setUpNextButtonConstraints() {
         addSubview(nextButton)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([nextButton.centerYAnchor.constraint(equalTo: centerImage.centerYAnchor), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
+        NSLayoutConstraint.activate([nextButton.centerYAnchor.constraint(equalTo: centerYAnchor), nextButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8), nextButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), nextButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
     private func setUpImageViewConstraints() {
@@ -86,22 +93,29 @@ class SecondOnboardingView: UIView {
         NSLayoutConstraint.activate([centerImage.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 5.0), centerImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), centerImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), centerImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.57)])
     }
     
-    private func setUpInfoViewConstraints(){
+    private func setUpInfoViewConstraints() {
         addSubview(infoView)
         infoView.translatesAutoresizingMaskIntoConstraints = false
     
-        NSLayoutConstraint.activate([infoView.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 50.0), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.bottomAnchor.constraint(equalTo: skipButton.topAnchor, constant: -8)])
+        NSLayoutConstraint.activate([infoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2), infoView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor , constant: 16), infoView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), infoView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8)])
     }
     
-    private func setUpSkipButtonConstraints(){
+    private func setUpTransparentViewConstraints() {
+        addSubview(transparentView)
+        transparentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([transparentView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2), transparentView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), transparentView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16), transparentView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8)])
+    }
+    
+    private func setUpSkipButtonConstraints() {
         addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([skipButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8), skipButton.heightAnchor.constraint(equalToConstant: 50.0), skipButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5), skipButton.centerXAnchor.constraint(equalTo: centerXAnchor)])
+        NSLayoutConstraint.activate([skipButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16), skipButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16), skipButton.heightAnchor.constraint(equalToConstant: 50.0), skipButton.widthAnchor.constraint(equalToConstant: 50.0)])
     }
     
     @objc
-    private func showLocationsVC(){
+    private func showLocationsVC() {
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
     }

@@ -14,7 +14,7 @@ class ThirdOnboardingController: UIViewController {
     private let thirdOnboardingView = ThirdOnboardingView()
     private var player: AVPlayer?
     
-    override func loadView(){
+    override func loadView() {
         view = thirdOnboardingView
     }
 
@@ -23,7 +23,7 @@ class ThirdOnboardingController: UIViewController {
         setUp()
     }
     
-    private func setUp(){
+    private func setUp() {
         thirdOnboardingView.backgroundColor = PaletteColour.darkBlue.colour
     }
 }

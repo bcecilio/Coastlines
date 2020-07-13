@@ -65,7 +65,7 @@ class FifthOnboardingView: UIView {
     
     private func commonInit(){
         // setUpCentralImageConstraints()
-//        setUpPrevButtonConstraints()
+        setUpPrevButtonConstraints()
         setUpBeginButtonConstraints()
         setUpInfoViewConstraints()
     }
@@ -74,7 +74,7 @@ class FifthOnboardingView: UIView {
         addSubview(prevButton)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([prevButton.centerYAnchor.constraint(equalTo: centralImage.centerYAnchor), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
+        NSLayoutConstraint.activate([prevButton.centerYAnchor.constraint(equalTo: centerYAnchor), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
 //    private func setUpCentralImageConstraints() {

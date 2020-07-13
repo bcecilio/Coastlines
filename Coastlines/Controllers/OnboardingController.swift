@@ -10,13 +10,13 @@ import UIKit
 import AVFoundation
 
 class OnboardingController: UIViewController {
-
-    private let secondOnboardingView: UIView
     
-    private var player: AVPlayer?
+    private let currentView: UIView
+    private var player: AVPlayer
     
-    init(_ view: UIView){
-        self.secondOnboardingView = view
+    init(_ view: UIView) {
+        self.currentView = view
+        self.player = AVPlayer()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -26,56 +26,62 @@ class OnboardingController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animateChevrons()
+        downcastView()
     }
     
-    override func loadView(){
-        view = secondOnboardingView
+    override func loadView() {
+        view = currentView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         setUp()
+        setUp()
     }
     
-    private func setUp(){
-        secondOnboardingView.backgroundColor = PaletteColour.darkBlue.colour
+    private func setUp() {
+        currentView.backgroundColor = PaletteColour.darkBlue.colour
     }
 }
 
 extension OnboardingController {
     
-    private func animateChevrons(){
-        if let displayView = view as? SecondOnboardingView{
-            displayView.animateNextButton()
+    /**
+          Downcasts the current View Controller's view in order to decide which background video should be played.
+     */
+    private func downcastView() {
+        if let thisView = view as? SecondOnboardingView{
             playBackgroundVideo("IcebergPan")
-        } else if let displayView = view as? ThirdOnboardingView{
-            displayView.animateChevrons()
+            thisView.animateNextButton()
+        } else if let thisView = view as? ThirdOnboardingView{
             playBackgroundVideo("IcebergPan2")
-        } else if let displayView = view as? FourthOnboardingView{
-            displayView.animateChevrons()
+            thisView.animateChevrons()
+        } else if let thisView = view as? FourthOnboardingView{
             playBackgroundVideo("coastPan")
-        } else if let displayView = view as? FifthOnboardingView{
-            displayView.animatePrevButton()
+            thisView.animateChevrons()
+        } else if let thisView = view as? FifthOnboardingView{
             playBackgroundVideo("IcebergPan3")
+            thisView.animatePrevButton()
         }
     }
     
+    /**
+            Plays a video on the layer of the current view.
+            - Parameters:
+                - resource: A string corresponding to the name of a .mov file.
+     */
     private func playBackgroundVideo(_ resource: String) {
-           let path = Bundle.main.path(forResource: resource, ofType: "mov")
-           player = AVPlayer(url: URL(fileURLWithPath: path!))
-           player!.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
-           let playerLayer = AVPlayerLayer(player: player)
-           playerLayer.frame = self.view.frame
-           playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-           self.view.layer.insertSublayer(playerLayer, at: 0)
-           NotificationCenter.default.addObserver(self, selector: #selector(video), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player?.currentItem)
-           player!.seek(to: CMTime.zero)
-           player!.play()
-           self.player!.isMuted = true
-       }
-       
-       @objc func video() {
-           player!.seek(to: CMTime.zero)
-       }
+        guard let path = Bundle.main.path(forResource: resource, ofType: "mov") else {
+            return
+        }
+        
+        player = AVPlayer(url: URL(fileURLWithPath: path))
+        player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        player.play()
+        player.isMuted = true
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.frame
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        view.layer.insertSublayer(playerLayer, at: 0)
+    }
 }

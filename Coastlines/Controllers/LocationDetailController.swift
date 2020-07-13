@@ -6,15 +6,20 @@ class LocationDetailController: UIViewController {
     
     private var locationView = DetailView()
     private let location: Location
-    private var tableOfContentsCell = TOCCell()
+    private var selection: Selection
     private var seaChartCell = GraphCell()
     private var augCell = ARCell()
     private var buttonTag = 0
-    private var selection = Selection(selected: "")
-    private var comingSoonAlert = UIAlertController()
+    private var didYouKnowText: [String]
+    private var whatsHappeningText: [String]
+    private var whereWillWeGoText: [String]
     
     init(_ location: Location) {
         self.location = location
+        self.selection = Selection(selected: self.location.name)
+        self.didYouKnowText = location.getDidYouKnowText()
+        self.whatsHappeningText = location.getWhatsHappeningText()
+        self.whereWillWeGoText = location.getWhereWillWeGoText()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,16 +37,12 @@ class LocationDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = PaletteColour.darkBlue.colour
         
         setupUIandTargets()
-        
+        showHideButtons()
         locationView.collectionView.delegate = self
         locationView.collectionView.dataSource = self
-        
-        showHideButtons()
-        
     }
     
     private func setupUIandTargets() {
@@ -53,34 +54,23 @@ class LocationDetailController: UIViewController {
         
         locationView.imageOne.image = UIImage(named: location.images.one)
         locationView.locationLabel.text = location.name
-        
         locationView.collectionView.isScrollEnabled = false
-        
-//        makeComingSoonAlert()
     }
     
-    private func makeComingSoonAlert() {
-        comingSoonAlert = GraphShowAlert.makeAlert(year: 0, rise: 0, vc: self)
+    @objc func goToARButtonPressed(_ sender: UIButton?) {
         
-        comingSoonAlert.title = "\n\nComing Soon!!!"
-        comingSoonAlert.message = "\n\nAn Augmented Reality Experience for \(location.name) is on its way"
-        
-        comingSoonAlert.setTitle(font: Font.boldArial26, color: PaletteColour.darkBlue.colour)
-        comingSoonAlert.setMessage(font: Font.boldArial24, color: PaletteColour.darkBlue.colour)
-    }
-    
-    @objc func goToARButtonPressed(_ sender: UIButton) {
-        
-        let selection = Selection(selected: location.name)
         if selection != .newYork {
-            makeComingSoonAlert()
+            
+            let comingSoonAlert = makeAlert("\n\nComing Soon!!!", "\n\nAn Augmented Reality Experience for \(location.name) is on its way", Font.boldArial26, PaletteColour.darkBlue.colour)
+            comingSoonAlert.setMessage(font: Font.boldArial24, color: PaletteColour.darkBlue.colour)
+            
             present(comingSoonAlert, animated: true, completion: nil)
+            
         } else {
-            print("AR Pressed")
-//            let arVC = ExperimentARController(location)
-//            UIViewController.resetWindow(arVC)
+            //            let arVC = ExperimentARController(location)
+            //            UIViewController.resetWindow(arVC)
         }
-    
+        
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
@@ -155,14 +145,6 @@ class LocationDetailController: UIViewController {
         seaChartCell.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 3, easingOption: .easeInCirc)
     }
     
-    private func setSeaLevelChart() {
-        seaChartCell.location = location
-        seaChartCell.setSeaLevelData()
-        seaChartCell.seaLevelSet.setCircleColor(PaletteColour.darkBlue.colour)
-        seaChartCell.seaLevelSet.setColor(PaletteColour.darkBlue.colour)
-        seaChartCell.seaLevelSet.fill = Fill(color: PaletteColour.darkBlue.colour)
-    }
-    
 }
 
 extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -177,103 +159,52 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let tocCell = collectionView.dequeueReusableCell(withReuseIdentifier: "tocCell", for: indexPath) as? TOCCell, let contentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentCell", for: indexPath) as? ContentCell, let graphCell = collectionView.dequeueReusableCell(withReuseIdentifier: "graphCell", for: indexPath) as? GraphCell, let pieCell = collectionView.dequeueReusableCell(withReuseIdentifier: "pieCell", for: indexPath) as? PieChartCell, let arCell = collectionView.dequeueReusableCell(withReuseIdentifier: "arCell", for: indexPath) as? ARCell else {
-            fatalError("Failed to create cells")
+        guard let arCell = collectionView.dequeueReusableCell(withReuseIdentifier: "arCell", for: indexPath) as? ARCell else {
+            fatalError("Failed to create AR Cell.")
         }
         
         switch indexPath.row {
-            
         case 0:
-            tableOfContentsCell = tocCell
-            tableOfContentsCell.contentDelegate = self
-            return tableOfContentsCell
+            return configureTOCCell(collectionView, indexPath, self)
+            
         case 1:
-            contentCell.headerLabel.text = ContentText.didYouKnow
-            contentCell.headerLabel.addAccessibility(.none, ContentText.didYouKnow, nil, nil)
-            contentCell.factOneLabel.text = location.facts.quickFact1
-            contentCell.factOneLabel.addAccessibility(.none, location.facts.quickFact1, nil, nil)
-            contentCell.factTwoLabel.text = location.facts.quickFact2
-            contentCell.factTwoLabel.addAccessibility(.none, location.facts.quickFact2, nil, nil)
-            contentCell.contentLabel.text = location.facts.generalFacts
-            contentCell.contentLabel.addAccessibility(.none, location.facts.generalFacts, nil, nil)
-            return contentCell
+            return configureContentCell(collectionView, indexPath, didYouKnowText)
+            
         case 2:
-            seaChartCell = graphCell
-            seaChartCell.graphDelegate = self
-            setSeaLevelChart()
+            seaChartCell = configureLina(collectionView, indexPath, self, location)
             return seaChartCell
+            
         case 3:
-            contentCell.headerLabel.text = ContentText.whatsHappening
-            contentCell.headerLabel.addAccessibility(.none, ContentText.whatsHappening, nil, nil)
-            contentCell.factOneLabel.text = location.facts.quickFact3
-            contentCell.factOneLabel.addAccessibility(.none, location.facts.quickFact3, nil, nil)
-            contentCell.factTwoLabel.text = location.facts.quickFact4
-            contentCell.factTwoLabel.addAccessibility(.none, location.facts.quickFact4, nil, nil)
-            contentCell.contentLabel.text = location.facts.seaLevelFacts
-            contentCell.contentLabel.addAccessibility(.none, location.facts.seaLevelFacts, nil, nil)
-            return contentCell
+            return configureContentCell(collectionView, indexPath, whatsHappeningText)
+            
         case 4:
-            pieCell.location = location
-            pieCell.setPopulationGraphData()
-            return pieCell
+            return configurePieChartCell(collectionView, indexPath, location)
+            
         case 5:
-            contentCell.headerLabel.text = ContentText.whereWillWeGo
-            contentCell.headerLabel.addAccessibility(.none, ContentText.whereWillWeGo, nil, nil)
-            contentCell.factOneLabel.text = location.facts.quickFact5
-            contentCell.factOneLabel.addAccessibility(.none, location.facts.quickFact5, nil, nil)
-            contentCell.factTwoLabel.text = location.facts.quickFact6
-            contentCell.factTwoLabel.addAccessibility(.none, location.facts.quickFact6, nil, nil)
-            contentCell.contentLabel.text = location.facts.populationFacts
-            contentCell.contentLabel.addAccessibility(.none, location.facts.populationFacts, nil, nil)
-            return contentCell
+            return configureContentCell(collectionView, indexPath, whereWillWeGoText)
+            
         case 6:
             augCell = arCell
-//            augCell.arIconAnimation.play()
-//            augCell.arIconAnimation.loopMode = .loop
             return augCell
+            
         default:
-            break
+            return UICollectionViewCell()
         }
-        
-        return UICollectionViewCell()
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let maxSize: CGSize = UIScreen.main.bounds.size
-        let spacingBetweenItems: CGFloat = 8
-        let numberOfItems: CGFloat = 1
-        let totalSpacing: CGFloat = (2 * spacingBetweenItems) + (numberOfItems - 1) * spacingBetweenItems
-        let itemWidth: CGFloat = (maxSize.width - totalSpacing) / numberOfItems
-        let itemHeight: CGFloat = locationView.collectionView.frame.height /// 1.5
-        return  CGSize(width: itemWidth, height: itemHeight)
+        return  locationView.collectionView.configureCellSize(1, 8)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let selection = Selection(selected: location.name)
-        
         if indexPath.row == 6 {
-            if selection != .newYork {
-                makeComingSoonAlert()
-                present(comingSoonAlert, animated: true, completion: nil)
-            } else {
-//                let arVC = ExperimentARController(location)
-//                UIViewController.resetWindow(arVC)
-            }
-            
+            goToARButtonPressed(nil)
         } else if indexPath.row == 4 {
-            
             let (fact1,fact2) = FactText.getFact(selection)
-            let showAlert = GraphShowAlert.makeAlert(year: 0, rise: 0, vc: self)
+            let showAlert = makeAlert(fact1, fact2, Font.boldArial26, PaletteColour.darkBlue.colour)
             
-            showAlert.title = fact1
-            showAlert.message = fact2
-            
-            showAlert.setTitle(font: Font.boldArial26, color: PaletteColour.darkBlue.colour)
-            
-            showAlert.setMessage(font: Font.boldArial26, color: PaletteColour.darkBlue.colour)
             self.present(showAlert, animated: true, completion: nil)
         }
     }
@@ -297,7 +228,7 @@ extension LocationDetailController: TapContents {
     
     private func scrollHelper(to: Int) {
         for _ in 1...to {
-            scrollRightTo(time: Double(to)*0.8)
+            scrollRightTo(time: Double(0)*0.8)
         }
     }
 }
@@ -306,7 +237,6 @@ extension LocationDetailController: GraphClicked {
     
     func clickedOnGraph(year: Double, rise: Double) {
         let showAlert = GraphShowAlert.makeAlert(year: year, rise: rise, vc: self)
-        
         self.present(showAlert, animated: true, completion: nil)
     }
     

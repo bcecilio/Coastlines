@@ -73,12 +73,12 @@ class WavyView: UIView {
         
         return path
     }
-    
+    /// Redraws the belzier path from a higher starting point.
     public func waveIncrease() {
         start += 0.01
         setNeedsDisplay()
     }
-    
+    /// Redraws the belzier path from a lower starting point.
     public func waveDecrease() {
         start -= 0.01
         setNeedsDisplay()

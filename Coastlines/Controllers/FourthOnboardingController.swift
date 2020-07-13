@@ -12,7 +12,7 @@ class FourthOnboardingController: UIViewController {
 
     private let fourthOnboardingView = FourthOnboardingView()
     
-    override func loadView(){
+    override func loadView() {
         view = fourthOnboardingView
     }
     
@@ -21,7 +21,7 @@ class FourthOnboardingController: UIViewController {
         setUp()
     }
     
-    private func setUp(){
+    private func setUp() {
         fourthOnboardingView.backgroundColor = PaletteColour.darkBlue.colour
     }
 }

@@ -9,21 +9,17 @@
 import UIKit
 import Charts
 
+// このファイル無要
+
 class LocationDetailVC: UIViewController {
     
-    private var locationView = LocationDetailView()
-    
-    private var detailView = DetailView()
-    
     private let locations = FactsData.getLocations()
-    
     private let location: Location
-    
-    private var isStatusBarHidden = false
-    
-    private var animateSLGraphCalled = false
-    
+    private var locationView = LocationDetailView()
+    private var detailView = DetailView()
     private var seaLevelSet = LineChartDataSet()
+    private var isStatusBarHidden = false
+    private var animateSLGraphCalled = false
     
     init(_ location: Location) {
         self.location = location
@@ -52,18 +48,20 @@ class LocationDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = PaletteColour.darkBlue.colour
         
+        setupUI()
+        setSeaLevelData()
+        setPopulationGraphData()
+        setUpTargetsAndDelegates()
+    }
+    
+    private func setUpTargetsAndDelegates(){
         locationView.goToARButton.addTarget(self, action: #selector(goToARButtonPressed(_:)), for: .touchUpInside)
         locationView.backButton.addTarget(self, action: #selector(backButtonPressed(_:)), for: .touchUpInside)
         locationView.scrollView.delegate = self
         locationView.seaLevelLineChart.delegate = self
         locationView.populationGraphView.delegate = self
-        setupUI()
-        setSeaLevelData()
-        setPopulationGraphData()
-        
     }
     
     private func setupUI() {
@@ -76,19 +74,11 @@ class LocationDetailVC: UIViewController {
     
     
     @objc func goToARButtonPressed(_ sender: UIBarButtonItem) {
-        
-        print("AR Button Pressed")
-        
-//        let arVC = ARViewController()
-//        present(arVC, animated: true)
-//        let arcV = TestARController()
-//        present(arcV, animated: true)
+//        let arVC = ExperimentARController(location)
+//        present(arVC, animated: true, completion: nil)
     }
     
     @objc func backButtonPressed(_ sender: UIBarButtonItem) {
-        
-        print("Back Button Pressed")
-        
         //        locationView.seaLevelLineChart.animate(xAxisDuration: 4)
         //        locationView.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 6.5, easingOption: .easeInCirc)
 //        locationView.seaLevelLineChart.animate(xAxisDuration: 10)
@@ -181,9 +171,7 @@ extension LocationDetailVC: ChartViewDelegate {
         let c2 = NSUIColor(hex: 0xa1c5c5)
         
         dataSet.colors = [c1, c2]
-        
         dataSet.drawValuesEnabled = false
-        
         
         locationView.populationGraphView.data = PieChartData(dataSet: dataSet)
         locationView.populationGraphView.isUserInteractionEnabled = true

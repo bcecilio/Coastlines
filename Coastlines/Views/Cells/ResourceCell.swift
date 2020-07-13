@@ -36,14 +36,17 @@ class ResourceCell: UITableViewCell {
         tv.text = ""
         tv.font = UIFont.preferredFont(forTextStyle: .body)
         tv.adjustsFontForContentSizeCategory = true
-        tv.textColor = .white
+        tv.linkTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange, NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+        tv.isUserInteractionEnabled = true
         tv.isEditable = false
+        tv.isSelectable = true
+        tv.dataDetectorTypes = UIDataDetectorTypes.link
         tv.textAlignment = .left
-        tv.backgroundColor = PaletteColour.lightBlue.colour
+        tv.backgroundColor = UIColor.clear
         return tv
     }()
     
-    private let container: UIView = {
+    private lazy var container: UIView = {
         let v = UIView()
         v.clipsToBounds = true
         v.backgroundColor = PaletteColour.lightBlue.colour
@@ -93,7 +96,7 @@ class ResourceCell: UITableViewCell {
         container.addSubview(subtext)
         subtext.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            subtext.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10),
+            subtext.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 16),
             subtext.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 15),
             subtext.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -15),
             subtext.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -5)
@@ -109,7 +112,11 @@ class ResourceCell: UITableViewCell {
     
     public func configureCell(with resource: Resources) {
         title.text = resource.title
-        subtext.text = resource.description
+        let attString = NSMutableAttributedString(string: resource.description, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)])
+        let url = "https://www.apple.com"
+        attString.setAttributes([.link: url, NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)], range: NSMakeRange(attString.length - 11, 11))
+        subtext.attributedText = attString
+    
         title.addAccessibility(.none, resource.title, nil, nil)
         subtext.addAccessibility(.none, resource.description, nil, nil)
     }

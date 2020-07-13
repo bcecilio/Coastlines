@@ -17,6 +17,18 @@ struct Location: Decodable {
     let images: LocationImages
     let facts: Facts
     let dataSet: [LocationData]
+    
+    func getDidYouKnowText() -> [String] {
+        return [ContentText.didYouKnow, facts.quickFact1, facts.quickFact2, facts.generalFacts]
+    }
+    
+    func getWhatsHappeningText() -> [String] {
+        return [ContentText.whatsHappening,facts.quickFact3,facts.quickFact4,facts.seaLevelFacts]
+    }
+    
+    func getWhereWillWeGoText() -> [String] {
+        return [ContentText.whereWillWeGo, facts.quickFact5, facts.quickFact6, facts.populationFacts]
+    }
 }
 
 struct LocationImages: Decodable {
