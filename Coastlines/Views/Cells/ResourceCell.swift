@@ -10,7 +10,7 @@ import UIKit
 
 class ResourceCell: UITableViewCell {
     
-    var data: Resources? {
+    var data: Resource? {
         didSet {
             guard let data = data else {
                 return
@@ -149,7 +149,7 @@ class ResourceCell: UITableViewCell {
         }
     }
     
-    public func configureCell(with resource: Resources) {
+    public func configureCell(with resource: Resource) {
         title.text = resource.title
         let attString = NSMutableAttributedString(string: resource.description, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)])
         let url = "https://www.apple.com"

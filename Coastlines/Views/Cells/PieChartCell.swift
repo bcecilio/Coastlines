@@ -43,7 +43,7 @@ class PieChartCell: UICollectionViewCell {
         setupHeaderLabel()
         setupPieChart()
         setPopulationGraphData()
-        animatePieChart()
+        //animatePieChart()
     }
     
     private func setupHeaderLabel() {
@@ -84,7 +84,7 @@ extension PieChartCell: ChartViewDelegate {
         guard let location = location else { return }
         
         populationGraphView.isHidden = false
-        populationGraphView.legend.enabled = false
+        populationGraphView.legend.enabled = true
         entries.append(PieChartDataEntry(value: Double(location.facts.population), label: "Population"))
         entries.append(PieChartDataEntry(value: Double(location.facts.populationDisplaced), label: "Displaced"))
         
