@@ -11,8 +11,6 @@
 		024035D4248D8B7800C7F7B2 /* ARCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024035D3248D8B7800C7F7B2 /* ARCell.swift */; };
 		024128D12497DB5F0070FEAC /* RealityUI in Frameworks */ = {isa = PBXBuildFile; productRef = 024128D02497DB5F0070FEAC /* RealityUI */; };
 		0271163324B7746D00FC9165 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0271163224B7746D00FC9165 /* AppInfo.swift */; };
-		02737072249C317100A10E7B /* simd+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02737071249C317100A10E7B /* simd+ext.swift */; };
-		02737073249C324B00A10E7B /* simd+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02737071249C317100A10E7B /* simd+ext.swift */; };
 		02737075249D22F300A10E7B /* TOCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02737074249D22F300A10E7B /* TOCCell.swift */; };
 		02737076249D23E800A10E7B /* TOCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02737074249D22F300A10E7B /* TOCCell.swift */; };
 		02737078249FB8AA00A10E7B /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02737077249FB8AA00A10E7B /* UIAlertController+Extension.swift */; };
@@ -29,8 +27,6 @@
 		0285857B2483063A0003E31A /* FactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0285857A2483063A0003E31A /* FactsData.swift */; };
 		0285857F2485970E0003E31A /* WavyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0285857E2485970E0003E31A /* WavyView.swift */; };
 		028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028585822485B9660003E31A /* NSUIColor+Hex.swift */; };
-		0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
-		0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
 		02AC5AA224996FCE00468145 /* SeaLevelComputations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AA124996FCE00468145 /* SeaLevelComputations.swift */; };
 		02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */; };
 		02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4D15624913FCE0095560B /* ExperimentARController.swift */; };
@@ -39,13 +35,10 @@
 		02F53F04248AA7E200227C62 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F03248AA7E200227C62 /* GraphCell.swift */; };
 		02F53F06248AAB3C00227C62 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */; };
 		02F53F12248AF87600227C62 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F11248AF87600227C62 /* PieChartCell.swift */; };
-		0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
-		0B09F374247EF4B4001E17F0 /* ARCoastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F373247EF4B4001E17F0 /* ARCoastView.swift */; };
 		0B1A9ED6249BB0D3008477C6 /* CityLights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A9ED5249BB0D3008477C6 /* CityLights.swift */; };
 		0B2AA89E2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2AA89D2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift */; };
 		0B35424C2488000600AAB02C /* WavyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35424B2488000600AAB02C /* WavyView2.swift */; };
 		0BCDFFB8248534B1007A94BF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB7248534B1007A94BF /* LocationCell.swift */; };
-		0BCDFFBA2485376A007A94BF /* LocationReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB92485376A007A94BF /* LocationReusableView.swift */; };
 		0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */; };
 		1393FDC357C87C1B91849D65 /* Pods_Coastlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */; };
 		5D700857BBD059F2237BFD0C /* Pods_TestFeatureTarget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B9E8FE61F7AAE1A1CB365C /* Pods_TestFeatureTarget.framework */; };
@@ -63,24 +56,17 @@
 		B7B59BE12497E532004CA137 /* ResourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BDF2497E532004CA137 /* ResourceCell.swift */; };
 		B7B59BE32497E8C9004CA137 /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BE22497E8C9004CA137 /* ResourceModel.swift */; };
 		B7B59BE42497E8C9004CA137 /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B59BE22497E8C9004CA137 /* ResourceModel.swift */; };
-		B7BC816824993AAF00EB6A57 /* ARAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B7BC816724993AAF00EB6A57 /* ARAnimation.json */; };
-		B7BC816924993AAF00EB6A57 /* ARAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B7BC816724993AAF00EB6A57 /* ARAnimation.json */; };
 		B7C49F8524A29ABC00D07683 /* IcebergPan3.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */; };
 		B7C49F8624A29ABC00D07683 /* IcebergPan3.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */; };
 		B7C49F8724A29ABC00D07683 /* coastPan.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8424A29ABC00D07683 /* coastPan.mov */; };
 		B7C49F8824A29ABC00D07683 /* coastPan.mov in Resources */ = {isa = PBXBuildFile; fileRef = B7C49F8424A29ABC00D07683 /* coastPan.mov */; };
 		C40F2CD32490123800AA1756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD22490123800AA1756 /* AppDelegate.swift */; };
 		C40F2CD52490123800AA1756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD42490123800AA1756 /* SceneDelegate.swift */; };
-		C40F2CD72490123800AA1756 /* TestARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2CD62490123800AA1756 /* TestARController.swift */; };
 		C40F2CDA2490123800AA1756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40F2CD82490123800AA1756 /* Main.storyboard */; };
 		C40F2CDC2490123A00AA1756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C40F2CDB2490123A00AA1756 /* Assets.xcassets */; };
 		C40F2CDF2490123A00AA1756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40F2CDD2490123A00AA1756 /* LaunchScreen.storyboard */; };
 		C40F2CE42490124F00AA1756 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E97908247DE48A0039B398 /* WelcomeController.swift */; };
 		C40F2CE52490125200AA1756 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925824847AA200DDB4DE /* OnboardingController.swift */; };
-		C40F2CE62490125400AA1756 /* ThirdOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926024847EE800DDB4DE /* ThirdOnboardingController.swift */; };
-		C40F2CE72490125800AA1756 /* FourthOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926224847EF800DDB4DE /* FourthOnboardingController.swift */; };
-		C40F2CE82490125A00AA1756 /* FifthOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926424847F0B00DDB4DE /* FifthOnboardingController.swift */; };
-		C40F2CEA2490126000AA1756 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8FB247DB981008D3910 /* LocationDetailVC.swift */; };
 		C40F2CEB2490126300AA1756 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */; };
 		C40F2CEC2490126500AA1756 /* LocationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423722489C8D1000C1A9B /* LocationDetailController.swift */; };
 		C40F2CED2490126800AA1756 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EBCC824884626001DB0A3 /* GlobalConstants.swift */; };
@@ -89,11 +75,8 @@
 		C40F2CF02490127500AA1756 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EBCC2248808D9001DB0A3 /* TestView.swift */; };
 		C40F2CF12490127700AA1756 /* WavyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0285857E2485970E0003E31A /* WavyView.swift */; };
 		C40F2CF22490127D00AA1756 /* WavyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35424B2488000600AAB02C /* WavyView2.swift */; };
-		C40F2CF32490128000AA1756 /* ARCoastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F373247EF4B4001E17F0 /* ARCoastView.swift */; };
-		C40F2CF42490128300AA1756 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289F8F9247DB933008D3910 /* LocationDetailView.swift */; };
 		C40F2CF52490128500AA1756 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsView.swift */; };
 		C40F2CF62490128800AA1756 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
-		C40F2CF72490128A00AA1756 /* LocationReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB92485376A007A94BF /* LocationReusableView.swift */; };
 		C40F2CF82490128E00AA1756 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423762489E617000C1A9B /* ContentCell.swift */; };
 		C40F2CF92490129100AA1756 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F03248AA7E200227C62 /* GraphCell.swift */; };
 		C40F2CFA2490129300AA1756 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F11248AF87600227C62 /* PieChartCell.swift */; };
@@ -123,8 +106,6 @@
 		C40F2D1C2490157200AA1756 /* ThirdOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */; };
 		C40F2D1D2490157200AA1756 /* FourthOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925C24847EC900DDB4DE /* FourthOnboardingView.swift */; };
 		C40F2D1E2490157200AA1756 /* FifthOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */; };
-		C40F2D1F2490168500AA1756 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09F371247EF49F001E17F0 /* ARViewController.swift */; };
-		C40F2D212490171F00AA1756 /* TestARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40F2D202490171F00AA1756 /* TestARView.swift */; };
 		C44314B7248564E4008A59D9 /* UIViewController+resetWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */; };
 		C45DDA8A24A14988002E5C40 /* UIView+AddAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DDA8924A14988002E5C40 /* UIView+AddAccessibility.swift */; };
 		C45DDA8B24A14988002E5C40 /* UIView+AddAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45DDA8924A14988002E5C40 /* UIView+AddAccessibility.swift */; };
@@ -133,9 +114,6 @@
 		C463925B24847EB900DDB4DE /* ThirdOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */; };
 		C463925D24847EC900DDB4DE /* FourthOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925C24847EC900DDB4DE /* FourthOnboardingView.swift */; };
 		C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */; };
-		C463926124847EE800DDB4DE /* ThirdOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926024847EE800DDB4DE /* ThirdOnboardingController.swift */; };
-		C463926324847EF800DDB4DE /* FourthOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926224847EF800DDB4DE /* FourthOnboardingController.swift */; };
-		C463926524847F0B00DDB4DE /* FifthOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463926424847F0B00DDB4DE /* FifthOnboardingController.swift */; };
 		C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EBCC2248808D9001DB0A3 /* TestView.swift */; };
 		C48EBCCB24884626001DB0A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCC524884626001DB0A3 /* Assets.xcassets */; };
 		C48EBCCC24884626001DB0A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCC624884626001DB0A3 /* LaunchScreen.storyboard */; };
@@ -172,7 +150,6 @@
 		0200C36224A6E69D00D94229 /* HandleYears.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleYears.swift; sourceTree = "<group>"; };
 		024035D3248D8B7800C7F7B2 /* ARCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCell.swift; sourceTree = "<group>"; };
 		0271163224B7746D00FC9165 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
-		02737071249C317100A10E7B /* simd+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "simd+ext.swift"; sourceTree = "<group>"; };
 		02737074249D22F300A10E7B /* TOCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCCell.swift; sourceTree = "<group>"; };
 		02737077249FB8AA00A10E7B /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		02737079249FBC2B00A10E7B /* GraphShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphShowAlert.swift; sourceTree = "<group>"; };
@@ -185,8 +162,6 @@
 		0285857A2483063A0003E31A /* FactsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsData.swift; sourceTree = "<group>"; };
 		0285857E2485970E0003E31A /* WavyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyView.swift; sourceTree = "<group>"; };
 		028585822485B9660003E31A /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
-		0289F8F9247DB933008D3910 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
-		0289F8FB247DB981008D3910 /* LocationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
 		02AC5AA124996FCE00468145 /* SeaLevelComputations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaLevelComputations.swift; sourceTree = "<group>"; };
 		02B9AC9F248ED2ED0037971E /* FirstOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingView.swift; sourceTree = "<group>"; };
 		02C4D15624913FCE0095560B /* ExperimentARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentARController.swift; sourceTree = "<group>"; };
@@ -195,15 +170,12 @@
 		02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		02F53F11248AF87600227C62 /* PieChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
 		0642E2B8B8A6CC829C97600A /* Pods-TestFeatureTarget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestFeatureTarget.release.xcconfig"; path = "Target Support Files/Pods-TestFeatureTarget/Pods-TestFeatureTarget.release.xcconfig"; sourceTree = "<group>"; };
-		0B09F371247EF49F001E17F0 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = Coastlines/ARViewController.swift; sourceTree = SOURCE_ROOT; };
-		0B09F373247EF4B4001E17F0 /* ARCoastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARCoastView.swift; path = Coastlines/ARCoastView.swift; sourceTree = SOURCE_ROOT; };
 		0B1A9ED5249BB0D3008477C6 /* CityLights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityLights.swift; sourceTree = "<group>"; };
 		0B1F21382476DEC300729365 /* Coastlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coastlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1F21492476DECA00729365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B2AA89D2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExperimentARController+ARCoachingOverlay.swift"; sourceTree = "<group>"; };
 		0B35424B2488000600AAB02C /* WavyView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyView2.swift; sourceTree = "<group>"; };
 		0BCDFFB7248534B1007A94BF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
-		0BCDFFB92485376A007A94BF /* LocationReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReusableView.swift; sourceTree = "<group>"; };
 		0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIntroCell.swift; sourceTree = "<group>"; };
 		3E4C564036176640CEBB70C2 /* Pods-TestFeatureTarget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestFeatureTarget.debug.xcconfig"; path = "Target Support Files/Pods-TestFeatureTarget/Pods-TestFeatureTarget.debug.xcconfig"; sourceTree = "<group>"; };
 		90B7802E35291B5353608B3B /* Pods-Coastlines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.debug.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,18 +188,15 @@
 		B7B59BDC2497E4E8004CA137 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 		B7B59BDF2497E532004CA137 /* ResourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCell.swift; sourceTree = "<group>"; };
 		B7B59BE22497E8C9004CA137 /* ResourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
-		B7BC816724993AAF00EB6A57 /* ARAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ARAnimation.json; sourceTree = "<group>"; };
 		B7C49F8324A29ABA00D07683 /* IcebergPan3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IcebergPan3.mov; sourceTree = "<group>"; };
 		B7C49F8424A29ABC00D07683 /* coastPan.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = coastPan.mov; sourceTree = "<group>"; };
 		C40F2CD02490123800AA1756 /* Coasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40F2CD22490123800AA1756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C40F2CD42490123800AA1756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C40F2CD62490123800AA1756 /* TestARController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARController.swift; sourceTree = "<group>"; };
 		C40F2CD92490123800AA1756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C40F2CDB2490123A00AA1756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C40F2CDE2490123A00AA1756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C40F2CE02490123A00AA1756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C40F2D202490171F00AA1756 /* TestARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestARView.swift; sourceTree = "<group>"; };
 		C44314B6248564E4008A59D9 /* UIViewController+resetWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+resetWindow.swift"; path = "Coastlines/UIViewController+resetWindow.swift"; sourceTree = SOURCE_ROOT; };
 		C45DDA8924A14988002E5C40 /* UIView+AddAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddAccessibility.swift"; sourceTree = "<group>"; };
 		C463925624847A8F00DDB4DE /* SecondOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingView.swift; sourceTree = "<group>"; };
@@ -235,9 +204,6 @@
 		C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboardingView.swift; sourceTree = "<group>"; };
 		C463925C24847EC900DDB4DE /* FourthOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthOnboardingView.swift; sourceTree = "<group>"; };
 		C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthOnboardingView.swift; sourceTree = "<group>"; };
-		C463926024847EE800DDB4DE /* ThirdOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboardingController.swift; sourceTree = "<group>"; };
-		C463926224847EF800DDB4DE /* FourthOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthOnboardingController.swift; sourceTree = "<group>"; };
-		C463926424847F0B00DDB4DE /* FifthOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthOnboardingController.swift; sourceTree = "<group>"; };
 		C48EBCC2248808D9001DB0A3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		C48EBCC524884626001DB0A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C48EBCC724884626001DB0A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -293,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				02858578248305410003E31A /* locationFactsData.json */,
-				B7BC816724993AAF00EB6A57 /* ARAnimation.json */,
 				02D2F71224A199EC005E89D6 /* arIconAnimation.json */,
 			);
 			path = "JSON Data";
@@ -304,11 +269,8 @@
 			children = (
 				02B9AC9D248EC3DD0037971E /* Wavy Views */,
 				02B9AC9C248EC3AE0037971E /* Onboarding Views */,
-				0B09F373247EF4B4001E17F0 /* ARCoastView.swift */,
-				0289F8F9247DB933008D3910 /* LocationDetailView.swift */,
 				B7A4588D247F10BE001F8E51 /* LocationsView.swift */,
 				028423742489C984000C1A9B /* DetailView.swift */,
-				0BCDFFB92485376A007A94BF /* LocationReusableView.swift */,
 				B7B59BDC2497E4E8004CA137 /* ResourceView.swift */,
 				02B9AC9E248EC3FC0037971E /* Cells */,
 			);
@@ -321,11 +283,6 @@
 				C4CFF34B249AC87C00777962 /* PageController.swift */,
 				C4E97908247DE48A0039B398 /* WelcomeController.swift */,
 				C463925824847AA200DDB4DE /* OnboardingController.swift */,
-				C463926024847EE800DDB4DE /* ThirdOnboardingController.swift */,
-				C463926224847EF800DDB4DE /* FourthOnboardingController.swift */,
-				C463926424847F0B00DDB4DE /* FifthOnboardingController.swift */,
-				0B09F371247EF49F001E17F0 /* ARViewController.swift */,
-				0289F8FB247DB981008D3910 /* LocationDetailVC.swift */,
 				B7A4588B247F10A1001F8E51 /* LocationsViewController.swift */,
 				028423722489C8D1000C1A9B /* LocationDetailController.swift */,
 				B7B59BDA2497E4A0004CA137 /* ResourcesController.swift */,
@@ -340,7 +297,6 @@
 				C4C4D89624B76AE60023C5EB /* UIViewController+makeAlert.swift */,
 				028585822485B9660003E31A /* NSUIColor+Hex.swift */,
 				02F53F05248AAB3C00227C62 /* UIButton+Extension.swift */,
-				02737071249C317100A10E7B /* simd+ext.swift */,
 				02737077249FB8AA00A10E7B /* UIAlertController+Extension.swift */,
 				C45DDA8924A14988002E5C40 /* UIView+AddAccessibility.swift */,
 				C4C4D89924B76FB10023C5EB /* UICollectionView+configureCellSize.swift */,
@@ -468,8 +424,6 @@
 				0273708224A10BDE00A10E7B /* DropFlipRiseNYC.rcproject */,
 				C40F2CD22490123800AA1756 /* AppDelegate.swift */,
 				C40F2CD42490123800AA1756 /* SceneDelegate.swift */,
-				C40F2CD62490123800AA1756 /* TestARController.swift */,
-				C40F2D202490171F00AA1756 /* TestARView.swift */,
 				02C4D15624913FCE0095560B /* ExperimentARController.swift */,
 				0B1A9ED5249BB0D3008477C6 /* CityLights.swift */,
 				0B2AA89D2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift */,
@@ -619,7 +573,6 @@
 			files = (
 				C48EBCE5248846C6001DB0A3 /* CooperHewitt-ThinItalic.otf in Resources */,
 				C48EBCE9248846C6001DB0A3 /* CooperHewitt-LightItalic.otf in Resources */,
-				B7BC816824993AAF00EB6A57 /* ARAnimation.json in Resources */,
 				C48EBCE7248846C6001DB0A3 /* CooperHewitt-BookItalic.otf in Resources */,
 				B7C49F8524A29ABC00D07683 /* IcebergPan3.mov in Resources */,
 				02858579248305410003E31A /* locationFactsData.json in Resources */,
@@ -662,7 +615,6 @@
 				C40F2D13249012E400AA1756 /* CooperHewitt-MediumItalic.otf in Resources */,
 				C40F2D14249012E400AA1756 /* CooperHewitt-Semibold.otf in Resources */,
 				B7C49F8824A29ABC00D07683 /* coastPan.mov in Resources */,
-				B7BC816924993AAF00EB6A57 /* ARAnimation.json in Resources */,
 				02D2F71424A199EC005E89D6 /* arIconAnimation.json in Resources */,
 				C40F2D12249012E400AA1756 /* CooperHewitt-Light.otf in Resources */,
 				C40F2D07249012E400AA1756 /* CooperHewitt-SemiboldItalic.otf in Resources */,
@@ -773,7 +725,6 @@
 				02F53F06248AAB3C00227C62 /* UIButton+Extension.swift in Sources */,
 				C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
-				02737072249C317100A10E7B /* simd+ext.swift in Sources */,
 				C45DDA8A24A14988002E5C40 /* UIView+AddAccessibility.swift in Sources */,
 				0B35424C2488000600AAB02C /* WavyView2.swift in Sources */,
 				B7B59BDD2497E4E8004CA137 /* ResourceView.swift in Sources */,
@@ -789,29 +740,21 @@
 				B7A4588C247F10A1001F8E51 /* LocationsViewController.swift in Sources */,
 				028585832485B9660003E31A /* NSUIColor+Hex.swift in Sources */,
 				C4C4D89D24B7A0270023C5EB /* LocationDetailController+ConfigureCells.swift in Sources */,
-				0B09F374247EF4B4001E17F0 /* ARCoastView.swift in Sources */,
-				0BCDFFBA2485376A007A94BF /* LocationReusableView.swift in Sources */,
 				028423752489C984000C1A9B /* DetailView.swift in Sources */,
 				02F53F04248AA7E200227C62 /* GraphCell.swift in Sources */,
 				02737078249FB8AA00A10E7B /* UIAlertController+Extension.swift in Sources */,
 				C4CFF34C249AC87C00777962 /* PageController.swift in Sources */,
 				0273707E24A00D2C00A10E7B /* FactText.swift in Sources */,
-				0B09F372247EF49F001E17F0 /* ARViewController.swift in Sources */,
 				B7A4588E247F10BE001F8E51 /* LocationsView.swift in Sources */,
 				C463925724847A8F00DDB4DE /* SecondOnboardingView.swift in Sources */,
-				C463926124847EE800DDB4DE /* ThirdOnboardingController.swift in Sources */,
 				C48EBCCE24884626001DB0A3 /* AppDelegate.swift in Sources */,
 				0BCDFFB8248534B1007A94BF /* LocationCell.swift in Sources */,
 				02B9ACA0248ED2ED0037971E /* FirstOnboardingView.swift in Sources */,
 				C4C4D89724B76AE60023C5EB /* UIViewController+makeAlert.swift in Sources */,
-				C463926324847EF800DDB4DE /* FourthOnboardingController.swift in Sources */,
 				C463925924847AA200DDB4DE /* OnboardingController.swift in Sources */,
 				B7B59BDB2497E4A0004CA137 /* ResourcesController.swift in Sources */,
 				0273707A249FBC2B00A10E7B /* GraphShowAlert.swift in Sources */,
 				C48EBCCD24884626001DB0A3 /* GlobalConstants.swift in Sources */,
-				C463926524847F0B00DDB4DE /* FifthOnboardingController.swift in Sources */,
-				0289F8FC247DB981008D3910 /* LocationDetailVC.swift in Sources */,
-				0289F8FA247DB933008D3910 /* LocationDetailView.swift in Sources */,
 				0271163324B7746D00FC9165 /* AppInfo.swift in Sources */,
 				C463925B24847EB900DDB4DE /* ThirdOnboardingView.swift in Sources */,
 			);
@@ -821,15 +764,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C40F2CD72490123800AA1756 /* TestARController.swift in Sources */,
 				C40F2CEC2490126500AA1756 /* LocationDetailController.swift in Sources */,
-				02737073249C324B00A10E7B /* simd+ext.swift in Sources */,
 				C40F2CF22490127D00AA1756 /* WavyView2.swift in Sources */,
 				C40F2D1E2490157200AA1756 /* FifthOnboardingView.swift in Sources */,
 				C4C4D89E24B7A13B0023C5EB /* LocationDetailController+ConfigureCells.swift in Sources */,
 				0B1A9ED6249BB0D3008477C6 /* CityLights.swift in Sources */,
 				C40F2CE52490125200AA1756 /* OnboardingController.swift in Sources */,
-				C40F2CE82490125A00AA1756 /* FifthOnboardingController.swift in Sources */,
 				C40F2CFA2490129300AA1756 /* PieChartCell.swift in Sources */,
 				C40F2CED2490126800AA1756 /* GlobalConstants.swift in Sources */,
 				02737076249D23E800A10E7B /* TOCCell.swift in Sources */,
@@ -842,7 +782,6 @@
 				0273707B249FEC2C00A10E7B /* GraphShowAlert.swift in Sources */,
 				C40F2CFE2490129E00AA1756 /* UIViewController+resetWindow.swift in Sources */,
 				C4CFF34D249AC87C00777962 /* PageController.swift in Sources */,
-				C40F2CF72490128A00AA1756 /* LocationReusableView.swift in Sources */,
 				02C4D15724913FCE0095560B /* ExperimentARController.swift in Sources */,
 				C40F2CEB2490126300AA1756 /* LocationsViewController.swift in Sources */,
 				C40F2D1A2490157200AA1756 /* FirstOnboardingView.swift in Sources */,
@@ -862,20 +801,13 @@
 				C4C4D89824B76D140023C5EB /* UIViewController+makeAlert.swift in Sources */,
 				0273708124A047BF00A10E7B /* FactText.swift in Sources */,
 				C40F2CFB2490129500AA1756 /* ARCell.swift in Sources */,
-				C40F2CEA2490126000AA1756 /* LocationDetailVC.swift in Sources */,
-				C40F2CE62490125400AA1756 /* ThirdOnboardingController.swift in Sources */,
 				C40F2CD52490123800AA1756 /* SceneDelegate.swift in Sources */,
-				C40F2CF42490128300AA1756 /* LocationDetailView.swift in Sources */,
 				C40F2CF82490128E00AA1756 /* ContentCell.swift in Sources */,
 				C40F2CFC2490129800AA1756 /* LocationCell.swift in Sources */,
 				C45DDA8B24A14988002E5C40 /* UIView+AddAccessibility.swift in Sources */,
-				C40F2D212490171F00AA1756 /* TestARView.swift in Sources */,
 				0200C36324A6E69D00D94229 /* HandleYears.swift in Sources */,
-				C40F2D1F2490168500AA1756 /* ARViewController.swift in Sources */,
 				C40F2D1D2490157200AA1756 /* FourthOnboardingView.swift in Sources */,
-				C40F2CF32490128000AA1756 /* ARCoastView.swift in Sources */,
 				B7B59BDE2497E4E8004CA137 /* ResourceView.swift in Sources */,
-				C40F2CE72490125800AA1756 /* FourthOnboardingController.swift in Sources */,
 				C40F2CFD2490129A00AA1756 /* LocationIntroCell.swift in Sources */,
 				C40F2D1C2490157200AA1756 /* ThirdOnboardingView.swift in Sources */,
 			);
