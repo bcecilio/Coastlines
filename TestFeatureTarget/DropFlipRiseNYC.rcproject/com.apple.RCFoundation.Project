@@ -356,6 +356,20 @@
                 "factory" : null,
                 "runtimeAttributes" : [
                   [
+                    "accessibilityDescription",
+                    {
+                      "typeName" : "String",
+                      "value" : "When the camera finds something horizontal such as a table top or the floor, an image of New York City drops into view from a distance."
+                    }
+                  ],
+                  [
+                    "accessibilityLabel",
+                    {
+                      "typeName" : "String",
+                      "value" : "Drop Scene"
+                    }
+                  ],
+                  [
                     "isAccessibilityEnabled",
                     {
                       "typeName" : "Bool",
@@ -578,7 +592,8 @@
                       "accessibility" : {
                         "__content" : [
                           {
-                            "isEnabled" : false
+                            "description" : "Welcome to the augmented reality experience. An image of New York City drops into view from a distance. Tap the center of the screen for more information.",
+                            "isEnabled" : true
                           }
                         ],
                         "__version" : 1
@@ -951,10 +966,31 @@
                           }
                         ],
                         [
+                          "accessibilityDescription",
+                          {
+                            "typeName" : "String",
+                            "value" : "The image is a view of Manhattan’s gorgeous skyline from across the Hudson in Jersey City."
+                          }
+                        ],
+                        [
+                          "accessibilityLabel",
+                          {
+                            "typeName" : "String",
+                            "value" : "Image of Manhattan’s gorgeous skyline from across the Hudson in Jersey City.  Tapping on the image will cause it to flip and display a model of lower Manhattan."
+                          }
+                        ],
+                        [
                           "entityName",
                           {
                             "typeName" : "String",
                             "value" : "nycImage"
+                          }
+                        ],
+                        [
+                          "isAccessibilityEnabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
                           }
                         ],
                         [
@@ -1237,21 +1273,21 @@
               "title" : "FlipScene",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.99763596057891846,
-                  -6.717163358871403e-08,
-                  0.06871921569108963,
+                  0.97631591558456421,
+                  -6.7055225372314453e-08,
+                  0.21634969115257263,
                   0,
-                  0.049414839595556259,
-                  0.69492471218109131,
-                  -0.71738255023956299,
+                  0.083657659590244293,
+                  0.92221486568450928,
+                  -0.37751957774162292,
                   0,
-                  -0.047754701226949692,
-                  0.71908235549926758,
-                  0.69328206777572632,
+                  -0.19952088594436646,
+                  0.38667750358581543,
+                  0.90037316083908081,
                   0,
-                  0.063369542360305786,
-                  0.90236735343933105,
-                  1.0101866722106934,
+                  -0.13964974880218506,
+                  0.47100299596786499,
+                  1.5116539001464844,
                   1
                 ],
                 "sceneTransform" : [
@@ -2097,6 +2133,53 @@
                     }
                   ],
                   "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "description" : "A 3 D model of the city is shown in the middle of the screen. Highlighted by white spotlights.",
+                            "isEnabled" : true
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+
+                      ],
+                      "color" : [
+                        0.30980393290519714,
+                        0.56470590829849243,
+                        0.99215686321258545,
+                        1
+                      ],
+                      "identifier" : "0A306733-4CFE-4B44-B6A0-F399A08300B1",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "accessibility",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+
+                                },
+                                "name" : "start"
+                              },
+                              "identifier" : "987FFAC2-DC24-4419-96F9-96BE8B3EB6EF",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
                 }
               ],
               "gravity" : [
@@ -2146,10 +2229,24 @@
                           }
                         ],
                         [
+                          "accessibilityLabel",
+                          {
+                            "typeName" : "String",
+                            "value" : "A night time photo of new york city's famous Brooklyn Bridge is taken from the well known South Street Seaport district. In the coming years, the south street seaport district will be at ever increasing risk to flooding due to rising sea levels."
+                          }
+                        ],
+                        [
                           "entityName",
                           {
                             "typeName" : "String",
                             "value" : "sssImage"
+                          }
+                        ],
+                        [
+                          "isAccessibilityEnabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
                           }
                         ]
                       ]
@@ -2260,10 +2357,24 @@
                           }
                         ],
                         [
+                          "accessibilityLabel",
+                          {
+                            "typeName" : "String",
+                            "value" : "This is a model of New York City in the year 2020.  By tapping on the model, markers of some notable new york city landmarks come in to view."
+                          }
+                        ],
+                        [
                           "entityName",
                           {
                             "typeName" : "String",
                             "value" : "nycModel"
+                          }
+                        ],
+                        [
+                          "isAccessibilityEnabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
                           }
                         ]
                       ]
@@ -4180,10 +4291,24 @@
                           }
                         ],
                         [
+                          "accessibilityLabel",
+                          {
+                            "typeName" : "String",
+                            "value" : "Image of The Manhattan Bridge is taken from west fourth street in dumbo Brooklyn. Bob Dylan's album cover for Freewheelin made this vantage point famous and a go to spot for music lovers and photographers alike. In the year 2100 it is likely the photographer trying to recreate this image would be standing in chest high water."
+                          }
+                        ],
+                        [
                           "entityName",
                           {
                             "typeName" : "String",
                             "value" : "dumboImage"
+                          }
+                        ],
+                        [
+                          "isAccessibilityEnabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
                           }
                         ]
                       ]
@@ -6696,10 +6821,24 @@
                           }
                         ],
                         [
+                          "accessibilityLabel",
+                          {
+                            "typeName" : "String",
+                            "value" : "Dumbo Brooklyn"
+                          }
+                        ],
+                        [
                           "entityName",
                           {
                             "typeName" : "String",
                             "value" : "dumboMarker"
+                          }
+                        ],
+                        [
+                          "isAccessibilityEnabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
                           }
                         ]
                       ]
@@ -7031,10 +7170,24 @@
                           }
                         ],
                         [
+                          "accessibilityLabel",
+                          {
+                            "typeName" : "String",
+                            "value" : "South Street Seaport"
+                          }
+                        ],
+                        [
                           "entityName",
                           {
                             "typeName" : "String",
                             "value" : "sssMarker"
+                          }
+                        ],
+                        [
+                          "isAccessibilityEnabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
                           }
                         ]
                       ]
@@ -7099,10 +7252,24 @@
                           }
                         ],
                         [
+                          "accessibilityLabel",
+                          {
+                            "typeName" : "String",
+                            "value" : "A picture of Battery Park on Manhattan's southern tip taken from a helicopter on a sunny day. In the not so far future, Battery Park will be completely under water if nothing is done to slow down climate change."
+                          }
+                        ],
+                        [
                           "entityName",
                           {
                             "typeName" : "String",
                             "value" : "bParkImage"
+                          }
+                        ],
+                        [
+                          "isAccessibilityEnabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
                           }
                         ]
                       ]
@@ -8520,10 +8687,24 @@
                           }
                         ],
                         [
+                          "accessibilityLabel",
+                          {
+                            "typeName" : "String",
+                            "value" : "This is a label reading New York City with the date 202 next to it."
+                          }
+                        ],
+                        [
                           "entityName",
                           {
                             "typeName" : "String",
                             "value" : "nycLabel"
+                          }
+                        ],
+                        [
+                          "isAccessibilityEnabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
                           }
                         ],
                         [
@@ -8981,10 +9162,24 @@
                           }
                         ],
                         [
+                          "accessibilityLabel",
+                          {
+                            "typeName" : "String",
+                            "value" : "Battery Park"
+                          }
+                        ],
+                        [
                           "entityName",
                           {
                             "typeName" : "String",
                             "value" : "bParkMarker"
+                          }
+                        ],
+                        [
+                          "isAccessibilityEnabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
                           }
                         ]
                       ]
@@ -9217,9 +9412,9 @@
                   0.59589952230453491,
                   0.73123848438262939,
                   0,
-                  -0.41781884431838989,
-                  0.49791243672370911,
-                  0.91880381107330322,
+                  -0.31353083252906799,
+                  0.86483079195022583,
+                  1.1594440937042236,
                   1
                 ],
                 "sceneTransform" : [

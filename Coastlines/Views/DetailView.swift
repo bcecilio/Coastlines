@@ -86,7 +86,7 @@ class DetailView: UIView {
     public lazy var goToARButton: UIButton = {
         var button = UIButton()
         button = button.arButton()
-        button.addAccessibility(.button, "Augmented Reality", nil, "Will bring you to an IMPACTFUL!!! augmented reality experience.")
+        button.addAccessibility(.button, "Augmented Reality", nil, "Will bring you to an impactful augmented reality experience. Once in ay are, pan your phone around to find a horizontal surface.")
         return button
     }()
     

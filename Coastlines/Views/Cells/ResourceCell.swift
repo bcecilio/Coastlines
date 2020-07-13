@@ -151,5 +151,12 @@ class ResourceCell: UITableViewCell {
         subtext.text = resource.description
         title.addAccessibility(.none, resource.title, nil, nil)
         subtext.addAccessibility(.none, resource.description, nil, nil)
+
+        if frame.height == 65 {
+            downExpand.image = UIImage(systemName: "chevron.compact.down")
+        } else {
+            downExpand.image = UIImage(systemName: "chevron.compact.up")
+        }
+        
     }
 }
