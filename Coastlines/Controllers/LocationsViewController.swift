@@ -33,20 +33,29 @@ class LocationsViewController: UIViewController {
 extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return locations.count
+        if section == 0 {
+            return 1
+        } else {
+            return locations.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "locationCell", for: indexPath) as? LocationCell else {
                 fatalError("Failed to create locationCell")
             }
-            
+        
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "introCell", for: indexPath) as? LocationIntroCell ?? UICollectionViewCell()
+            return cell
+        } else {
             cell.configureCell(locations[indexPath.row])
             return cell
+        }
     }
     
     
@@ -68,9 +77,11 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
             let vc = LocationDetailController(locationData[indexPath.row])
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
