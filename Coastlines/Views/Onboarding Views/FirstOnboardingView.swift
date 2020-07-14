@@ -58,7 +58,7 @@ class FirstOnboardingView: UIView {
         let button = UIButton()
         button.setTitle("Skip", for: .normal)
         button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
-        button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(goToLocationsVC(sender:)), for: .touchUpInside)
         button.addAccessibility(.button, "Skip", "Skips onboarding experience", nil)
         button.adjustsImageSizeForAccessibilityContentSizeCategory = true
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
@@ -166,7 +166,10 @@ class FirstOnboardingView: UIView {
         NSLayoutConstraint.activate([topView.topAnchor.constraint(equalTo: topAnchor), topView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), topView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), topView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.35)])
     }
     
-    @objc
+    @objc private func goToLocationsVC(sender: UIButton) {
+        animateSkipButton(sender)
+    }
+    
     private func showLocationsVC(){
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
@@ -183,6 +186,18 @@ class FirstOnboardingView: UIView {
             self.nextButton.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             self.nextButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }) { (completed) in
+        }
+    }
+    
+    private func animateSkipButton(_ buttonToAnimate: UIButton) {
+        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.80, y: 0.80)
+        }) { (_) in
+            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }) { (_) in
+                self.showLocationsVC()
+            }
         }
     }
 }
