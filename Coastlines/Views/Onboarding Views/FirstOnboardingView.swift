@@ -17,7 +17,7 @@ class FirstOnboardingView: UIView {
         button.layer.borderWidth = 1.0
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
         button.layer.cornerRadius = 25.0
-        button.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
+        button.addTarget(self, action: #selector(beginSegue(sender:)), for: .touchUpInside)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -175,7 +175,10 @@ class FirstOnboardingView: UIView {
         UIViewController.resetWindow(locationsVC)
     }
     
-    @objc
+    @objc private func beginSegue(sender: UIButton) {
+        animateBeginButton(sender)
+    }
+    
     private func segueNext(){
         let nextVC = PageController()
         UIViewController.resetWindow(nextVC)
@@ -197,6 +200,18 @@ class FirstOnboardingView: UIView {
                 buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
             }) { (_) in
                 self.showLocationsVC()
+            }
+        }
+    }
+    
+    private func animateBeginButton(_ buttonToAnimate: UIButton) {
+        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.80, y: 0.80)
+        }) { (_) in
+            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }) { (_) in
+                self.segueNext()
             }
         }
     }
