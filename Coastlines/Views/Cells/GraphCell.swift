@@ -57,9 +57,19 @@ class GraphCell: UICollectionViewCell {
         label.text = ""
         label.textAlignment = .center
         label.textColor = PaletteColour.offWhite.colour
-        label.font = Font.cooper20
+        label.font = Font.boldArial24
         label.numberOfLines = 0
         label.alpha = 1
+        return label
+    }()
+    
+    public lazy var tapChartLabel: UILabel = {
+        let label = UILabel()
+        label.text = "tap the chart to learn more"
+        label.textAlignment = .center
+        label.font = Font.boldArial18
+        label.textColor = PaletteColour.offWhite.colour
+        label.numberOfLines = 0
         return label
     }()
     
@@ -70,6 +80,7 @@ class GraphCell: UICollectionViewCell {
         setupHeaderLabel()
         setupSeaLevelGraph()
         setupDescriptionLabel()
+        setupTapChartLabel()
         setSeaLevelData()
 //        flashChart()
     }
@@ -101,11 +112,22 @@ class GraphCell: UICollectionViewCell {
     private func setupDescriptionLabel() {
         addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.text = "\nRise in inches by 2100"
+        descriptionLabel.text = "Rise in inches by 2100"
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: seaLevelLineChart.bottomAnchor, constant: 0),
+            descriptionLabel.topAnchor.constraint(equalTo: seaLevelLineChart.bottomAnchor, constant: 10),
             descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+        ])
+    }
+    
+    private func setupTapChartLabel() {
+        addSubview(tapChartLabel)
+        tapChartLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tapChartLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
+            tapChartLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            tapChartLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
     }
     

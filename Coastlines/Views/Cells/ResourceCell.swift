@@ -22,10 +22,17 @@ class ResourceCell: UITableViewCell {
     
     private var titleHeightConstraint = NSLayoutConstraint()
     
+    private lazy var iconImage: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(named: "population")
+        return iv
+    }()
+    
     private lazy var title: UILabel = {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+//        label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.textColor = PaletteColour.offWhite.colour
         label.backgroundColor = .clear
         label.clipsToBounds = true
@@ -38,7 +45,7 @@ class ResourceCell: UITableViewCell {
         tv.text = ""
         tv.font = UIFont.preferredFont(forTextStyle: .body)
         tv.adjustsFontForContentSizeCategory = true
-        tv.linkTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange, NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+        tv.linkTextAttributes = [NSAttributedString.Key.foregroundColor: PaletteColour.peach.colour, NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
         tv.isUserInteractionEnabled = true
         tv.isEditable = false
         tv.isSelectable = true
@@ -85,6 +92,7 @@ class ResourceCell: UITableViewCell {
     
     private func commonInit() {
         setupContainer()
+        setupIconImage()
         setupTitle()
         setupDownExpand()
         setupSubText()
@@ -101,17 +109,45 @@ class ResourceCell: UITableViewCell {
         ])
     }
     
+    private func setupIconImage() {
+        container.addSubview(iconImage)
+        iconImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            iconImage.topAnchor.constraint(equalTo: container.topAnchor, constant: 20),
+            iconImage.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 10),
+            iconImage.widthAnchor.constraint(equalToConstant: 38),
+            iconImage.heightAnchor.constraint(equalToConstant: 38)
+        ])
+    }
+    
     private func setupTitle() {
-        container.addSubview(title)
+        self.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: container.topAnchor, constant: 20),
-            title.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
-            title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
-            //title.heightAnchor.constraint(equalToConstant: 60)
+//            title.topAnchor.constraint(equalTo: container.topAnchor, constant: 20),
+//            title.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
+//            title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
+            title.centerYAnchor.constraint(equalTo: iconImage.centerYAnchor),
+            title.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: 10),
+            title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20)
         ])
         
     }
+    
+//    private func setupTitle() {
+//            container.addSubview(title)
+//            title.translatesAutoresizingMaskIntoConstraints = false
+//            NSLayoutConstraint.activate([
+//    //            title.topAnchor.constraint(equalTo: container.topAnchor, constant: 20),
+//    //            title.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
+//    //            title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
+//                title.centerYAnchor.constraint(equalTo: iconImage.centerYAnchor),
+//                title.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: 5),
+//                title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20)
+//            ])
+//
+//        }
     
     private func setupDownExpand() {
         container.addSubview(downExpand)
@@ -151,14 +187,18 @@ class ResourceCell: UITableViewCell {
     
     public func configureCell(with resource: Resources) {
         title.text = resource.title
-        let attString = NSMutableAttributedString(string: resource.description, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)])
-        let url = "https://www.apple.com"
-        attString.setAttributes([.link: url, NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)], range: NSMakeRange(attString.length - 11, 11))
+        
+        iconImage.image = UIImage(named: resource.image)
+        
+        let attString = NSMutableAttributedString(string: resource.description, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body), NSAttributedString.Key.foregroundColor: PaletteColour.offWhite.colour])
+
+        attString.setAttributes([.link: resource.url, NSAttributedString.Key.foregroundColor: PaletteColour.offWhite.colour, NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)], range: NSMakeRange(attString.length - 11, 11))
+        
         subtext.attributedText = attString
         title.addAccessibility(.none, resource.title, nil, nil)
         subtext.addAccessibility(.none, resource.description, nil, nil)
 
-        if frame.height == 65 {
+        if frame.height == 75 {
             downExpand.image = UIImage(systemName: "chevron.compact.down")
         } else {
             downExpand.image = UIImage(systemName: "chevron.compact.up")

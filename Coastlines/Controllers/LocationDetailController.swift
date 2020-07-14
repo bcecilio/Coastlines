@@ -113,11 +113,11 @@ class LocationDetailController: UIViewController {
         case 5:
             locationView.showPrev()
             locationView.showNext()
-            locationView.showARButton()
+//            locationView.showARButton()
         case 6:
             locationView.hideNext()
             locationView.showPrev()
-            locationView.hideARButton()
+//            locationView.hideARButton()
             augCell.arIconAnimation.play()
             augCell.arIconAnimation.loopMode = .loop
         default:
@@ -232,7 +232,7 @@ extension LocationDetailController: TapContents {
         locationView.showPrev(delay: TimeInterval(content.rawValue)*0.5)
         
         if content == .seeInAR {
-            locationView.hideARButton()
+//            locationView.hideARButton()
             locationView.hideNext()
             augCell.arIconAnimation.play()
             augCell.arIconAnimation.loopMode = .loop
