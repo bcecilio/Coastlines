@@ -66,7 +66,7 @@ public struct ContentText {
     static let whatsHappening = "\nWhat is happening?"
     static let popDisplaced = "\nPeople Displaced"
     static let whereWillWeGo = "\nWhere will we go?"
-    static let seeInAR = "\nAugmented Reality"
+    static let seeInAR = "\n\nAugmented Reality"
 }
 
 public struct Font {

@@ -32,7 +32,6 @@ class ResourceCell: UITableViewCell {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-//        label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.textColor = PaletteColour.offWhite.colour
         label.backgroundColor = .clear
         label.clipsToBounds = true
@@ -60,17 +59,6 @@ class ResourceCell: UITableViewCell {
         iv.image = UIImage(systemName: "chevron.compact.down")
         iv.tintColor = PaletteColour.offWhite.colour
         return iv
-    }()
-    
-    private lazy var linkLabel: UILabel = {
-       let label = UILabel()
-        label.text = "learn more"
-        label.textAlignment = .right
-        label.textColor = PaletteColour.offWhite.colour
-        label.backgroundColor = .brown
-        label.isUserInteractionEnabled = true
-        label.font = UIFont.preferredFont(forTextStyle: .body)
-        return label
     }()
     
     private let container: UIView = {
@@ -125,29 +113,12 @@ class ResourceCell: UITableViewCell {
         self.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-//            title.topAnchor.constraint(equalTo: container.topAnchor, constant: 20),
-//            title.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
-//            title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
             title.centerYAnchor.constraint(equalTo: iconImage.centerYAnchor),
             title.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: 10),
             title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20)
         ])
         
     }
-    
-//    private func setupTitle() {
-//            container.addSubview(title)
-//            title.translatesAutoresizingMaskIntoConstraints = false
-//            NSLayoutConstraint.activate([
-//    //            title.topAnchor.constraint(equalTo: container.topAnchor, constant: 20),
-//    //            title.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
-//    //            title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
-//                title.centerYAnchor.constraint(equalTo: iconImage.centerYAnchor),
-//                title.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: 5),
-//                title.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20)
-//            ])
-//
-//        }
     
     private func setupDownExpand() {
         container.addSubview(downExpand)
@@ -165,11 +136,10 @@ class ResourceCell: UITableViewCell {
         container.addSubview(subtext)
         subtext.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            subtext.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 16),
+            subtext.topAnchor.constraint(equalTo: iconImage.bottomAnchor, constant: 10),
             subtext.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 15),
             subtext.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -15),
             subtext.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -5)
-//            subtext.heightAnchor.constraint(equalToConstant: 120)
         ])
     }
     

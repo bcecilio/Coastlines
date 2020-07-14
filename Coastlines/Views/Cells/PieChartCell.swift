@@ -20,6 +20,7 @@ class PieChartCell: UICollectionViewCell {
         label.font = Font.cooper34
         label.textColor = PaletteColour.offWhite.colour
         label.numberOfLines = 0
+        label.alpha = 0
         return label
     }()
     
@@ -33,6 +34,7 @@ class PieChartCell: UICollectionViewCell {
         pieChart.rotationAngle = 20
         pieChart.rotationEnabled = false
         pieChart.legend.enabled = true
+        pieChart.alpha = 0
         return pieChart
     }()
     
@@ -43,6 +45,7 @@ class PieChartCell: UICollectionViewCell {
         label.font = Font.boldArial18
         label.textColor = PaletteColour.offWhite.colour
         label.numberOfLines = 0
+        label.alpha = 0
         return label
     }()
     
@@ -75,7 +78,8 @@ class PieChartCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             populationGraphView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10),
             populationGraphView.widthAnchor.constraint(equalTo: self.widthAnchor),
-            populationGraphView.heightAnchor.constraint(equalTo: populationGraphView.widthAnchor, multiplier: 0.85)
+            populationGraphView.heightAnchor.constraint(equalTo: populationGraphView.widthAnchor, multiplier: 0.85),
+            populationGraphView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
         ])
     }
     
@@ -92,6 +96,18 @@ class PieChartCell: UICollectionViewCell {
     
     public func animatePieChart() {
         populationGraphView.pulsate()
+    }
+    
+    public func showItems() {
+        headerLabel.showItem()
+        populationGraphView.showItem()
+        tapChartLabel.showItem()
+    }
+    
+    public func hideItems() {
+        headerLabel.hideItem()
+        populationGraphView.hideItem()
+        tapChartLabel.hideItem()
     }
     
 }

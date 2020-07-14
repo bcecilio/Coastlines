@@ -18,13 +18,14 @@ class ARCell: UICollectionViewCell {
         label.font = Font.cooper34
         label.textColor = PaletteColour.offWhite.colour
         label.numberOfLines = 0
-        label.alpha = 1
+        label.alpha = 0
         return label
     }()
     
     public lazy var arIconAnimation: AnimationView = {
         let v = AnimationView()
         v.animation = Animation.named("arIconAnimation")
+        v.alpha = 0
         return v
     }()
     
@@ -35,6 +36,7 @@ class ARCell: UICollectionViewCell {
         label.font = Font.boldArial18
         label.textColor = PaletteColour.offWhite.colour
         label.numberOfLines = 0
+        label.alpha = 0
         return label
     }()
     
@@ -45,16 +47,16 @@ class ARCell: UICollectionViewCell {
         setupARAnimation()
         setupHeaderLabel()
         setupARLabel()
-        animateLabel()
+//        animateLabel()
 //        animateARIcon()
     }
     
-    private func animateLabel() {
-        UIView.animate(withDuration: 2, delay: 0, options: [.transitionCrossDissolve], animations: {
-            self.headerLabel.alpha = 1
-            
-        }, completion: nil)
-    }
+//    private func animateLabel() {
+//        UIView.animate(withDuration: 2, delay: 0, options: [.transitionCrossDissolve], animations: {
+//            self.headerLabel.alpha = 1
+//
+//        }, completion: nil)
+//    }
     
     private func setupHeaderLabel() {
         addSubview(headerLabel)
@@ -88,6 +90,18 @@ class ARCell: UICollectionViewCell {
             tapARLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             tapARLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
+    }
+    
+    public func showItems() {
+        headerLabel.showItem()
+        arIconAnimation.showItem()
+        tapARLabel.showItem()
+    }
+    
+    public func hideItems() {
+        headerLabel.hideItem()
+        arIconAnimation.hideItem()
+        tapARLabel.hideItem()
     }
     
 //    public func animateARIcon(){
