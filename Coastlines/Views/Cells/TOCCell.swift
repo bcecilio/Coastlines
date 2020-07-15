@@ -185,6 +185,16 @@ class TOCCell: UICollectionViewCell {
         
         contentDelegate?.onItem(content: content)
     }
+    
+    public func showItems() {
+        stackView.showItem()
+        headerLabel.showItem()
+    }
+    
+    public func hideItems() {
+        stackView.hideItem()
+        headerLabel.hideItem()
+    }
 }
 
 extension UIView {

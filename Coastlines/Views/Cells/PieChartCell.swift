@@ -20,6 +20,7 @@ class PieChartCell: UICollectionViewCell {
         label.font = Font.cooper34
         label.textColor = PaletteColour.offWhite.colour
         label.numberOfLines = 0
+        label.alpha = 0
         return label
     }()
     
@@ -33,7 +34,19 @@ class PieChartCell: UICollectionViewCell {
         pieChart.rotationAngle = 20
         pieChart.rotationEnabled = false
         pieChart.legend.enabled = true
+        pieChart.alpha = 0
         return pieChart
+    }()
+    
+    public lazy var tapChartLabel: UILabel = {
+        let label = UILabel()
+        label.text = "tap the chart to learn more"
+        label.textAlignment = .center
+        label.font = Font.boldArial18
+        label.textColor = PaletteColour.offWhite.colour
+        label.numberOfLines = 0
+        label.alpha = 0
+        return label
     }()
     
     override func layoutSubviews() {
@@ -43,6 +56,7 @@ class PieChartCell: UICollectionViewCell {
         setupHeaderLabel()
         setupPieChart()
         setPopulationGraphData()
+        setupTapChartLabel()
         animatePieChart()
     }
     
@@ -64,12 +78,36 @@ class PieChartCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             populationGraphView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10),
             populationGraphView.widthAnchor.constraint(equalTo: self.widthAnchor),
-            populationGraphView.heightAnchor.constraint(equalTo: populationGraphView.widthAnchor, multiplier: 0.85)
+            populationGraphView.heightAnchor.constraint(equalTo: populationGraphView.widthAnchor, multiplier: 0.85),
+            populationGraphView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
+        ])
+    }
+    
+    private func setupTapChartLabel() {
+        addSubview(tapChartLabel)
+        tapChartLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tapChartLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
+            tapChartLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            tapChartLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
     }
     
     public func animatePieChart() {
         populationGraphView.pulsate()
+    }
+    
+    public func showItems() {
+        headerLabel.showItem()
+        populationGraphView.showItem()
+        tapChartLabel.showItem()
+    }
+    
+    public func hideItems() {
+        headerLabel.hideItem()
+        populationGraphView.hideItem()
+        tapChartLabel.hideItem()
     }
     
 }
@@ -88,21 +126,25 @@ extension PieChartCell: ChartViewDelegate {
         let percentDisplaced = Int((Double(location.facts.populationDisplaced)/Double(location.facts.population)) * 100)
         let percentNotDisplaced = 100 - percentDisplaced
         
+//        legend.setCustom(colors: [UIColor.greenColor(), UIColor.blueColor(), UIColor.blackColor()], labels: ["qwe", "asd", "zxc"])
         
-        
-        var entryOne = PieChartDataEntry(value: Double(location.facts.population), label: "\(percentNotDisplaced)%")
-        var entryTwo = PieChartDataEntry(value: Double(location.facts.populationDisplaced), label: "\(percentDisplaced)%")
+        let entryOne = PieChartDataEntry(value: Double(location.facts.population), label: "         Population")
+        let entryTwo = PieChartDataEntry(value: Double(location.facts.populationDisplaced), label: "Displaced      ")
         
         populationGraphView.legend.textColor = PaletteColour.offWhite.colour
         
         entries.append(entryOne)
         entries.append(entryTwo)
         
-        let entryOneo = LegendEntry()
-        entryOneo.label = "JKDJNVKSDJBVKB"
-        populationGraphView.legend.entries = [entryOneo]
-        
-        
+        let legendOne = LegendEntry()
+        legendOne.label = "\(percentNotDisplaced)%"
+        legendOne.formColor = NSUIColor(hex: 0xa9bd95)
+        let legendTwo = LegendEntry()
+        legendTwo.label = "\(percentDisplaced)%"
+        legendTwo.formColor = NSUIColor(hex: 0xe2a093)
+        populationGraphView.legend.setCustom(entries: [legendOne,legendTwo])
+        populationGraphView.legend.formSize = 20
+        populationGraphView.legend.font = NSUIFont(name: "Arial-BoldMT", size: 16) ?? NSUIFont()
         let dataSet = PieChartDataSet(entries: entries, label: "")
         
         let c1 = NSUIColor(hex: 0xa9bd95)
@@ -128,7 +170,7 @@ extension PieChartView {
     func pulsate() {
         let pulse = CASpringAnimation(keyPath: "transform.scale")
         pulse.duration = 0.4
-        pulse.fromValue = 0.98
+        pulse.fromValue = 0.985
         pulse.toValue = 1.0
         pulse.autoreverses = true
         pulse.repeatCount = .infinity

@@ -7,7 +7,12 @@ class LocationDetailController: UIViewController {
     private var locationView = DetailView()
     private let location: Location
     private var selection: Selection
-    private var seaChartCell = GraphCell()
+    private var tocCell = TOCCell()
+    private var didYouKnowCell = ContentCell()
+    private var happeningCell = ContentCell()
+    private var willWeGoCell = ContentCell()
+    private var linaCell = GraphCell()
+    private var pieCell = PieChartCell()
     private var augCell = ARCell()
     private var buttonTag = 0
     private var didYouKnowText: [String]
@@ -40,7 +45,7 @@ class LocationDetailController: UIViewController {
         view.backgroundColor = PaletteColour.darkBlue.colour
         
         setupUIandTargets()
-        showHideButtons()
+        showHideItems()
         locationView.collectionView.delegate = self
         locationView.collectionView.dataSource = self
     }
@@ -69,55 +74,74 @@ class LocationDetailController: UIViewController {
             present(comingSoonAlert, animated: true, completion: nil)
             
         } else {
-
-            print("AR Pressed")
-//            let arVC = ExperimentARController(location)
-//            UIViewController.resetWindow(arVC)
-            
+            let arVC = ExperimentARController(location)
+            UIViewController.resetWindow(arVC)
         }
         
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
-        
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
     }
     
     @objc func infoButtonPressed(_ sender: UIButton) {
-        
         let resourcesVC = ResourcesController()
         UIViewController.resetWindow(resourcesVC)
     }
     
     @objc func nextButtonPressed(_ sender: UIButton) {
-        scrollRightTo()
+        scrollRightTo(isToc: false)
         buttonTag += 1
-        showHideButtons()
+        showHideItems()
         print(buttonTag)
     }
     
     @objc func prevButtonPressed(_ sender: UIButton) {
         scrollLeftTo()
         buttonTag -= 1
-        showHideButtons()
+        showHideItems()
         print(buttonTag)
     }
     
-    private func showHideButtons() {
+    private func showHideItems() {
         switch buttonTag {
         case 0:
+            tocCell.showItems()
             locationView.hidePrev()
+            didYouKnowCell.hideLabels()
+        case 1:
+            tocCell.hideItems()
+            locationView.showPrev()
+            didYouKnowCell.showLabels()
+            linaCell.hideItems()
         case 2:
+            locationView.showPrev()
+            linaCell.showItems()
             animateChart()
+            didYouKnowCell.hideLabels()
+            happeningCell.hideLabels()
+        case 3:
+            linaCell.hideItems()
+            happeningCell.showLabels()
+            pieCell.hideItems()
+        case 4:
+            pieCell.showItems()
+            happeningCell.hideLabels()
+            willWeGoCell.hideLabels()
         case 5:
+            pieCell.hideItems()
             locationView.showPrev()
             locationView.showNext()
-            locationView.showARButton()
+            willWeGoCell.showLabels()
+            augCell.hideItems()
+        //            locationView.showARButton()
         case 6:
+            willWeGoCell.hideLabels()
             locationView.hideNext()
             locationView.showPrev()
-            locationView.hideARButton()
+            //            locationView.hideARButton()
+            augCell.showItems()
             augCell.arIconAnimation.play()
             augCell.arIconAnimation.loopMode = .loop
         default:
@@ -125,12 +149,22 @@ class LocationDetailController: UIViewController {
         }
     }
     
-    private func scrollRightTo(time: Double = 1.0) {
+    private func scrollRightTo(time: Double = 1.0, isToc: Bool) {
         
-        UIView.animate(withDuration: time*(1), delay: 0, options: .curveEaseOut, animations: {
-            self.locationView.collectionView.contentOffset.x += self.locationView.frame.width-5.5
+        var notInstant = 0.0
+        
+        UIView.animate(withDuration: time*(0.75), delay: 0, options: .curveEaseOut, animations: {
             self.locationView.nameLabelLeading.constant -= self.locationView.frame.width+8
             self.locationView.wavyLeading.constant -= self.locationView.frame.width
+            self.locationView.layoutIfNeeded()
+        }, completion: nil)
+        
+        if !isToc {
+            notInstant = time
+        }
+        
+        UIView.animate(withDuration: notInstant*(1), delay: 0, options: .curveEaseOut, animations: {
+            self.locationView.collectionView.contentOffset.x += self.locationView.frame.width-5.5
             self.locationView.layoutIfNeeded()
         }, completion: nil)
         
@@ -147,16 +181,16 @@ class LocationDetailController: UIViewController {
     }
     
     private func animateChart() {
-        seaChartCell.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 3, easingOption: .easeInCirc)
+        linaCell.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 3, easingOption: .easeInCirc)
     }
-
+    
     private func setSeaLevelChart() {
-        seaChartCell.location = location
-        seaChartCell.setSeaLevelData()
-        seaChartCell.seaLevelSet.setCircleColor(PaletteColour.darkBlue.colour)
-        seaChartCell.seaLevelSet.setColor(PaletteColour.darkBlue.colour)
-        seaChartCell.seaLevelSet.fill = Fill(color: PaletteColour.darkBlue.colour)
-        seaChartCell.headerLabel.addAccessibility(.none, "This is a line chart that shows how sea levels might rise from now until 2100. It is even possible that by the year 2100 sea levels could surpass 6 feet.", nil, "Tapping on this chart displays a pop up view for the rise in sea level for the selected year")
+        linaCell.location = location
+        linaCell.setSeaLevelData()
+        linaCell.seaLevelSet.setCircleColor(PaletteColour.darkBlue.colour)
+        linaCell.seaLevelSet.setColor(PaletteColour.darkBlue.colour)
+        linaCell.seaLevelSet.fill = Fill(color: PaletteColour.darkBlue.colour)
+        linaCell.headerLabel.addAccessibility(.none, "This is a line chart that shows how sea levels might rise from now until 2100. It is even possible that by the year 2100 sea levels could surpass 6 feet.", nil, "Tapping on this chart displays a pop up view for the rise in sea level for the selected year")
     }
 }
 
@@ -178,23 +212,28 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
         
         switch indexPath.row {
         case 0:
-            return configureTOCCell(collectionView, indexPath, self)
+            tocCell = configureTOCCell(collectionView, indexPath, self)
+            return tocCell
             
         case 1:
-            return configureContentCell(collectionView, indexPath, didYouKnowText)
+            didYouKnowCell = configureContentCell(collectionView, indexPath, didYouKnowText)
+            return didYouKnowCell
             
         case 2:
-            seaChartCell = configureLina(collectionView, indexPath, self, location)
-            return seaChartCell
+            linaCell = configureLina(collectionView, indexPath, self, location)
+            return linaCell
             
         case 3:
-            return configureContentCell(collectionView, indexPath, whatsHappeningText)
+            happeningCell = configureContentCell(collectionView, indexPath, whatsHappeningText)
+            return happeningCell
             
         case 4:
-            return configurePieChartCell(collectionView, indexPath, location)
+            pieCell = configurePieChartCell(collectionView, indexPath, location)
+            return pieCell
             
         case 5:
-            return configureContentCell(collectionView, indexPath, whereWillWeGoText)
+            willWeGoCell = configureContentCell(collectionView, indexPath, whereWillWeGoText)
+            return willWeGoCell
             
         case 6:
             augCell = arCell
@@ -232,7 +271,7 @@ extension LocationDetailController: TapContents {
         locationView.showPrev(delay: TimeInterval(content.rawValue)*0.5)
         
         if content == .seeInAR {
-            locationView.hideARButton()
+            //            locationView.hideARButton()
             locationView.hideNext()
             augCell.arIconAnimation.play()
             augCell.arIconAnimation.loopMode = .loop
@@ -240,8 +279,27 @@ extension LocationDetailController: TapContents {
     }
     
     private func scrollHelper(to: Int) {
+        tocCell.hideItems()
+        
         for _ in 1...to {
-            scrollRightTo(time: Double(0)*0.8)
+            scrollRightTo(time: Double(to)*0.8, isToc: true)
+        }
+        
+        switch to {
+        case 1:
+            didYouKnowCell.showLabels()
+        case 2:
+            linaCell.showItems()
+        case 3:
+            happeningCell.showLabels()
+        case 4:
+            pieCell.showItems()
+        case 5:
+            willWeGoCell.showLabels()
+        case 6:
+            augCell.showItems()
+        default:
+            break
         }
     }
 }

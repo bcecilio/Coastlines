@@ -4,9 +4,12 @@ import RealityUI
 
 class ExperimentARController: UIViewController {
     
-    let arView = ARView()
+    var arView = ARView()
     
     let location: Location
+    
+    let configuration = ARWorldTrackingConfiguration()
+    
     let backButton = UIButton().previousButton()
     lazy var coachingOverlay = ARCoachingOverlayView()
     
@@ -39,23 +42,46 @@ class ExperimentARController: UIViewController {
         super.viewDidLoad()
         
         setupARView()
+        
         setupCoachingOverlayView()
         
         loadScene()
         //        setupOccBox()
         setupSlider()
         
+        
+        arView.session.delegate = self
+        
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        arView.automaticallyConfigureSession = false
+//        configuration.planeDetection = [.horizontal]
+//        configuration.environmentTexturing = .automatic
+//
+//        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
+//            configuration.sceneReconstruction = .mesh
+//        }
+////        arView.session.run(configuration, options: .resetSceneReconstruction)
+//        self.arView.session.run(configuration)
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        self.arView.session.pause()
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         setupBackButton()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
-        //arView.session.pause()
-    }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(true)
+//        //arView.session.pause()
+//    }
+    
     
     private func loadScene() {
         
@@ -182,8 +208,8 @@ class ExperimentARController: UIViewController {
         redLight.light.attenuationRadius = 0
         riseSegmentScene.addChild(redLight)
         
-//        cityLightOne.light.color = .white
-//        riseSegmentScene.addChild(cityLightOne)
+        //        cityLightOne.light.color = .white
+        //        riseSegmentScene.addChild(cityLightOne)
         
         cityLightTwo.light.color = .white
         riseSegmentScene.addChild(cityLightTwo)
@@ -288,7 +314,9 @@ class ExperimentARController: UIViewController {
     @objc
     func goBack(_ sender: UIButton) {
         arView.scene.anchors.removeAll()
+        arView.session.pause()
         let detailVC = LocationDetailController(location)
+//        arView.removeFromSuperview()
         UIViewController.resetWindow(detailVC)
     }
     
@@ -302,6 +330,16 @@ class ExperimentARController: UIViewController {
             arView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             arView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             arView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
+        
+//        arView.automaticallyConfigureSession = false
+//        configuration.planeDetection = [.horizontal]
+//        configuration.environmentTexturing = .automatic
+//
+//        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
+//            configuration.sceneReconstruction = .mesh
+//        }
+//        arView.session.run(configuration, options: .resetSceneReconstruction)
+        
     }
     
     private func setupBackButton() {
@@ -318,4 +356,22 @@ class ExperimentARController: UIViewController {
         ])
     }
     
+}
+
+extension ExperimentARController: ARSessionObserver, ARSessionDelegate {
+    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
+        print("CAMERA TRACKING: \(camera.trackingState)")
+    }
+    
+    func sessionWasInterrupted(_ session: ARSession) {
+        print("")
+    }
+    
+    func session(_ session: ARSession, didFailWithError error: Error) {
+        print("ERROR IS: \(error.localizedDescription)")
+    }
+    
+    func sessionShouldAttemptRelocalization(_ session: ARSession) -> Bool {
+        return true
+    }
 }

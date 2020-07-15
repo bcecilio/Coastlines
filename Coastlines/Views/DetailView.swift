@@ -319,3 +319,21 @@ extension UIButton {
         layer.add(pulse, forKey: nil)
     }
 }
+
+extension UIView {
+    func hideItem() {
+        UIView.animate(withDuration: 1, delay: 0, options: [.transitionCrossDissolve], animations: {
+            
+            self.alpha = 0
+            
+        },completion: nil)
+    }
+    
+    func showItem() {
+        UIView.animate(withDuration: 1, delay: 0, options: [.transitionCrossDissolve], animations: {
+            
+            self.alpha = 1
+            
+        },completion: nil)
+    }
+}

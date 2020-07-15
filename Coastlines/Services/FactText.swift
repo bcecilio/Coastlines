@@ -66,13 +66,14 @@ public struct ContentText {
     static let whatsHappening = "\nWhat is happening?"
     static let popDisplaced = "\nPeople Displaced"
     static let whereWillWeGo = "\nWhere will we go?"
-    static let seeInAR = "\nExperience AR"
+    static let seeInAR = "\nAugmented Reality"
 }
 
 public struct Font {
     static let cooper34 = UIFont(name: "CooperHewitt-Medium", size: 34)
     static let cooper24 = UIFont(name: "CooperHewitt-Medium", size: 24)
     static let cooper20 = UIFont(name: "CooperHewitt-Medium", size: 20)
+    static let boldArial18 = UIFont(name: "Arial-BoldMT", size: 18)
     static let boldArial24 = UIFont(name: "Arial-BoldMT", size: 24)
     static let boldArial26 = UIFont(name: "Arial-BoldMT", size: 26)
 }
