@@ -90,3 +90,18 @@ extension UIImageView {
     }
 }
 
+extension UIButton {
+    
+    func animateButton(functionClosure: @escaping () -> ()) {
+        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        }) { (_) in
+            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                self.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }) { (_) in
+                functionClosure()
+            }
+        }
+    }
+}
+

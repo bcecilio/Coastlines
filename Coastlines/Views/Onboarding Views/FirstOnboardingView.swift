@@ -17,7 +17,7 @@ class FirstOnboardingView: UIView {
         button.layer.borderWidth = 1.0
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
         button.layer.cornerRadius = 25.0
-        button.addTarget(self, action: #selector(beginSegue(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(beginSegue), for: .touchUpInside)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -58,7 +58,7 @@ class FirstOnboardingView: UIView {
         let button = UIButton()
         button.setTitle("Skip", for: .normal)
         button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
-        button.addTarget(self, action: #selector(goToLocationsVC(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(goToLocationsVC), for: .touchUpInside)
         button.addAccessibility(.button, "Skip", "Skips onboarding experience", nil)
         button.adjustsImageSizeForAccessibilityContentSizeCategory = true
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
@@ -166,8 +166,8 @@ class FirstOnboardingView: UIView {
         NSLayoutConstraint.activate([topView.topAnchor.constraint(equalTo: topAnchor), topView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), topView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), topView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.35)])
     }
     
-    @objc private func goToLocationsVC(sender: UIButton) {
-        animateSkipButton(sender)
+    @objc private func goToLocationsVC() {
+        skipButton.animateButton(functionClosure: showLocationsVC)
     }
     
     private func showLocationsVC(){
@@ -175,8 +175,8 @@ class FirstOnboardingView: UIView {
         UIViewController.resetWindow(locationsVC)
     }
     
-    @objc private func beginSegue(sender: UIButton) {
-        animateBeginButton(sender)
+    @objc private func beginSegue() {
+        nextButton.animateButton(functionClosure: segueNext)
     }
     
     private func segueNext(){
@@ -192,27 +192,27 @@ class FirstOnboardingView: UIView {
         }
     }
     
-    private func animateSkipButton(_ buttonToAnimate: UIButton) {
-        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.80, y: 0.80)
-        }) { (_) in
-            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
-            }) { (_) in
-                self.showLocationsVC()
-            }
-        }
+//    private func animateSkipButton(_ buttonToAnimate: UIButton) {
+//        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+//            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.80, y: 0.80)
+//        }) { (_) in
+//            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+//                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
+//            }) { (_) in
+//                self.showLocationsVC()
+//            }
+//        }
     }
     
-    private func animateBeginButton(_ buttonToAnimate: UIButton) {
-        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.80, y: 0.80)
-        }) { (_) in
-            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
-            }) { (_) in
-                self.segueNext()
-            }
-        }
-    }
-}
+//    private func animateBeginButton(_ buttonToAnimate: UIButton) {
+//        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+//            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.80, y: 0.80)
+//        }) { (_) in
+//            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+//                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
+//            }) { (_) in
+//                self.segueNext()
+//            }
+//        }
+//    }
+//}

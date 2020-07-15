@@ -45,7 +45,7 @@ class FifthOnboardingView: UIView {
         button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
         button.layer.borderWidth = 1.0
-        button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(exploreButtonPressed), for: .touchUpInside)
         button.layer.cornerRadius = 25
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -99,8 +99,11 @@ class FifthOnboardingView: UIView {
         beginButton.setContentHuggingPriority(.required, for: .vertical)
     }
     
-    @objc
-    private func showLocationsVC() {
+    @objc private func exploreButtonPressed() {
+        beginButton.animateButton(functionClosure: showLocationsVC)
+    }
+    
+    @objc private func showLocationsVC() {
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
     }

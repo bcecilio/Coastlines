@@ -37,7 +37,7 @@ class LocationsView: UIView {
         button.addAccessibility(.button, "Get involved", nil, "Shows a list of actions that can be taken to reduce your carbon footprint.")
         button.makeFontAccessible()
 //        button.layer.borderColor = PaletteColours.darkBlue.rawValue.convertHexToColour().cgColor
-        button.addTarget(self, action: #selector(resourceButtonPressed(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(resourceButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -91,8 +91,8 @@ class LocationsView: UIView {
         ])
     }
     
-    @objc func resourceButtonPressed(sender: UIButton) {
-        animateButton(sender)
+    @objc func resourceButtonPressed() {
+        resourceButton.animateButton(functionClosure: goToResourceVC)
 //        goToResourceVC()
     }
     
@@ -101,15 +101,15 @@ class LocationsView: UIView {
         UIViewController.resetWindow(resourceVC)
     }
     
-    func animateButton(_ buttonToAnimate: UIView) {
-        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
-        }) { (_) in
-            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
-            }) { (_) in
-                self.goToResourceVC()
-            }
-        }
-    }
+//    func animateButton(_ buttonToAnimate: UIView) {
+//        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+//            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+//        }) { (_) in
+//            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+//                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
+//            }) { (_) in
+//                self.goToResourceVC()
+//            }
+//        }
+//    }
 }
