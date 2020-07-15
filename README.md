@@ -31,7 +31,7 @@ _Onboarding_ | _Detail_ | _Resources_
 
 _AR_ _One_ | _AR_ _Two_
 ------------ | -------------
-![gif](Assets/coastsARGIF.gif) | ![gif](Assets/coastsARGIF2.gif)
+![gif](Assets/gifARTwo.gif) | ![gif](Assets/gifAROne.gif)
 
 ## Code Snippet of Challenging parts
 
