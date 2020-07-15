@@ -61,7 +61,7 @@ class LocationCell: UICollectionViewCell {
             imageValue = LocationDescription.floridaValue
         case .newOrleans:
             label.text = "New Orleans"
-            imageView.image = UIImage(named: "new-orleans")
+            imageView.image = UIImage(named: "nolaOne")
             imageDescription = LocationDescription.newOrleansImage
             imageValue = LocationDescription.newOrleansValue
         case .bangladesh:

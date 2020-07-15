@@ -11,12 +11,12 @@ import UIKit
 public struct FactText {
     static let nycPop1 = "\n481,000 New York residents live on land below 6 feet"
     static let nycPop2 = "\n21% of them live in just 3 zip codes (Manhattan Beach, Coney Island, Far Rockaway)."
-    static let nolaPop1 = "\nNOLA1"
-    static let nolaPop2 = "\nNOLA2"
-    static let miaPop1 = "\nMIAMI3"
-    static let miaPop2 = "\nMIAMI2"
-    static let bgdPop1 = "\nBANGLADESH1"
-    static let bgdPop2 = "\nBANGLADESH2"
+    static let nolaPop1 = "\nRising sea levels could displace 500,000 New Orleans area residents"
+    static let nolaPop2 = "\nThat's more than one third of the city's current population"
+    static let miaPop1 = "\nWith densely populated coastal locales, Florida faces the greatest risk in the U.S."
+    static let miaPop2 = "\nUp to 6.06 million residents could be affected if sea levels rise 6 feet"
+    static let bgdPop1 = "\nBy 2050, one in every seven people in Bangladesh could be displaced by climate change."
+    static let bgdPop2 = "\n28% of the population of Bangladesh lives on the coast"
     
     static func getFact(_ location: Selection) -> (String, String) {
         
@@ -66,13 +66,14 @@ public struct ContentText {
     static let whatsHappening = "\nWhat is happening?"
     static let popDisplaced = "\nPeople Displaced"
     static let whereWillWeGo = "\nWhere will we go?"
-    static let seeInAR = "\nExperience AR"
+    static let seeInAR = "\nAugmented Reality"
 }
 
 public struct Font {
     static let cooper34 = UIFont(name: "CooperHewitt-Medium", size: 34)
     static let cooper24 = UIFont(name: "CooperHewitt-Medium", size: 24)
     static let cooper20 = UIFont(name: "CooperHewitt-Medium", size: 20)
+    static let boldArial18 = UIFont(name: "Arial-BoldMT", size: 18)
     static let boldArial24 = UIFont(name: "Arial-BoldMT", size: 24)
     static let boldArial26 = UIFont(name: "Arial-BoldMT", size: 26)
 }

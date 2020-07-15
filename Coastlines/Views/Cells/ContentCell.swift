@@ -39,7 +39,7 @@ class ContentCell: UICollectionViewCell {
         label.textColor = PaletteColour.offWhite.colour
         label.font = Font.cooper34
         label.numberOfLines = 0
-        label.alpha = 1
+        label.alpha = 0
         return label
     }()
     
@@ -50,7 +50,7 @@ class ContentCell: UICollectionViewCell {
         label.font = Font.cooper24
         label.textColor = PaletteColour.offWhite.colour
         label.numberOfLines = 0
-        label.alpha = 1
+        label.alpha = 0
         return label
     }()
     
@@ -61,7 +61,7 @@ class ContentCell: UICollectionViewCell {
         label.font = Font.cooper24
         label.textColor = PaletteColour.offWhite.colour
         label.numberOfLines = 0
-        label.alpha = 1
+        label.alpha = 0
         return label
     }()
     
@@ -72,6 +72,7 @@ class ContentCell: UICollectionViewCell {
         button.layer.cornerRadius = 6
         button.layer.borderWidth = 3
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
+        button.alpha = 0
         return button
     }()
     
@@ -217,6 +218,30 @@ class ContentCell: UICollectionViewCell {
         }, completion: nil)
         
         sayMoreButton.isHidden = true
+    }
+    
+    public func showLabels() {
+        scrollView.contentOffset.y = 0
+        headerLabel.showItem()
+        factOneLabel.showItem()
+        factTwoLabel.showItem()
+        sayMoreButton.showItem()
+    }
+    
+    public func hideLabels() {
+        headerLabel.hideItem()
+        factOneLabel.hideItem()
+        factTwoLabel.hideItem()
+        sayMoreButton.hideItem()
+        
+        scrollView.isScrollEnabled = false
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
+            self.learnMoreLabel.alpha = 0
+            self.contentLabel.alpha = 0
+        }, completion: nil)
+        
+        sayMoreButton.isHidden = false
+        
     }
     
 }

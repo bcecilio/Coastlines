@@ -18,20 +18,26 @@ class ARCell: UICollectionViewCell {
         label.font = Font.cooper34
         label.textColor = PaletteColour.offWhite.colour
         label.numberOfLines = 0
-        label.alpha = 1
+        label.alpha = 0
         return label
     }()
-    
-//    public lazy var arIconImage: UIImageView = {
-//        let iv = UIImageView()
-//        iv.image = UIImage(named: "ar5")
-//        return iv
-//    }()
     
     public lazy var arIconAnimation: AnimationView = {
         let v = AnimationView()
         v.animation = Animation.named("arIconAnimation")
+        v.alpha = 0
         return v
+    }()
+    
+    public lazy var tapARLabel: UILabel = {
+        let label = UILabel()
+        label.text = "To begin AR experience, tap button below!"
+        label.textAlignment = .center
+        label.font = Font.boldArial18
+        label.textColor = PaletteColour.offWhite.colour
+        label.numberOfLines = 0
+        label.alpha = 0
+        return label
     }()
     
     override func layoutSubviews() {
@@ -40,16 +46,7 @@ class ARCell: UICollectionViewCell {
         
         setupARAnimation()
         setupHeaderLabel()
-        
-        animateLabel()
-//        animateARIcon()
-    }
-    
-    private func animateLabel() {
-        UIView.animate(withDuration: 2, delay: 0, options: [.transitionCrossDissolve], animations: {
-            self.headerLabel.alpha = 1
-            
-        }, completion: nil)
+        setupARLabel()
     }
     
     private func setupHeaderLabel() {
@@ -63,18 +60,6 @@ class ARCell: UICollectionViewCell {
         ])
     }
     
-//    private func setupARIcon() {
-//        addSubview(arIconImage)
-//        arIconImage.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([
-//            arIconImage.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -20),
-//            arIconImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            arIconImage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.45),
-//            arIconImage.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.35)
-//        ])
-//    }
-    
     private func setupARAnimation() {
         addSubview(arIconAnimation)
         arIconAnimation.backgroundColor = .clear
@@ -83,8 +68,31 @@ class ARCell: UICollectionViewCell {
             arIconAnimation.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             arIconAnimation.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             arIconAnimation.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.2),
-            arIconAnimation.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            arIconAnimation.heightAnchor.constraint(equalTo: arIconAnimation.widthAnchor)
         ])
+    }
+    
+    private func setupARLabel() {
+        addSubview(tapARLabel)
+        tapARLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tapARLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100),
+            tapARLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            tapARLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+        ])
+    }
+    
+    public func showItems() {
+        headerLabel.showItem()
+        arIconAnimation.showItem()
+        tapARLabel.showItem()
+    }
+    
+    public func hideItems() {
+        headerLabel.hideItem()
+        arIconAnimation.hideItem()
+        tapARLabel.hideItem()
     }
     
 //    public func animateARIcon(){

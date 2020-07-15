@@ -45,7 +45,7 @@ class FifthOnboardingView: UIView {
         button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
         button.layer.borderWidth = 1.0
-        button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(exploreButtonPressed), for: .touchUpInside)
         button.layer.cornerRadius = 25
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -65,7 +65,7 @@ class FifthOnboardingView: UIView {
     
     private func commonInit(){
         // setUpCentralImageConstraints()
-//        setUpPrevButtonConstraints()
+        setUpPrevButtonConstraints()
         setUpBeginButtonConstraints()
         setUpInfoViewConstraints()
     }
@@ -74,7 +74,7 @@ class FifthOnboardingView: UIView {
         addSubview(prevButton)
         prevButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([prevButton.centerYAnchor.constraint(equalTo: centralImage.centerYAnchor), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
+        NSLayoutConstraint.activate([prevButton.centerYAnchor.constraint(equalTo: centerYAnchor), prevButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8), prevButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05), prevButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.07)])
     }
     
 //    private func setUpCentralImageConstraints() {
@@ -99,8 +99,11 @@ class FifthOnboardingView: UIView {
         beginButton.setContentHuggingPriority(.required, for: .vertical)
     }
     
-    @objc
-    private func showLocationsVC() {
+    @objc private func exploreButtonPressed() {
+        beginButton.animateButton(functionClosure: showLocationsVC)
+    }
+    
+    @objc private func showLocationsVC() {
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
     }

@@ -4,6 +4,7 @@
             "name": "New York City",
             "images": {
                 "one": "nycSea",
+                "accessibility": "New York City. A beautiful view of lower Manhattan with it's incredible skyline and busy water ways of the Hudson and East rivers is shown. Some prominent New York City staples in this image are One World Trade, Battery Park, the Staten Island Ferry, and in the distance the Brooklyn Bridge.",
                 "two": "nycSeaOne",
                 "three": "nycHeader",
                 "four": "nycSeaTwo",
@@ -99,6 +100,7 @@
             "name": "New Orleans",
             "images": {
                 "one": "newOrleansHeader",
+                "accessibility": "New Orleans, Louisiana. Street musicians perform on a New Orleans street lined with vibrant pink and yellow buildings on a very sunny day. People walking by seem to be enjoying the music produced by the washboard player and trumpeteers.",
                 "two": "newOrleansHeader",
                 "three": "newOrleansHeader",
                 "four": "newOrleansHeader",
@@ -193,7 +195,8 @@
         {
             "name": "Miami",
             "images": {
-                "one": "miamiHeader",
+                "one": "miamiOne",
+                "accessibility": "Miami, Florida. A night time scene of downtown Miami is shown. In this image are a row of some notable South Florida hotels and palm trees emphasized by the classic neon lights Miami is known for.",
                 "two": "miamiHeader",
                 "three": "miamiHeader",
                 "four": "miamiHeader",
@@ -202,15 +205,15 @@
                 "seven": "nycAugReality"
             },
             "facts": {
-                "quickFact1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat ut nulla ultricies pharetra. Suspendisse sit amet dignissim sapien. Nunc nec aliquam dui, eget vehicula massa",
-                "quickFact2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat ut nulla ultricies pharetra. Suspendisse sit amet dignissim sapien. Nunc nec aliquam dui, eget vehicula massa",
-                "generalFacts": "South Florida and Miami coastlines serve as an important reservoir of landscape, community, and species diversity. The beach and dune system of Miami-Dade county is the first line of defense against storms because it acts as a buffer between the storm waves and coastal development or infrastructure. During storms, waves encounter the beach and dunes prior to reaching upland property, therefore absorbing wave energy and reducing the damage suffered to upland homes and businesses.",
-                "quickFact3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat ut nulla ultricies pharetra. Suspendisse sit amet dignissim sapien. Nunc nec aliquam dui, eget vehicula massa",
-                "quickFact4": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat ut nulla ultricies pharetra. Suspendisse sit amet dignissim sapien. Nunc nec aliquam dui, eget vehicula massa",
-                "seaLevelFacts": "The sea level around Miami, Florida, has risen by 8 inches since 1950. Its speed of rise has accelerated over the last ten years and it’s now rising by 1 inch every 3 years. Scientists know this because sea levels are measured every 6 minutes using equipment like satellites, floating buoys off the coast, and tidal gauges to accurately measure the local sea level as it accelerates and changes.",
-                "quickFact5": "\nAccording to the Lower Manhattan Coastal Resilience survey, 37 percent of lower Manhattan will be at risk for storm surges by 2050.",
-                "quickFact6": "\n By 2100, sea levels could rise by as much as six feet, scientists say.\n",
-                "populationFacts": "Miami-Dade County, Florida has more people living less than 4 feet above sea level than any U.S. state, except Louisiana. Miami has the largest amount of exposed assets and the fourth-largest population vulnerable to sea-level rise in the world. More than 10 percent of land in Miami-Dade sits at less than 1 foot above current sea level, nearly 20 percent at less than 2 feet, and one-fourth at less than three feet.",
+                "quickFact1": "\nSouth Florida and Miami coastlines serve as an important reservoir of landscape, community, and species diversity.",
+                "quickFact2": "\nThe coastlines of Miami are living environments that are constantly changing.",
+                "generalFacts": "\nThe beach and dune system of Miami-Dade county is the first line of defense against storms because it acts as a buffer between the storm waves and coastal development or infrastructure. \n\nDuring storms, waves encounter the beach and dunes prior to reaching upland property, therefore absorbing wave energy and reducing the damage suffered to upland homes and businesses.\n\n Over the course of centuries when sea level was stable by geologic standards, natural systems developed an intimate relationship with the land–sea boundary.\n\nMarshes and mangroves expanded to the very limit of their abilities; intertidal oyster reefs became closely calibrated to tides, and seagrass beds grew as deeply as light penetration allowed.",
+                "quickFact3": "\nThe sea level around Miami, Florida, has risen by 8 inches since 1950.",
+                "quickFact4": "\nIts speed of rise has accelerated over the last ten years and is now rising by 1 inch every year.",
+                "seaLevelFacts": "\nScientists know the rate of rise because sea levels are measured every 6 minutes using equipment like satellites, floating buoys off the coast, and tidal gauges.\n\nWhile there are four causes of sea level rise in Florida, melting ice from the North and the South Poles and slowing of the Gulf Stream are the two largest contributors. \n\nThe rate of ice melt has been increasing significantly since 1992, and the fresh water melting into the ocean has been slowing down the Gulf Stream. \n\nFlorida is particularly vulnerable to an increased rate of sea level rise in the future",
+                "quickFact5": "\nMiami-Dade County, Florida has more people living less than 4 feet above sea level than any U.S. state, except Louisiana.",
+                "quickFact6": "\nMiami has the largest amount of exposed assets and the fourth-largest population vulnerable to sea-level rise in the world.\n",
+                "populationFacts": "\nMore than 10 percent of land in Miami-Dade sits at less than 1 foot above current sea level, nearly 20 percent at less than 2 feet, and one-fourth at less than three feet.\n\nIn South Florida, taxpayers are already paying the price for climate change as salt water pushes through porous bedrock into coastal drinking-water supplies, and rivers and canals choked by heavy rains have a harder time draining into the ocean. \n\nA recent Florida Atlantic University study estimated that just 6 more inches of sea level rise — very plausible within two decades — would cripple about half of South Florida’s flood control capacity.",
                 "population": 21480000,
                 "populationDisplaced": 6060000
             },
@@ -289,6 +292,7 @@
             "name": "Bangladesh",
             "images": {
                 "one": "bangladeshHeader",
+                "accessibility": "Bangladesh. A breathtaking overhead view of a Bangladeshi neighborhood is shown with prophetic line of clouds above the residential buildings.",
                 "two": "bangladeshHeader",
                 "three": "bangladeshHeader",
                 "four": "bangladeshHeader",
@@ -297,15 +301,15 @@
                 "seven": "nycAugReality"
             },
             "facts": {
-                "quickFact1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat ut nulla ultricies pharetra. Suspendisse sit amet dignissim sapien. Nunc nec aliquam dui, eget vehicula massa",
-                "quickFact2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat ut nulla ultricies pharetra. Suspendisse sit amet dignissim sapien. Nunc nec aliquam dui, eget vehicula massa",
-                "generalFacts": "The coastline of Bangladesh is about 441 miles long, and the effective area of marine fishery ground is estimated to be around 4000 square miles. The coastal area of Bangladesh is full of natural resources and is the main contributor to the country's economy.",
-                "quickFact3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat ut nulla ultricies pharetra. Suspendisse sit amet dignissim sapien. Nunc nec aliquam dui, eget vehicula massa",
-                "quickFact4": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat ut nulla ultricies pharetra. Suspendisse sit amet dignissim sapien. Nunc nec aliquam dui, eget vehicula massa",
-                "seaLevelFacts": "By the end of the century, sea levels are expected to rise along the Bangladesh coastline by up to 1.5 meters. And that will come with more extreme seasonal fluctuations in sea levels. Disastrous storms and unusually high tides currently occur once each decade, but could become as regular as three to 15 times each year by 2100.",
-                "quickFact5": "\nAccording to the Lower Manhattan Coastal Resilience survey, 37 percent of lower Manhattan will be at risk for storm surges by 2050.",
-                "quickFact6": "\n By 2100, sea levels could rise by as much as six feet, scientists say.\n",
-                "populationFacts": "Because of the country’s natural susceptibility to extreme weather, the people of Bangladesh have always used migration as a coping strategy. However, as conditions intensify under climate change, more people are being driven from their homes and land by more frequent and severe hazards. Sea level rise, storms, cyclones, drought, erosion, landslides, flooding and salinization are already displacing large numbers of people. It has been estimated that by 2050, one in every seven people in Bangladesh will be displaced by climate change. Up to 18 million people may have to move because of sea level rise alone.",
+                "quickFact1": "\nThe coastline of Bangladesh is about 441 miles long, and its marine fishery ground is estimated to be around 4000 square miles.",
+                "quickFact2": "\nThe coastal area of Bangladesh is full of natural resources and is the main contributor to the country's economy.",
+                "generalFacts": "\nAgriculture, the mainstay of the Bangladeshi economy, is also badly affected and crops damaged by rising salinity are doubly at risk from the resulting soil degradation. \n\nMany regions have already suffered large yield losses and significant price reductions as a result. \n\nBangladesh is exceptionally vulnerable to climate change. Its low elevation, high population density and inadequate infrastructure all put the nation in harm’s way, along with an economy that is heavily reliant on farming.",
+                "quickFact3": "\nBy the end of the century, sea levels are expected to rise along the Bangladesh coastline by up to 1.5 meters.",
+                "quickFact4": "\nThis will cause more extreme seasonal fluctuations in sea levels.\n",
+                "seaLevelFacts": "\nDisastrous storms and unusually high tides currently occur once each decade, but could become as regular as three to 15 times each year by 2100.\n\nRiverbank erosion is the primary cause of climate displacement inland. \n\nUp to 50% of those now living in Bangladesh’s urban slums may be there because they were forced to flee their rural homes as a result of riverbank erosion. \n\nThe process of salinisation has been exacerbated by rising sea levels. \n\nCoastal drinking water supplies have been contaminated with salt, leaving the 33 million people vulnerable to health problems such as pre-eclampsia during pregnancy, acute respiratory infections and skin diseases.",
+                "quickFact5": "\nBy 2050, one in every seven people in Bangladesh could be displaced by climate change.",
+                "quickFact6": "\nUp to 18 million people may have to move because of sea level rise alone.\n",
+                "populationFacts": "Because of the country’s natural susceptibility to extreme weather, the people of Bangladesh have always used migration as a coping strategy. \n\nHowever, as conditions intensify under climate change, more people are being driven from their homes and land by more frequent and severe hazards. \n\nSea level rise, storms, cyclones, drought, erosion, landslides, flooding and salinization are already displacing large numbers of people. \n\nUp to 18 million people may have to move because of sea level rise alone. \n\n28% of the population of Bangladesh lives on the coast, where the primary driver of displacement is tidal flooding caused by sea level rise",
                 "population": 161400000,
                 "populationDisplaced": 18000000
             },
@@ -384,6 +388,7 @@
             "name": "Polar Ice Caps",
             "images": {
                 "one": "iceCapsHeader",
+                "accessibility": "A beautiful view of lower Manhattan with it's incredible skyline and busy water ways of the Hudson and East rivers is shown. Some prominent New York City staples in this image are One World Trade, Battery Park, the Staten Island Ferry, and in the distance the Brooklyn Bridge.",
                 "two": "iceCapsHeader",
                 "three": "iceCapsHeader",
                 "four": "iceCapsHeader",

@@ -17,6 +17,7 @@ class LocationIntroCell: UICollectionViewCell {
         l.adjustsFontForContentSizeCategory = true
         l.numberOfLines = 2
         l.alpha = 0
+        l.textColor = .black
         return l
     }()
     

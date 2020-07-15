@@ -1,13 +1,15 @@
 import RealityKit
 import ARKit
-//import Combine
 import RealityUI
 
 class ExperimentARController: UIViewController {
     
-    let arView = ARView()
+    var arView = ARView()
     
     let location: Location
+    
+    let configuration = ARWorldTrackingConfiguration()
+    
     let backButton = UIButton().previousButton()
     lazy var coachingOverlay = ARCoachingOverlayView()
     
@@ -40,35 +42,46 @@ class ExperimentARController: UIViewController {
         super.viewDidLoad()
         
         setupARView()
+        
         setupCoachingOverlayView()
         
         loadScene()
         //        setupOccBox()
         setupSlider()
         
-//        let arBackground = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
-//        
-//        arView.environment.background = .color(arBackground)
         
-//        sceneLight = SCNLight()
-//        sceneLight.type = .omni
-//
-//        let lightNode = SCNNode()
-//        lightNode.light = sceneLight
-//        lightNode.position = SCNVector3(0,0,2)
+        arView.session.delegate = self
         
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        arView.automaticallyConfigureSession = false
+//        configuration.planeDetection = [.horizontal]
+//        configuration.environmentTexturing = .automatic
+//
+//        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
+//            configuration.sceneReconstruction = .mesh
+//        }
+////        arView.session.run(configuration, options: .resetSceneReconstruction)
+//        self.arView.session.run(configuration)
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        self.arView.session.pause()
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         setupBackButton()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
-        //arView.session.pause()
-        
-    }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(true)
+//        //arView.session.pause()
+//    }
+    
     
     private func loadScene() {
         
@@ -81,7 +94,8 @@ class ExperimentARController: UIViewController {
                 self.dropScene = scene
                 
                 self.arView.scene.anchors.append(scene)
-                //                self.coachingOverlay.isHidden = true
+                // self.coachingOverlay.isHidden = true
+                self.coachingOverlay.setActive(false, animated: true)
                 self.dropScene.actions.drop.onAction = self.wasDropped(_:)
             }
         }
@@ -194,8 +208,8 @@ class ExperimentARController: UIViewController {
         redLight.light.attenuationRadius = 0
         riseSegmentScene.addChild(redLight)
         
-//        cityLightOne.light.color = .white
-//        riseSegmentScene.addChild(cityLightOne)
+        //        cityLightOne.light.color = .white
+        //        riseSegmentScene.addChild(cityLightOne)
         
         cityLightTwo.light.color = .white
         riseSegmentScene.addChild(cityLightTwo)
@@ -300,7 +314,9 @@ class ExperimentARController: UIViewController {
     @objc
     func goBack(_ sender: UIButton) {
         arView.scene.anchors.removeAll()
+        arView.session.pause()
         let detailVC = LocationDetailController(location)
+//        arView.removeFromSuperview()
         UIViewController.resetWindow(detailVC)
     }
     
@@ -314,6 +330,16 @@ class ExperimentARController: UIViewController {
             arView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             arView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             arView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
+        
+//        arView.automaticallyConfigureSession = false
+//        configuration.planeDetection = [.horizontal]
+//        configuration.environmentTexturing = .automatic
+//
+//        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
+//            configuration.sceneReconstruction = .mesh
+//        }
+//        arView.session.run(configuration, options: .resetSceneReconstruction)
+        
     }
     
     private func setupBackButton() {
@@ -329,30 +355,23 @@ class ExperimentARController: UIViewController {
             backButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
+    
 }
 
-//extension ExperimentARController: ARSCNViewDelegate{
-//
-//    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-//
-//        //1. Get The Current Light Estimate
-//        guard let lightEstimate = self.arView.session.currentFrame?.lightEstimate else { return }
-//
-//        //2. Get The Ambient Intensity & Colour Temperatures
-//        let ambientLightEstimate = lightEstimate.ambientIntensity
-//
-//        let ambientColourTemperature = lightEstimate.ambientColorTemperature
-//
-//        print(
-//            """
-//            Current Light Estimate = \(ambientLightEstimate)
-//            Current Ambient Light Colour Temperature Estimate = \(ambientColourTemperature)
-//            """)
-//
-//        if ambientLightEstimate < 100 { print("Lighting Is Too Dark") }
-//
-//        //3. Adjust The Scene Lighting
-//        sceneLight.intensity = ambientLightEstimate
-//        sceneLight.temperature = ambientColourTemperature
-//    }
-//}
+extension ExperimentARController: ARSessionObserver, ARSessionDelegate {
+    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
+        print("CAMERA TRACKING: \(camera.trackingState)")
+    }
+    
+    func sessionWasInterrupted(_ session: ARSession) {
+        print("")
+    }
+    
+    func session(_ session: ARSession, didFailWithError error: Error) {
+        print("ERROR IS: \(error.localizedDescription)")
+    }
+    
+    func sessionShouldAttemptRelocalization(_ session: ARSession) -> Bool {
+        return true
+    }
+}

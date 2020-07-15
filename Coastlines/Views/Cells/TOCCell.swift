@@ -39,7 +39,7 @@ enum Content: Int {
 }
 
 class TOCCell: UICollectionViewCell {
-
+    
     var contentDelegate: TapContents?
     
     public lazy var headerLabel: UILabel = {
@@ -47,7 +47,7 @@ class TOCCell: UICollectionViewCell {
         label.text = ""
         label.textColor = PaletteColour.offWhite.colour
         label.textAlignment = .left
-//        label.font = .preferredFont(forTextStyle: .title1)
+        //        label.font = .preferredFont(forTextStyle: .title1)
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.numberOfLines = 1
         label.alpha = 1
@@ -131,8 +131,8 @@ class TOCCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-    
-        backgroundColor = PaletteColour.lightBlue.colour
+        
+        backgroundColor = PaletteColour.darkBlue.colour
         setupHeaderLabel()
         configStackView()
         
@@ -185,6 +185,16 @@ class TOCCell: UICollectionViewCell {
         
         contentDelegate?.onItem(content: content)
     }
+    
+    public func showItems() {
+        stackView.showItem()
+        headerLabel.showItem()
+    }
+    
+    public func hideItems() {
+        stackView.hideItem()
+        headerLabel.hideItem()
+    }
 }
 
 extension UIView {
@@ -194,43 +204,45 @@ extension UIView {
         let label = UILabel()
         let iv = UIImageView()
         iv.image = UIImage(named: image)
-        label.text = "\u{2022} \(text)"
+        label.text = " \(text)"
         
         view.backgroundColor = .clear
         view.layer.borderWidth = 3
         view.layer.borderColor = PaletteColour.offWhite.colour.cgColor
         view.layer.cornerRadius = 4
         
-        view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
-        ])
-        label.backgroundColor = .clear
-//        label.font = .preferredFont(forTextStyle: .title2)
-        label.font = UIFont.systemFont(ofSize: 23, weight: .medium)
-        label.adjustsFontForContentSizeCategory = false
-        label.textColor = PaletteColour.offWhite.colour
-        label.alpha = 0
         
-        iv.alpha = 0
         view.addSubview(iv)
         iv.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            iv.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 0),
-            iv.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 0),
+            iv.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5),
+            iv.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             iv.widthAnchor.constraint(equalToConstant: 38),
             iv.heightAnchor.constraint(equalToConstant: 38)
         ])
         iv.image = UIImage(named: image)
         iv.backgroundColor = .clear
         iv.contentMode = .scaleAspectFit
+        
+        view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: iv.trailingAnchor, constant: 5),
+            label.bottomAnchor.constraint(equalTo: iv.bottomAnchor, constant: -5),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        label.backgroundColor = .clear
+        //        label.font = .preferredFont(forTextStyle: .title2)
+        label.font = UIFont.systemFont(ofSize: 23, weight: .medium)
+        label.adjustsFontForContentSizeCategory = false
+        label.textColor = PaletteColour.offWhite.colour
+        label.alpha = 0
+        iv.alpha = 0
         UIView.animate(withDuration: 2, delay: 0, options: [.transitionCrossDissolve], animations: {
             label.alpha = 1
             iv.alpha = 1
         }, completion: nil)
-        label.trailingAnchor.constraint(equalTo: iv.leadingAnchor, constant: -8).isActive = true
+//        label.trailingAnchor.constraint(equalTo: iv.leadingAnchor, constant: -8).isActive = true
         
         return view
     }

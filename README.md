@@ -2,11 +2,8 @@
 
 ## Contributors 
 
-[Cameron Rivera](https://github.com/CameronRivera) 
-
-[Brendon Cecilio](https://github.com/bcecilio)
-
-[Kelby Mittan](https://github.com/kelby-mittan)
+[Cameron Rivera](https://github.com/CameronRivera) | [Brendon Cecilio](https://github.com/bcecilio) | [Kelby Mittan](https://github.com/kelby-mittan)
+------------ | ------------- | -------------
 
 ## About
 
@@ -25,6 +22,16 @@ Xcode 11, Swift 5, ARKit, RealityKit, AVFoundation
 
 - Currently this application only supports iOS 13.5 and beyond. 
 - This application makes use of CocoaPods.
+
+## GIFs of the App
+
+_Onboarding_ | _Detail_ | _Resources_
+------------ | ------------- | -------------
+![gif](Assets/coastsGIF1.gif) | ![gif](Assets/coastsGIF2.gif) | ![gif](Assets/resourcesGIF.gif)
+
+_AR_ _One_ | _AR_ _Two_
+------------ | -------------
+![gif](Assets/coastsARGIF.gif) | ![gif](Assets/coastsARGIF2.gif)
 
 ## Code Snippet of Challenging parts
 
@@ -102,7 +109,3 @@ struct CompSeaLevel {
     }
   }
   ```
-
-## Screenshot of the App
-
-## Gif

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TODO:Try an make all of these wavy views into one View. Possible solution includes adding some parameters for the initalizer.
 class TestView: UIView {
 
      override init(frame: CGRect) {

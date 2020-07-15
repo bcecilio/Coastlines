@@ -9,12 +9,12 @@
 import UIKit
 
 /// Contains a key for onboarding experience logic. 
-public struct OnboardingKey{
+public struct OnboardingKey {
     static let ftuexKey = "ftuex" // First Time User Experience
 }
 
 /// A struct used to centralize all onboarding label text.
-public struct OnboardingText{
+public struct OnboardingText {
     static let appTitle = "Welcome to Coasts"
     static let welcomeMessage = """
 Thank you for installing this application. Before you begin your experience, we'd like to take a moment to inform you a bit about climate change and its effect on the global sea level.
@@ -29,10 +29,10 @@ Alternatively, if you are a climate change expert, you can go ahead and skip the
 }
 
 /// A description of the locations in the locationsVC. For accessibility purposes.
-public struct LocationDescription{
-    static let nycImage = "A yellow taxi cab is shown waiting at a busy new york city corner."
-    static let nycImageValue = "Tap to learn more about how the rising sea level will affect nyc."
-    static let newOrleansImage = "A view of buildings is shown from a high vantage point."
+public struct LocationDescription {
+    static let nycImage = "A yellow taxi cab is shown waiting at a busy new york city street corner."
+    static let nycImageValue = "Tap to learn more about how the rising sea level will affect new york city."
+    static let newOrleansImage = "New Orleans' bustling Bourbon Street is shown with ominous clouds overhead."
     static let newOrleansValue = "Tap to learn more about how the rising sea level will affect New Orleans."
     static let floridaImage = "A Miami beach with clear blue water is shown extending into the distance."
     static let floridaValue = "Tap to learn more about how the rising sea level will affect Miami."
@@ -41,7 +41,7 @@ public struct LocationDescription{
 }
 
 /// An enum containing hex vaules that correspond to colours from the chosen colour palette.
-enum PaletteColour: String{
+enum PaletteColour: String {
     case offWhite = "#f9f7e3"
     case lightBlue = "#333fc1"
     case lightGreen = "#a9bd95"
@@ -50,7 +50,7 @@ enum PaletteColour: String{
     case darkBlue = "#3e54c7"
     case black = "#000000"
     
-    var colour: UIColor{
+    var colour: UIColor {
         guard self.rawValue.count == 7 else { return UIColor.black }
         var hexTuple: (Int,Int,Int) = (0,0,0)
         hexTuple.0 = Int(self.rawValue[self.rawValue.index(self.rawValue.startIndex, offsetBy: 1)...self.rawValue.index(self.rawValue.startIndex, offsetBy: 2)], radix: 16) ?? 0

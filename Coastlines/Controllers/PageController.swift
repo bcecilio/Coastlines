@@ -12,7 +12,7 @@ class PageController: UIPageViewController {
 
     private let onboardingControllers: [UIViewController] = [OnboardingController(SecondOnboardingView()), OnboardingController(ThirdOnboardingView()), OnboardingController(FourthOnboardingView()), OnboardingController(FifthOnboardingView())]
     
-    init(){
+    init() {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
     }
     
@@ -26,9 +26,9 @@ class PageController: UIPageViewController {
         stylePageControl()
     }
     
-    private func setUp(){
+    private func setUp() {
         dataSource = self
-        view.backgroundColor = PaletteColour.darkBlue.colour
+        view.backgroundColor = PaletteColour.offWhite.colour
         
         if let first = onboardingControllers.first {
             setViewControllers([first], direction: .forward, animated: true)
@@ -36,10 +36,12 @@ class PageController: UIPageViewController {
         
     }
     
-    private func stylePageControl(){
+    private func stylePageControl() {
         let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [type(of: self)])
         
-        pageControl.backgroundColor = PaletteColour.darkBlue.colour
+        pageControl.backgroundColor = PaletteColour.offWhite.colour
+        pageControl.pageIndicatorTintColor = UIColor.systemGray4
+        pageControl.currentPageIndicatorTintColor = PaletteColour.darkBlue.colour
         pageControl.isUserInteractionEnabled = false
     }
 
