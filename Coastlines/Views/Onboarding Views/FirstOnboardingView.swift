@@ -17,7 +17,7 @@ class FirstOnboardingView: UIView {
         button.layer.borderWidth = 1.0
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
         button.layer.cornerRadius = 25.0
-        button.addTarget(self, action: #selector(segueNext), for: .touchUpInside)
+        button.addTarget(self, action: #selector(beginSegue), for: .touchUpInside)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -58,7 +58,7 @@ class FirstOnboardingView: UIView {
         let button = UIButton()
         button.setTitle("Skip", for: .normal)
         button.setTitleColor(PaletteColour.offWhite.colour, for: .normal)
-        button.addTarget(self, action: #selector(showLocationsVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(goToLocationsVC), for: .touchUpInside)
         button.addAccessibility(.button, "Skip", "Skips onboarding experience", nil)
         button.adjustsImageSizeForAccessibilityContentSizeCategory = true
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
@@ -166,13 +166,19 @@ class FirstOnboardingView: UIView {
         NSLayoutConstraint.activate([topView.topAnchor.constraint(equalTo: topAnchor), topView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor), topView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor), topView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.35)])
     }
     
-    @objc
+    @objc private func goToLocationsVC() {
+        skipButton.animateButton(functionClosure: showLocationsVC)
+    }
+    
     private func showLocationsVC(){
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
     }
     
-    @objc
+    @objc private func beginSegue() {
+        nextButton.animateButton(functionClosure: segueNext)
+    }
+    
     private func segueNext(){
         let nextVC = PageController()
         UIViewController.resetWindow(nextVC)

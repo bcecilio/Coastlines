@@ -37,7 +37,7 @@ class LocationsView: UIView {
         button.addAccessibility(.button, "Get involved", nil, "Shows a list of actions that can be taken to reduce your carbon footprint.")
         button.makeFontAccessible()
 //        button.layer.borderColor = PaletteColours.darkBlue.rawValue.convertHexToColour().cgColor
-        button.addTarget(self, action: #selector(goToResourceVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(resourceButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -91,7 +91,11 @@ class LocationsView: UIView {
         ])
     }
     
-    @objc private func goToResourceVC() {
+    @objc func resourceButtonPressed() {
+        resourceButton.animateButton(functionClosure: goToResourceVC)
+    }
+    
+    private func goToResourceVC() {
         let resourceVC = ResourcesController()
         UIViewController.resetWindow(resourceVC)
     }
