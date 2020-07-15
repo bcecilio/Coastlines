@@ -27,7 +27,7 @@ Xcode 11, Swift 5, ARKit, RealityKit, AVFoundation
 
 _Onboarding_ | _Detail_ | _Resources_
 ------------ | ------------- | -------------
-![gif](Assets/coastsGIF1.gif) | ![gif](Assets/coastsGIF2.gif) | ![gif](Assets/resourcesGIF.gif)
+![gif](Assets/gifCoastsOne.gif) | ![gif](Assets/gifCoastsTwo.gif) | ![gif](Assets/gifCoastsThree.gif)
 
 _AR_ _One_ | _AR_ _Two_
 ------------ | -------------
