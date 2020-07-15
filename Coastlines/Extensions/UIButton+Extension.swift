@@ -20,6 +20,7 @@ extension UIButton {
         button.tintColor = .black
         button.layer.borderWidth = 3
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
+        button.addTarget(self, action: #selector(animateButton2), for: .touchUpInside)
 //        button.layer.shadowColor = UIColor.black.cgColor
 //        button.layer.shadowOffset = CGSize(width: 5, height: 5)
 //        button.layer.shadowRadius = 3
@@ -39,6 +40,7 @@ extension UIButton {
         button.tintColor = .black
         button.layer.borderWidth = 3
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
+        button.addTarget(self, action: #selector(animateButton2), for: .touchUpInside)
 //        button.layer.shadowColor = UIColor.black.cgColor
 //        button.layer.shadowOffset = CGSize(width: 5, height: 5)
 //        button.layer.shadowRadius = 3
@@ -58,6 +60,7 @@ extension UIButton {
         button.tintColor = .white
         button.layer.borderWidth = 5
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
+        button.addTarget(self, action: #selector(animateButton2), for: .touchUpInside)
 //        button.layer.shadowColor = UIColor.black.cgColor
 //        button.layer.shadowOffset = CGSize(width: 5, height: 5)
 //        button.layer.shadowRadius = 3
@@ -101,6 +104,16 @@ extension UIButton {
             }) { (_) in
                 functionClosure()
             }
+        }
+    }
+    
+    @objc func animateButton2() {
+        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        }) { (_) in
+            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+                self.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }, completion: nil)
         }
     }
 }
