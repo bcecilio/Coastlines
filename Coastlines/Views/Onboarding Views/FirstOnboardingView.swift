@@ -191,28 +191,4 @@ class FirstOnboardingView: UIView {
         }) { (completed) in
         }
     }
-    
-//    private func animateSkipButton(_ buttonToAnimate: UIButton) {
-//        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-//            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.80, y: 0.80)
-//        }) { (_) in
-//            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-//                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
-//            }) { (_) in
-//                self.showLocationsVC()
-//            }
-//        }
-    }
-    
-//    private func animateBeginButton(_ buttonToAnimate: UIButton) {
-//        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-//            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.80, y: 0.80)
-//        }) { (_) in
-//            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-//                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
-//            }) { (_) in
-//                self.segueNext()
-//            }
-//        }
-//    }
-//}
+}

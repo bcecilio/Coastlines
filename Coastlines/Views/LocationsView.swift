@@ -93,23 +93,10 @@ class LocationsView: UIView {
     
     @objc func resourceButtonPressed() {
         resourceButton.animateButton(functionClosure: goToResourceVC)
-//        goToResourceVC()
     }
     
     private func goToResourceVC() {
         let resourceVC = ResourcesController()
         UIViewController.resetWindow(resourceVC)
     }
-    
-//    func animateButton(_ buttonToAnimate: UIView) {
-//        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-//            buttonToAnimate.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
-//        }) { (_) in
-//            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-//                buttonToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
-//            }) { (_) in
-//                self.goToResourceVC()
-//            }
-//        }
-//    }
 }
