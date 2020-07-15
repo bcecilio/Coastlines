@@ -12,7 +12,7 @@ import ARKit
 extension ExperimentARController: ARCoachingOverlayViewDelegate {
     
     func setupCoachingOverlayView() {
-        //coachingOverlay.session = arView.session
+        coachingOverlay.session = arView.session
         setUpCoachingOverlayConstraints()
         coachingOverlay.delegate = self
         coachingOverlay.setActive(true,animated: true)

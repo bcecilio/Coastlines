@@ -42,16 +42,28 @@ class ExperimentARController: UIViewController {
         super.viewDidLoad()
         
         setupARView()
+        
         setupCoachingOverlayView()
         
         loadScene()
         //        setupOccBox()
         setupSlider()
         
+        
+        arView.session.delegate = self
+        
     }
     
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
+//        arView.automaticallyConfigureSession = false
+//        configuration.planeDetection = [.horizontal]
+//        configuration.environmentTexturing = .automatic
+//
+//        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
+//            configuration.sceneReconstruction = .mesh
+//        }
+////        arView.session.run(configuration, options: .resetSceneReconstruction)
 //        self.arView.session.run(configuration)
 //    }
 //
@@ -65,10 +77,10 @@ class ExperimentARController: UIViewController {
         setupBackButton()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
-        //arView.session.pause()
-    }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(true)
+//        //arView.session.pause()
+//    }
     
     
     private func loadScene() {
@@ -301,8 +313,10 @@ class ExperimentARController: UIViewController {
     
     @objc
     func goBack(_ sender: UIButton) {
+        arView.scene.anchors.removeAll()
+        arView.session.pause()
         let detailVC = LocationDetailController(location)
-        arView.removeFromSuperview()
+//        arView.removeFromSuperview()
         UIViewController.resetWindow(detailVC)
     }
     
@@ -342,4 +356,22 @@ class ExperimentARController: UIViewController {
         ])
     }
     
+}
+
+extension ExperimentARController: ARSessionObserver, ARSessionDelegate {
+    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
+        print("CAMERA TRACKING: \(camera.trackingState)")
+    }
+    
+    func sessionWasInterrupted(_ session: ARSession) {
+        print("")
+    }
+    
+    func session(_ session: ARSession, didFailWithError error: Error) {
+        print("ERROR IS: \(error.localizedDescription)")
+    }
+    
+    func sessionShouldAttemptRelocalization(_ session: ARSession) -> Bool {
+        return true
+    }
 }

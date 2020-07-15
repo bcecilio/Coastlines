@@ -47,16 +47,7 @@ class ARCell: UICollectionViewCell {
         setupARAnimation()
         setupHeaderLabel()
         setupARLabel()
-//        animateLabel()
-//        animateARIcon()
     }
-    
-//    private func animateLabel() {
-//        UIView.animate(withDuration: 2, delay: 0, options: [.transitionCrossDissolve], animations: {
-//            self.headerLabel.alpha = 1
-//
-//        }, completion: nil)
-//    }
     
     private func setupHeaderLabel() {
         addSubview(headerLabel)
@@ -77,7 +68,7 @@ class ARCell: UICollectionViewCell {
             arIconAnimation.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             arIconAnimation.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             arIconAnimation.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.2),
-            arIconAnimation.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            arIconAnimation.heightAnchor.constraint(equalTo: arIconAnimation.widthAnchor)
         ])
     }
     

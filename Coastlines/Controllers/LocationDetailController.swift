@@ -9,10 +9,10 @@ class LocationDetailController: UIViewController {
     private var selection: Selection
     private var tocCell = TOCCell()
     private var didYouKnowCell = ContentCell()
-    private var meansCell = ContentCell()
+    private var happeningCell = ContentCell()
     private var willWeGoCell = ContentCell()
-    private var seaChartCell = GraphCell()
-    private var pieChartCell = PieChartCell()
+    private var linaCell = GraphCell()
+    private var pieCell = PieChartCell()
     private var augCell = ARCell()
     private var buttonTag = 0
     private var didYouKnowText: [String]
@@ -74,20 +74,18 @@ class LocationDetailController: UIViewController {
             present(comingSoonAlert, animated: true, completion: nil)
             
         } else {
-//            let arVC = ExperimentARController(location)
-//            UIViewController.resetWindow(arVC)
+            let arVC = ExperimentARController(location)
+            UIViewController.resetWindow(arVC)
         }
         
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
-        
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
     }
     
     @objc func infoButtonPressed(_ sender: UIButton) {
-        
         let resourcesVC = ResourcesController()
         UIViewController.resetWindow(resourcesVC)
     }
@@ -116,23 +114,23 @@ class LocationDetailController: UIViewController {
             tocCell.hideItems()
             locationView.showPrev()
             didYouKnowCell.showLabels()
-            seaChartCell.hideItems()
+            linaCell.hideItems()
         case 2:
             locationView.showPrev()
-            seaChartCell.showItems()
+            linaCell.showItems()
             animateChart()
             didYouKnowCell.hideLabels()
-            meansCell.hideLabels()
+            happeningCell.hideLabels()
         case 3:
-            seaChartCell.hideItems()
-            meansCell.showLabels()
-            pieChartCell.hideItems()
+            linaCell.hideItems()
+            happeningCell.showLabels()
+            pieCell.hideItems()
         case 4:
-            pieChartCell.showItems()
-            meansCell.hideLabels()
+            pieCell.showItems()
+            happeningCell.hideLabels()
             willWeGoCell.hideLabels()
         case 5:
-            pieChartCell.hideItems()
+            pieCell.hideItems()
             locationView.showPrev()
             locationView.showNext()
             willWeGoCell.showLabels()
@@ -155,7 +153,7 @@ class LocationDetailController: UIViewController {
         
         var notInstant = 0.0
         
-        UIView.animate(withDuration: time*(1), delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: time*(0.75), delay: 0, options: .curveEaseOut, animations: {
             self.locationView.nameLabelLeading.constant -= self.locationView.frame.width+8
             self.locationView.wavyLeading.constant -= self.locationView.frame.width
             self.locationView.layoutIfNeeded()
@@ -183,16 +181,16 @@ class LocationDetailController: UIViewController {
     }
     
     private func animateChart() {
-        seaChartCell.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 3, easingOption: .easeInCirc)
+        linaCell.seaLevelLineChart.animate(xAxisDuration: 2, yAxisDuration: 3, easingOption: .easeInCirc)
     }
     
     private func setSeaLevelChart() {
-        seaChartCell.location = location
-        seaChartCell.setSeaLevelData()
-        seaChartCell.seaLevelSet.setCircleColor(PaletteColour.darkBlue.colour)
-        seaChartCell.seaLevelSet.setColor(PaletteColour.darkBlue.colour)
-        seaChartCell.seaLevelSet.fill = Fill(color: PaletteColour.darkBlue.colour)
-        seaChartCell.headerLabel.addAccessibility(.none, "This is a line chart that shows how sea levels might rise from now until 2100. It is even possible that by the year 2100 sea levels could surpass 6 feet.", nil, "Tapping on this chart displays a pop up view for the rise in sea level for the selected year")
+        linaCell.location = location
+        linaCell.setSeaLevelData()
+        linaCell.seaLevelSet.setCircleColor(PaletteColour.darkBlue.colour)
+        linaCell.seaLevelSet.setColor(PaletteColour.darkBlue.colour)
+        linaCell.seaLevelSet.fill = Fill(color: PaletteColour.darkBlue.colour)
+        linaCell.headerLabel.addAccessibility(.none, "This is a line chart that shows how sea levels might rise from now until 2100. It is even possible that by the year 2100 sea levels could surpass 6 feet.", nil, "Tapping on this chart displays a pop up view for the rise in sea level for the selected year")
     }
 }
 
@@ -222,16 +220,16 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             return didYouKnowCell
             
         case 2:
-            seaChartCell = configureLina(collectionView, indexPath, self, location)
-            return seaChartCell
+            linaCell = configureLina(collectionView, indexPath, self, location)
+            return linaCell
             
         case 3:
-            meansCell = configureContentCell(collectionView, indexPath, whatsHappeningText)
-            return meansCell
+            happeningCell = configureContentCell(collectionView, indexPath, whatsHappeningText)
+            return happeningCell
             
         case 4:
-            pieChartCell = configurePieChartCell(collectionView, indexPath, location)
-            return pieChartCell
+            pieCell = configurePieChartCell(collectionView, indexPath, location)
+            return pieCell
             
         case 5:
             willWeGoCell = configureContentCell(collectionView, indexPath, whereWillWeGoText)
@@ -283,24 +281,25 @@ extension LocationDetailController: TapContents {
     private func scrollHelper(to: Int) {
         tocCell.hideItems()
         
+        for _ in 1...to {
+            scrollRightTo(time: Double(to)*0.8, isToc: true)
+        }
+        
         switch to {
         case 1:
             didYouKnowCell.showLabels()
         case 2:
-            seaChartCell.showItems()
+            linaCell.showItems()
         case 3:
-            meansCell.showLabels()
+            happeningCell.showLabels()
         case 4:
-            pieChartCell.showItems()
+            pieCell.showItems()
         case 5:
             willWeGoCell.showLabels()
         case 6:
             augCell.showItems()
         default:
             break
-        }
-        for _ in 1...to {
-            scrollRightTo(time: Double(to)*0.8, isToc: true)
         }
     }
 }

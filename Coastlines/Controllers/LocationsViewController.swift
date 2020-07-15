@@ -62,7 +62,7 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let maxSize: CGSize = UIScreen.main.bounds.size
-        let itemHeight: CGFloat = maxSize.height / 3
+        let itemHeight: CGFloat = maxSize.height / 2.75
         
         return  CGSize(width: maxSize.width, height: itemHeight)
     }
