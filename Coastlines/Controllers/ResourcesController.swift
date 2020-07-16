@@ -24,13 +24,6 @@ class ResourcesController: UIViewController {
         Resources(title: "Line-Dry Your Clothes!", description: "New is not always better – the traditional method of line-drying your clothing is much better for the environment. One dryer load uses 5 times more electricity than washing – by simply line-drying your clothes, you can save 1/3 of their carbon footprint. Unfortunately, line-drying seems to be America’s least favorite way to save energy – despite the fact that running a clothes dryer is equivalent to turning on 225 light bulbs for an hour. It might be time to follow Europeans' lead, especially considering the tumble dryer is one of the top energy-consuming appliances.", url: "https://www.theguardian.com/environment/green-living-blog/2010/nov/25/carbon-footprint-load-laundry", image: "tshirt")
         ]
     
-    /*
-     Whether you live in a house or an apartment, planting some greens is a quick and easy way to reduce your carbon footprint. We all know plants absorb carbon dioxide – a beneficial relationship for humans, that we should all be seeking to nurture. Plant some bee-friendly flowers, a few trees, or a vegetable garden.
-     */
-    
-    let url = URL(string: "https://globalclimatestrike.net/more/")
-//    UIApplication.shared.open(url)
-    
     private var selectedIndex: IndexPath = IndexPath(row: -1, section: 0)
     private var lastIndex: IndexPath = IndexPath(row: 0, section: 0)
     
@@ -94,10 +87,6 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
             fatalError()
         }
         
-        print("last: \(lastCell.frame.height)")
-        
-        print("current: \(cell.frame.height)")
-        
         if cell != lastCell{
             lastCell.downExpand.image = downChevron
         }
@@ -106,7 +95,6 @@ extension ResourcesController: UITableViewDelegate, UITableViewDataSource {
         tableView.beginUpdates()
         tableView.reloadRows(at: [indexPath], with: .none)
         tableView.endUpdates()
-        
         lastIndex = indexPath
                 
     }

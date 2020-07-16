@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TapContents {
-    func onItem(content: Content)
+    func onItem(content: Content, forView: UIView)
 }
 
 enum Content: Int {
@@ -182,8 +182,24 @@ class TOCCell: UICollectionViewCell {
         let content = Content(selected: id)
         
         print(content)
+        var contentView = UIView()
         
-        contentDelegate?.onItem(content: content)
+        switch content {
+        case .didYouKnow:
+            contentView = didYouKnowItem
+        case .seaLevels:
+            contentView = seaLevelGraphItem
+        case .whatsHappening:
+            contentView = seaLevelFactsItem
+        case .popDisplaced:
+            contentView = pieChartItem
+        case .whereWillWeGo:
+            contentView = popFactsItem
+        case .seeInAR:
+            contentView = arItem
+        }
+        
+        contentDelegate?.onItem(content: content, forView: contentView)
     }
     
     public func showItems() {
@@ -242,7 +258,7 @@ extension UIView {
             label.alpha = 1
             iv.alpha = 1
         }, completion: nil)
-//        label.trailingAnchor.constraint(equalTo: iv.leadingAnchor, constant: -8).isActive = true
+        //        label.trailingAnchor.constraint(equalTo: iv.leadingAnchor, constant: -8).isActive = true
         
         return view
     }

@@ -87,9 +87,12 @@ class ResourceView: UIView {
     }
     
     @objc private func goBack() {
-        
-        let locationVC = LocationsViewController()
-        UIViewController.resetWindow(locationVC)
+        prevButton.animateButton(scale: 0.7, functionClosure: backOut)
+    }
+    
+    private func backOut() {
+        let locationsVC = LocationsViewController()
+        UIViewController.resetWindow(locationsVC)
     }
     
 }
