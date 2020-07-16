@@ -74,8 +74,8 @@ class LocationDetailController: UIViewController {
             present(comingSoonAlert, animated: true, completion: nil)
             
         } else {
-            let arVC = ExperimentARController(location)
-            UIViewController.resetWindow(arVC)
+//            let arVC = ExperimentARController(location)
+//            UIViewController.resetWindow(arVC)
         }
         
     }

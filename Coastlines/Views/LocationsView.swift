@@ -22,8 +22,8 @@ class LocationsView: UIView {
         return collection
     }()
     
-    public lazy var wavyView: WavyView2 = {
-        let wv = WavyView2()
+    public lazy var wavyView: WavyView = {
+        let wv = WavyView(start: 0.5, amplitude: 16, periods: 0.75, topColor: PaletteColour.darkBlue.colour, btmColor: PaletteColour.offWhite.colour, frame: self.frame)
         wv.backgroundColor = .clear
         return wv
     }()

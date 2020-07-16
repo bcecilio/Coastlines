@@ -1,9 +1,10 @@
 # Coasts
+[![](Assets/logo.png)](https://github.com)
 
 ## Contributors 
-
 [Cameron Rivera](https://github.com/CameronRivera) | [Brendon Cecilio](https://github.com/bcecilio) | [Kelby Mittan](https://github.com/kelby-mittan)
 ------------ | ------------- | -------------
+[![](Assets/cameron.png)](https://github.com/CameronRivera) | [![](Assets/brendon.png)](https://github.com/bcecilio) | [![](Assets/kelby.png)](https://github.com/kelby-mittan)
 
 ## About
 
@@ -27,11 +28,14 @@ Xcode 11, Swift 5, ARKit, RealityKit, AVFoundation
 
 _Onboarding_ | _Detail_ | _Resources_
 ------------ | ------------- | -------------
-![gif](Assets/coastsGIF1.gif) | ![gif](Assets/coastsGIF2.gif) | ![gif](Assets/resourcesGIF.gif)
+![gif](Assets/gifCoasts1.1.gif) | ![gif](Assets/gifCoastsTwo.gif) | ![gif](Assets/gifCoasts3.1.gif)
 
 _AR_ _One_ | _AR_ _Two_
 ------------ | -------------
-![gif](Assets/coastsARGIF.gif) | ![gif](Assets/coastsARGIF2.gif)
+![gif](Assets/gifARTwo.gif) | ![gif](Assets/gifAROne.gif)
+
+## Wavy
+![Coasts](Assets/coastsSShot1.1.png)![Coasts](Assets/coastsSShot2.1.png)![Coasts](Assets/coastsSShot3.1.png)![Coasts](Assets/coastsSShot4.1.png)![Coasts](Assets/coastsSShot5.1.png)![Coasts](Assets/coastsSShot6.1.png)![Coasts](Assets/coastsSShot7.1.png)
 
 ## Code Snippet of Challenging parts
 

@@ -74,8 +74,9 @@ class FirstOnboardingView: UIView {
         return button
     }()
     
-    public lazy var waves: TestView = {
-        let wv = TestView()
+    public lazy var waves: WavyView = {
+        let topColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        let wv = WavyView(start: 0, amplitude: 17, periods: 1.95, topColor: topColor, btmColor: PaletteColour.darkBlue.colour, frame: self.frame)
         wv.backgroundColor = UIColor.clear
         return wv
     }()
