@@ -24,7 +24,7 @@ Xcode 11, Swift 5, ARKit, RealityKit, AVFoundation
 - This application makes use of CocoaPods.
 
 ## Wavy
-![Coasts](Assets/coastsSShot1.1.png)![Coasts](Assets/coastsSShot2.1.png)
+![Coasts](Assets/coastsSShot1.1.png)![Coasts](Assets/coastsSShot2.1.png)![Coasts](Assets/coastsSShot3.1.png)![Coasts](Assets/coastsSShot4.1.png)![Coasts](Assets/coastsSShot5.1.png)![Coasts](Assets/coastsSShot6.1.png)![Coasts](Assets/coastsSShot7.1.png)
 
 ## GIFs of the App
 
