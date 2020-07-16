@@ -23,6 +23,9 @@ Xcode 11, Swift 5, ARKit, RealityKit, AVFoundation
 - Currently this application only supports iOS 13.5 and beyond. 
 - This application makes use of CocoaPods.
 
+## Wavy
+![Coasts](Assets/coastsSShot1.png)
+
 ## GIFs of the App
 
 _Onboarding_ | _Detail_ | _Resources_
