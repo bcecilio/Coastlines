@@ -4,7 +4,7 @@
 ## Contributors 
 [Cameron Rivera](https://github.com/CameronRivera) | [Brendon Cecilio](https://github.com/bcecilio) | [Kelby Mittan](https://github.com/kelby-mittan)
 ------------ | ------------- | -------------
-![Coasts](Assets/cameron.png) | ![Coasts](Assets/brendon.png) | ![ (Assets/kelby.png) ] (https://github.com/kelby-mittan)
+![Coasts](Assets/cameron.png) | ![Coasts](Assets/brendon.png) | ![](Assets/kelby.png)
 
 ## About
 
