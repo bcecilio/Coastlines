@@ -208,9 +208,11 @@ class ContentCell: UICollectionViewCell {
     }
     
     @objc func sayMorePressed(_ sender: UIButton) {
-        
+        sayMoreButton.animateButton(functionClosure: scaleSayMore)
+    }
+    
+    private func scaleSayMore() {
         scrollView.isScrollEnabled = true
-        
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
             self.scrollView.contentOffset.y += self.sayMoreView.frame.height
             self.learnMoreLabel.alpha = 1
