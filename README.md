@@ -2,11 +2,9 @@
 ![Coasts](Assets/logo.png)
 
 ## Contributors 
-
-![Coasts](Assets/cameron.png) | ![Coasts](Assets/brendon.png) | ![Coasts](Assets/kelby.png)
------------- | ------------- | -------------
 [Cameron Rivera](https://github.com/CameronRivera) | [Brendon Cecilio](https://github.com/bcecilio) | [Kelby Mittan](https://github.com/kelby-mittan)
-
+------------ | ------------- | -------------
+![Coasts](Assets/cameron.png) | ![Coasts](Assets/brendon.png) | ![Coasts](Assets/kelby.png)
 
 ## About
 
