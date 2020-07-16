@@ -1,10 +1,10 @@
 # Coasts
-![Coasts](Assets/logo.png)
+[![](Assets/logo.png)](https://github.com)
 
 ## Contributors 
 [Cameron Rivera](https://github.com/CameronRivera) | [Brendon Cecilio](https://github.com/bcecilio) | [Kelby Mittan](https://github.com/kelby-mittan)
 ------------ | ------------- | -------------
-![Coasts](Assets/cameron.png) | ![Coasts](Assets/brendon.png) | [![](Assets/kelby.png)](https://github.com/kelby-mittan)
+[![](Assets/cameron.png)](https://github.com/CameronRivera) | [![](Assets/brendon.png)](https://github.com/bcecilio) | [![](Assets/kelby.png)](https://github.com/kelby-mittan)
 
 ## About
 
