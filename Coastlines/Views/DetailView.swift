@@ -56,7 +56,8 @@ class DetailView: UIView {
     }()
     
     public lazy var wView: WavyView = {
-        let wavy = WavyView()
+        let topColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        let wavy = WavyView(start: 0, amplitude: 10, periods: 0.75*5, topColor: topColor, btmColor: PaletteColour.darkBlue.colour, frame: self.frame)
         wavy.backgroundColor = .clear
         return wavy
     }()

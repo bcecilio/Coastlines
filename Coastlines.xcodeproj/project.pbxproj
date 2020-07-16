@@ -37,7 +37,6 @@
 		02F53F12248AF87600227C62 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F53F11248AF87600227C62 /* PieChartCell.swift */; };
 		0B1A9ED6249BB0D3008477C6 /* CityLights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A9ED5249BB0D3008477C6 /* CityLights.swift */; };
 		0B2AA89E2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2AA89D2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift */; };
-		0B35424C2488000600AAB02C /* WavyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35424B2488000600AAB02C /* WavyView2.swift */; };
 		0BCDFFB8248534B1007A94BF /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFB7248534B1007A94BF /* LocationCell.swift */; };
 		0BCDFFBC24856588007A94BF /* LocationIntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */; };
 		1393FDC357C87C1B91849D65 /* Pods_Coastlines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */; };
@@ -72,9 +71,7 @@
 		C40F2CED2490126800AA1756 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EBCC824884626001DB0A3 /* GlobalConstants.swift */; };
 		C40F2CEE2490126B00AA1756 /* FactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0285857A2483063A0003E31A /* FactsData.swift */; };
 		C40F2CEF2490126E00AA1756 /* locationFactsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 02858578248305410003E31A /* locationFactsData.json */; };
-		C40F2CF02490127500AA1756 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EBCC2248808D9001DB0A3 /* TestView.swift */; };
 		C40F2CF12490127700AA1756 /* WavyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0285857E2485970E0003E31A /* WavyView.swift */; };
-		C40F2CF22490127D00AA1756 /* WavyView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35424B2488000600AAB02C /* WavyView2.swift */; };
 		C40F2CF52490128500AA1756 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4588D247F10BE001F8E51 /* LocationsView.swift */; };
 		C40F2CF62490128800AA1756 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
 		C40F2CF82490128E00AA1756 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423762489E617000C1A9B /* ContentCell.swift */; };
@@ -114,7 +111,6 @@
 		C463925B24847EB900DDB4DE /* ThirdOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */; };
 		C463925D24847EC900DDB4DE /* FourthOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925C24847EC900DDB4DE /* FourthOnboardingView.swift */; };
 		C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */; };
-		C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EBCC2248808D9001DB0A3 /* TestView.swift */; };
 		C48EBCCB24884626001DB0A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCC524884626001DB0A3 /* Assets.xcassets */; };
 		C48EBCCC24884626001DB0A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48EBCC624884626001DB0A3 /* LaunchScreen.storyboard */; };
 		C48EBCCD24884626001DB0A3 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48EBCC824884626001DB0A3 /* GlobalConstants.swift */; };
@@ -174,7 +170,6 @@
 		0B1F21382476DEC300729365 /* Coastlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coastlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1F21492476DECA00729365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B2AA89D2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExperimentARController+ARCoachingOverlay.swift"; sourceTree = "<group>"; };
-		0B35424B2488000600AAB02C /* WavyView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavyView2.swift; sourceTree = "<group>"; };
 		0BCDFFB7248534B1007A94BF /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		0BCDFFBB24856588007A94BF /* LocationIntroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIntroCell.swift; sourceTree = "<group>"; };
 		3E4C564036176640CEBB70C2 /* Pods-TestFeatureTarget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestFeatureTarget.debug.xcconfig"; path = "Target Support Files/Pods-TestFeatureTarget/Pods-TestFeatureTarget.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,7 +199,6 @@
 		C463925A24847EB900DDB4DE /* ThirdOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboardingView.swift; sourceTree = "<group>"; };
 		C463925C24847EC900DDB4DE /* FourthOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthOnboardingView.swift; sourceTree = "<group>"; };
 		C463925E24847ED600DDB4DE /* FifthOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthOnboardingView.swift; sourceTree = "<group>"; };
-		C48EBCC2248808D9001DB0A3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		C48EBCC524884626001DB0A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C48EBCC724884626001DB0A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C48EBCC824884626001DB0A3 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
@@ -340,9 +334,7 @@
 		02B9AC9D248EC3DD0037971E /* Wavy Views */ = {
 			isa = PBXGroup;
 			children = (
-				C48EBCC2248808D9001DB0A3 /* TestView.swift */,
 				0285857E2485970E0003E31A /* WavyView.swift */,
-				0B35424B2488000600AAB02C /* WavyView2.swift */,
 			);
 			path = "Wavy Views";
 			sourceTree = "<group>";
@@ -723,10 +715,8 @@
 				C48EBCCF24884626001DB0A3 /* SceneDelegate.swift in Sources */,
 				02737075249D22F300A10E7B /* TOCCell.swift in Sources */,
 				02F53F06248AAB3C00227C62 /* UIButton+Extension.swift in Sources */,
-				C48EBCC3248808D9001DB0A3 /* TestView.swift in Sources */,
 				C463925F24847ED600DDB4DE /* FifthOnboardingView.swift in Sources */,
 				C45DDA8A24A14988002E5C40 /* UIView+AddAccessibility.swift in Sources */,
-				0B35424C2488000600AAB02C /* WavyView2.swift in Sources */,
 				B7B59BDD2497E4E8004CA137 /* ResourceView.swift in Sources */,
 				028423772489E617000C1A9B /* ContentCell.swift in Sources */,
 				028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */,
@@ -765,7 +755,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C40F2CEC2490126500AA1756 /* LocationDetailController.swift in Sources */,
-				C40F2CF22490127D00AA1756 /* WavyView2.swift in Sources */,
 				C40F2D1E2490157200AA1756 /* FifthOnboardingView.swift in Sources */,
 				C4C4D89E24B7A13B0023C5EB /* LocationDetailController+ConfigureCells.swift in Sources */,
 				0B1A9ED6249BB0D3008477C6 /* CityLights.swift in Sources */,
@@ -775,7 +764,6 @@
 				02737076249D23E800A10E7B /* TOCCell.swift in Sources */,
 				0273708324A10BDE00A10E7B /* DropFlipRiseNYC.rcproject in Sources */,
 				C40F2CFF249012A100AA1756 /* NSUIColor+Hex.swift in Sources */,
-				C40F2CF02490127500AA1756 /* TestView.swift in Sources */,
 				C40F2D1B2490157200AA1756 /* SecondOnboardingView.swift in Sources */,
 				B776AD412497F5AF00034A4E /* ResourcesController.swift in Sources */,
 				C4C4D89B24B76FBA0023C5EB /* UICollectionView+configureCellSize.swift in Sources */,
