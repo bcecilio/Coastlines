@@ -27,18 +27,21 @@ class DetailView: UIView {
         button = button.nextButton()
         button.setImage(UIImage(named: "info1"), for: .normal)
         button.addAccessibility(.button, "Resources", nil, "Shows a list of actions that can be taken to reduce your carbon footprint.")
+        button.removeTarget(self, action: #selector(animateButtonNoClosure), for: .touchUpInside)
         button.contentMode = .scaleAspectFit
         return button
     }()
     
     public lazy var nextButton: UIButton = {
-        let button = UIButton()
-        return button.nextButton()
+        var button = UIButton()
+        button = button.nextButton()
+        return button
     }()
     
     public lazy var prevButton: UIButton = {
-        let button = UIButton()
-        return button.previousButton()
+        var button = UIButton()
+        button = button.previousButton()
+        return button
     }()
     
     public lazy var headerContainerView: UIView = {
@@ -51,7 +54,6 @@ class DetailView: UIView {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        
         return iv
     }()
     
@@ -107,7 +109,6 @@ class DetailView: UIView {
     }
     
     private func commonInit() {
-        
         headerContainer()
         setupLocationImageConstraints()
         setupWaveView()
@@ -251,28 +252,6 @@ class DetailView: UIView {
         ])
     }
     
-    public func hideARButton() {
-//        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
-//            self.goToARButton.alpha = 0
-//
-//        })  { (completed) in
-//            self.goToARButton.isHidden = true
-//        }
-        goToARButton.pulsate()
-    }
-    
-    public func showARButton() {
-//        UIView.animate(withDuration: 1.25, delay: 0, options: [.transitionCrossDissolve], animations: {
-//
-//            self.goToARButton.isHidden = false
-//            self.goToARButton.alpha = 1
-//
-//        })  { (completed) in
-//
-//        }
-        goToARButton.pulsate(1, 1)
-    }
-    
     public func hidePrev(delay: TimeInterval = 0) {
         UIView.animate(withDuration: 1.25, delay: delay, options: [.transitionCrossDissolve], animations: {
             
@@ -307,34 +286,16 @@ class DetailView: UIView {
     
 }
 
-extension UIButton {
-    func pulsate(_ start: Float = 0.97, _ stop: Float = 1.1) {
-        let pulse = CASpringAnimation(keyPath: "transform.scale")
-        pulse.duration = 0.7
-        pulse.fromValue = start
-        pulse.toValue = stop
-        pulse.autoreverses = true
-        pulse.repeatCount = .infinity
-        pulse.initialVelocity = 0
-        pulse.damping = 5
-        layer.add(pulse, forKey: nil)
-    }
-}
-
 extension UIView {
     func hideItem() {
         UIView.animate(withDuration: 1, delay: 0, options: [.transitionCrossDissolve], animations: {
-            
             self.alpha = 0
-            
         },completion: nil)
     }
     
     func showItem() {
         UIView.animate(withDuration: 1, delay: 0, options: [.transitionCrossDissolve], animations: {
-            
             self.alpha = 1
-            
         },completion: nil)
     }
 }

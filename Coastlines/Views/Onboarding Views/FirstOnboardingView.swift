@@ -168,7 +168,7 @@ class FirstOnboardingView: UIView {
     }
     
     @objc private func goToLocationsVC() {
-        skipButton.animateButton(functionClosure: showLocationsVC)
+        skipButton.animateButton(scale: 0.94, functionClosure: showLocationsVC)
     }
     
     private func showLocationsVC(){

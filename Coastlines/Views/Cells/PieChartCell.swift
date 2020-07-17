@@ -34,8 +34,17 @@ class PieChartCell: UICollectionViewCell {
         pieChart.rotationAngle = 20
         pieChart.rotationEnabled = false
         pieChart.legend.enabled = true
+        pieChart.isUserInteractionEnabled = true
+        pieChart.delegate = self
         pieChart.alpha = 0
         return pieChart
+    }()
+    
+    public lazy var pieView: UIView = {
+        let view = UIView()
+        view.isUserInteractionEnabled = true
+        view.backgroundColor = .clear
+        return view
     }()
     
     public lazy var tapChartLabel: UILabel = {
@@ -56,8 +65,9 @@ class PieChartCell: UICollectionViewCell {
         setupHeaderLabel()
         setupPieChart()
         setPopulationGraphData()
+        setupPieView()
         setupTapChartLabel()
-        animatePieChart()
+//        animatePieChart()
     }
     
     private func setupHeaderLabel() {
@@ -80,6 +90,17 @@ class PieChartCell: UICollectionViewCell {
             populationGraphView.widthAnchor.constraint(equalTo: self.widthAnchor),
             populationGraphView.heightAnchor.constraint(equalTo: populationGraphView.widthAnchor, multiplier: 0.85),
             populationGraphView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
+        ])
+    }
+    
+    private func setupPieView() {
+        addSubview(pieView)
+        pieView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pieView.centerXAnchor.constraint(equalTo: populationGraphView.centerXAnchor),
+            pieView.centerYAnchor.constraint(equalTo: populationGraphView.centerYAnchor),
+            pieView.widthAnchor.constraint(equalTo: populationGraphView.widthAnchor),
+            pieView.heightAnchor.constraint(equalTo: populationGraphView.heightAnchor)
         ])
     }
     
@@ -114,7 +135,7 @@ class PieChartCell: UICollectionViewCell {
 
 extension PieChartCell: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print(entry)
+        print("TAAAAAAPPED")
     }
     
     public func setPopulationGraphData() {

@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = WelcomeController()
+        window?.rootViewController = SplashScreenController()
         window?.makeKeyAndVisible()
     }
 
@@ -51,6 +51,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    func loadWelcomeScreen() {
+        guard let screenWindow = window else { return }
+        window?.rootViewController = WelcomeController()
+        UIView.transition(with: screenWindow, duration: 0.5, options: [.transitionCrossDissolve], animations: nil, completion: nil)
     }
 
 
