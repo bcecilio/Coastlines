@@ -50,7 +50,7 @@ class ExperimentARController: UIViewController {
         setupSlider()
         
         
-        arView.session.delegate = self
+//        arView.session.delegate = self
         
     }
     
@@ -314,7 +314,7 @@ class ExperimentARController: UIViewController {
     @objc
     func goBack(_ sender: UIButton) {
         arView.scene.anchors.removeAll()
-        arView.session.pause()
+//        arView.session.pause()
         let detailVC = LocationDetailController(location)
 //        arView.removeFromSuperview()
         UIViewController.resetWindow(detailVC)

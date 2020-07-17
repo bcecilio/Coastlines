@@ -139,6 +139,8 @@
 		C4C4D89E24B7A13B0023C5EB /* LocationDetailController+ConfigureCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D89C24B7A0270023C5EB /* LocationDetailController+ConfigureCells.swift */; };
 		C4CFF34C249AC87C00777962 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFF34B249AC87C00777962 /* PageController.swift */; };
 		C4CFF34D249AC87C00777962 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFF34B249AC87C00777962 /* PageController.swift */; };
+		C4DE80D724C0C93C002370EC /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DE80D624C0C93C002370EC /* SplashScreenController.swift */; };
+		C4DE80D924C0CAFB002370EC /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DE80D824C0CAFB002370EC /* SplashScreenView.swift */; };
 		C4E97909247DE48A0039B398 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E97908247DE48A0039B398 /* WelcomeController.swift */; };
 /* End PBXBuildFile section */
 
@@ -223,6 +225,8 @@
 		C4C4D89924B76FB10023C5EB /* UICollectionView+configureCellSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+configureCellSize.swift"; sourceTree = "<group>"; };
 		C4C4D89C24B7A0270023C5EB /* LocationDetailController+ConfigureCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationDetailController+ConfigureCells.swift"; sourceTree = "<group>"; };
 		C4CFF34B249AC87C00777962 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
+		C4DE80D624C0C93C002370EC /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
+		C4DE80D824C0CAFB002370EC /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		C4E97908247DE48A0039B398 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeController.swift; path = ../WelcomeController.swift; sourceTree = "<group>"; };
 		CEE5A3A6EC95A87BAEBAA85A /* Pods-Coastlines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coastlines.release.xcconfig"; path = "Target Support Files/Pods-Coastlines/Pods-Coastlines.release.xcconfig"; sourceTree = "<group>"; };
 		D9E2C3AA5973D81C0024A883 /* Pods_Coastlines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coastlines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -421,6 +425,8 @@
 				0B2AA89D2497BC4300789B34 /* ExperimentARController+ARCoachingOverlay.swift */,
 				02AC5AA124996FCE00468145 /* SeaLevelComputations.swift */,
 				0200C36224A6E69D00D94229 /* HandleYears.swift */,
+				C4DE80D824C0CAFB002370EC /* SplashScreenView.swift */,
+				C4DE80D624C0C93C002370EC /* SplashScreenController.swift */,
 				C40F2CD82490123800AA1756 /* Main.storyboard */,
 				C40F2CDB2490123A00AA1756 /* Assets.xcassets */,
 				C40F2CDD2490123A00AA1756 /* LaunchScreen.storyboard */,
@@ -761,6 +767,7 @@
 				C40F2CE52490125200AA1756 /* OnboardingController.swift in Sources */,
 				C40F2CFA2490129300AA1756 /* PieChartCell.swift in Sources */,
 				C40F2CED2490126800AA1756 /* GlobalConstants.swift in Sources */,
+				C4DE80D924C0CAFB002370EC /* SplashScreenView.swift in Sources */,
 				02737076249D23E800A10E7B /* TOCCell.swift in Sources */,
 				0273708324A10BDE00A10E7B /* DropFlipRiseNYC.rcproject in Sources */,
 				C40F2CFF249012A100AA1756 /* NSUIColor+Hex.swift in Sources */,
@@ -793,6 +800,7 @@
 				C40F2CF82490128E00AA1756 /* ContentCell.swift in Sources */,
 				C40F2CFC2490129800AA1756 /* LocationCell.swift in Sources */,
 				C45DDA8B24A14988002E5C40 /* UIView+AddAccessibility.swift in Sources */,
+				C4DE80D724C0C93C002370EC /* SplashScreenController.swift in Sources */,
 				0200C36324A6E69D00D94229 /* HandleYears.swift in Sources */,
 				C40F2D1D2490157200AA1756 /* FourthOnboardingView.swift in Sources */,
 				B7B59BDE2497E4E8004CA137 /* ResourceView.swift in Sources */,
