@@ -1,5 +1,5 @@
-# Coasts
-[![](Assets/logo.png)](https://github.com)
+# Coasts - [check out or site](http://brendoncecilio.com/coastsapp/)
+[![](Assets/logo.png)](http://brendoncecilio.com/coastsapp/)
 
 ## Contributors 
 [Cameron Rivera](https://github.com/CameronRivera) | [Brendon Cecilio](https://github.com/bcecilio) | [Kelby Mittan](https://github.com/kelby-mittan)
