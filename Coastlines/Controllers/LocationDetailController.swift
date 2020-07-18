@@ -78,8 +78,8 @@ class LocationDetailController: UIViewController {
     }
     
     private func experienceWatAR() {
-//        let arVC = ExperimentARController(location)
-//        UIViewController.resetWindow(arVC)
+        let arVC = ExperimentARController(location)
+        UIViewController.resetWindow(arVC)
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
