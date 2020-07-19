@@ -25,6 +25,16 @@ class LocationsViewController: UIViewController {
         super.viewDidLoad()
         locationsView.collectionView.dataSource = self
         locationsView.collectionView.delegate = self
+        locationsView.pageControl.numberOfPages = locations.count
+        locationsView.pageControl.currentPage = 0
+    }
+    
+    private func calculatePageControl(_ scrollView: UIScrollView){
+        let offset = scrollView.contentOffset.x
+        let width = scrollView.frame.width
+        let horizontalCenter = width / 2
+        
+        locationsView.pageControl.currentPage = Int((offset + horizontalCenter) / width)
     }
 }
 
@@ -33,29 +43,20 @@ class LocationsViewController: UIViewController {
 extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else {
-            return locations.count
-        }
+        return locations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "locationCell", for: indexPath) as? LocationCell else {
-                fatalError("Failed to create locationCell")
-            }
-        
-        if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "introCell", for: indexPath) as? LocationIntroCell ?? UICollectionViewCell()
-            return cell
-        } else {
-            cell.configureCell(locations[indexPath.row])
-            return cell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "locationCell", for: indexPath) as? LocationCell else {
+            fatalError("Failed to create locationCell")
         }
+        
+        cell.configureCell(locations[indexPath.row])
+        return cell
     }
     
     
@@ -77,11 +78,9 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
-            let vc = LocationDetailController(locationData[indexPath.row])
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
-        }
+        let vc = LocationDetailController(locationData[indexPath.row])
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -97,5 +96,7 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
         }
         
         oldValue = x
+        
+        calculatePageControl(scrollView)
     }
 }

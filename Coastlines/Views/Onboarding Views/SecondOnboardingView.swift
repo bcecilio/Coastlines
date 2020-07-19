@@ -72,7 +72,7 @@ class SecondOnboardingView: UIView {
     private func commonInit() {
 
 //        setUpImageViewConstraints()
-        setUpSkipButtonConstraints()
+//        setUpSkipButtonConstraints()
 //        setUpTransparentViewConstraints()
         setUpInfoViewConstraints()
 //        setUpInfoViewConstraints()

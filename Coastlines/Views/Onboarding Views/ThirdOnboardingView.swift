@@ -73,7 +73,7 @@ class ThirdOnboardingView: UIView {
         // setUpCenterImageConstraints()
         setUpPrevButtonConstraints()
         setUpNextButtonConstraints()
-        setUpSkipButtonConstraints()
+//        setUpSkipButtonConstraints()
         setUpInfoViewConstraints()
     }
     

@@ -49,18 +49,14 @@ extension OnboardingController {
           Downcasts the current View Controller's view in order to decide which background video should be played.
      */
     private func downcastView() {
-        if let thisView = view as? SecondOnboardingView{
+        if let _ = view as? SecondOnboardingView{
             playBackgroundVideo("IcebergPan")
-            thisView.animateNextButton()
-        } else if let thisView = view as? ThirdOnboardingView{
+        } else if let _ = view as? ThirdOnboardingView{
             playBackgroundVideo("IcebergPan2")
-            thisView.animateChevrons()
-        } else if let thisView = view as? FourthOnboardingView{
+        } else if let _ = view as? FourthOnboardingView{
             playBackgroundVideo("coastPan")
-            thisView.animateChevrons()
-        } else if let thisView = view as? FifthOnboardingView{
+        } else if let _ = view as? FifthOnboardingView{
             playBackgroundVideo("IcebergPan3")
-            thisView.animatePrevButton()
         }
     }
     
