@@ -54,34 +54,10 @@ class ExperimentARController: UIViewController {
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        arView.automaticallyConfigureSession = false
-//        configuration.planeDetection = [.horizontal]
-//        configuration.environmentTexturing = .automatic
-//
-//        if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
-//            configuration.sceneReconstruction = .mesh
-//        }
-////        arView.session.run(configuration, options: .resetSceneReconstruction)
-//        self.arView.session.run(configuration)
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        self.arView.session.pause()
-//    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         setupBackButton()
     }
-    
-//    override func viewDidDisappear(_ animated: Bool) {
-//        super.viewDidDisappear(true)
-//        //arView.session.pause()
-//    }
-    
     
     private func loadScene() {
         
