@@ -73,7 +73,7 @@ class FourthOnboardingView: UIView {
         // setUpCenterImageConstraints()
         setUpPrevButtonConstraints()
         setUpNextButtonConstraints()
-        setUpSkipButtonConstraints()
+//        setUpSkipButtonConstraints()
         setUpInfoViewConstraints()
     }
     
