@@ -104,14 +104,12 @@ class LocationDetailController: UIViewController {
         scrollRightTo(isToc: false)
         buttonTag += 1
         showHideItems()
-        print(buttonTag)
     }
     
     @objc func prevButtonPressed(_ sender: UIButton) {
         scrollLeftTo()
         buttonTag -= 1
         showHideItems()
-        print(buttonTag)
     }
     
     private func showHideItems() {
@@ -200,7 +198,6 @@ class LocationDetailController: UIViewController {
     }
     
     @objc func touchTapped(_ sender: UITapGestureRecognizer) {
-        print("is this thing on????")
         pieCell.populationGraphView.animateButton(scale: 0.92, functionClosure: showPieFacts)
     }
     

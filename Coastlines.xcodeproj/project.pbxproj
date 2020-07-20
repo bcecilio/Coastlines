@@ -20,6 +20,7 @@
 		0273707E24A00D2C00A10E7B /* FactText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273707D24A00D2C00A10E7B /* FactText.swift */; };
 		0273708124A047BF00A10E7B /* FactText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273707D24A00D2C00A10E7B /* FactText.swift */; };
 		0273708324A10BDE00A10E7B /* DropFlipRiseNYC.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0273708224A10BDE00A10E7B /* DropFlipRiseNYC.rcproject */; };
+		027EF5F824C601E300563706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 027EF5F724C601E300563706 /* GoogleService-Info.plist */; };
 		028423732489C8D1000C1A9B /* LocationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423722489C8D1000C1A9B /* LocationDetailController.swift */; };
 		028423752489C984000C1A9B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423742489C984000C1A9B /* DetailView.swift */; };
 		028423772489E617000C1A9B /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028423762489E617000C1A9B /* ContentCell.swift */; };
@@ -153,6 +154,7 @@
 		02737079249FBC2B00A10E7B /* GraphShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphShowAlert.swift; sourceTree = "<group>"; };
 		0273707D24A00D2C00A10E7B /* FactText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactText.swift; sourceTree = "<group>"; };
 		0273708224A10BDE00A10E7B /* DropFlipRiseNYC.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = DropFlipRiseNYC.rcproject; sourceTree = "<group>"; };
+		027EF5F724C601E300563706 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		028423722489C8D1000C1A9B /* LocationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailController.swift; sourceTree = "<group>"; };
 		028423742489C984000C1A9B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		028423762489E617000C1A9B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				C40F2CD82490123800AA1756 /* Main.storyboard */,
 				C40F2CDB2490123A00AA1756 /* Assets.xcassets */,
 				C40F2CDD2490123A00AA1756 /* LaunchScreen.storyboard */,
+				027EF5F724C601E300563706 /* GoogleService-Info.plist */,
 				C40F2CE02490123A00AA1756 /* Info.plist */,
 			);
 			path = TestFeatureTarget;
@@ -511,6 +514,7 @@
 				C40F2CCD2490123800AA1756 /* Frameworks */,
 				C40F2CCE2490123800AA1756 /* Resources */,
 				909D6AAA218393C108070C7D /* [CP] Embed Pods Frameworks */,
+				027EF5F624C6002000563706 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -601,6 +605,7 @@
 			files = (
 				C40F2D06249012E400AA1756 /* CooperHewitt-Thin.otf in Resources */,
 				C40F2D09249012E400AA1756 /* CooperHewitt-Bold.otf in Resources */,
+				027EF5F824C601E300563706 /* GoogleService-Info.plist in Resources */,
 				B7C49F8624A29ABC00D07683 /* IcebergPan3.mov in Resources */,
 				C40F2D10249012E400AA1756 /* CooperHewitt-HeavyItalic.otf in Resources */,
 				B724305624A14E2400EF211F /* IcebergPan.mov in Resources */,
@@ -629,6 +634,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		027EF5F624C6002000563706 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		89EB34D1DF90C605ADAE2039 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -997,14 +1020,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cameronrivera13.TestFeatureTarget;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.coastlines;
 				PRODUCT_NAME = Coasts;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1017,14 +1041,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F72Z6LFG;
+				DEVELOPMENT_TEAM = 26RHXP32FH;
 				INFOPLIST_FILE = TestFeatureTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cameronrivera13.TestFeatureTarget;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.coastlines;
 				PRODUCT_NAME = Coasts;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

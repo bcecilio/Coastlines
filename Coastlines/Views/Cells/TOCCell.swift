@@ -181,7 +181,6 @@ class TOCCell: UICollectionViewCell {
         guard let id = sender.accessibilityLabel else { return }
         let content = Content(selected: id)
         
-        print(content)
         var contentView = UIView()
         
         switch content {
