@@ -40,8 +40,6 @@ class LocationCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
         setupViews()
-        
-        
     }
     
     public func configureCell(_ location: Location) {
