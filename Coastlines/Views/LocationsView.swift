@@ -17,7 +17,6 @@ class LocationsView: UIView {
         collection.backgroundColor = .clear
         collection.register(LocationCell.self, forCellWithReuseIdentifier: "locationCell")
         collection.register(LocationIntroCell.self, forCellWithReuseIdentifier: "introCell")
-        // TODO: Fix paging, it's alignment sucks.
         collection.isPagingEnabled = true
         return collection
     }()
@@ -41,6 +40,15 @@ class LocationsView: UIView {
         return button
     }()
     
+    public lazy var pageControl: UIPageControl = {
+       let pc = UIPageControl()
+        pc.backgroundColor = PaletteColour.offWhite.colour
+        pc.pageIndicatorTintColor = UIColor.systemGray4
+        pc.currentPageIndicatorTintColor = PaletteColour.darkBlue.colour
+        pc.isUserInteractionEnabled = false
+        return pc
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -56,6 +64,7 @@ class LocationsView: UIView {
         setupWavyView()
         setupCollectionView()
         setupResourceButton()
+        setUpPageControlConstraints()
     }
     
     private func setupCollectionView() {
@@ -89,6 +98,12 @@ class LocationsView: UIView {
             resourceButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.7),
             resourceButton.heightAnchor.constraint(equalToConstant: 60)
         ])
+    }
+    
+    private func setUpPageControlConstraints() {
+        collectionView.addSubview(pageControl)
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([pageControl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -(UIScreen.main.bounds.size.height * 0.25)), pageControl.centerXAnchor.constraint(equalTo: centerXAnchor), pageControl.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3), pageControl.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05)])
     }
     
     @objc func resourceButtonPressed() {
