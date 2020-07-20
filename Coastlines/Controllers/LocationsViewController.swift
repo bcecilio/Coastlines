@@ -79,10 +79,11 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = LocationDetailController(locationData[indexPath.row])
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
-
+        selectedLocation = locationData[indexPath.row]
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) else { fatalError() }
+        cell.animateButton(scale: 0.94, functionClosure: goToLocation)
+        
     }
     
     func goToLocation() {
