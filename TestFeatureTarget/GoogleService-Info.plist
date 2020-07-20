@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>370354284580-sktmb2p74bsfsnh48fttkp6hmagimocp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.370354284580-sktmb2p74bsfsnh48fttkp6hmagimocp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCMYIsLtJYrP5PA8TjewmqsCF8Kih8T4Bw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>370354284580</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.pursuit.coastlines</string>
+	<key>PROJECT_ID</key>
+	<string>coasts-4f311</string>
+	<key>STORAGE_BUCKET</key>
+	<string>coasts-4f311.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:370354284580:ios:87dfea9b9b81d85a1250b1</string>
+	<key>DATABASE_URL</key>
+	<string>https://coasts-4f311.firebaseio.com</string>
+</dict>
+</plist>

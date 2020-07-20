@@ -134,9 +134,6 @@ class PieChartCell: UICollectionViewCell {
 }
 
 extension PieChartCell: ChartViewDelegate {
-    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print("TAAAAAAPPED")
-    }
     
     public func setPopulationGraphData() {
         var entries = [PieChartDataEntry]()

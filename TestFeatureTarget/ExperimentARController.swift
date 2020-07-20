@@ -64,7 +64,8 @@ class ExperimentARController: UIViewController {
         DropFlipRiseNYC.loadDropSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
-                print("The flip scene error is..... \(error)")
+                let alert = self.makeAlert("Loading Error", "Could not load scene with error: \(error.localizedDescription)", nil, PaletteColour.peach.colour)
+                self.present(alert, animated: true)
             case .success(let scene):
                 
                 self.dropScene = scene
@@ -79,7 +80,8 @@ class ExperimentARController: UIViewController {
         DropFlipRiseNYC.loadFlipSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
-                print("The flip scene error is..... \(error)")
+                let alert = self.makeAlert("Loading Error", "Could not load scene with error: \(error.localizedDescription)", nil, PaletteColour.peach.colour)
+                self.present(alert, animated: true)
             case .success(let scene):
                 
                 self.flipScene = scene
@@ -95,7 +97,8 @@ class ExperimentARController: UIViewController {
         DropFlipRiseNYC.loadRiseSegmentSceneAsync { [unowned self] result in
             switch result {
             case .failure(let error):
-                print("The seaRise error is..... \(error)")
+                let alert = self.makeAlert("Loading Error", "Could not load scene with error: \(error.localizedDescription)", nil, PaletteColour.peach.colour)
+                self.present(alert, animated: true)
             case .success(let scene):
                 
                 self.riseSegmentScene = scene
@@ -230,9 +233,7 @@ class ExperimentARController: UIViewController {
             let year = HandleYears.getYearLabel(sliderVal: slider.value, scene: scene)
             
             HandleYears.showYearLabel(labels: yearLabels, year: year)
-            
-            print(slider.value)
-            
+                        
             self.redLight = CityLights.highlightManhattan(sliderVal: slider.value, light: self.redLight)
             
             self.cityLightTwo = CityLights.moveCenterCityLight(sliderVal: slider.value, light: self.cityLightTwo)
@@ -334,20 +335,3 @@ class ExperimentARController: UIViewController {
     
 }
 
-extension ExperimentARController: ARSessionObserver, ARSessionDelegate {
-    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
-        print("CAMERA TRACKING: \(camera.trackingState)")
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        print("")
-    }
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        print("ERROR IS: \(error.localizedDescription)")
-    }
-    
-    func sessionShouldAttemptRelocalization(_ session: ARSession) -> Bool {
-        return true
-    }
-}

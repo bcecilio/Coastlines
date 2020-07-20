@@ -4,6 +4,7 @@
 def project_pods
   pod 'Charts'
   pod 'lottie-ios'
+  pod 'Firebase/Crashlytics'
   end
 
 target 'Coastlines' do
