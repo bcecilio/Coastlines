@@ -18,6 +18,10 @@ class LocationDetailController: UIViewController {
     private var didYouKnowText: [String]
     private var whatsHappeningText: [String]
     private var whereWillWeGoText: [String]
+    private var linaYear: Double = 0
+    private var linaRise: Double = 0
+    private var tap = UITapGestureRecognizer()
+    private var tocContent = Content.didYouKnow
     
     init(_ location: Location) {
         self.location = location
@@ -56,36 +60,42 @@ class LocationDetailController: UIViewController {
         locationView.infoButton.addTarget(self, action: #selector(infoButtonPressed(_:)), for: .touchUpInside)
         locationView.nextButton.addTarget(self, action: #selector(nextButtonPressed(_:)), for: .touchUpInside)
         locationView.prevButton.addTarget(self, action: #selector(prevButtonPressed(_:)), for: .touchUpInside)
-        
         locationView.imageOne.image = UIImage(named: location.images.one)
         locationView.locationLabel.text = location.name
-        
         locationView.imageOne.addAccessibility(.image, location.images.accessibility, nil, "")
         locationView.collectionView.isScrollEnabled = false
+        tap = UITapGestureRecognizer(target: self, action: #selector(self.touchTapped(_:)))
     }
     
     @objc func goToARButtonPressed(_ sender: UIButton?) {
-        
         if selection != .newYork {
-            
             let comingSoonAlert = makeAlert("\n\nComing Soon!!!", "\n\nAn Augmented Reality Experience for \(location.name) is on its way", Font.boldArial26, PaletteColour.darkBlue.colour)
             comingSoonAlert.setMessage(font: Font.boldArial24, color: PaletteColour.darkBlue.colour)
-            
             present(comingSoonAlert, animated: true, completion: nil)
-            
         } else {
-//            let arVC = ExperimentARController(location)
-//            UIViewController.resetWindow(arVC)
+            locationView.goToARButton.animateButton(functionClosure: experienceWatAR)
         }
-        
+    }
+    
+    private func experienceWatAR() {
+//        let arVC = ExperimentARController(location)
+//        UIViewController.resetWindow(arVC)
     }
     
     @objc func backButtonPressed(_ sender: UIButton) {
+        locationView.backButton.animateButton(scale: 0.7, functionClosure: backOut)
+    }
+    
+    private func backOut() {
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
     }
     
     @objc func infoButtonPressed(_ sender: UIButton) {
+        locationView.infoButton.animateButton(scale: 0.7, functionClosure: infoPressed)
+    }
+    
+    private func infoPressed() {
         let resourcesVC = ResourcesController()
         UIViewController.resetWindow(resourcesVC)
     }
@@ -135,12 +145,10 @@ class LocationDetailController: UIViewController {
             locationView.showNext()
             willWeGoCell.showLabels()
             augCell.hideItems()
-        //            locationView.showARButton()
         case 6:
             willWeGoCell.hideLabels()
             locationView.hideNext()
             locationView.showPrev()
-            //            locationView.hideARButton()
             augCell.showItems()
             augCell.arIconAnimation.play()
             augCell.arIconAnimation.loopMode = .loop
@@ -167,11 +175,9 @@ class LocationDetailController: UIViewController {
             self.locationView.collectionView.contentOffset.x += self.locationView.frame.width-5.5
             self.locationView.layoutIfNeeded()
         }, completion: nil)
-        
     }
     
     private func scrollLeftTo() {
-        
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
             self.locationView.collectionView.contentOffset.x -= self.locationView.frame.width-5.5
             self.locationView.nameLabelLeading.constant += self.locationView.frame.width+8
@@ -191,6 +197,18 @@ class LocationDetailController: UIViewController {
         linaCell.seaLevelSet.setColor(PaletteColour.darkBlue.colour)
         linaCell.seaLevelSet.fill = Fill(color: PaletteColour.darkBlue.colour)
         linaCell.headerLabel.addAccessibility(.none, "This is a line chart that shows how sea levels might rise from now until 2100. It is even possible that by the year 2100 sea levels could surpass 6 feet.", nil, "Tapping on this chart displays a pop up view for the rise in sea level for the selected year")
+    }
+    
+    @objc func touchTapped(_ sender: UITapGestureRecognizer) {
+        print("is this thing on????")
+        pieCell.populationGraphView.animateButton(scale: 0.92, functionClosure: showPieFacts)
+    }
+    
+    private func showPieFacts() {
+        let (fact1,fact2) = FactText.getFact(selection)
+        let showAlert = makeAlert(fact1, fact2, Font.boldArial26, PaletteColour.darkBlue.colour)
+        
+        self.present(showAlert, animated: true, completion: nil)
     }
 }
 
@@ -229,6 +247,7 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
             
         case 4:
             pieCell = configurePieChartCell(collectionView, indexPath, location)
+            pieCell.pieView.addGestureRecognizer(tap)
             return pieCell
             
         case 5:
@@ -244,34 +263,23 @@ extension LocationDetailController: UICollectionViewDelegateFlowLayout, UICollec
         }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return  locationView.collectionView.configureCellSize(1, 8)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if indexPath.row == 6 {
-            goToARButtonPressed(nil)
-        } else if indexPath.row == 4 {
-            let (fact1,fact2) = FactText.getFact(selection)
-            let showAlert = makeAlert(fact1, fact2, Font.boldArial26, PaletteColour.darkBlue.colour)
-            
-            self.present(showAlert, animated: true, completion: nil)
-        }
     }
 }
 
 extension LocationDetailController: TapContents {
-    func onItem(content: Content) {
+    func onItem(content: Content, forView: UIView) {
+        tocContent = content
+        forView.animateButton(functionClosure: goToContent)
+    }
+    
+    func goToContent() {
+        scrollHelper(to: tocContent.rawValue)
+        buttonTag = tocContent.rawValue
+        locationView.showPrev(delay: TimeInterval(tocContent.rawValue)*0.5)
         
-        scrollHelper(to: content.rawValue)
-        buttonTag = content.rawValue
-        
-        locationView.showPrev(delay: TimeInterval(content.rawValue)*0.5)
-        
-        if content == .seeInAR {
-            //            locationView.hideARButton()
+        if tocContent == .seeInAR {
             locationView.hideNext()
             augCell.arIconAnimation.play()
             augCell.arIconAnimation.loopMode = .loop
@@ -306,9 +314,14 @@ extension LocationDetailController: TapContents {
 
 extension LocationDetailController: GraphClicked {
     
-    func clickedOnGraph(year: Double, rise: Double) {
-        let showAlert = GraphShowAlert.makeAlert(year: year, rise: rise, vc: self)
-        self.present(showAlert, animated: true, completion: nil)
+    func clickedOnGraph(lina: LineChartView, year: Double, rise: Double) {
+        linaYear = year
+        linaRise = rise
+        lina.animateButton(scale: 0.92, functionClosure: linaInteraction)
     }
     
+    func linaInteraction() {
+        let showAlert = GraphShowAlert.makeAlert(year: linaYear, rise: linaRise, vc: self)
+        self.present(showAlert, animated: true, completion: nil)
+    }
 }

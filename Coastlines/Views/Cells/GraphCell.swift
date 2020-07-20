@@ -10,7 +10,7 @@ import UIKit
 import Charts
 
 protocol GraphClicked {
-    func clickedOnGraph(year: Double, rise: Double)
+    func clickedOnGraph(lina: LineChartView, year: Double, rise: Double)
 }
 
 class GraphCell: UICollectionViewCell {
@@ -142,7 +142,7 @@ class GraphCell: UICollectionViewCell {
 
 extension GraphCell: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        graphDelegate?.clickedOnGraph(year: entry.x, rise: entry.y)
+        graphDelegate?.clickedOnGraph(lina: seaLevelLineChart,year: entry.x, rise: entry.y)
     }
     
     public func setSeaLevelData() {

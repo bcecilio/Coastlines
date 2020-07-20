@@ -116,6 +116,10 @@ class SecondOnboardingView: UIView {
     
     @objc
     private func showLocationsVC() {
+        skipButton.animateButton(scale: 0.6, functionClosure: xToLocations)
+    }
+    
+    private func xToLocations() {
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
     }

@@ -114,10 +114,15 @@ class ThirdOnboardingView: UIView {
     }
     
     @objc
-    private func showLocationsVC(){
+    private func showLocationsVC() {
+        skipButton.animateButton(scale: 0.6, functionClosure: xToLocations)
+    }
+    
+    private func xToLocations() {
         let locationsVC = LocationsViewController()
         UIViewController.resetWindow(locationsVC)
     }
+
     
     public func animateChevrons(){
         UIView.animate(withDuration: 0.5, delay: 0.5, options: [.repeat,.autoreverse], animations: {

@@ -60,7 +60,7 @@ extension UIButton {
         button.tintColor = .white
         button.layer.borderWidth = 5
         button.layer.borderColor = PaletteColour.offWhite.colour.cgColor
-        button.addTarget(self, action: #selector(animateButtonNoClosure), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(animateButtonNoClosure), for: .touchUpInside)
 //        button.layer.shadowColor = UIColor.black.cgColor
 //        button.layer.shadowOffset = CGSize(width: 5, height: 5)
 //        button.layer.shadowRadius = 3
@@ -93,11 +93,11 @@ extension UIImageView {
     }
 }
 
-extension UIButton {
+extension UIView {
     
-    func animateButton(functionClosure: @escaping () -> ()) {
+    func animateButton(scale: CGFloat = 0.88, functionClosure: @escaping () -> ()) {
         UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-            self.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+            self.transform = CGAffineTransform(scaleX: scale, y: scale)
         }) { (_) in
             UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
                 self.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -108,13 +108,23 @@ extension UIButton {
     }
     
     @objc func animateButtonNoClosure() {
-        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-            self.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
-        }) { (_) in
-            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
-                self.transform = CGAffineTransform(scaleX: 1, y: 1)
-            }, completion: nil)
-        }
+        animateButton(functionClosure: noop)
+    }
+    
+    func noop() {}
+}
+
+extension UIButton {
+    func pulsate(_ start: Float = 0.97, _ stop: Float = 1.1) {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.7
+        pulse.fromValue = start
+        pulse.toValue = stop
+        pulse.autoreverses = true
+        pulse.repeatCount = .infinity
+        pulse.initialVelocity = 0
+        pulse.damping = 5
+        layer.add(pulse, forKey: nil)
     }
 }
 

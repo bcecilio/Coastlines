@@ -13,6 +13,7 @@ class LocationsViewController: UIViewController {
     private let locationsView = LocationsView()
     private let locations = LocationCell.Location.allCases
     private let locationData = FactsData.getLocations()
+    private var selectedLocation = FactsData.getLocations()[0]
     
     /// Captures the last value of the x coordinate of the collection view.
     private lazy var oldValue = locationsView.collectionView.contentOffset.x
@@ -81,7 +82,15 @@ extension LocationsViewController: UICollectionViewDelegateFlowLayout, UICollect
         let vc = LocationDetailController(locationData[indexPath.row])
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
+
     }
+    
+    func goToLocation() {
+        let vc = LocationDetailController(selectedLocation)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
