@@ -1,4 +1,4 @@
-# Coasts - [check out or site](http://brendoncecilio.com/coastsapp/)
+# Coasts - [check out our site](http://brendoncecilio.com/coastsapp/)
 [![](Assets/logo.png)](http://brendoncecilio.com/coastsapp/)
 
 ## Contributors 
